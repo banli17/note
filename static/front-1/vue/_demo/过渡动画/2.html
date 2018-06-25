@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        .fade-enter-active {
+            animation: bounce-in .5s
+        }
+
+        .fade-leave-active {
+            animation: bounce-in .5s reverse
+        }
+
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0)
+            }
+            50% {
+                transform: scale(1.5)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="show = !show"></button>
+    <transition name="fade"
+                @enter="enter"
+                @after-enter="afterEnter">
+        <p v-if="show">You are running Vue in development mode.
+            Make sure to turn on production mode when deploying for production.
+            See more tips at https://vuejs.org/guide/deployment.html</p>
+    </transition>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            show: true
+        },
+        methods: {
+            enter(e){
+                console.log(e)
+                setTimeout(()=> {
+                    console.log(e)
+                }, 100)
+            },
+            afterEnter(e){
+                console.log(e)
+            }
+        },
+        created(){
+
+        }
+    })
+</script>
+</body>
+</html>

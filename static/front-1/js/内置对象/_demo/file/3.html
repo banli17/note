@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .preview {
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+    var canvas = document.getElementById('myCanvas'),
+            ctx = canvas.getContext('2d')
+    var image = new Image()
+    image.onload = function () {
+        Promise.all([
+            createImageBitmap(this, 0, 0, 32, 32),
+            createImageBitmap(this, 32, 0, 32, 32)
+        ]).then(function (sprites) {
+            console.log(sprites)
+            ctx.drawImage(sprites[0], 0, 0);
+            ctx.drawImage(sprites[1], 32, 32);
+        });
+    }
+    image.src = './img/21.jpg'
+</script>
+</body>
+</html>

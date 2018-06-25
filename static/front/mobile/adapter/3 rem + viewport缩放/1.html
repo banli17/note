@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [data-dpr="2"] div {
+            font-size: 26px;
+        }
+
+        [data-dpr="3"] div {
+            font-size: 39px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 1rem;
+            height: 1rem;
+            background: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div>你好</div>
+    <script>
+        var w = document.documentElement.clientWidth
+        var r = w / 640
+
+
+        var dpr = window.devicePixelRatio
+        if (/iPhone/.test(navigator.userAgent) && dpr > 1) {
+            document.documentElement.setAttribute('data-dpr', window.devicePixelRatio)
+        } else {
+            dpr = 1
+        }
+        r = 1 / dpr
+        document.querySelector('#viewport').content = `initial-scale=${r},user-scalable=no`
+        document.documentElement.style.fontSize = w / 10 * dpr + 'px'
+    </script>
+</body>
+
+</html>

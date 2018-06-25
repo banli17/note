@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="btn-group">
+    <button class="btn1">undo</button>
+</div>
+
+
+<script>
+    var command = {
+        key: [],
+        save: function (key) {
+            this.key.push(key)
+        },
+        undo: function () {
+            for (var i = 0, len = this.key.length; i < len; i++) {
+                console.log(this.key.shift())
+            }
+        }
+    }
+    document.onkeydown = function (e) {
+        command.save(e.key)
+    }
+    var btn1 = document.querySelector('.btn1')
+    btn1.onclick = function () {
+        command.undo()
+    }
+</script>
+</body>
+</html>

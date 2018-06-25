@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #toAnimate {
+            background: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<button class="btn"></button>
+<div id="toAnimate"></div>
+<script>
+    var btn = document.querySelector('.btn')
+    console.log(btn.style.motionOffset)
+    var player = document.querySelector('#toAnimate').animate([
+        {motionOffset: 0},
+        {motionOffset: '100%'}
+    ], {
+        duration: 3000
+    })
+</script>
+</body>
+</html>

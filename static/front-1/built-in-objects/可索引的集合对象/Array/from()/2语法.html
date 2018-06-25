@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // Array.from(arrayLike, mapFn, thisArg)
+    const a = [1, 5, 10]
+    const c = {name: 'zs'}
+    const b = Array.from(a, ()=> {  // 指定this时，也不能用箭头函数
+        console.log(this.name == '')  // this是window，this.name是空字符串
+    }, c)
+
+    const e = Array.from(a, function (item, i, arr) {
+        console.log(item, i, arr)
+        // 1 0 undefined
+        // 5 1 undefined
+        // 10 2 undefined
+
+        console.log(this.name)  //  'zs
+
+        return item * 2
+    }, c)
+
+    console.log(e)  // [2, 10, 20]
+
+    console.log(Array.from(a).length)
+</script>
+</body>
+</html>

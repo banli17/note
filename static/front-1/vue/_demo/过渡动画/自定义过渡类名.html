@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        .animated {
+        }
+
+        .tada {
+
+        }
+
+        .bounceOutRight {
+
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="show = !show"></button>
+    <transition name="fade"
+                :duration="2000"
+    >
+        <p v-if="show">You are running Vue in development mode.
+            Make sure to turn on production mode when deploying for production.
+            See more tips at https://vuejs.org/guide/deployment.html</p>
+    </transition>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            show: true
+        },
+        methods: {},
+        created(){
+
+        }
+    })
+</script>
+</body>
+</html>

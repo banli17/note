@@ -1,0 +1,5 @@
+define(['a'], function (a) {
+    return {
+        b: a.a
+    }
+})

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+
+    <div id="box">
+        <p v-html="$options.filters.currency(money,'small')"></p>
+        <p>{{msg}}</p>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
+<script>
+    function money(value, type) {
+        if (!/^(\d)/.test(value)) {
+            throw new Error('钱转换不是一个数字')
+            return
+        }
+        let m = parseFloat(value).toFixed(2).split('.')
+
+        return ` <div class="prod-price clearfix ${type}">
+        			<span class="yang-pic">&#xe64e;</span>
+        			<span class="yang-pic-price" id="jdPrice-copy">
+					<span class="big-price">${m[0]}</span><span class="small-price">.${m[1]}</span></span>
+    			</div>`
+    }
+    Vue.filter('currency', (value, type)=> {
+        return money(value, type)
+        if (!/^\/agent/.test(location.pathname)) {
+            return money(value, type)
+        }
+
+        return '￥' + Number(value).toFixed(2)
+    })
+    new Vue({
+        el: '#box',
+        data: {
+            msg: '',
+            money: 1222
+        },
+        methods: {
+            init(){
+
+            }
+        },
+        created(){
+            // this.init()
+        },
+        mounted(){
+            setInterval(()=> {
+                this.msg += 'hh'
+            }, 2000)
+        }
+    })
+</script>
+</body>
+</html>

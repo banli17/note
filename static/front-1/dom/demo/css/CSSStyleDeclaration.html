@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" style="font-size:12px"></div>
+
+    <script>
+        var box = document.querySelector('.box')
+        // console.log(box.style.fontSize)
+        // console.log(box.style.cssText = "")
+        // console.log(window.getComputedStyle(box).cssText)
+        // console.log(window.getComputedStyle(box).length)
+        // console.log(box.style.length)
+        // console.log(document.styleSheets[0].rules[0].style.parentRule)
+        console.log(window.getComputedStyle(box).getPropertyValue('font-size'))
+        console.log(box.style.getPropertyValue('width'))  // 获取不到 ''
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .sprite {
+            background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517487149991&di=80a029114c2c3e8b68071b66e2d5f831&imgtype=0&src=http%3A%2F%2Fimg11.weikeimg.com%2Fdata%2Fuploads%2F2015%2F09%2F10%2F149758971555f15abcc993c.png') no-repeat 0px 0px;
+            width: 125px;
+            height: 268px;
+        }
+    </style>
+</head>
+<body>
+<div class="sprite"></div>
+<script>
+    var sprite = document.querySelector('.sprite')
+    var x = 0
+    function move() {
+        if (x == 9) {
+            x = 0
+        }
+        sprite.style.backgroundPosition = -x * 125 + 'px 0px'
+        x++
+    }
+    setInterval(move, 30)
+    move()
+
+</script>
+</body>
+</html>

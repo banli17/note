@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //    'use strict'
+    var a = {}
+    Object.defineProperty(a, 'name', {
+        value: 20,
+        enumerable: false,
+        configurable: true
+    })
+
+    //    Object.defineProperty(a, 'name', {
+    //        value: 22,
+    //        enumerable: false
+    //    })
+    //    console.log(b.propertyIsEnumerable('name'))
+    //
+    console.log(a.hasOwnProperty('name'), Object.keys(a))
+    a.name = 13;
+    console.log(a)
+
+    function Archiver() {
+        var archive = []
+        var log = null
+
+        Object.defineProperty(archive, 'log', {
+            configurable: true,
+//            get: function () {
+//                console.log('get', log)
+//                return log
+//            },
+//            set: function (val) {
+//                console.log('set', val)
+//                log = val
+//                archive.push({log: val})
+//            }
+        })
+        return archive
+    }
+
+    //    var a = Archiver()
+    //    a.log = 'hello'
+    //    a.log = 'world'
+
+
+</script>
+</body>
+</html>

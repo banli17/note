@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="./swiper.css">
+</head>
+<body>
+<div class="swiper-container swiper-container-vertical">
+    <div class="swiper-wrapper">
+        <section class="swiper-slide" style="background:red"></section>
+        <section class="swiper-slide" style="background:blueviolet"></section>
+        <section class="swiper-slide" style="background:yellowgreen"></section>
+    </div>
+</div>
+<script src="swiper.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        mousewheel: true,
+        on: {
+            init: function () {
+                swiperAnimateCache(this);
+                swiperAnimate(this);
+            },
+            slideChangeTransitionEnd: function () {
+                swiperAnimate(this);
+            }
+        }
+    })
+</script>
+</body>
+</html>

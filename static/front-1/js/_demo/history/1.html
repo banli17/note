@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>111</title>
+</head>
+<body>
+<a id="a">a.html</a>
+<a id="b">b.html</a>
+<a id="c">c.html</a>
+<a href="./4.html">4.html</a>
+<p class="p"></p>
+<script>
+    var oa = document.querySelectorAll('a');
+    var op = document.querySelector('p')
+
+
+    for (var i = 0; i < oa.length; i++) {
+        oa[i].addEventListener('click', function () {
+            var title = this.innerHTML
+            op.innerHTML = title
+            history.pushState({title}, title, title)
+        })
+    }
+
+    window.addEventListener('popstate', function (e) {
+        console.log(e.state ,history.state)
+        op.innerHTML = history.state.title
+    })
+</script>
+</body>
+</html>

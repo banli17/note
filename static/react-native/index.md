@@ -1,0 +1,21 @@
+# react-native学习笔记
+
+
+- [环境搭建](#docs/reactnative/env)
+- [redux](#docs/reactnative/redux)
+- [基础知识](#docs/reactnative/basic)
+- [flex布局](#docs/reactnative/flex)
+- [瀑布流](#docs/reactnative/waterfall)
+- [官方组件大全](#docs/reactnative/component)
+- [官方API大全](#docs/reactnative/component)
+- [打包android apk](#docs/reactnative/makeapp)
+- [codepush热更新](#docs/reactnative/codepush)
+- [ios发布流程](#docs/reactnative/ios_deploy)
+- [图片处理汇总](#docs/reactnative/image)
+- [手势](#docs/reactnative/pan_responder)
+- [常用第三方插件](#docs/reactnative/plugin)
+- [RN升级](#docs/reactnative/update)
+- [微信多图分享的实现](#docs/reactnative/wechat-mutilImgShare)
+- [android集成友盟第三方原生组件](#docs/reactnative/native-modules-android)
+- [xcode常见问题](#docs/reactnative/xcode)
+- [其它常见问题](#docs/reactnative/issues)

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button class="btn">点击</button>
+<script src="https://cdn.bootcss.com/socket.io/2.0.4/socket.io.js"></script>
+<script>
+    let socket = io("http://localhost:5000");
+    socket.on('news', function (data) {
+        console.log('news', data)
+        socket.emit('my other event', {my: 'data'});
+    });
+    socket.on('haha', function (data) {
+        console.log('haha', data)
+    });
+    document.querySelector('.btn').onclick = function () {
+        socket.emit('my other event', {my: 'dat11a'});
+    }
+
+    let s = new WebSocket('ws://localhost:5000')
+    s.onmessage = function(){
+        console.log('message')
+    }
+</script>
+</body>
+</html>

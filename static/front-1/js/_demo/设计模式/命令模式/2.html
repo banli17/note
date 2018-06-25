@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+<button class="btn1">改变</button>
+<button class="btn2">撤销</button>
+
+<div class="box"></div>
+<script>
+    var btn1 = document.querySelector('.btn1')
+    var btn2 = document.querySelector('.btn2')
+    var box = document.querySelector('.box')
+
+    function randomHtml(obj) {
+        obj['innerHTML'] = Math.random()
+    }
+
+    var command = {
+        execute: function (obj, execute) {
+            execute(obj)
+        },
+        undo: function () {
+
+        }
+    }
+
+    btn1.onclick = function () {
+        command.execute(box, randomHtml)
+    }
+    btn2.onclick = function () {
+        command.execute(box, undo)
+    }
+</script>
+</body>
+</html>

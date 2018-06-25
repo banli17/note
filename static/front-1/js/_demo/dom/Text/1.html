@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p id="p">hello world</p>
+<script>
+    window.l = console.log
+    var p = document.getElementById('p')
+    var f = p.firstChild
+
+    var t2 = document.createTextNode('world')
+    //    f.appendData(' world')
+    //    f.deleteData(1, 1)
+    //    f.insertData(1, 'e')
+    //    f.replaceData(1, 2, 'oeeee')
+    //    l(f.substringData(2, 3))
+    //
+    //    p.appendChild(t2)
+    //
+    //    l(p.lastChild.textContent)
+    f.splitText(5)
+    l(f)
+    l(p.lastChild)
+    p.normalize()
+    l(p.childNodes)
+
+
+</script>
+</body>
+</html>

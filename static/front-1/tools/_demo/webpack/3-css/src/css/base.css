@@ -1,0 +1,45 @@
+html {
+    background: gold;
+}
+
+ul {
+    font-size: 19px;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background: url(../assets/imgs/17.jpg);
+}
+
+.small-box {
+    width: 300px;
+}
+
+
+
+@font-face {font-family: "iconfont";
+    src: url('../assets/font/iconfont.eot?t=1520232622563'); /* IE9*/
+    src: url('../assets/font/iconfont.eot?t=1520232622563#iefix') format('embedded-opentype'), /* IE6-IE8 */
+
+    url('../assets/font/iconfont.ttf?t=1520232622563') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../assets/font/iconfont.svg?t=1520232622563#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:116px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-friend:before { content: "\e6cc"; }
+
+.icon-iconjia:before { content: "\e620"; }
+
+.icon-mingpian:before { content: "\e63f"; }
+
+.icon-shangchengicon14:before { content: "\e60e"; }
+
+.icon-taobao:before { content: "\e60a"; }

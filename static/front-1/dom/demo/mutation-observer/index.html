@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>hello</p>
+    </div>
+    <script>
+        let app = document.querySelector('#app')
+        let p = document.querySelector('p')
+        let o = new MutationObserver(function (mutations, o) {
+            mutations.map((item) => {
+                console.log(item, o)
+            })
+        })
+
+        let options = {
+            childList: true,
+            attributes: true
+        }
+        o.observe(app, options)
+        // p.remove()
+        let newP = document.createElement('p')
+        newP.innerHTML = 'hi'
+        let newP1 = document.createElement('p')
+        newP1.innerHTML = 'hi1'
+        app.appendChild(newP1)
+    </script>
+</body>
+
+</html>

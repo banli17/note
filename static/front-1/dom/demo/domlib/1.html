@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">11</div>
+    <div class="box1">box1</div>
+    <div class="box1">box2</div>
+    <script src="zepto.js"></script>
+    <script class="s">
+        console.log('1eee')
+    </script>
+    <!-- <script src="dom.js"></script> -->
+    <script>
+        // $('.box').appendChild('<div>')
+        // $('.box').addClass('red blue')
+        // $('.box').removeClass('blue box')
+        // var b = $('.box').detach()
+        // console.dir(b)
+        // $('.box1').append(b)
+        // $('.box').prepend(document.querySelector('.box1'))
+        // document.querySelector('.box').parentNode.insertBefore(document.querySelector('.box1'), null)
+        $('.box1').append($('.box'))
+    </script>
+</body>
+
+</html>

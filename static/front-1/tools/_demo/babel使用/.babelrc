@@ -1,0 +1,14 @@
+{
+    "presets": [
+        "env"
+    ],
+    "plugins": [],
+    "env": {
+        "development": {
+            "plugins": []
+        },
+        "production": {
+            "plugins": ["transform-runtime"]
+        }
+    }
+}

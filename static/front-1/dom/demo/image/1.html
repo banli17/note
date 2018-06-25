@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <img src="./1.jpeg" id="img" alt="" referrerpolicy="no-referrer"> -->
+    <img src="http://jquery.cuishifeng.cn/images/top-img2_708014e.jpg" id="img" alt="">
+    <!-- <img src="./1.jpeg" id="img" alt="" referrerpolicy="no-referrer-when-downgrade"> -->
+    <!-- <img src="./1.jpeg" id="img" alt="" referrerpolicy="origin"> -->
+    <!-- <img src="./1.jpeg" id="img" alt="" referrerpolicy="origin-when-cross-origin"> -->
+    <!-- <img src="./1.jpeg" id="img" alt="" referrerpolicy="unsafe-url"> -->
+    <script>
+        // var img = new Image()
+        // img.src = './1.jpeg'
+        // document.body.appendChild(img)
+        // console.log(img.src)
+        // img.src = 'http://jquery.cuishifeng.cn/images/top-img2_708014e.jpg'
+        console.log(img.naturalWidth)
+        img.onloadstart = function(){
+            console.log('loadstart')
+        }
+        console.log(img.complete)
+        img.onload = function () {
+            console.log(img.currentSrc)
+        }
+        img.onerror= function(){
+            console.log('error', this.complete)
+        }
+    </script>
+</body>
+
+</html>

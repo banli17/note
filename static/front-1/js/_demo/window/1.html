@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<iframe src="xx.com" id="iframe" frameborder="0"></iframe>
+<img src="https://m.360buyimg.com/mobilecms/s240x240_jfs/t13417/259/983306914/27029/300e68e3/5a180820N25413283.jpg!q70.jpg"
+     alt="">
+<script>
+    var iframe = document.getElementById('iframe')
+    console.dir(iframe)
+
+
+    window.onfocus = function () {
+        console.log('focus')
+    }
+    window.onblur = function () {
+        console.log('blur')
+    }
+</script>
+</body>
+</html>

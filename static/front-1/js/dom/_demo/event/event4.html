@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<div style="width: 100px;height: 100px;background: red;" id="div"></div>
+<script>
+    // 验证 new Event 的第二个参数 bubbles 和cancelable
+    var div = document.querySelector('#div')
+
+    div.addEventListener('xx', function () {
+        console.log('div')
+    }, false)
+    window.addEventListener('xx', function () {
+        console.log('window')
+    }, false)
+
+    div.dispatchEvent(new Event('xx'))
+</script>
+</body>
+</html>

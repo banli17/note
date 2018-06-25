@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            font-weight: normal;
+        }
+
+        table, tr, td, th {
+            border: 1px solid #ccc
+        }
+
+    </style>
+</head>
+<body>
+<div id="form">
+    名字：<input type="text" class="name"> <br>
+    年龄：<input type="text" class="age"> <br>
+    qq：<input type="text" class="qq"> <br>
+    <button class="btn">提交</button>
+</div>
+<table id="table">
+    <thead>
+    <tr>
+        <th>名字</th>
+        <th>年龄</th>
+        <th>qq</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<script>
+	var idb = {
+		db: null,
+		version: 2,
+		store: null,  // 对象仓库
+		createDB: function (dbname, data) {
+			var request = indexedDB.open(dbname, this.version)
+			request.onupgradeneeded = function (e) {
+				this.db = e.target.result
+
+				// 创建对象仓库
+				if (!this.db.objectStoreNames.contains('user')) {
+					this.db.createObjectStore('user', {autoIncrement: true})
+				}
+			}
+			request.onsuccess = function (e) {
+				console.log('数据库' + dbname + '链接成功')
+				// 像对象仓库添加数据
+				var transaction = e.target.result.transaction(['user'], 'readwrite')
+				// console.log(transaction.objectStore('user'))
+				idb.store = transaction.objectStore('user')
+
+				var cursor = idb.store.openCursor()
+
+				var initHtml = ''
+				cursor.onsuccess = function (e) {
+					var res = e.target.result
+					if (res) {
+						var data = res.value
+						initHtml = `<tr><td>${data.name}</td><td>${data.age}</td><td>${data.qq}</td><td>删除</td></tr>`
+						document.querySelector('tbody').innerHTML += initHtml
+						res.continue()
+					}
+				}
+				if (!data) return
+
+				var a = idb.store.add(data)
+
+				a.onsuccess = function () {
+					console.log('数据添加成功,', data)
+
+					var html = `<tr><td>${data.name}</td><td>${data.age}</td><td>${data.qq}</td><td>删除</td></tr>`
+					document.querySelector('tbody').innerHTML += html
+				}
+			}
+		}
+	}
+	idb.createDB('db1')
+
+	var btn = document.querySelector('.btn')
+	btn.onclick = function () {
+		var name = document.querySelector('.name').value
+		var age = document.querySelector('.age').value
+		var qq = document.querySelector('.qq').value
+		idb.createDB('db1', {name, age, qq})
+	}
+
+</script>
+</body>
+</html>

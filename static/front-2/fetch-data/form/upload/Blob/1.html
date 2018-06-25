@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var aFileParts = ['<a id="a"><b id="b">hey!</b></a>']; // 一个包含DOMString的数组
+    var oMyBlob = new Blob(aFileParts, {type: 'text/html'}); // 得到 blob
+
+    var r = new FileReader()
+    r.addEventListener('loadend', function (e) {
+        console.log(r.result)
+        var str = ''
+        for (var i = 0; i < e.target.result.length; i++) {
+
+        }
+    })
+
+    r.readAsText(oMyBlob)
+</script>
+</body>
+</html>

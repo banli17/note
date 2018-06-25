@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const xhr = new XMLHttpRequest()
+
+    // 需要放在open之前，否则不会被触发
+    xhr.onprogress = function (e) {
+        if(e.lengthComputable){  // 进度是否可以计算
+            const percent = e.loaded /e.total
+        }
+        console.log(e)
+    }
+    xhr.upload.onprogress = function(e){
+        console.log('上传')
+    }
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                //console.log(xhr.responseText)
+            }
+        }
+    }
+    xhr.open('GET', './1.json', true)
+    xhr.send(null)
+</script>
+</body>
+</html>

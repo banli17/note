@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+        }
+        .container {
+
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .view {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: transform .3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+            background: #fff;
+            will-change: transform;
+        }
+
+        .detail-view {
+            transform: translateX(100%)
+        }
+
+        .view-change .list-view {
+            transform: translate(-100%)
+        }
+
+        .view-change .detail-view {
+            transform: translate(0)
+        }
+
+        .view li {
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #eee;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="view list-view">
+        <ul>
+            <li class="list-item">你好</li>
+            <li class="list-item"></li>
+            <li class="list-item"></li>
+            <li class="list-item"></li>
+        </ul>
+    </div>
+    <div class="view detail-view">
+        你好你好
+        <div class="back-button">返回</div>
+    </div>
+</div>
+<script>
+    var container = document.querySelector('.container')
+    var backButton = document.querySelector('.back-button')
+    var listItems = document.querySelectorAll('.list-item')
+
+    function onViewChange(evt) {
+        container.classList.toggle('view-change')
+    }
+
+    for (var i = 0; i < listItems.length; i++) {
+        listItems[i].addEventListener('click', onViewChange, false)
+    }
+
+    backButton.addEventListener('click', onViewChange)
+</script>
+</body>
+</html>

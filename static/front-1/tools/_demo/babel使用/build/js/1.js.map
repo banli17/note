@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/js/1.js"],"names":["Monkey","log","arguments"],"mappings":";;;;;;;;;;;;IAAMA,M;;;;;;;wBACA;AAAA;;AACJ,wBAAQC,GAAR,iBAAeC,SAAf;AACA","file":"1.js","sourcesContent":["class Monkey {\n\tasy(){\n\t\tconsole.log(...arguments)\n\t}\n}"]}

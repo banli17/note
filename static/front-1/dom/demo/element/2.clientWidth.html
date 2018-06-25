@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            background: red;
+            overflow: scroll;
+            padding: 5px;
+        }
+        .box:after{
+            content: 'hi';
+            width:10px;
+            position: absolute;
+        }
+
+        span {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">盒子css宽100pxpxpxpxpxpxpx</div>
+    <span class="span">hi</span>
+    <script>
+        var l = console.log
+        var box = document.querySelector('.box')
+        var span = document.querySelector('.span')
+        l(box.clientWidth)   // 100
+        l(span.clientHeight)  // 0
+        l(box.scrollWidth)   // 100
+        l(box.offsetWidth)   // 100
+    </script>
+</body>
+
+</html>

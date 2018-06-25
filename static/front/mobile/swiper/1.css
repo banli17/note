@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.swiper-wrapper {
+    display: flex;
+    height: 100%;
+    width: 400%;
+}
+
+.swiper-item {
+    flex: 1;
+    height: 100%;
+}
+.swiper-item img {
+    width: 100%;
+    height: 100%;
+}
+.bg1 {
+    background: green;
+}
+.bg2 {
+    background: yellow;
+}
+.bg3 {
+    background: red;
+}
+.bg4 {
+    background: blueviolet;
+}
+
+.active {
+    transition: 0.5s;
+}

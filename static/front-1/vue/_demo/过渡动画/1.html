@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 5s;
+        }
+
+        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+        {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="show = !show"></button>
+    <transition name="fade"
+                @enter="enter"
+                @after-enter="afterEnter">
+        <p v-if="show">hello</p>
+    </transition>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            show: true
+        },
+        methods: {
+            enter(e){
+                console.log(e)
+                setTimeout(()=> {
+                    console.log(e)
+                }, 100)
+            },
+            afterEnter(e){
+                console.log(e)
+            }
+        },
+        created(){
+
+        }
+    })
+</script>
+</body>
+</html>

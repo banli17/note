@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .modal {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            opacity: 0;
+            pointer-events: none;
+            background: rgba(0, 0, 0, 0.3);
+
+            will-change: transform, opacity;
+
+            transform: scale(1.5);
+            transition: transform 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946), opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        }
+
+        .modal.visible {
+            pointer-events: auto;
+            opacity: 1;
+            transform: scale(1);
+            transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+            opacity 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        }
+    </style>
+</head>
+<body>
+<div class="modal">
+    内容
+</div>
+<button>点击</button>
+<script>
+    var btn = document.querySelector('button')
+    var modal = document.querySelector('.modal')
+    btn.addEventListener('click', function () {
+        modal.classList.add('visible')
+    }, false)
+</script>
+</body>
+</html>

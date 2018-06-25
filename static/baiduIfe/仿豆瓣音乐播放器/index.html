@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>豆瓣音乐播放器</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="main">
+        {{audio}}
+        <ul class="music-list">
+            <li v-for="m in musicLists">{{m.title}}</li>
+        </ul>
+        <div class="music-author">
+        </div>
+        <div class="music-control">
+            <div class="music-progress-bar">
+                <div class="music-progress-buffered" :style="{width:500 * buffered+'px'}">
+                    <div class="music-progress-over" :style="{width:500 * progress +'px'}"></div>
+                </div>
+            </div>
+            <button @click="next">下一首</button>
+            <button @click="play">开始</button>
+            <button @click="pause">暂停</button>
+            <button @click="replay">重播</button>
+            <button @click="volumeAdd">声音增大</button>
+            <button @click="volumeMin">声音减小</button>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+
+<script>
+    function isBoom(b1, b2, type) {
+        if (type == 'rect') {
+            if (!((b1.x + b1.width < b2.x) || (b2.x + b2.width < b1.x) || (b1.y + b1.height < b2.y) || (b2.y + b2.height < b1.y))) {
+                return true
+            }
+        }
+
+        if (type == 'cir') {
+            var x = b2.x - b1.x
+            var y = b2.y - b1.y
+            var l = Math.sqrt(x * x + y * y)
+
+            if (l < y.radius + x.radius) {
+                return true
+            }
+        }
+        return false
+    }
+
+    var b1 = {
+        width: 100,
+        height: 100,
+        x: 10,
+        y: 10,
+        bg: 'red'
+    }
+
+    var b2 = {
+        width: 80,
+        height: 80,
+        x: 111,
+        y: 100,
+        bg: 'blue'
+    }
+
+    var canvas = document.getElementById('canvas')
+    var ctx = canvas.getContext('2d')
+    function draw(x) {
+        ctx.fillStyle = x.bg
+        ctx.fillRect(x.x, x.y, x.width, x.height)
+    }
+
+    draw(b1)
+    draw(b2)
+
+    console.log(isBoom(b1, b2, 'rect'))
+
+
+</script>
+</body>
+</html>

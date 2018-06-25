@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    .container
+        .row
+            form.form-horizontal(method="post", action="/admin/movie/new")
+                .form-group
+                    label.col-sm-3.control-label(for="inputTitle") 电影名字
+                    .col-sm-10
+                        input#inputTitle.form-control(type="text",name="movie[title]")
+
+

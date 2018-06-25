@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const xhr = new XMLHttpRequest()
+
+    xhr.onreadystatechange = function (e) {
+        if (xhr.readyState == 4) {
+            console.log(xhr)
+        }
+    }
+    xhr.onerror = function(e){
+        console.log(e)
+    }
+    xhr.open('GET', './1.json', true)
+    xhr.abort()
+    xhr.send(null)
+</script>
+</body>
+</html>

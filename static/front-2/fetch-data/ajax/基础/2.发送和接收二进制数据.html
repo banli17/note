@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const xhr = new XMLHttpRequest()
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                var arrayBuffer = xhr.response;
+                var byteArray = new Uint8Array(arrayBuffer);
+                var str = ''
+                for (var i = 0; i < byteArray.byteLength; i++) {
+                    // 对数组中的每个字节进行操作
+                    str += String.fromCharCode(byteArray[i])
+                }
+            }
+        }
+    }
+    xhr.open('GET', './1.json', true)
+    xhr.responseType = 'arraybuffer'
+    xhr.send(null)
+</script>
+</body>
+</html>

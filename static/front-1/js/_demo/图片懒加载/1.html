@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .imgbox {
+            background: #eee;
+            width: 300px;
+            height: 200px;
+            margin-bottom: 800px;
+        }
+
+        img {
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="imgbox">
+    <img data-src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018011102.jpg" alt="">
+</div>
+<div class="imgbox">
+    <img data-src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018011103.jpg" alt="">
+</div>
+<div class="imgbox">
+    <img data-src="http://www.ruanyifeng.com/blogimg/asset/2018/bg2018011105.jpg" alt="">
+</div>
+
+<script>
+
+    // 图片懒加载
+
+    ;
+    (function () {
+        var imgs = document.querySelectorAll('img')
+
+        function loadImg() {
+            imgs.forEach(function (image, i) {
+                var img = new Image()
+                // 检查图片位置
+                if (image.offsetTop < window.innerHeight + window.scrollY && !image.src) {
+                    img.src = image.dataset.src
+
+                    img.onload = function () {
+                        image.src = this.src
+                        image.style.opacity = 1
+                    }
+                }
+            })
+        }
+
+        loadImg()
+        window.onscroll = function () {
+            loadImg()
+        }
+    })();
+</script>
+</body>
+</html>

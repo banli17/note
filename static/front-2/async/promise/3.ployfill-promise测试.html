@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script src="./polyfill.js"></script> 
+   <script>
+        setTimeout(() => {
+            console.log(1)
+        })
+
+        new Promise((resolve) => {
+            console.log(2)
+
+            for (let i = 0; i < 10000; i++) {
+                i == 9999 && resolve()
+            }
+            console.log(3)
+        }).then(() => {
+            console.log(4)
+        })
+
+        console.log(5)
+   </script>   
+</body>
+</html>

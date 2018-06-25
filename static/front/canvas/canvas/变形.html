@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #canvas{
+            transform-origin:50% 50%;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="300"></canvas>
+<script>
+    var c = document.getElementById('canvas')
+    var ctx = c.getContext('2d')
+
+    ctx.fillStyle = 'red'
+//    ctx.scale(5,5)
+    ctx.translate(115, 115);
+    ctx.rotate(30 * Math.PI/180)
+    ctx.fillRect(-25, -25, 50, 50)
+
+//    ctx.fillStyle = 'blue'
+//    ctx.fillRect(20,20,60,60)
+
+    // 放大
+</script>
+</body>
+</html>

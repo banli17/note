@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+	if ('indexedDB' in window) {
+		console.log('ok')
+	}
+
+	var openRequest = indexedDB.open('test', 36)
+	// console.dir(openRequest)
+
+	openRequest.onupgradeneeded = function (e) {
+		var db = e.target.result
+		if (!db.objectStoreNames.contains("firstOS")) {
+			db.createObjectStore("firstOS");
+		}
+
+		var transaction = e.target.transaction
+		var store = transaction.objectStore('firstOS')
+		store.createIndex("name", "name", {unique: false});
+		store.createIndex("age", "age", {unique: false});
+
+		var o = {name: 'zs', age: 12}
+		var request = store.add(o, 1)
+		request.onerror = function (e) {
+			console.log("Error", e.target.error.name);
+			// error handler
+		}
+
+		request.onsuccess = function (e) {
+			console.log("数据添加成功！");
+		}
+		transaction.oncomplete = function (e) {
+			console.dir(e)
+		}
+
+	}
+	openRequest.onsuccess = function (e) {
+		console.log('Success', e.target)
+		var transaction = e.target.result.transaction(['firstOS'], 'readwrite')
+		var store = transaction.objectStore('firstOS');
+
+		// var ob = store.get(1);
+		// ob.onsuccess = function (e) {
+		// 	console.log(e.target.result) //{p: 123}
+		// }
+	}
+
+	openRequest.onerror = function (e) {
+		console.log('Error')
+		console.dir(e)
+	}
+
+
+</script>
+</body>
+
+</html>

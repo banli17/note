@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2"></div>
+</div>
+
+<script>
+    var box1 = document.querySelector('.box1')
+    var box2 = document.querySelector('.box2')
+
+    //    box1.onmouseenter = function () {
+    //        console.log('mouseenter')
+    //    }
+    //    box1.onmouseleave = function () {
+    //        console.log('mouseleave')
+    //    }
+    box1.onmouseover = function () {
+        console.log('mouseover')
+    }
+    box1.onmouseout = function () {
+        console.log('mouseout')
+    }
+</script>
+</body>
+</html>

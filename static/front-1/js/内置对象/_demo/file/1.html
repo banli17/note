@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .preview {
+        }
+    </style>
+</head>
+<body>
+<input type="file" class="file">
+<img src="" alt="" class="preview">
+<button type="button" class="btn">点击</button>
+<script>
+    var file = document.querySelector('.file')
+    var preview = document.querySelector('.preview')
+    var btn = document.querySelector('.btn')
+
+    btn.onclick = function (e) {
+        var f = file.files[0]
+        console.log(URL.createObjectURL(f))
+        var src = URL.createObjectURL(f)
+        preview.src = src
+//        var reader = new FileReader()
+//        reader.onload = function (e) {
+//            console.log(this.readyState)
+//            console.log(e.target == this)
+//            console.log(this)
+//
+//            preview.src = e.target.result
+//        }
+//        reader.readAsDataURL(f)
+    }
+</script>
+</body>
+</html>

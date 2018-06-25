@@ -1,0 +1,1 @@
+const each = require('./collections/each')

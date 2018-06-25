@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+    <style>
+        .ball {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="ball"></div>
+<script>
+    var target = document.querySelector('.ball')
+    target.alpha = 0;
+    createjs.Tween.get(target).to({alpha: 1}, 1000).call(handleComplete);
+
+    function handleComplete() {
+        //渐变完成执行
+    }
+
+    var tween = createjs.Tween.get(target, {loop: true})
+        .to({x: 300}, 400)
+        .set({label: "hello!"})
+        .wait(500).to({alpha: 0, visible: false}, 1000)
+        .call(handleComplete);
+</script>
+</body>
+</html>

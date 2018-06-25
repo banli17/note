@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+
+<script>
+    var canvas = document.getElementById('canvas')
+    var context = canvas.getContext('2d')
+
+    var ball = {
+        x: 150,
+        y: 150,
+        radius: 20,
+        moveValue: 10,
+        direction: 'right',
+        move: function (ev) {
+            console.log(ev.key)
+
+            switch (ev.keyCode) {
+                case 37:
+                    this.x -= this.moveValue
+                    break;
+                case 38:
+                    this.y -= this.moveValue
+                    break;
+                case 39:
+                    this.x += this.moveValue
+                    break;
+                case 40:
+                    this.y += this.moveValue
+                    break;
+            }
+        },
+        clear: function () {
+            context.clearRect(0, 0, canvas.width, canvas.height)
+        },
+        draw: function () {
+            context.beginPath()
+            context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+            context.fill()
+        }
+    }
+
+    ball.draw()
+
+    window.onkeydown = function (e) {
+        ball.clear()
+        ball.move(e)
+        ball.draw()
+    }
+</script>
+</body>
+</html>
