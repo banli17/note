@@ -50,8 +50,8 @@ curl -0 -L http://npmjs.org/install.sh | sudo sh.
 ### 虚拟机的安装
 
 安装virtualbox 和genymotion
-https://www.virtualbox.org/wiki/Downloads 
-https://dl.genymotion.com/releases/genymotion-2.8.0/genymotion-2.8.0.dmg 
+https://www.virtualbox.org/wiki/Downloads
+https://dl.genymotion.com/releases/genymotion-2.8.0/genymotion-2.8.0.dmg
 安装sdk
 让虚拟机能够安装apk文件的方法：https://forum.xda-developers.com/showthread.php?t=2528952
 
@@ -74,7 +74,7 @@ react-native run-android
 mv software/reactnative/gradle-2.4-all.zip .gradle/wrapper/dists/gradle-2.4-all/
 cd .gradle/wrapper/dists/gradle-2.4-all/
 ls
-unzip gradle-2.4-all.zip 
+unzip gradle-2.4-all.zip
 history
 cp -r 拷贝
 ```
@@ -89,7 +89,7 @@ git clone https://github.com/facebook/react-native.git
 ./gradlew :Examples:UIExplorer:android:app:installDebug
 ```
 
-参考文章：http://www.jianshu.com/p/bcaaf51a9d0b 
+参考文章：http://www.jianshu.com/p/bcaaf51a9d0b
 
 **iso**
 
@@ -127,3 +127,13 @@ NSString *host = [[_bridge bundleURL] host] ?: @"192.168.0.104";
 ```
 
 如果报错`.. busy`则重插`usb`，重启`xcode`或重启手机。
+
+
+**"Error: `fsevents` unavailable" on jest --watch**
+
+```bash
+npm r -g watchman
+brew install watchman
+```
+
+然后，重开`js bundle`命令行。

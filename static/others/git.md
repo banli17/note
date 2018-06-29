@@ -93,8 +93,31 @@ git config --global core.quotepath false
 git push -u origin master -f
 ```
 
-**git warning: LF will be replaced by CRLF in**
+**2. git warning: LF will be replaced by CRLF in**
 
 ```
 git config core.autocrlf false
+```
+
+
+**3. windows上git提交的内容，在mac上报错了。env: bash\r: No such file or directory**
+
+如果上Mac
+
+```bash
+brew install dos2unix # Installs dos2unix Mac
+find . -type f -exec dos2unix {} \; # recursively removes windows related stuff
+```
+
+如果上Linux
+
+```bash
+sudo apt-get install -y dos2unix # Installs dos2unix Linux
+sudo find . -type f -exec dos2unix {} \; # recursively removes windows related stuff
+```
+
+之后确保windows上首先配置一下提交始终使用linux行结束符\n。
+
+```bash
+git config --global core.autocrlf input
 ```

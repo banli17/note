@@ -194,7 +194,22 @@ android {
 
 ## adb不是内部命令
 
+**windows系统**
 将android studio sdk目录打开，`C:\Users\banli17\AppData\Local\Android\sdk\platform-tools`。里面有个adb.exe文件。 将它配置成环境变量。
+
+**mac系统**
+
+```bash
+// 方法1，全局生效
+vim /etc/profile
+export PATH=$PATH:/Users/banli/Library/Android/sdk/platform-tools
+source /etc/profile
+
+// 方法2，用户生效
+sudo vim ~/.bash_profile
+export PATH=$PATH:/Users/banli/Library/Android/sdk/platform-tools
+source ~/.bash_profile
+```
 
 ## Error 'Could not determine java version from ‘10’
 

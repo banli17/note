@@ -135,7 +135,7 @@ console.log(total, subtotal, tax, items);
 
 ```
 function sum(...nums) {
-  let total = 0;  
+  let total = 0;
   for(const num of nums) {
     total += num;
   }
@@ -327,7 +327,7 @@ class Apple {}
 class GrannySmith extends Apple {
   constructor(tartnessLevel, energy) {
     this.tartnessLevel = tartnessLevel; // `this` before `super` will throw an error!
-    super(energy); 
+    super(energy);
   }
 }
 
@@ -337,7 +337,7 @@ class GrannySmith extends Apple {
 - class 不是魔术: 关键字 class 带来了其它基于类的语言中的很多思想观念。它没有像变魔术一样向 JavaScript 类添加了此功能。
 - class 是原型继承的抽象形式:我们已经多次提到，JavaScript 类实际上使用的就是原型继承。
 - 使用类需要用到 new: 在创建 JavaScript 类的新实例时，必须使用关键字 new，否则报错Uncaught TypeError: Class constructor Toy cannot be invoked without 'new'
-                                                     
+
 
 
 
@@ -447,7 +447,7 @@ console.log(arrayIterator.next());
 基本上，Set 是让你可以存储唯一条目的对象。你可以向 Set 中添加条目，删除条目，并循环访问 Set。这些条目可以是原始值或对象。
 
 ```
-const games = new Set();  // 此代码会创建空的 Set 
+const games = new Set();  // 此代码会创建空的 Set
 ```
 
 如果你想根据值列表创建 Set，则使用数组：
@@ -541,7 +541,7 @@ console.log(roster);
 类似于对象
 
 如果说 Set 类似于数组，那么 Map 就类似于对象，因为 Map 存储键值对，和对象包含命名属性及值相类似。要创建 Map，只需输入：
-                                                        
+
 ```
 const employees = new Map();
 console.log(employees);  // Map {}
@@ -552,10 +552,10 @@ console.log(employees);  // Map {}
 ```
 const employees = new Map();
 
-employees.set('james.parkes@udacity.com', { 
+employees.set('james.parkes@udacity.com', {
     firstName: 'James',
     lastName: 'Parkes',
-    role: 'Content Developer' 
+    role: 'Content Developer'
 });
 employees.set('julia@udacity.com', {
     firstName: 'Julia',
@@ -688,85 +688,3 @@ var obj = {
 
 对于 ES6 中的 Proxy，我们不需要提前知道这些属性。
 
-## 生成器
-
-每当函数被调用时，JavaScript 引擎就会在函数顶部启动，并运行每行代码，直到到达底部。无法中途停止运行代码，并稍后重新开始。一直都是这种“运行到结束”的工作方式：
-
-如果我们希望能够中途暂停运行函数，则需要使用 ES6 中新提供的一种函数，叫做 generator（生成器）函数！我们来看一个示例：
-
-```
-function* getEmployee() {
-    console.log('the function has started');
-
-    const names = ['Amanda', 'Diego', 'Farrin', 'James', 'Kagure', 'Kavita', 'Orit', 'Richard'];
-
-    for (const name of names) {
-        console.log( name );
-    }
-
-    console.log('the function has ended');
-}
-```
-
-注意到 function 关键字后面的星号（即 *）了吗？星号表示该函数实际上是生成器！生成器的星号实际上可以放在 function 关键字和函数名称之间的任何位置。
-
-生成器被调用时，它不会运行函数中的任何代码，而是创建和返回迭代器。该迭代器可以用来运行实际生成器的内部代码。
-
-```
-const generatorIterator = getEmployee();
-generatorIterator.next();
-```
-要暂停，需要使用关键字yield。它只能用在生成器函数中。yield 会导致生成器暂停下来。
-
-调用完时，它被调用的次数将比生成器函数中的 yield 表达式的数量多一次，即done为true。返回的value是yield后面跟的值，如果没有则是undefined。
-
-return 会覆盖yield的值，但是next()时不会在return停止，比如：
-
-```
-function* say(){
-	return 'hello'
-	yield 3
-}
-
-const s = say()
-
-console.log(s.next())  // {value:'hello',done:false}
-console.log(s.next())  // {value:undefined,done:true}
-```
-
-上面是用yield从生成器中获取数据。还可以将数据发送给生成器。
-
-```
-function* displayResponse() {
-    const response = yield;
-    console.log(`Your response is "${response}"!`);
-}
-
-const iterator = displayResponse();
-
-iterator.next(); // 暂停离开
-iterator.next('Hello Udacity Student'); // 传数据继续执行
-```
-
-使用数据调用 .next()会将该数据发送到生成器函数中上次离开的地方。它会将 yield 关键字替换为你提供的数据。
-
-```
-function* createSundae() {
-	const toppings = [];
-	
-	toppings.push(yield);
-	toppings.push(yield);
-	toppings.push(yield);
-	console.log(toppings)
-	return toppings;
-}
-
-var it = createSundae();
-it.next('hot fudge');
-it.next('sprinkles');
-it.next('whipped cream');
-it.next();
-
-// [ 'sprinkles', 'whipped cream', undefined ]
-```
-上面的代码执行后，最后一项是undefined。因为第一次暂停后没有传值，下一次才会传。

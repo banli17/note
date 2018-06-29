@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function* generator(){
+        var arr = []
+
+        arr.push(yield)
+        arr.push(yield)
+        arr.push(yield)
+        arr.push(yield)
+
+        console.log(arr)
+    }
+
+    const g = generator()
+    g.next('my')
+    g.next('name')
+    g.next('is')
+    g.next('liming')
+    g.next(0)
+</script>
+</body>
+</html>

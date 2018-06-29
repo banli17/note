@@ -54,6 +54,7 @@
 * [常用的库]()
     * [clipboard复制到剪切板](/front-1/common-libs/clipboard)
     * [weui.js](/front-1/common-libs/weui-js)
+    * [jquery.validate.js](/front-1/common-libs/jquery-validate)
 * [underscore]()
     * [underscore源码阅读]()
 * [网页打印知识总结](/front-1/use/print)
@@ -114,6 +115,7 @@
 * [异步编程](/front/async/index)
     * [promise的使用](/front/async/promise)
     * [promise实现原理](/front/async/promiseA)
+    * [generator](/front/async/generator)
     * [async函数](/front/async/async)
     * [事件循环event loop](/front/async/event-loop)
 
