@@ -41,6 +41,33 @@ const g = generator()
 g.next()  // 打印出1,2
 ```
 
+## 与Iterator接口的关系
+
+Generator 函数就是遍历器生成函数，因此可以把 Generator 赋值给对象的 Symbol.iterator 属性，从而使该对象具有 Iterator 接口。
+
+```javascript
+var myIterable = {}
+myIterable[Symbol.iterator] = function* (){
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+[...myIterable]  // [1, 2, 3]
+```
+
+Generator 函数执行后，返回一个遍历器对象，该对象也有 Symbol.iterator 属性，执行后返回自身。
+
+```
+function* gen(){
+    // some code
+}
+
+var g = gen()
+
+g[Symbol.iterator]() === g  // true
+```
+
 ## yield
 
 要暂停代码，需要使用`yield`关键字，它只能再生成器中使用，否则报错。
@@ -89,18 +116,18 @@ g.next()
 
 **done**表示函数是否执行完了。所以调用next()的次数会比yield的数量多1。
 
-上面主要是通过 yield 暂停函数，还可以通过 yield 传递值。
+上面主要是通过 yield 暂停函数，还可以通过 yield 传递值。yield 默认返回值上 undefined，可以通过 next() 的参数传递值。
 
 ```javascript
 function* generator(){
-    const a = yield
+    const a = yield 3
     console.log(a)
 }
 
 const g = generator()
 
 g.next()
-g.next('hi')
+g.next('hi') // a = 'hi'
 ```
 
 上面的代码，在第一次调用next()时，函数暂停，第二次执行next()时，next()的参数会赋值给yield。所以代码打印出`'hi'`。
@@ -128,6 +155,8 @@ g.next(0)
 
 // 打印出 ["name", "is", "liming", 0]
 ```
+
+## generator应用
 
 
 

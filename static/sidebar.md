@@ -210,4 +210,5 @@
 * [使用gitbook写书](/others/gitbook)
 * [前端面试题大全](/interview/web)
 * [node面试题大全](/interview/node)
+* [使用Kindle Ear推送RSS到Kindle设备](/others/kindle-rss)
 
