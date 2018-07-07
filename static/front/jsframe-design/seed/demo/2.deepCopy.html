@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function deepCopy(origin) {
+    var target = {}
+    for (var i in origin) {
+        if (typeof origin[i] !== 'object' || origin[i] == null || typeof origin[i] === 'function') {
+            target[i] = origin[i]
+            continue
+        }
+        if (Object.prototype.toString.call(origin[i]) === '[object Array]') {
+            target[i] = origin[i].slice()
+            continue
+        }
+
+        target[i] = deepCopy(origin[i])
+    }
+    return target
+}
+
+    var a = {
+        name: 'zs',
+        age: 12,
+        child: [{
+            name: 'lisi',
+            age: 15,
+            say: function () {
+
+            }
+        }]
+    }
+    var b = deepCopy(a)
+    console.log(b)
+</script>
+</body>
+</html>

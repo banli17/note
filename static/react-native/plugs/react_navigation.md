@@ -9,7 +9,7 @@ const TabBar = TabNavigation({
         navigationOptions:{
             tabBarLabel: '首页',
             tabBarIcon: ()=>{
-                <Image 
+                <Image
                     source={}
                     style={}
                 />
@@ -33,7 +33,7 @@ const SimpleApp = StackNavigator({
 			headerStyle:{
 				backgroundColor:'#18b4ed',
 				height: 48,
-				
+
 				// 下面三项，去除导航条阴影
 				shadowOpacity: 0,
                 shadowOffset: {
@@ -56,18 +56,18 @@ const SimpleApp = StackNavigator({
 			screenInterpolator: sceneProps => {
 				const {layout, position, scene} = sceneProps
 				const {index} = scene
-				
+
 				const height = layout.initHeight
 				const translateX = position.interpolate({
 					inputRange: [index - 1, index, index + 1],
 					outputRange: [height, 0, 0]
 				})
-				
+
 				const opacity = position.interpolate({
 					inputRange: [index - 1, index - 0.99, index],
 					outputRange: [0, 1, 1],
 				})
-				
+
 				return {opacity, transform: [{translateX}]}
 			},
 		}),
@@ -86,7 +86,7 @@ static navigationOptions = {
 
 抽出方法，将它赋值给`params`即可。
 
-```
+```javascript
 static navigationOptions = ({navigation})=> {
 	let {params} = navigation.state
 	return {
@@ -107,3 +107,15 @@ componentDidMount() {
 	})
 }
 ```
+
+
+## 路由跳转
+
+将`this.props.navigation`设置为全局变量，方便编码。然后使用`navigate()`方法。
+
+```javascript
+navigation.navigate({
+    routerName: ''
+})
+```
+

@@ -19,7 +19,7 @@
     * [Attribute属性](/front-1/dom/attribute)
     * [Text](/front-1/dom/text)
     * [Document](/front-1/dom/document)
-    * [事件和事件对象](/front-1/dom/event)
+    * [事件和事件对象](/front/dom/event)
     * [Image图片](/front-1/dom/image)
     * [Mutation Observer](/front-1/dom/mutation-observer)
     * [Zepto dom源码阅读(一)](/front-1/dom/zepto-dom1)
@@ -119,11 +119,17 @@
     * [async函数](/front/async/async)
     * [事件循环event loop](/front/async/event-loop)
 
-## 第4章：函数式编程
+
+## 第4章：前端飞升
+* [种子模块](/front/index)
+    * [对象扩展](/front/jsframe-design/seed/object-extend)
+
+
+## 第5章：函数式编程
 
 * [函数式编程](/front-3/functional-paradigm)
 
-## 第4章：node
+## 第6章：node
 * [node简介](/node/1)
 * [做一个聊天室](/node/2)
 * [node基础编程](/node/3)
@@ -142,14 +148,14 @@
 * [4.扩展事件监听器：文件监听器](/node/node-in-action/4)
 * [pm2](/node/pm2)
 
-## 第5章：vue全家桶
+## 第7章：vue全家桶
 * [vue](/vue)
 
-## 第6章:react
+## 第8章:react
 * [react基础](/react/basic)
 * [redux](/react/redux)
 
-## 第7章:react-native
+## 第9章:react-native
 * [运行原理解析](/react-native/principle)
 * [ReactNative api](/react-native/api)
 * [Java必备知识](/react-native/java)
@@ -163,7 +169,7 @@
 * [动画](/react-native/animation)
 * [react-native-code-push](/react-native/codepush)
 
-## 第8章：linux
+## 第10章：linux
 
 - [linux文件管理命令](/linux/file-manage)
 - [Vim 常用命令](/linux/vim)
@@ -171,7 +177,7 @@
 - [用户管理](/linux/linux)
 - [shell](/linux/linux)
 
-## 第9章：数据结构与算法
+## 第11章：数据结构与算法
 * [排序算法](/)
     * [归并排序](/algorithms/sort/mergeSort)
 * [排序基础](/algorithms/sort-basic)
@@ -183,7 +189,7 @@
 * [最小生成树](/algorithms/heap)
 * [最短路径](/algorithms/heap)
 
-## 第10章：设计模式
+## 第12章：设计模式
 * [单例模式](/patterns/singleton)
 * [策略模式](/patterns/strategy)
 * [代理模式](/patterns/proxy)
@@ -201,7 +207,8 @@
 * [生成消费模式](/patterns/command)
 * [设计原则与编程技巧](/patterns)
 
-## 第11章：其它必会
+## 第13章：其它必会
+* [mac使用技巧](/others/mac)
 * [学习svn](/others/svn)
 * [学习git和github](/others/git)
 * [使用webstorm编辑器](/others/webstorm)
