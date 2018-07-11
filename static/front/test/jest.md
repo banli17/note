@@ -8,7 +8,7 @@
 
 ## 常用的Matchers
 
-- toBe(): 全等，是通过 Object.is() 实现的。 
+- toBe(): 全等，是通过 Object.is() 实现的。
 - toEqual() ：值相等，可以用于判断对象，如 {a:1} 和 {a:1} 是相等的。
 - not：将 Matchers 取反，如 not.toBe()
 - toBeNull()：只能是 null
@@ -24,7 +24,7 @@
 - toMatch()：可以使用正则 expect('Christoph').toMatch(/stop/)
 - toContain()：数组包含某个值
 - toThrow()：匹配抛出的错误，可以是正则或字符串。如
- 
+
 ```
 function compileAndroidCode() {
     throw new ConfigError('you are using the wrong JDK');
@@ -64,7 +64,7 @@ test("ajax data.name is 3", done => {
 
 jest 内置了 [istanbul](https://github.com/gotwarlost/istanbul) 生成代码测试覆盖率。
 
-```
+```bash
 node_modules/.bind/jest --coverage
 ```
 
@@ -80,18 +80,19 @@ node 默认是不支持 es6 的模块导入导出的，需要使用 babel 进行
 **1. 安装插件**
 
 ```shell
-npm i --save-dev babel-jest babel-core regenerator-runtime babel-plugin-transform-es2015-modules-commonjs
+npm i --save-dev babel-jest babel-core regenerator-runtime babel-plugin-transform-es2015-modules-commonjs babel-preset-env
 ```
 
 - `babel-jest`：安装jest时它会被自动安装，作用是将代码通过 babel 转义。
 - `babel-plugin-transform-es2015-modules-commonjs`：用于将es6的 import 和 export 转义
 - `regenerator-runtime`：facebook自己出的用于 async/generator 转义的插件
+- `babel-preset-env`：会根据当前环境转换不支持的代码。当前环境是指执行编译后代码的环境，比如浏览器比如nodejs 等。babel-preset-env 中存储的是 各个浏览器和其它运行环境的核心版本号以及支持js的版本标识。然后自动生成一个配置给babel来做编译转换。babelrc里设置{  "presets": ["env"] } 会自动转换那些环境不支持的代码。
 
 **2. 配置babel**
 
 jest 默认运行环境就是 test。所以在根目录的 .babelrc 文件新增下面代码：
 
-```
+```javascript
 {
     "presets": ["env"],
     "env": {

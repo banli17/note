@@ -6,7 +6,7 @@
 window.config = {
     leftbar: {
         file: '/static/sidebar.md',
-        expand: true,   // 左侧菜单默认全部展开，如果要收缩将它改为false
+        expand: false,   // 左侧菜单默认全部展开，如果要收缩将它改为false
         showChapter: true
     },
     content: {
@@ -15,7 +15,7 @@ window.config = {
     rightbar: {
         // 搜索的api，github为false，表示使用本地接口进行搜索，否则需要填写github接口,例如：https://github.com/banli17/blog/search?q=
         search: {
-            github: false
+            github: 'https://github.com/banli17/blog/search?q='
         },
         // 友情链接
         friendLinks: [

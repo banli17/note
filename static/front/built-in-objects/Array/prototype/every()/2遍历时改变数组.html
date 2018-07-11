@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var a = [1, 2, {age: 12}]
+    var b = {name: 'zs'}
+    var res = a.every(function (item, index, array) {
+        // 这里改变item无用，因为item是局部变量，改属性才有用
+        if (item.age) {
+            item.age = 10
+        }
+        return item > 0
+    }, b)
+
+    console.log(res)   // true
+    console.log(a)  // [1, 2, {age: 10}]
+</script>
+</body>
+</html>

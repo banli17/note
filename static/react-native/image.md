@@ -25,6 +25,7 @@ ImageCache.get().clear()  清除所有的缓存文件
 ```
 
 ## 保存图片到手机相册
+
 只需要使用官方的 `CameraRoll.saveToCameraRoll`方法就可以保存到相册中。
 ```markup
 CameraRoll.saveToCameraRoll(ImageCache.get().cache[url]))
@@ -38,4 +39,4 @@ CameraRoll 在安卓上可以直接使用，在 ios 需要配置一番。
 2、在 `xcode` 屏幕中间菜单有个 `Build Phases，Link Binary With Libraries` 里加一项 `libRCTCameraRoll.a`。
 3、在 `Info.plist` 里加入一行 `Privacy - Photo Library Usage Description`。
 
-> 参考文章： <a href='http://www.hangge.com/blog/cache/detail_1615.html' target='_blank'>使用CameraRoll将图片保存到本地相册</a> 
+> 参考文章： <a href='http://www.hangge.com/blog/cache/detail_1615.html' target='_blank'>使用CameraRoll将图片保存到本地相册</a>

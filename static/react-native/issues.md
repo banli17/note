@@ -39,6 +39,23 @@ fetch('1.json', {
 ## cookie操作
 
 
+## Network request failed
+
+最新的rn用chrome调试时，ajax请求发送报错，说是跨域请求失败。解决方法是另外打开一个能跨域的chrome模式进行调试。
+
+```bash
+open -n /Applications/Google\ Chrome.app/ --args --disable-web-security  --user-data-dir=/Users/banli/MyChromeDevUserData/
+```
+
+将上面 banli 换成自己的 mac 名称。
+
+
+## SDK问题
+
+### 找不到 `extra -> support library`？
+
+因为这个包 google 准备将它移除掉。不推荐使用了。如果需要使用，可以到[mvnrepository](http://www.mvnrepository.com/artifact/com.android.support/support-v4?repo=google)下载对应的aar版本。然后将它的后缀名改成 .zip。解压后目录里有个 `classes.jar`。
+
 ## 参考文章
 
 - fetch() and the missing Cookie on React Native Android

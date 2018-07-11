@@ -265,9 +265,113 @@ var EventUtil = {
 
 ## 事件类型
 
+事件类型分为下面几类：
+- UI事件
 
 
+### UI事件
 
+UI事件包括：load、unload、abort、error、
+
+**load**
+
+页面完全加载完成时，就会触发 window 上的 load 事件。有2种方式定义事件处理程序。
+
+1、通过addHandler
+
+```javascript
+EventUtil.addHandler(window, 'load', function(event){
+
+})
+```
+
+要注意这里 event.target 指向document。ie不会为这个事件设置 srcElement 属性。
+
+![](./imgs/load.png)
+
+
+2、通过 body 绑定 onload
+
+```javascript
+<body onload="alert('loaded')">
+```
+
+一般来说 window 上的任何事件都可以通过 body 绑定的方法指定。dom2 级规范规定在 document 而非 window 上触发 load 事件。但是所以浏览器都是在 window 上实现的。
+
+图像也有 load 事件。
+
+```
+<img onload="">
+
+// 注意这里img不一定是需要插入到body才下载，只要设置src就开始下载
+var img = document.createElement('img')
+img.onload = function(){}
+document.body.appendChild(img)
+img.src = 'xx.png'
+
+// 通过new Image，注意并不是所有浏览器都将new Image当做 <img> 元素
+// 也就是有些浏览器可以直接插入img，有些不能
+var img = new Image()
+img.src = 'xx.png'
+```
+
+> 在不属于dom文档的图像（包括未添加到文档的<img>和Image对象）上触发 load，ie8及之前不会生成event对象，ie9才修复。
+
+另外，ie9+和现代浏览器支持 <script> 元素的 load 事件。不过和图像不同，它是插入到页面时才会开始下载。firefox3之前其event对象是document。ie 和 opera 还支持 <link> 元素的 load 事件，它也是插入到页面才下载。
+
+**unload**
+
+在页面卸载后(页面刷新或关闭)触发。所以页面加载后存在的对象，如dom等就已经不存在了。操作会报错。
+
+```javascript
+window.onunload = function(){
+    console.log('hi')  // 会执行
+    alert('hi')        // 不会执行
+}
+```
+
+暂时没发现这个事件有什么用。
+
+dom2级事件本来是规定在 body 上有 unload 事件，单身浏览器在 window 上实现了。
+
+**resize**
+
+浏览器宽高变化时触发，这个事件在 window 上触发。
+
+```javascript
+window.onresize = function(){}
+
+<body onresize="">
+```
+
+传入的 event.target 依然是 document。ie8及之前版本没有提供任何属性。
+
+firefox是在用户停止调整窗口时触发 resize 事件，而其它浏览器都是在窗口变化 1px 就触发。
+
+**scroll**
+
+虽然 scroll 是在 window 上触发，但是它实际表示页面中元素的变化。在混杂模式下，可以通过 <body> 的 scrollLeft 和 scrollTop 监控这一变化；在标准模式下，除了 safari，都是通过 <html> 元素反映这一变化，safari 还是通过 <body>。
+
+```javascript
+// safari3.1之前不支持document.compatMode
+EventUtil.addHandler(window, 'scroll', function(event){
+    if(document.compatMode == 'CSS1Compat'){
+        alert(document.documentElement.scrollTop)
+    }else{
+        alert(document.body.scrollTop)
+    }
+})
+```
+
+### 焦点事件
+
+**blur**
+
+**focus**
+
+**focusin**
+
+**focusout**
 
 
 

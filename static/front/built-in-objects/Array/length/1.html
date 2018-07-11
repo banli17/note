@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 范围0 - Math.pow(2, 32)-1，不能是负数和超出
+    try {
+        var a = new Array(Math.pow(2, 32))
+    } catch (ex) {
+        console.log(ex)   // RangeError: Invalid array length
+    }
+    try {
+        var c = new Array(-100)  // 也报错，和上面一样
+    } catch (ex) {
+    }
+
+
+    var b = new Array(Math.pow(2, 32) - 1)
+
+    var d = new Array(5)
+    console.log(d, d[0])  // [undefined, ...]
+
+
+    d.length = 2
+    console.log(d)
+
+    d.length = 5
+    console.log(d)
+
+
+    function printEntries(arr) {
+        var goNext = true
+        var entries = arr.entries()   // Array Iterator
+        console.log(entries)
+
+        while (goNext) {
+            var result = entries.next()
+            console.log(result)
+            //{done: false, value: [0, 1]}
+            //{done: false, value: [1, 4]}
+            //{done: false, value: [2, 7]}
+            //{done: true, value: undefined}
+            if (result.done !== true) {
+                goNext = true
+            } else {
+                goNext = false
+            }
+        }
+    }
+
+    printEntries([1, 4, 9])
+
+
+    var e = []
+    e[5] = 'hello'
+    console.log(e, e.length, e[0]) // [undefined,....], 6
+</script>
+</body>
+</html>

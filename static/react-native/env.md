@@ -17,7 +17,7 @@
 
 然后执行下面的命令，安装node和watchman
 
-```
+```bash
 brew install node
 brew install watchman
 ```
@@ -34,12 +34,13 @@ npm install -g react-native-cli
 
 如果发生权限错误，可以执行：
 
-```
+```bash
 sudo npm install -g react-native-cli
 ```
 
 如果报 "cannot find module npmlog"，直接运行下面命令安装npm：
-```
+
+```bash
 curl -0 -L http://npmjs.org/install.sh | sudo sh.
 ```
 
@@ -61,7 +62,7 @@ react-native-android-studio-android-sdk-platforms.png
 并且在genymotion中设置sdk的路径，否则可能会报错'* failed to start daemon * error: cannot connect to daemon'
 测试安装
 
-```
+```bash
 react-native init AwesomeProject
 cd AwesomeProject
 react-native run-android
