@@ -120,6 +120,7 @@ function bindEvent(el, ename, handler){
     }else{
         el['on'+ename] = handler
     }
+    return handler    // 用于方便移除事件
 }
 
 function removeEvent(el, ename, handler){
@@ -372,6 +373,75 @@ EventUtil.addHandler(window, 'scroll', function(event){
 **focusin**
 
 **focusout**
+
+
+
+## 模拟事件
+
+模拟事件的步骤：
+1. 创建 event 对象。
+2. 初始化 event 对象，即设置 type、clientX、clientY等。
+3. 触发事件 dispatchEvent(event对象)。
+
+### DOM中的事件模拟
+
+可以使用`document.createEvents(eventString)`来创建 event 对象。DOM2 里都是复数形式，DOM3 都变成了单数。
+
+eventString 可以是：
+
+- UIEvents：一般化UI事件，鼠标和键盘事件都继承自UI事件。DOM3级中是 UIEvent。
+- MouseEvents：一般化鼠标事件，DOM3级中是 MouseEvent。
+- MutationEvents：一般化DOM变化事件，DOM3中是 MutationEvent。
+- HTMLEvents：一般化HTML事件，没有对应的DOM3事件（HTML事件被分散到其他类别中）
+
+DOM2 没有规定键盘事件，DOM3 才正式规定。IE9 支持 DOM3 级键盘事件。
+
+**1、模拟鼠标事件**
+
+```javascript
+// 创建事件对象
+var e = document.createEvent('MouseEvents')
+
+// 初始化事件对象
+e.initMouseEvent('click')
+
+// 触发事件
+document.dispatchEvent(e)
+```
+
+initMouseEvent 可以接受 15 个参数，分别是：
+
+- type
+- bubbles
+- cancelable
+- view：几乎总是要设置成 document.defaultView
+- detail
+- screenX
+- screenY
+- clientX
+- clientY
+- ctrlKey
+- altKey
+- shiftKey
+- metaKey
+- button
+- relatedTarget
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -178,7 +178,8 @@
     * [集成腾讯orc sdk服务](/react-native/react-native-tencent-orc)
     * [react-navigation](/react-native/plugs/react-navigation)
     * [react-native-boom-ui](/react-native/react-native-boom-ui)
-    * [antd-mobile-rn](/react-native/plugs/antd-mobile/rn)
+    * [antd-mobile-rn](/react-native/plugs/antd-mobile-rn)
+    - [react-native-camera](/react-native/plugs/react-native-camera)
     * [react-native-code-push](/react-native/plugs/react-native-code-push)
 
 ## 第10章：linux
