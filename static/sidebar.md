@@ -181,6 +181,7 @@
     * [antd-mobile-rn](/react-native/plugs/antd-mobile-rn)
     - [react-native-camera](/react-native/plugs/react-native-camera)
     * [react-native-code-push](/react-native/plugs/react-native-code-push)
+* [常见问题](/react-native/issues)
 
 ## 第10章：linux
 

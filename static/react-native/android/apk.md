@@ -45,7 +45,7 @@ MYAPP_RELEASE_KEY_PASSWORD=*****
     }
 }...
 ```
-5、开启压缩 `app/proguard-rules.pro`
+5、开启压缩 `android/app/build.gradle`
 
 ```markup
 def enableProguardInReleaseBuilds = true
@@ -98,3 +98,19 @@ http://www.jianshu.com/p/9195cd991fc7
 http://www.jianshu.com/p/b1b77d804254
 https://developer.apple.com/account/ios/profile/create
 https://itunesconnect.apple.com/
+
+
+
+## 报错
+
+node_modules_antdmobilern_lib_checkbox_image_normal.png: error: uncompiled PNG file passed as argument. Must be compiled first into .flat file..
+
+1、`/android/gradle.properties`
+
+```
+android.enableAapt2=false
+```
+
+2、看看`android/app/src/res/drawable...`里`node_...png`图片删掉。
+
+3、`./gradlew clean`
