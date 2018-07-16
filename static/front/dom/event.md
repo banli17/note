@@ -318,7 +318,7 @@ img.src = 'xx.png'
 
 > 在不属于dom文档的图像（包括未添加到文档的<img>和Image对象）上触发 load，ie8及之前不会生成event对象，ie9才修复。
 
-另外，ie9+和现代浏览器支持 <script> 元素的 load 事件。不过和图像不同，它是插入到页面时才会开始下载。firefox3之前其event对象是document。ie 和 opera 还支持 <link> 元素的 load 事件，它也是插入到页面才下载。
+另外，ie9+和现代浏览器支持`<script>`元素的 load 事件。不过和图像不同，它是插入到页面时才会开始下载。firefox3之前其event对象是document。ie 和 opera 还支持 <link> 元素的 load 事件，它也是插入到页面才下载。
 
 **unload**
 
@@ -351,7 +351,7 @@ firefox是在用户停止调整窗口时触发 resize 事件，而其它浏览�
 
 **scroll**
 
-虽然 scroll 是在 window 上触发，但是它实际表示页面中元素的变化。在混杂模式下，可以通过 <body> 的 scrollLeft 和 scrollTop 监控这一变化；在标准模式下，除了 safari，都是通过 <html> 元素反映这一变化，safari 还是通过 <body>。
+虽然 scroll 是在 window 上触发，但是它实际表示页面中元素的变化。在混杂模式下，可以通过`<body>`的 scrollLeft 和 scrollTop 监控这一变化；在标准模式下，除了 safari，都是通过`<html>`元素反映这一变化，safari 还是通过`<body>`。
 
 ```javascript
 // safari3.1之前不支持document.compatMode
@@ -373,6 +373,176 @@ EventUtil.addHandler(window, 'scroll', function(event){
 **focusin**
 
 **focusout**
+
+
+### 鼠标与滚轮事件
+
+DOM3 级事件中定义了9个鼠标事件：
+- `click`：当按下主鼠标键或回车键时触发。
+- `dbclick`：双击主鼠标键时触发。
+- `mousedown`：按下任何鼠标键时触发。
+- `mouseenter`：首次移动到元素内时触发，不冒泡，而且移动到后代元素不会触发。
+- `mouseleavel`：移动到元素外时触发，不冒泡，而且移动到后代元素不会触发。
+- `mousemove`：鼠标指针移动时重复触发。不能通过键盘触发。
+- `mouseout`：鼠标从元素移动到另一个元素时触发，包括子元素。不能通过键盘触发。
+- `mouseover`：移动到另一个元素边界时触发，不能通过键盘触发。
+- `mouseup`：抬起鼠标按钮时触发，不能通过键盘触发。
+
+除了 mouseenter 和 mouseleave，所有鼠标事件都能冒泡，也可以取消，但取消鼠标会影响浏览器默认行为。
+
+click、dbclick都会依赖先行事件。中间事件取消了，它们就不会被触发。(不知如何取消？)。
+
+1. mousedown
+1. mouseup
+1. click
+1. mousedown
+1. mouseup
+1. click
+1. dbclick
+
+ie8及之前版本有个bug，顺序是 mousedown -> mouseup -> click -> mouseup -> dbclick。
+
+
+DOM2级事件不包括dbclick、mouseenter、mouseleave。检测支持度的方法是：
+
+```javascript
+// 支持DOM2级事件
+var isSupported = document.implementation.hasFeature('MouseEvents', '2.0')
+
+// 支持上面所有事件，注意没有s
+var isSupported = document.implementation.hasFeature('MouseEvent', '3.0')
+```
+
+滚轮事件只有 mousewheel 事件，对应鼠标滚动或Mac触控板。
+
+**属性**
+
+- 视口坐标位置：clientX、clientY。注意不包括页面滚动距离。
+- 页面坐标位置：pageX、pageY。页面没有滚动距离时和视口坐标位置一致。ie8及之前版本没有这2个属性。
+
+```
+// ie8及之前版本，需要通过document.body（混杂模式）或 document.documentElement（标准模式）计算
+通过 e.clientX + (document.body.scrollLeft || document.documentElement.scrollLeft)
+```
+
+- 屏幕坐标位置：screenX、screenY
+- 修改键，shiftKey、ctrlKey、altKey 和 metaKey(win或mac cmd键)检测对应键是否按下，返回布尔值。ie8不支持 metaKey。
+- mouseover主元素是指得到光标的元素，相关元素是指失去光标的元素。mouseout相反。相关元素可以通过 relatedTarget 属性获取(只有这2个事件有值，其它都是null)。ie8及之前不支持 relatedTarget，但 mouseover 对应 fromElement 属性，mouseout 对应 toElement 属性。
+
+```javascript
+var EventUtil = {
+    getRelatedTarget(e){
+        if(e.relatedTarget){
+            return e.relatedTarget
+        }else if(e.toElement){
+            return e.toElement
+        }else if(e.fromElement){
+            return e.fromElement
+        }else{
+            return null
+        }
+    }
+}
+
+// 使用 EventUtil.getRelatedTarget(e).tagName
+```
+
+- mousedown、mouseup事件中 e.button 属性表示按下或释放的鼠标键。
+
+```
+// DOM
+0 主键
+1 滚轮键
+2 鼠标次键
+
+// ie8及之前，不太实用
+0 没按下
+1 按下主键
+2 按下次键
+3 同时按下主、次键
+4 按下中键
+5 按下主、中键
+6 按下次、中键
+7 按下主、中、次键
+```
+
+```javascript
+var EventUtil = {
+    getButton(e){
+        if(document.implementation.hasFeature('MouseEvents', '2.0'){
+            return e.button
+        }else{
+            // ie不支持 2.0
+            switch(e.button){
+                case 0:
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                    return 0
+                case 2:
+                case 6:
+                    return 2
+                case 4:
+                    return 1
+            }
+        }
+    }
+}
+```
+
+- e.detail 表示鼠标在同一地方单击的次数，如果mousedown 和 mouseup 之间移动了，则重置为 0。
+
+### 鼠标事件
+
+1、DOM3相关的9个事件，以及分别的含义。
+
+- click
+- dbclick
+- mousedown
+- mousemove
+- mouseup
+- mouseenter
+- mouseleave
+- mouseover
+- mouseout
+
+2、鼠标事件常用的事件对象属性。
+
+- clientX、clientY
+- pageX、pageY
+- screenX、screenY
+- shiftKey、ctrlKey、altKey、metaKey
+- e.relatedTarget
+- e.button
+- e.detail
+
+3、滚轮事件
+
+标准滚轮事件是`mousewheel`。会冒泡到 window 对象(ie8冒泡到 document)。当鼠标滚轮向前滚动，event.wheelDelta 是 120 的倍数，向后滚动是 -120 的倍数（mac相反），所以总结就是页面向上滚动是正数，向下滚动是负数。opera9.5之前版本正负号是反的。
+
+firefox 是`DOMMouseScroll`事件，鼠标向前滚动时，event.detail 为 -3 的倍数，向后滚动是 3 的倍数。(测试新版ff，页面向下滚动为正数，向上为负数)。
+
+```javascript
+var EventUtil = {
+    ...
+    getWheelDelta(e){
+        if(event.wheelDelta){
+            return e.wheelDelta > 0 ? 1 : -1
+        }else{
+            return e.detail > 0 ? -1 : 1
+        }
+    }
+}
+```
+
+上面的方法没有兼容 opera9.5 之前版本，当页面向上滚动时，getWheelDelta() 返回 1，向下滚动返回 -1。
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+    var div = document.querySelector('div')
+    div.addEventListener('mousedown', function (e) {
+        e.stopPropagation()
+        e.preventDefault()
+    }, false)
+    div.onclick = function () {
+        console.log('click')
+    }
+</script>
+</body>
+</html>

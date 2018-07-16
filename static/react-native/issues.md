@@ -56,17 +56,7 @@ open -n /Applications/Google\ Chrome.app/ --args --disable-web-security  --user-
 
 因为这个包 google 准备将它移除掉。不推荐使用了。如果需要使用，可以到[mvnrepository](http://www.mvnrepository.com/artifact/com.android.support/support-v4?repo=google)下载对应的aar版本。然后将它的后缀名改成 .zip。解压后目录里有个 `classes.jar`。
 
-## 网络请求问题
 
-坑爹，开启了下面的配置。会发送请求一直是：
-
-![](./imgs/fetch-error1.png)
-![](./imgs/fetch-error2.png)
-
-````javascript
-GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
-global.FormData = global.originalFormData
-```
 
 ## 参考文章
 

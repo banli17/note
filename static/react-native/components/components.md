@@ -324,6 +324,10 @@ const styles = StyleSheet.create({
 
 ```
 
+## StatusBar
+
+
+
 ## 参考链接
 - <a href='https://stackoverflow.com/questions/39446077/react-native-go-back-on-android-hardware-back-button-pressed' target='_blank'>React-Native: Go back on android hardware back button pressed</a>
 

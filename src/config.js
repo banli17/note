@@ -6,7 +6,7 @@
 window.config = {
     leftbar: {
         file: '/static/sidebar.md',
-        expand: false,   // 左侧菜单默认全部展开，如果要收缩将它改为false
+        expand: true,   // 左侧菜单默认全部展开，如果要收缩将它改为false
         showChapter: true
     },
     content: {

@@ -11,6 +11,19 @@
 
 ## AndroidManifest.xml
 
+## 修改包名
+
+假设包名为com.exease.etd.objective，以下地方需要修改。
+
+首先是两个java文件：android/app/src/main/java/com/PROJECT_NAME/MainActivity.java和/MainApplication.java，修改第一行为package com.exease.etd.objective;
+然后是安卓的描述文件android/app/src/main/AndroidManifest.xml，第二行把package的至改为com.exease.etd.objective
+之后是两个打包脚本。
+android/app/BUCK，修改两个package的值package = 'com.exease.etd.objective',
+android/app/build.gradle其中的applicationID，改为applicationId "com.exease.etd.objective"
+修改完成后，命令行进入android目录，执行./gradlew clean清除缓存即可（windows上是 gradlew.bat）
+android/app/src/AndroidManifest.xml里package。
+还有MainActivity.java同级目录里文件的package。
+
 ## 权限
 
 ```xml
