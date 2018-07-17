@@ -11,6 +11,7 @@
 GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
 global.FormData = global.originalFormData
 ```
+2. kan wangl
 
 ## http.js
 

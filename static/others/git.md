@@ -21,7 +21,7 @@ git config --global user.email johndoe@example.com
 ## 切换版本
 
 ```
-git log
+git log 查看当前版本之前的提交记录，如果回退了，就看不到后退之后提交的记录了。
 git reflog  可以查看所有分支的所有操作记录，包括 commit 和 reset的操作。
 git checkout fdss22
 ```
