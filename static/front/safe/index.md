@@ -76,18 +76,45 @@ xss攻击注入风险点
 
 
 
+## 传输安全
 
+http传输是明文的，所以数据在浏览器和服务端传输中(路由，防火墙等)很容易被窃听和篡改。
 
+`traceroute`命令用于追踪数据包在网络上的传输时的全部路径，它默认发送的数据包大小是40字节。
 
+```bash
+traceroute www.baidu.com
+```
 
+比如用【[anyproxy](http://anyproxy.io/cn/)】做代理，发送的请求都是由其代理了，它就可以知道发送的请求数据和返回的数据。而且可以篡改数据。
 
+![](./imgs/anyproxy.png)
 
+`Map Local`用来将原来的文件替换为本地文件(即篡改)。新版本是通过rule模块来实现。
 
+实践操作步骤:
+1. npm 安装 anyproxy，并执行`anyproxy --port 1080`。
+2. 按照 chrome 插件 SwitchyOmega，设置并切换 anyproxy。
 
+![](./imgs/anyproxy2.png)
 
+3. 浏览器打开`http://127.0.0.1:8002/`可以看到代理的请求。
+4. 写个 html 页面，将里面的 js 通过 [rules 模块](http://anyproxy.io/cn/#rule%E6%A8%A1%E5%9D%97)进行篡改。
 
+![](./imgs/anyproxy1.png)
 
+窃听的问题：
+- 窃听密码
+- 窃听敏感信息
+- 获取非法资料
 
+篡改的问题：
+- 插入广告
+- 重定向网站
+- 无法防御 XSS 和 CSRF 攻击，因为可以随意篡改。
+
+案例：
+- 运营商劫持等
 
 
 
