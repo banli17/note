@@ -539,7 +539,78 @@ var EventUtil = {
 上面的方法没有兼容 opera9.5 之前版本，当页面向上滚动时，getWheelDelta() 返回 1，向下滚动返回 -1。
 
 
+## 键盘事件
 
+键盘事件有3个：
+
+- keydown
+- keypress
+- keyup
+
+按下一个键时，会依次触发上面三个键；如果按住一个字符键(可以在输入框输入的字符，如空格，a等)不放，会依次触发`keydown -> keypress -> keydown -> keypress ... -> keyup`。如果按下非字符键，则会只触发一次`keydown -> keyup`。注意Caps Lock键按下和抬起算一次，只会依次触发一次`keydown -> keyup`。
+
+**键值**
+
+- event.keyCode：表示按下的键码，貌似已废弃(旧浏览器支持)。
+
+![](./imgs/keycode1.png)
+![](./imgs/keycode2.png)
+
+- event.charCode：在keypress事件时才有，表示按键的 ASCII 编码，数字类型，DOM3 不再包含。
+
+```javascript
+var EventUtil = {
+    getCharCode(e){
+        if(typeof e.charCode === 'number'){
+            return e.charCode
+        }else{
+            return e.keyCode
+        }
+    }
+}
+```
+
+获取到键值后，可以通过`String.fromCharCode()`转成对应字符。
+
+- event.key：按键的ASCII码，用于取代 keyCode。如果是字符键则是字符(m,n)，非字符键就是键名(如Shift、Down)。
+- event.char：字符键返回字符，非字符键返回 null。不推荐使用。
+- event.keyIdentifier：测试 chrome 不支持。
+- event.location：表示按了什么位置的键盘。
+    - 0 表示默认键盘
+    - 1 左侧位置，如左shift
+    - 2 右侧位置，如右shift
+    - 3 数字小键盘
+    - 4 移动设备键盘，也就是虚拟键盘
+    - 5 表示手柄
+- event.getModifierState()：表示活动的修改键，Shift、Ctrl、Alt、Meta。返回 true 或 false。
+
+```javascript
+event.getModifierState('Shift')
+
+// 下面属性类似，鼠标按下时是否同时按下了ctrl等键
+e.shiftKey
+e.altKey
+e.ctrlKey
+e.metaKey
+```
+
+### textInput事件
+
+ie9+、chrome等支持 textInput 事件，它会在输入框输入字符时触发 。和 keypress 的区别：
+
+1. 只有可编辑区域才能触发 textInput，任何可获得焦点的元素都可以触发 keypress 事件。
+2. textInput事件在按下实际字符时才触发，keypress 在按下能影响文本显示的键时也触发(如退格)。
+3. textInput 事件的 e.key 是 undefined，e.data 表示用户输入的字符，如`shift+s`就是`S`。
+
+ie支持 e.inputMethod 属性，表示文本输入到文本框的方式。
+
+
+如果一个按下非字符键不放，则会连续触发 keypress。如果按下字符键不放，则会连续触发keydown。
+
+
+文本事件只有一个：`textInput`。在文本插入到输入框前触发。
+
+## 复合事件
 
 
 
