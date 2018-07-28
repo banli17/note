@@ -70,6 +70,41 @@ xss攻击注入风险点
 
 
 
+## 点击劫持clickjacking
+
+用户打开黑客网站，网站实际有个透明的`iframe`，点击界面实际是操作的这个iframe里的内容。
+
+特点：
+- 用户亲手操作
+- 用户不知情
+
+危害：
+- 可以获取用户资金（转账、消费）
+- 获取用户敏感信息
+
+防控：
+- 防止被内嵌为iframe
+
+```javascript
+if(top != window){ top.location = window.location}
+```
+
+html5添加了 sandbox 用来限制 iframe 的权利。值为`allow-forms`时，表单能提交，iframe的脚本不会执行。
+
+```javascript
+// 又可以被劫持了
+<iframe sandbox="allow-forms">
+```
+
+- 设置响应头`X-Frame-Options`：用于设置 iframe 是否能被内嵌
+    - DENY: 不允许内嵌
+    - SAMEORIGIN: 同域
+    - ALLOW-FROM uri：指定来源
+- 其它辅助手段：让用户知情，比如验证码。
+
+
+例子：比如点击一个表面显示是“播放”某个视频的按钮，而实际上完成的操作却是将用户的社交网站个人信息改为“公开”状态。
+
 
 
 
@@ -135,11 +170,9 @@ traceroute www.baidu.com
 
 如果将不受信任的CA改为信任，则它可能会给假 taobao 网站颁发证书，访问时也会有被窃听或篡改。
 
+申请证书：[https://letsencrypt.org/](https://letsencrypt.org/getting-started/)
 
-
-
-
-
+有自动脚本。acme.sh
 
 
 

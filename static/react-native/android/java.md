@@ -13,23 +13,43 @@
 
 ## 变量类型
 
+java数据类型有基本数据类型和引用类型。
+
+基本类型有：
+- 数值型
+    - byte
+    - short
+    - int
+    - long
+    - float
+    - double
+- 字符型
+    - char
+- 布尔型
+    - boolean
+
+引用类型有：
+- 类 class
+- 接口 interface
+- 数组
+
 java 支持的变量类型有：
 - 类变量
 - 实例变量
 - 局部变量
 
-```
+```javascript
 public class Variable{
     static int allClicks=0;    // 类变量，初始化后值不能修改
- 
+
     String str="hello world";  // 实例变量，可以在其他方法中使用
- 
+
     public void method(){
- 
+
         int i =0;  // 局部变量
 
         str = 'hi';
- 
+
     }
 }
 ```
