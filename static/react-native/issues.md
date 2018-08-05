@@ -38,7 +38,6 @@ fetch('1.json', {
 
 ## cookie操作
 
-
 ## Network request failed
 
 最新的rn用chrome调试时，ajax请求发送报错，说是跨域请求失败。解决方法是另外打开一个能跨域的chrome模式进行调试。
@@ -57,6 +56,13 @@ open -n /Applications/Google\ Chrome.app/ --args --disable-web-security  --user-
 因为这个包 google 准备将它移除掉。不推荐使用了。如果需要使用，可以到[mvnrepository](http://www.mvnrepository.com/artifact/com.android.support/support-v4?repo=google)下载对应的aar版本。然后将它的后缀名改成 .zip。解压后目录里有个 `classes.jar`。
 
 
+## 修改genymotion的hosts文件
+
+```bash
+adb shell
+mount -o remount,rw /system
+echo "10.71.34.1   devmobservices" >> /etc/hosts
+```
 
 ## 参考文章
 

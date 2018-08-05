@@ -82,7 +82,8 @@ protected List<ReactPackage> getPackages() {
 
 打开命令行，进入项目目录输入命令登录`code-push-server`服务器。
 
-```
+```bash
+npm install -g code-push-cli
 code-push login http://api.code-push.com:8080
 ```
 
@@ -136,12 +137,11 @@ code-push rollback <appName> Production --targetRelease v4(codepush服务部署�
 
 ## 使用实例
 
-```
+```javascript
 import codePush from "react-native-code-push"
 
 
 checkUpdate() {
-
     // 防止总是rollback  https://github.com/Microsoft/cordova-plugin-code-push/issues/200
     codePush.notifyApplicationReady()
 
@@ -151,14 +151,16 @@ checkUpdate() {
      * - ios     静默更新，更新后立即重启
      */
 
-    codePush.checkForUpdate().then((update)=> {
-        console.log(update)
+
+    // 提示更新成功
+
+    codePush.getUpdateMetadata().then((update) => {
 
         if (!update) return;
-
         if (update.isFirstRun && update.description) {
-            Toast.showShortTop('恭喜恭喜，更新成功')
+            Toast.info('恭喜恭喜，更新成功1', 1.5)
         }
+
         if (Platform.OS == 'ios') {
             codePush.sync({
                 updateDialog: false,
@@ -166,28 +168,27 @@ checkUpdate() {
             });
             return
         }
-
         codePush.sync({
             mandatoryInstallMode: codePush.InstallMode.IMMEDIATE,
             updateDialog: {
                 title: '更新提示',
                 mandatoryContinueButtonLabel: '更新',
-                mandatoryUpdateMessage: `有新版本${APP_VERSION}了，立即更新？\n`,
+                mandatoryUpdateMessage: `有新版本，立即更新？\n`,
                 appendReleaseDescription: true,
-                descriptionPrefix: "更新包大小：" + covertByte(update.packageSize),
+                descriptionPrefix: "更新包大小：" + $.covertByte(update.packageSize),
                 optionalIgnoreButtonLabel: '忽略',
                 optionalInstallButtonLabel: '更新',
-                optionalUpdateMessage: `有新版本${APP_VERSION}了，立即更新？\n`
+                optionalUpdateMessage: `有新版本，立即更新？\n`
 
             },
-        }, (status)=> {
+        }, (status) => {
             // switch (status) {
-            // 	case codePush.SyncStatus.DOWNLOADING_PACKAGE:
-            // 		Toast.showShortTop('开始下载')
-            // 		break;
-            // 	case codePush.SyncStatus.INSTALLING_UPDATE:
-            // 		Toast.showShortTop('更新成功了')
-            // 		break;
+            //     case codePush.SyncStatus.DOWNLOADING_PACKAGE:
+            //         Toast.showShortTop('开始下载')
+            //         break;
+            //     case codePush.SyncStatus.INSTALLING_UPDATE:
+            //         Toast.showShortTop('更新成功了')
+            //         break;
             // }
         });
     })
