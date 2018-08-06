@@ -1,16 +1,3 @@
-# 发布订阅模式
-
-## 学习资料
-
-- [设计模式（三）：观察者模式与发布/订阅模式区别](http://www.cnblogs.com/lovesong/p/5272752.html)
-- [观察者模式和发布订阅模式有什么不同？](https://www.zhihu.com/question/23486749)
-
-
-![](./imgs/observer.png)
-
-## 实现
-
-```javascript
 class Subject {
     constructor() {
         this.state = 0
@@ -35,6 +22,7 @@ class Subject {
     attach(observer) {
         this.observers.push(observer)
     }
+
 }
 
 class Observer {
@@ -55,6 +43,4 @@ const o2 = new Observer('o2', s)
 
 s.setState(1)
 s.setState(2)
-```
 
-当发布者发布消息，即调用`s.setState()`时，观察者会受到消息。
