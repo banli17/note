@@ -55,6 +55,9 @@ open -n /Applications/Google\ Chrome.app/ --args --disable-web-security  --user-
 
 因为这个包 google 准备将它移除掉。不推荐使用了。如果需要使用，可以到[mvnrepository](http://www.mvnrepository.com/artifact/com.android.support/support-v4?repo=google)下载对应的aar版本。然后将它的后缀名改成 .zip。解压后目录里有个 `classes.jar`。
 
+## android安装了genymotion插件后，看不到genymotion红按钮。
+
+可能是toolbar没有打开，在`菜单栏 -> View -> ToolBar`打开。然后点击genymotion按钮，选择它的安装地址：`/Applications/Genymotion.app`。
 
 ## 修改genymotion的hosts文件
 
@@ -68,3 +71,13 @@ echo "10.71.34.1   devmobservices" >> /etc/hosts
 
 - fetch() and the missing Cookie on React Native Android
 - 解决react native使用fetch函数在ios9报network request failed的问题
+
+
+使用pod install
+被卡住:Updating local specs repositories
+一种原因：pod install 被墙了，换成pod install --verbose --no-repo-update
+
+另外一种原因：cocoapods是git使用管理，可能由于某种原因git存在了修改，再使用pod install的时候，会提示“在更新或合并之前解决修改（大概这个意思）”。解决办法：①解决修改，然后再pod install。②或者直接删除$HOME.cocoapods/repos/下面的master，再pod install 重新clone pod库。
+
+还有一种原因，就是git更新超慢，导致的错觉
+
