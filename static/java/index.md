@@ -121,7 +121,7 @@ int c = (int)(a + b)
 
 ```java
 3/4    -> 0  向下取整
-3.0/4  -> 0.75 
+3.0/4  -> 0.75
 ```
 
 整数相除只能得到整数，要想得到小数，必须有浮点数参与运算。
@@ -130,7 +130,7 @@ int c = (int)(a + b)
 
 ```
 // 字符加法
-// 'A' -> 65, 'a' -> 97 , '0' -> 48  
+// 'A' -> 65, 'a' -> 97 , '0' -> 48
 int a = 10;
 int b = 20;
 
@@ -164,7 +164,7 @@ System.out.println(b++);  // 4
 int a = 10;
 short b = 20;
 a += b;  // 实际相当于 a = (int)(a + b);会转成a类型
-System.out.println(a); 
+System.out.println(a);
 ```
 
 ### 关系运算符
@@ -246,15 +246,67 @@ if(a > 1){
 }
 
 // 注意这里会报错，因为计算机不知道分支的情况，有可能没有给b赋值。不能使用没赋值的变量。
-System.out.println("b:"+b);  
+System.out.println("b:"+b);
 ```
 
-导包：
-- 手动导入
-- 点击鼠标自动生成
-- 快捷键(推荐) ctrl + shift + o
+intellij idea导包：
+- 快捷键(推荐) alt + enter
 
 
+**switch语句**
+
+表达式可以是：byte、short、int、char、枚举、字符串。
+
+```java
+switch(表达式){
+    case val1:
+        do...;
+        break;
+    case val2:
+        do...;
+        break;
+    default:
+        do...;
+        break;
+}
+```
+
+**循环语句**
+
+
+```java
+for(int i=0; i < 10; i++){
+    System.out.println(i);
+}
+```
+
+水仙花数：是指一个三位数，其各位数字的立方等于该数本身。
+
+```java
+public class ForDemo2 {
+    public static void main(String[] args) {
+        for (int i = 100; i < 1000; i++) {
+            int a = i % 10;
+            int b = i / 10 % 10;
+            int c = i / 100 % 10;
+
+            if (a * a * a + b * b * b + c * c * c == i) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+```
+
+
+while循环。
+
+```
+while(i < 10){
+    do...;
+    i++;
+}
+```
 
 
 

@@ -7,6 +7,8 @@
 - 通过Activation code：[http://idea.lanyus.com/](http://idea.lanyus.com/)
 - 通过licence server：[https://gist.github.com/rvegas/a596d2e2abd54784b919](https://gist.github.com/rvegas/a596d2e2abd54784b919)
 
+http://idea.yutao8.com/
+
 ## 使用
 
 **1. [webStorm livereload 自动刷新](#livereload自动刷新)**
@@ -353,7 +355,7 @@ mac下webstorm vim模式键盘移动慢的解决方法
 // 然后
 npm install --save-dev babel-cli
 ```
-https://www.zhihu.com/question/43414079/answer/95642131  
+https://www.zhihu.com/question/43414079/answer/95642131
 
 
 
