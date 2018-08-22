@@ -75,10 +75,50 @@ props + state -> view
 - 组件尽量无状态，所需数据通过 props 获取。
 
 
+## JSX的本质：不是模板而是语法糖
 
 
+```
+// jsx
+const name = 'Nate Wang'
+const element = <h1>Hello, {name}</h1>
 
+// 本质是动态创建组件
+const name = 'Nate Wang'
+const element = React.createElement(
+    'h1',
+    null,      // 属性
+    'Hello, '  // 子元素
+    name       // 子元素
+)
+```
 
+好处是直接用 js 来模拟，换了种写法。而不是模板引擎。这样可以直接用 js 的特性。比如表达式。
+
+```
+// jsx本身是表达式
+const element = <h1>Hello, {name}</h1>
+
+// 在属性中使用
+<component foo={1+2} />
+
+// 延展属性
+const props = {a:1,b:2}
+<component {...props}/>
+
+// 表达式作为子元素
+const element = <h1>Hello, {name}</h1>
+```
+
+优点：
+1. 声明式创建界面的直观
+2. 代码动态创建界面的灵活
+3. 无需学习新的模板语言
+
+约定：自定义组件以大写字母开头
+1. React 认为小写的 tag 都是原生的 DOM 节点，如 div
+2. 大写字母开头的为自定义属性
+3. jsx 标记可以使用属性语法，例如 <menu.Item> 这样就不需要遵循大写开头的约定
 
 
 
