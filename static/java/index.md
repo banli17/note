@@ -301,15 +301,80 @@ public class ForDemo2 {
 
 while循环。
 
-```
+```java
 while(i < 10){
     do...;
     i++;
 }
 ```
 
+do...while循环。
+
+```java
+int i=5;
+do{
+   System.out.println(i); 
+   i--;
+}while(i<4);
+```
+
+break：中断循环语句，用在 switch、for循环中。
+continue：跳到下次循环
 
 
+Random: 产生随机整数
+
+```java
+import java.util.Random;
+Random r = new Random(); // java.util.Random@511d50c0
+// 数据范围:[0,10)，包括0，不包括10
+int number = r.nextInt(10);
+```
+
+随机数小游戏。
+
+```java
+import java.util.Random;
+import java.util.Scanner;
+
+public class GameDemo {
+    public static void main(String[] args) {
+        Random r = new Random();
+
+        int number = r.nextInt(100) + 1;
+
+        while (true) {
+            Scanner s = new Scanner(System.in);
+
+            System.out.println("请输入要猜的数(1-100)：");
+
+            int guessNumber = s.nextInt();
+
+            if (guessNumber > number) {
+                System.out.println("输入的数大了");
+            } else if (guessNumber < number) {
+                System.out.println("输入的数小了");
+            } else {
+                System.out.println("恭喜，猜中了");
+                break;
+            }
+        }
+    }
+}
+```
+
+## 数组
+
+初始化：
+- 动态初始化：只给出长度，系统给出初始值,是地址值。
+- 静态初始化：给出初始值，系统决定长度
+
+```java
+// 动态
+int[] arr = new int[3];
+
+
+```
 
 
 
