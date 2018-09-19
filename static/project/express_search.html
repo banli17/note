@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>查快递</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .result-box {
+            text-align: left;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .result-list {
+            border-top: 0.0625rem solid #dddddd;
+            position: relative;
+            z-index: 0
+        }
+
+        .result-list li {
+            display: -webkit-box;
+            -webkit-box-align: center;
+            overflow: hidden;
+            color: #777;
+            border-bottom: 0.0625rem solid #dddddd;
+        }
+
+        .result-list li.last {
+            color: #FE8540;
+        }
+
+        .result-list li .col1, .result-list li .col2, .result-list li .col3 {
+            display: block;
+        }
+
+        .result-list li .col1 {
+            width: 70px;
+            padding: 0.625rem;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .result-list li .col2 {
+            width: 1rem;
+            position: relative;
+
+        }
+
+        li.step .col2 .point, li.first .col2 .point {
+            transform: rotate(180deg);
+        }
+
+        .result-list li .col3 {
+            -webkit-box-flex: 1;
+            padding: 0 0.625rem;
+            font-size: 12px
+        }
+
+        .result-list li .col1 dd {
+            margin-top: 0.25rem;
+            font-size: 1.5rem;
+        }
+
+        /*.result-list li.first .col1 dd{font-size:2rem;}
+        .result-list li.last .col1 dd{font-size:2rem;}*/
+        .result-list li .col2 .line1, .result-list li .col2 .line2 {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            width: 0.5rem;
+            height: 10em;
+            border-right: 0.0625rem solid #dddddd;
+        }
+
+        .result-list li .col2 .line1 {
+            top: -10em;
+        }
+
+        .result-list li .col2 .line2 {
+            top: 0;
+        }
+
+        .result-list li .col2 .point {
+            position: absolute;
+            z-index: 2;
+            top: -0.5rem;
+            left: 0;
+            width: 0.9375rem;
+            height: 0.9375rem;
+            border-radius: 0.9375rem;
+            background-color: #fff;
+            border: 0.0625rem solid #dddddd;
+        }
+
+        .result-list li .col2 .point:before {
+            content: "";
+            position: absolute;
+            top: 0.45rem;
+            left: 0.0625rem;
+            height: 0.125rem;
+            width: 0.5rem;
+            overflow: hidden;
+            background: #ddd;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            border-radius: .02em;
+        }
+
+        .result-list li .col2 .point:after {
+            content: "";
+            position: absolute;
+            top: 0.45rem;
+            right: 0.0625rem;
+            height: 0.125rem;
+            width: 0.5rem;
+            overflow: hidden;
+            background: #ddd;
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+            border-radius: .02em;
+        }
+
+        .result-list li.last .col2 .point {
+            border: solid 1px #fe8540
+        }
+
+        .result-list li.last .point:before {
+            background: #fe8540;
+        }
+
+        .result-list li.last .point:after {
+            background: #fe8540;
+        }
+
+        .result-list li.finish {
+            position: relative;
+        }
+
+        .result-list li.finish .col2 .point {
+            background-color: #ef5858;
+        }
+
+        .result-list li.finish .point:before {
+            content: "";
+            position: absolute;
+            top: 0.5625rem;
+            left: 0.0625rem;
+            height: 0.125rem;
+            width: 0.375rem;
+            overflow: hidden;
+            background: #FFF;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            border-radius: .02em;
+        }
+
+        .result-list li.finish .point:after {
+            content: "";
+            position: absolute;
+            top: 0.46rem;
+            right: 0;
+            height: 0.125rem;
+            width: 0.75rem;
+            overflow: hidden;
+            background: #FFF;
+            -webkit-transform: rotate(135deg);
+            transform: rotate(120deg);
+            border-radius: .02em;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <script src="https://res.wx.qq.com/open/libs/weuijs/1.1.2/weui.js"></script>
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+</head>
+<body>
+<section id="app">
+    <div id="form">
+        <div class="weui-cells__title">填写快递单号</div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">快递号</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text"
+                           required=""
+                           v-model="express_sn"
+                           placeholder="快递号"></div>
+                <div class="weui-cell__ft"><i class="weui-icon-warn"></i></div>
+            </div>
+        </div>
+        <div class="weui-btn-area">
+            <a id="formSubmitBtn" @click="searchExpress"
+               class="weui-btn weui-btn_primary">提交</a>
+        </div>
+    </div>
+    <section class="result-box">
+        <p style="margin-bottom: 5px;" class="my-fz13">
+            快递单号：{{express_sn}}</p>
+        <div class="result-success" id="success">
+            <ul id="result" class="result-list">
+                <li :class="[(index == 0 && 'last finish')
+                            || ((index == express_content.length-1) && 'first')
+                            || 'step'
+                            ]"
+                    v-for="(r, index) in express_content">
+                    <div class="col1">
+                        <dl>
+                            <dt class="ng-binding">{{r.time}}</dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="col2"><span class="step"><span class="line2"></span><span class="point"></span></span>
+                    </div>
+                    <div class="col3 ng-binding" v-html="r.context"></div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            express_sn: '',
+            express_content: []
+        },
+        methods: {
+            searchExpress: function () {
+                $.ajax({
+                    url: 'http://api.4vtk.com/v2/kuaidi/query.php',
+                    data: {
+                        id: this.express_sn
+                    },
+                    type: 'get',
+                    dataType: 'jsonp',
+                    jsonp: "callback",
+                    jsonpCallback: "success_jsonpCallback",
+                    success: function (data) {
+
+                    },
+                    error: function () {
+
+                    }
+                })
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

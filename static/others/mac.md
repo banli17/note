@@ -22,3 +22,9 @@ sudo ln -s /Volumes ~/Desktop/Volumes
 ```
 
 接着finder左侧设备的盘就可以读写了。
+
+## 安装未知来源软件
+
+```bash
+sudo spctl --master-disable  
+```

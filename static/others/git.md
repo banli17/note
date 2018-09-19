@@ -5,18 +5,63 @@
 
 - [git book pro](https://git-scm.com/book/zh/v2)
 
+## git分支
+
+1、git保存的是每个文件的快照。git commit 第一次提交前，会计算每个子目录的校验和，然后将这些目录保存成树对象。之后创建的提交对象，包含提交信息和这个树对象的指针。
+
+2、提交的对象看起来像下图。
+
+![](./imgs/git/3-1.png)
+
+3、多次提交之后像下面这样。
+
+![](./imgs/git/3-2.png)
+
+4、分支实际是指向 commit 对象的可变指针。git 会使用 master 作为分支的默认名。多次提交后，HEAD指针会指向最后一次提交对象的 master 分支。每次提交，指针会向前移动。
+
+![](./imgs/git/3-3.png)
+
+5、创建分支
+
+```bash
+git branch testing
+```
+
+创建后，HEAD还是指向 master 分支，切换分支需要使用下面命令。
+
+```bash
+git checkout testing
+```
+
+6、每个分支都是相互独立的，可以在各个分支进行修改提交，只需要在最后合适的时候，将分支合并即可。
+
+
+
+
+## 服务器上的git
+
+### 生成SSH公钥
+
+```bash
+ssh-keygen
+```
+
+通过下面命令生成秘钥，会存储在用户主目录下的`~/.ssh`目录。`id_dsa`是秘钥，`id_dsa.pub`是公钥。
+
+在window下，`ssh-keygen`如果不是内部命令，需要将`ssh-keygen.exe`的路径`C:\Program Files\Git\usr\bin`加入到环境变量中。
+
+
 ## 初始化
 
 生成秘钥
 
-```
+```bash
 ssh-keygen
 
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
 
-`ssh-keygen`如果不是内部命令，需要将`ssh-keygen.exe`的路径`C:\Program Files\Git\usr\bin`加入到环境变量中。
 
 ## 切换版本
 

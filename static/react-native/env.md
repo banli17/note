@@ -94,22 +94,24 @@ git clone https://github.com/facebook/react-native.git
 
 **iso**
 
-启动xcode，然后启动项目中的uiexplorer.xcodeproj即可。要首先npm install一下。
+启动xcode，然后启动项目中的`uiexplorer.xcodeproj`即可。要首先`npm install`一下。
 
+## 解决react-native run-android报DeviceException Could not create ADB Bridge错误
 
+修改`genymotion`的 sdk，在：`settings -> ADB -> Use custom SDK tools`。
 
 # genymotion安卓模拟器
 
 ## 安装genymotion模拟器步骤
 
-1、注册账号并安装genymotion个人免费版。
-2、安装virtualBox。
-3、安装android sdk。
-4、修改genymotion的setting里的ADB的android sdk。
+1、注册账号并安装 genymotion 个人免费版。
+2、安装`virtualBox`。
+3、安装`android sdk`。
+4、修改`genymotion`的 setting 里的ADB的 android sdk。
 
 ## 安装apk
 
-`genymotion`安装`apk`，需要首先安装Genymotion_ARM_Translation兼容包。
+`genymotion`安装`apk`，需要首先安装 Genymotion_ARM_Translation 兼容包。
 
 ```markup
 5.0.0以下链接: https://pan.baidu.com/s/1eSmu8H8 密码: dw7s
@@ -130,7 +132,7 @@ NSString *host = [[_bridge bundleURL] host] ?: @"192.168.0.104";
 如果报错`.. busy`则重插`usb`，重启`xcode`或重启手机。
 
 
-**"Error: `fsevents` unavailable" on jest --watch**
+**"Error: fsevents unavailable" on jest --watch**
 
 ```bash
 npm r -g watchman

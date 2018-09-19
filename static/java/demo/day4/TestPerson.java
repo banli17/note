@@ -1,15 +1,15 @@
 package day4;
 
 public class TestPerson {
-    static Person p = new Person();
-
-    public static void main(String[] args) {
-        p.say("hello");
-        System.out.println(p.a);
+    public TestPerson(){
+        System.out.println("调用1");
     }
 
-    public void say(){
+    public TestPerson(String a ){
+        System.out.println("调用2");
+    }
 
-        System.out.println(Person.b);
+    public static void main(String[] args){
+        new TestPerson();
     }
 }

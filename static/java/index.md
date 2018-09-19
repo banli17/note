@@ -366,28 +366,125 @@ public class GameDemo {
 ## 数组
 
 初始化：
-- 动态初始化：只给出长度，系统给出初始值,是地址值。
-- 静态初始化：给出初始值，系统决定长度
+- 动态初始化：只给出长度。
+- 静态初始化：给出初始值，系统决定长度。
 
 ```java
+// 静态
+int[] myInt = new Int[]{12, 13, 14};
+int[] myInt = {12, 13, 14};
+
+// 下面错误
+int [] myInt;
+myInt = {12, 13, 14};
+
 // 动态
 int[] arr = new int[3];
-
-
 ```
 
+对于动态创建的数组元素：
+- int 默认是 0
+- char 默认是 空格
+- boolean 默认是 false
+- float 默认是 0.0
+- 引用类型的变量，默认是 null，比如String
+
+数组一旦定义，数组长度无法改变。
 
 
 
 
 
+## java 对象和类
+
+### 基本概念
+
+- 对象：类是一个实例。
+- 类：是一个模板，描述一类对象的行为和状态。
+- 局部变量：定义在方法里的变量。
+- 成员变量：在类中、方法体外的变量。能被其它方法访问。在创建对象时实例化。
+- 类变量：static 定义的变量。声明在类中，方法体外。
+
+**构造函数**
+
+每个类都有构造函数，没有显示定义，java编译器会提供一个默认构造方法。在创建对象时，至少要调用一个构造方法。构造方法名必须和类同名。一个类可以有多个构造方法，根据参数区别调用哪个构造方法。
+
+```java
+public class Puppy{
+    public Puppy(){}
+    public Puppy(String name){}
+}
+```
+
+**创建对象**
+
+通过 new 关键字创建对象。步骤是：
+1. 声明对象，包括对象名称和类型。
+2. 通过 new 实例化对象。
+3. 初始化：new 会调用构造方法初始化对象。
+
+**实例变量和方法**
+
+```java
+public class Puppy{
+   int puppyAge;
+   public Puppy(String name){
+      // 这个构造器仅有一个参数：name
+      System.out.println("小狗的名字是 : " + name ); 
+   }
+ 
+   public void setAge( int age ){
+       puppyAge = age;
+   }
+ 
+   public int getAge( ){
+       System.out.println("小狗的年龄为 : " + puppyAge ); 
+       return puppyAge;
+   }
+ 
+   public static void main(String []args){
+      /* 创建对象 */
+      Puppy myPuppy = new Puppy( "tommy" );
+      /* 通过方法来设定age */
+      myPuppy.setAge( 2 );
+      /* 调用另一个方法获取age */
+      myPuppy.getAge( );
+      /*你也可以像下面这样访问成员变量 */
+      System.out.println("变量值 : " + myPuppy.puppyAge ); 
+   }
+}
+```
+
+## 源文件声明规则
+
+- 一个源文件只能有一个 public 类。
+- 一个源文件可以有多个非 public 类。
+- 源文件名称应和 public 类名称一致。
+- 如果一个类定义在某个包中，那么 package 语句应放在源文件首行。
+- import 要放在 package 和 类定义之间。
+
+**java 包**
+
+包主要用于对接口和类进行分类。
+
+**import语句**
+在Java中，如果给出一个完整的限定名，包括包名、类名，那么Java编译器就可以很容易地定位到源代码或者类。Import语句就是用来提供一个合理的路径，使得编译器可以找到某个类。
 
 
+## java修饰符
 
+修饰符分2类：
+- 访问修饰符
+- 非访问修饰符
 
+### 访问控制修饰符
 
+- default（默认什么都不写）：同一包可见，可使用于类、接口、变量、方法
+- private：在同一类可见，可用于变量、方法
+- public：对所有类可见，可用于类、接口、变量、方法
+- protected：对同一包内的类和所有子类可见，可用于变量、方法
 
-
+默认，接口里的变量隐式声明为`public static final`。方法是`public`。
 
 
 
