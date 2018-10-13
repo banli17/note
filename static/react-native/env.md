@@ -1,10 +1,5 @@
 # 开发环境搭建
 
-## 学习网址
-
-- <a href='http://www.zhufengpeixun.cn/course/55' target='_blank'>珠峰课堂 React Native App实战</a>
-- <a href='https://github.com/zhufengketang/app' target='_blank'>珠峰课堂 React Native App github</a>
-
 ## mac 开发环境搭建
 
 ### 安装node, watchman

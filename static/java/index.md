@@ -392,6 +392,132 @@ int[] arr = new int[3];
 数组一旦定义，数组长度无法改变。
 
 
+```java
+// 学生成绩小练习
+package day4;
+
+import java.util.Scanner;
+
+public class ArrayStudentScore {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("请输入学生个数");
+        int num = s.nextInt();
+        int max = 0;
+
+        int[] scores = new int[num];
+        for (int i = 0; i < num; i++) {
+            System.out.println("请输入学生" + (i + 1) + "的成绩：");
+            int score = s.nextInt();
+            scores[i] = score;
+
+            if (max < score) {
+                max = score;
+            }
+        }
+
+        System.out.println("学生最高分是：" + max);
+    }
+}
+```
+
+### 多维数组
+
+```java
+int[][] score;
+int[] score[];
+int score[][];
+
+// 1.二维数组初始化
+score = new int[][]{{1,2,3},{3,4},{6}};  // 静态
+
+score = new int[5][3];  // 动态1
+
+score = new int[2][];  // 动态2
+score[0] = new int[3];
+score[1] = new int[3];
+```
+
+遍历二维数组
+
+```java
+for(int i=0;i<score.length;i++){
+    for(int j=0;j<score[i].length;j++){
+        
+    }
+}
+```
+
+打印杨辉三角
+
+```java
+public class Yanghui {
+    public static void main(String[] args) {
+        // 创建二维数组
+        int[][] y = new int[10][];
+        for (int i = 0; i < y.length; i++) {
+            y[i] = new int[i + 1];
+        }
+
+        // 赋值
+        for (int i = 0; i < y.length; i++) {
+            for (int j = 0; j < y[i].length; j++) {
+                y[i][0] = y[i][i] = 1;
+
+                if (i > 1 && j > 0 && j < i) {
+                    y[i][j] = y[i - 1][j] + y[i - 1][j - 1];
+                }
+            }
+        }
+
+        // 打印
+        for (int i = 0; i < y.length; i++) {
+            for (int j = 0; j < y[i].length; j++) {
+                System.out.print(y[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+数组的反转
+
+```java
+public class ArrayDemo4 {
+    public static void main(String[] args) {
+        int[] arr = new int[]{1, 2, 5, 9, 3};
+
+        for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+        }
+    }
+}
+```
+
+### 注意事项
+
+1. 数据越界异常会报错，比如超出范围。java.lang.ArrayIndexOutOfBoundsException。
+2. 空指针的异常。NullPointerException。
+
+```java
+boolean[] b = new boolean[3];
+b = null;
+System.out.println(b[0]);
+```
+
+## 面向对象
+
+1. java类及类的成员
+2. 面向对象的三大特征
+3. 其它关键字
 
 
 

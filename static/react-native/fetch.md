@@ -7,11 +7,10 @@
 ![](./imgs/fetch-error1.png)
 ![](./imgs/fetch-error2.png)
 
-````javascript
+```javascript
 GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
 global.FormData = global.originalFormData
 ```
-2. kan wangl
 
 ## http.js
 

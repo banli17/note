@@ -20,6 +20,36 @@
 - Microtasks
 
 
+- 宏任务：setTimeout，setImmediate，MutationObsever，MessageChannel。
+- 微任务：Promise.then()
+
+浏览器事件循环：
+1. 先执行栈代码。
+2. 执行微任务，会把微任务清空。
+3. 执行宏任务，取出一个执行完，再执行微任务。不停的循环。
+
+```javascript
+setTimeout(function () {
+    console.log('1')
+    Promise.resolve().then(function () {
+        console.log('micro 1')
+    })
+}, 0)
+
+Promise.resolve().then(function () {
+    console.log('micro 2')
+    setTimeout(function () {
+        console.log('2')
+    }, 0)
+})
+
+setTimeout(function () {
+    console.log('3')
+}, 0)
+
+// micro2 1 micro1 3 2
+```
+
 ## 关于setTimeout
 
 setTimeout 0延迟，实际默认有延迟。至少运行时 (runtime) 处理请求所需的最小时间。

@@ -158,7 +158,9 @@
 
 ## 第9章:react-native
 * [运行原理解析](/react-native/principle)
+* [环境搭建](/react-native/env)
 * [屏幕适配方案](/react-native/fitscreen)
+* [网络请求封装](/react-native/fetch)
 * [组件](/react-native/components/index)
     * [官方组件](/react-native/components/components)
     * [列表](/react-native/components/list)
@@ -205,20 +207,22 @@
 * [最短路径](/algorithms/heap)
 
 ## 第12章：设计模式
+* [工厂模式](/patterns/factory)
 * [单例模式](/patterns/singleton)
-* [策略模式](/patterns/strategy)
+* [适配器模式](/patterns/command)
+* [装饰者模式](/patterns/command)
 * [代理模式](/patterns/proxy)
-* [迭代器模式](/patterns/iterator)
+* [策略模式](/patterns/strategy)
+* [外观模式](/patterns/facade)
 * [观察者模式](/patterns/observer)
+* [迭代器模式](/patterns/iterator)
 * [命令模式](/patterns/command)
 * [组合模式](/patterns/command)
 * [模板方法模式](/patterns/command)
 * [享元模式](/patterns/command)
 * [职责链模式](/patterns/command)
 * [中介者模式](/patterns/command)
-* [装饰者模式](/patterns/command)
 * [状态模式](/patterns/command)
-* [适配器模式](/patterns/command)
 * [生成消费模式](/patterns/command)
 * [设计原则与编程技巧](/patterns)
 

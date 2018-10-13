@@ -106,12 +106,12 @@ class _App extends Component {
 - `getPhotos()`：用于获取相册的图片接口，没有界面
 - `saveToCameraRoll()`：保存到相册
 
-## Clipboard
+## 剪切板
 
 异步获取剪切板的内容。`async Clipboard.getString()`
 
-- getString()
-- setString()
+- `getString()`，返回promise
+- `setString(content)`，同步设置剪切板内容
 
 ## DataPickerAndroid
 
