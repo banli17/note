@@ -1,0 +1,793 @@
+{
+  "entrypoints": [
+    "main"
+  ],
+  "origins": {
+    "0": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      57,
+      0
+    ],
+    "1": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      57,
+      1
+    ],
+    "2": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      8,
+      2
+    ],
+    "@theme/BlogListPage": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "@theme/BlogPostPage": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "@theme/BlogTagsListPage": [
+      0,
+      1,
+      5
+    ],
+    "@theme/BlogTagsPostsPage": [
+      0,
+      1,
+      2,
+      6
+    ],
+    "@theme/DocLegacyItem": [
+      0,
+      7
+    ],
+    "@theme/DocLegacyPage": [
+      0,
+      1,
+      2,
+      8
+    ],
+    "/Users/banli/banli_blog/src/pages/index.js": [
+      0,
+      1,
+      9
+    ],
+    "/Users/banli/banli_blog/blog/2019-05-28-hola.md?truncated=true": [
+      10
+    ],
+    "/Users/banli/banli_blog/blog/2019-05-28-hola.md": [
+      11
+    ],
+    "/Users/banli/banli_blog/docs/about.md": [
+      12
+    ],
+    "/Users/banli/banli_blog/docs/algo/index.md": [
+      13
+    ],
+    "/Users/banli/banli_blog/docs/base/compute-combine.md": [
+      14
+    ],
+    "/Users/banli/banli_blog/docs/browser/work.md": [
+      15
+    ],
+    "/Users/banli/banli_blog/docs/database/mongo.md": [
+      16
+    ],
+    "/Users/banli/banli_blog/docs/database/mysql.md": [
+      17
+    ],
+    "/Users/banli/banli_blog/docs/database/redis.md": [
+      18
+    ],
+    "/Users/banli/banli_blog/docs/doc2.md": [
+      19
+    ],
+    "/Users/banli/banli_blog/docs/doc3.md": [
+      20
+    ],
+    "/Users/banli/banli_blog/docs/html/doc1.md": [
+      21
+    ],
+    "/Users/banli/banli_blog/docs/javascript/async.md": [
+      22
+    ],
+    "/Users/banli/banli_blog/docs/javascript/oop.md": [
+      23
+    ],
+    "/Users/banli/banli_blog/docs/javascript/type.md": [
+      24
+    ],
+    "/Users/banli/banli_blog/docs/linux/index.md": [
+      25
+    ],
+    "/Users/banli/banli_blog/docs/mdx.md": [
+      26
+    ],
+    "/Users/banli/banli_blog/docs/nginx/index.md": [
+      27
+    ],
+    "/Users/banli/banli_blog/docs/other/mac.md": [
+      28
+    ],
+    "/Users/banli/banli_blog/docs/patterns/patterns.md": [
+      29
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-b5f.json": [
+      30
+    ],
+    "main": [
+      55,
+      31
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-pages/index.json": [
+      32
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-c06.json": [
+      33
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-hola-089.json": [
+      34
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-tags-docusaurus-0e0.json": [
+      35
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-tags-hola-ea2.json": [
+      36
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-about-5c5.json": [
+      37
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-algo-index-5bf.json": [
+      38
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-base-compute-combine-e5b.json": [
+      39
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-browser-work-f45.json": [
+      40
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-database-mongo-4b5.json": [
+      41
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-database-mysql-1e3.json": [
+      42
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-database-redis-08c.json": [
+      43
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-doc-2-29a.json": [
+      44
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-doc-3-72e.json": [
+      45
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-html-doc-1-8cb.json": [
+      46
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-javascript-async-e56.json": [
+      47
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-javascript-oop-ea7.json": [
+      48
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-javascript-type-66f.json": [
+      49
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-linux-index-1fa.json": [
+      50
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-mdx-04f.json": [
+      51
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nginx-index-bac.json": [
+      52
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-other-mac-041.json": [
+      53
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-patterns-494.json": [
+      54
+    ],
+    "runtime~main": [
+      31,
+      55
+    ],
+    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-tags-tags-4c2.json": [
+      56
+    ],
+    "@theme/NotFound": [
+      0,
+      1,
+      57
+    ]
+  },
+  "assets": {
+    "0": {
+      "js": [
+        {
+          "file": "0.204e5db3f5dd12dd0588.js",
+          "hash": "204e5db3f5dd12dd0588",
+          "publicPath": "/0.204e5db3f5dd12dd0588.js"
+        }
+      ]
+    },
+    "1": {
+      "css": [
+        {
+          "file": "1.6dd25177d3651995ab70.css",
+          "hash": "6dd25177d3651995ab70",
+          "publicPath": "/1.6dd25177d3651995ab70.css"
+        }
+      ],
+      "js": [
+        {
+          "file": "1.6dd25177d3651995ab70.js",
+          "hash": "6dd25177d3651995ab70",
+          "publicPath": "/1.6dd25177d3651995ab70.js"
+        }
+      ]
+    },
+    "2": {
+      "css": [
+        {
+          "file": "2.4033ddc9c38b6d4c2912.css",
+          "hash": "4033ddc9c38b6d4c2912",
+          "publicPath": "/2.4033ddc9c38b6d4c2912.css"
+        }
+      ],
+      "js": [
+        {
+          "file": "2.4033ddc9c38b6d4c2912.js",
+          "hash": "4033ddc9c38b6d4c2912",
+          "publicPath": "/2.4033ddc9c38b6d4c2912.js"
+        }
+      ]
+    },
+    "3": {
+      "js": [
+        {
+          "file": "component---theme-blog-list-pagea-6-a-7ba.d20264b0076c39526595.js",
+          "hash": "d20264b0076c39526595",
+          "publicPath": "/component---theme-blog-list-pagea-6-a-7ba.d20264b0076c39526595.js"
+        }
+      ]
+    },
+    "4": {
+      "js": [
+        {
+          "file": "component---theme-blog-post-pageccc-cab.02a62d27203bdd98b318.js",
+          "hash": "02a62d27203bdd98b318",
+          "publicPath": "/component---theme-blog-post-pageccc-cab.02a62d27203bdd98b318.js"
+        }
+      ]
+    },
+    "5": {
+      "js": [
+        {
+          "file": "component---theme-blog-tags-list-page-01-a-d0b.6f444b877be506fa64e0.js",
+          "hash": "6f444b877be506fa64e0",
+          "publicPath": "/component---theme-blog-tags-list-page-01-a-d0b.6f444b877be506fa64e0.js"
+        }
+      ]
+    },
+    "6": {
+      "js": [
+        {
+          "file": "component---theme-blog-tags-posts-page-687-b6c.fc2daa1ed293db2abfd6.js",
+          "hash": "fc2daa1ed293db2abfd6",
+          "publicPath": "/component---theme-blog-tags-posts-page-687-b6c.fc2daa1ed293db2abfd6.js"
+        }
+      ]
+    },
+    "7": {
+      "css": [
+        {
+          "file": "component---theme-doc-legacy-item-031-769.920d2fa2f36bcb7864cd.css",
+          "hash": "920d2fa2f36bcb7864cd",
+          "publicPath": "/component---theme-doc-legacy-item-031-769.920d2fa2f36bcb7864cd.css"
+        }
+      ],
+      "js": [
+        {
+          "file": "component---theme-doc-legacy-item-031-769.920d2fa2f36bcb7864cd.js",
+          "hash": "920d2fa2f36bcb7864cd",
+          "publicPath": "/component---theme-doc-legacy-item-031-769.920d2fa2f36bcb7864cd.js"
+        }
+      ]
+    },
+    "8": {
+      "css": [
+        {
+          "file": "component---theme-doc-legacy-page-9-e-7-ca5.0db2e06dd5012b1c4c60.css",
+          "hash": "0db2e06dd5012b1c4c60",
+          "publicPath": "/component---theme-doc-legacy-page-9-e-7-ca5.0db2e06dd5012b1c4c60.css"
+        }
+      ],
+      "js": [
+        {
+          "file": "component---theme-doc-legacy-page-9-e-7-ca5.0db2e06dd5012b1c4c60.js",
+          "hash": "0db2e06dd5012b1c4c60",
+          "publicPath": "/component---theme-doc-legacy-page-9-e-7-ca5.0db2e06dd5012b1c4c60.js"
+        }
+      ]
+    },
+    "9": {
+      "css": [
+        {
+          "file": "component---users-banli-banli-blog-src-pages-index-jsfb-7-c6b.22b4ea20a1b6b53bd232.css",
+          "hash": "22b4ea20a1b6b53bd232",
+          "publicPath": "/component---users-banli-banli-blog-src-pages-index-jsfb-7-c6b.22b4ea20a1b6b53bd232.css"
+        }
+      ],
+      "js": [
+        {
+          "file": "component---users-banli-banli-blog-src-pages-index-jsfb-7-c6b.22b4ea20a1b6b53bd232.js",
+          "hash": "22b4ea20a1b6b53bd232",
+          "publicPath": "/component---users-banli-banli-blog-src-pages-index-jsfb-7-c6b.22b4ea20a1b6b53bd232.js"
+        }
+      ]
+    },
+    "10": {
+      "js": [
+        {
+          "file": "content---blog-5-d-5-35e.a85c3560a085b246e405.js",
+          "hash": "a85c3560a085b246e405",
+          "publicPath": "/content---blog-5-d-5-35e.a85c3560a085b246e405.js"
+        }
+      ]
+    },
+    "11": {
+      "js": [
+        {
+          "file": "content---blog-hola-6-d-8-57b.cf51fd61e038d571daa7.js",
+          "hash": "cf51fd61e038d571daa7",
+          "publicPath": "/content---blog-hola-6-d-8-57b.cf51fd61e038d571daa7.js"
+        }
+      ]
+    },
+    "12": {
+      "js": [
+        {
+          "file": "content---docs-about-422-cb3.2027da0cc198de2f48c6.js",
+          "hash": "2027da0cc198de2f48c6",
+          "publicPath": "/content---docs-about-422-cb3.2027da0cc198de2f48c6.js"
+        }
+      ]
+    },
+    "13": {
+      "js": [
+        {
+          "file": "content---docs-algo-indexf-58-41e.1783f4831eb941cc18a1.js",
+          "hash": "1783f4831eb941cc18a1",
+          "publicPath": "/content---docs-algo-indexf-58-41e.1783f4831eb941cc18a1.js"
+        }
+      ]
+    },
+    "14": {
+      "js": [
+        {
+          "file": "content---docs-base-compute-combined-88-1f1.6d8b762a095814634751.js",
+          "hash": "6d8b762a095814634751",
+          "publicPath": "/content---docs-base-compute-combined-88-1f1.6d8b762a095814634751.js"
+        }
+      ]
+    },
+    "15": {
+      "js": [
+        {
+          "file": "content---docs-browser-workba-9-7be.99748832630c157cff04.js",
+          "hash": "99748832630c157cff04",
+          "publicPath": "/content---docs-browser-workba-9-7be.99748832630c157cff04.js"
+        }
+      ]
+    },
+    "16": {
+      "js": [
+        {
+          "file": "content---docs-database-mongoc-49-83b.da738657adf15fd42d56.js",
+          "hash": "da738657adf15fd42d56",
+          "publicPath": "/content---docs-database-mongoc-49-83b.da738657adf15fd42d56.js"
+        }
+      ]
+    },
+    "17": {
+      "js": [
+        {
+          "file": "content---docs-database-mysql-092-926.a6553954a3ef3795c3bf.js",
+          "hash": "a6553954a3ef3795c3bf",
+          "publicPath": "/content---docs-database-mysql-092-926.a6553954a3ef3795c3bf.js"
+        }
+      ]
+    },
+    "18": {
+      "js": [
+        {
+          "file": "content---docs-database-redis-861-47c.7c106195cf75b7d210a7.js",
+          "hash": "7c106195cf75b7d210a7",
+          "publicPath": "/content---docs-database-redis-861-47c.7c106195cf75b7d210a7.js"
+        }
+      ]
+    },
+    "19": {
+      "js": [
+        {
+          "file": "content---docs-doc-29-c-9-6d3.54f667ce08e297a0b857.js",
+          "hash": "54f667ce08e297a0b857",
+          "publicPath": "/content---docs-doc-29-c-9-6d3.54f667ce08e297a0b857.js"
+        }
+      ]
+    },
+    "20": {
+      "js": [
+        {
+          "file": "content---docs-doc-3-da-9-dc5.8b8b50aa543a86ca86b7.js",
+          "hash": "8b8b50aa543a86ca86b7",
+          "publicPath": "/content---docs-doc-3-da-9-dc5.8b8b50aa543a86ca86b7.js"
+        }
+      ]
+    },
+    "21": {
+      "js": [
+        {
+          "file": "content---docs-html-doc-154-c-9b3.a94d3979c563c6a6b3dd.js",
+          "hash": "a94d3979c563c6a6b3dd",
+          "publicPath": "/content---docs-html-doc-154-c-9b3.a94d3979c563c6a6b3dd.js"
+        }
+      ]
+    },
+    "22": {
+      "js": [
+        {
+          "file": "content---docs-javascript-asyncbae-08e.23a8990d2e9938a34963.js",
+          "hash": "23a8990d2e9938a34963",
+          "publicPath": "/content---docs-javascript-asyncbae-08e.23a8990d2e9938a34963.js"
+        }
+      ]
+    },
+    "23": {
+      "js": [
+        {
+          "file": "content---docs-javascript-oop-154-3a2.7e277f76981171875e7e.js",
+          "hash": "7e277f76981171875e7e",
+          "publicPath": "/content---docs-javascript-oop-154-3a2.7e277f76981171875e7e.js"
+        }
+      ]
+    },
+    "24": {
+      "js": [
+        {
+          "file": "content---docs-javascript-type-723-131.66967753f2fd9b40a0ff.js",
+          "hash": "66967753f2fd9b40a0ff",
+          "publicPath": "/content---docs-javascript-type-723-131.66967753f2fd9b40a0ff.js"
+        }
+      ]
+    },
+    "25": {
+      "js": [
+        {
+          "file": "content---docs-linux-indexe-08-943.19df0d2b38a04fd44a8e.js",
+          "hash": "19df0d2b38a04fd44a8e",
+          "publicPath": "/content---docs-linux-indexe-08-943.19df0d2b38a04fd44a8e.js"
+        }
+      ]
+    },
+    "26": {
+      "js": [
+        {
+          "file": "content---docs-mdxf-7-b-309.b2ae36facbce2ef4e687.js",
+          "hash": "b2ae36facbce2ef4e687",
+          "publicPath": "/content---docs-mdxf-7-b-309.b2ae36facbce2ef4e687.js"
+        }
+      ]
+    },
+    "27": {
+      "js": [
+        {
+          "file": "content---docs-nginx-index-711-8c5.85b6b8b75a8706425ef6.js",
+          "hash": "85b6b8b75a8706425ef6",
+          "publicPath": "/content---docs-nginx-index-711-8c5.85b6b8b75a8706425ef6.js"
+        }
+      ]
+    },
+    "28": {
+      "js": [
+        {
+          "file": "content---docs-other-mace-02-121.e6fda5679bdebde97965.js",
+          "hash": "e6fda5679bdebde97965",
+          "publicPath": "/content---docs-other-mace-02-121.e6fda5679bdebde97965.js"
+        }
+      ]
+    },
+    "29": {
+      "js": [
+        {
+          "file": "content---docs-patterns-patterns-65-e-afa.219ec9c7c5965ef4bf1f.js",
+          "hash": "219ec9c7c5965ef4bf1f",
+          "publicPath": "/content---docs-patterns-patterns-65-e-afa.219ec9c7c5965ef4bf1f.js"
+        }
+      ]
+    },
+    "30": {
+      "js": [
+        {
+          "file": "docsMetadata---docs-76-d-edd.e0463ad5199d68e4671e.js",
+          "hash": "e0463ad5199d68e4671e",
+          "publicPath": "/docsMetadata---docs-76-d-edd.e0463ad5199d68e4671e.js"
+        }
+      ]
+    },
+    "31": {
+      "css": [
+        {
+          "file": "main.cd8597ec8eb975fc8710.css",
+          "hash": "cd8597ec8eb975fc8710",
+          "publicPath": "/main.cd8597ec8eb975fc8710.css"
+        }
+      ],
+      "js": [
+        {
+          "file": "main.cd8597ec8eb975fc8710.js",
+          "hash": "cd8597ec8eb975fc8710",
+          "publicPath": "/main.cd8597ec8eb975fc8710.js"
+        }
+      ]
+    },
+    "32": {
+      "js": [
+        {
+          "file": "metadata---8-ab-efb.7e11faf2402f7debbc9d.js",
+          "hash": "7e11faf2402f7debbc9d",
+          "publicPath": "/metadata---8-ab-efb.7e11faf2402f7debbc9d.js"
+        }
+      ]
+    },
+    "33": {
+      "js": [
+        {
+          "file": "metadata---blog-8-d-5-403.f984c40c0918cc46c56a.js",
+          "hash": "f984c40c0918cc46c56a",
+          "publicPath": "/metadata---blog-8-d-5-403.f984c40c0918cc46c56a.js"
+        }
+      ]
+    },
+    "34": {
+      "js": [
+        {
+          "file": "metadata---blog-hola-918-90b.11314fee1e552a82498a.js",
+          "hash": "11314fee1e552a82498a",
+          "publicPath": "/metadata---blog-hola-918-90b.11314fee1e552a82498a.js"
+        }
+      ]
+    },
+    "35": {
+      "js": [
+        {
+          "file": "metadata---blog-tags-docusaurus-69-f-df1.aacf3a93f7eaa81248af.js",
+          "hash": "aacf3a93f7eaa81248af",
+          "publicPath": "/metadata---blog-tags-docusaurus-69-f-df1.aacf3a93f7eaa81248af.js"
+        }
+      ]
+    },
+    "36": {
+      "js": [
+        {
+          "file": "metadata---blog-tags-hola-90-f-bad.7ce1f129e8dfa0dc41b5.js",
+          "hash": "7ce1f129e8dfa0dc41b5",
+          "publicPath": "/metadata---blog-tags-hola-90-f-bad.7ce1f129e8dfa0dc41b5.js"
+        }
+      ]
+    },
+    "37": {
+      "js": [
+        {
+          "file": "metadata---docs-abouta-4-f-846.9e815dc965c53eea316b.js",
+          "hash": "9e815dc965c53eea316b",
+          "publicPath": "/metadata---docs-abouta-4-f-846.9e815dc965c53eea316b.js"
+        }
+      ]
+    },
+    "38": {
+      "js": [
+        {
+          "file": "metadata---docs-algo-index-3-da-9b7.7c5f2caa9419eab32308.js",
+          "hash": "7c5f2caa9419eab32308",
+          "publicPath": "/metadata---docs-algo-index-3-da-9b7.7c5f2caa9419eab32308.js"
+        }
+      ]
+    },
+    "39": {
+      "js": [
+        {
+          "file": "metadata---docs-base-compute-combined-1-b-754.320549531dbbf5908f1b.js",
+          "hash": "320549531dbbf5908f1b",
+          "publicPath": "/metadata---docs-base-compute-combined-1-b-754.320549531dbbf5908f1b.js"
+        }
+      ]
+    },
+    "40": {
+      "js": [
+        {
+          "file": "metadata---docs-browser-work-3-d-9-7af.632c6181c329291b15df.js",
+          "hash": "632c6181c329291b15df",
+          "publicPath": "/metadata---docs-browser-work-3-d-9-7af.632c6181c329291b15df.js"
+        }
+      ]
+    },
+    "41": {
+      "js": [
+        {
+          "file": "metadata---docs-database-mongoe-54-98e.77860a1c44943c98b303.js",
+          "hash": "77860a1c44943c98b303",
+          "publicPath": "/metadata---docs-database-mongoe-54-98e.77860a1c44943c98b303.js"
+        }
+      ]
+    },
+    "42": {
+      "js": [
+        {
+          "file": "metadata---docs-database-mysqlc-31-563.8964c1083f11237226c2.js",
+          "hash": "8964c1083f11237226c2",
+          "publicPath": "/metadata---docs-database-mysqlc-31-563.8964c1083f11237226c2.js"
+        }
+      ]
+    },
+    "43": {
+      "js": [
+        {
+          "file": "metadata---docs-database-redisb-45-9ea.aad502651eea5c26d8bc.js",
+          "hash": "aad502651eea5c26d8bc",
+          "publicPath": "/metadata---docs-database-redisb-45-9ea.aad502651eea5c26d8bc.js"
+        }
+      ]
+    },
+    "44": {
+      "js": [
+        {
+          "file": "metadata---docs-doc-2-bed-d62.6affa55b9cb128c64d20.js",
+          "hash": "6affa55b9cb128c64d20",
+          "publicPath": "/metadata---docs-doc-2-bed-d62.6affa55b9cb128c64d20.js"
+        }
+      ]
+    },
+    "45": {
+      "js": [
+        {
+          "file": "metadata---docs-doc-312-d-57d.c13aa553b9adffefef7d.js",
+          "hash": "c13aa553b9adffefef7d",
+          "publicPath": "/metadata---docs-doc-312-d-57d.c13aa553b9adffefef7d.js"
+        }
+      ]
+    },
+    "46": {
+      "js": [
+        {
+          "file": "metadata---docs-html-doc-1-fcd-8ff.1b2ba8f3914cdd4f6752.js",
+          "hash": "1b2ba8f3914cdd4f6752",
+          "publicPath": "/metadata---docs-html-doc-1-fcd-8ff.1b2ba8f3914cdd4f6752.js"
+        }
+      ]
+    },
+    "47": {
+      "js": [
+        {
+          "file": "metadata---docs-javascript-async-7-ab-b15.435d7feb6bf1b193ee73.js",
+          "hash": "435d7feb6bf1b193ee73",
+          "publicPath": "/metadata---docs-javascript-async-7-ab-b15.435d7feb6bf1b193ee73.js"
+        }
+      ]
+    },
+    "48": {
+      "js": [
+        {
+          "file": "metadata---docs-javascript-oopc-52-edf.958d05e24b37cb32cbff.js",
+          "hash": "958d05e24b37cb32cbff",
+          "publicPath": "/metadata---docs-javascript-oopc-52-edf.958d05e24b37cb32cbff.js"
+        }
+      ]
+    },
+    "49": {
+      "js": [
+        {
+          "file": "metadata---docs-javascript-type-366-03e.2e4b536ee683af8a25fc.js",
+          "hash": "2e4b536ee683af8a25fc",
+          "publicPath": "/metadata---docs-javascript-type-366-03e.2e4b536ee683af8a25fc.js"
+        }
+      ]
+    },
+    "50": {
+      "js": [
+        {
+          "file": "metadata---docs-linux-index-885-30a.2e307a0d5a3a8e58c436.js",
+          "hash": "2e307a0d5a3a8e58c436",
+          "publicPath": "/metadata---docs-linux-index-885-30a.2e307a0d5a3a8e58c436.js"
+        }
+      ]
+    },
+    "51": {
+      "js": [
+        {
+          "file": "metadata---docs-mdxdf-2-f06.ed580022cd4ee8d530aa.js",
+          "hash": "ed580022cd4ee8d530aa",
+          "publicPath": "/metadata---docs-mdxdf-2-f06.ed580022cd4ee8d530aa.js"
+        }
+      ]
+    },
+    "52": {
+      "js": [
+        {
+          "file": "metadata---docs-nginx-index-4-b-5-890.5e0402c57e99e1d253e8.js",
+          "hash": "5e0402c57e99e1d253e8",
+          "publicPath": "/metadata---docs-nginx-index-4-b-5-890.5e0402c57e99e1d253e8.js"
+        }
+      ]
+    },
+    "53": {
+      "js": [
+        {
+          "file": "metadata---docs-other-macc-2-b-c65.874a3a87911d33ece2d4.js",
+          "hash": "874a3a87911d33ece2d4",
+          "publicPath": "/metadata---docs-other-macc-2-b-c65.874a3a87911d33ece2d4.js"
+        }
+      ]
+    },
+    "54": {
+      "js": [
+        {
+          "file": "metadata---docs-patterns-patterns-5-be-c3b.c6a06c8c0c2b6a6f7a8c.js",
+          "hash": "c6a06c8c0c2b6a6f7a8c",
+          "publicPath": "/metadata---docs-patterns-patterns-5-be-c3b.c6a06c8c0c2b6a6f7a8c.js"
+        }
+      ]
+    },
+    "55": {
+      "js": [
+        {
+          "file": "runtime~main.8e4584f979e619f4e751.js",
+          "hash": "8e4584f979e619f4e751",
+          "publicPath": "/runtime~main.8e4584f979e619f4e751.js"
+        }
+      ]
+    },
+    "56": {
+      "js": [
+        {
+          "file": "tags---blog-tags-3-c-9-4c8.f80c0b440f1d51a1ef94.js",
+          "hash": "f80c0b440f1d51a1ef94",
+          "publicPath": "/tags---blog-tags-3-c-9-4c8.f80c0b440f1d51a1ef94.js"
+        }
+      ]
+    },
+    "57": {
+      "js": [
+        {
+          "file": "57.115d004b3a6bab1b66e6.js",
+          "hash": "115d004b3a6bab1b66e6",
+          "publicPath": "/57.115d004b3a6bab1b66e6.js"
+        }
+      ]
+    }
+  }
+}
