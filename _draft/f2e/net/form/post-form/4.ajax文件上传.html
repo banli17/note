@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="">
+    <input type="file" name="file">
+    <input type="button" class="submit" value="确定">
+</form>
+<img src="" alt="">
+<script>
+    var form = document.getElementsByTagName('form')[0]
+    var f = form.elements[0]
+    var s = document.querySelector('.submit')
+
+    s.onclick = function () {
+        console.log(f.files[0])
+        var os = new FileReader()
+        os.onload = function (e) {
+            console.log(e.target.result)
+            document.querySelector('img').src = e.target.result
+        }
+
+        var str = `Content-Disposition: form-data;name=\"${f.name}\"; filename="${f.files[0].name}\"\r\nContent-Type: ${f.files[0].type} \r\n\r\n`
+        console.log(str)
+        os.readAsDataURL(f.files[0])
+
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST', '1.php', true)
+        xhr.send(str)
+    }
+
+
+</script>
+</body>
+</html>

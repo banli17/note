@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" class="ipt1">
+<input type="text" class="ipt2">
+<p class="result"></p>
+<script>
+    var w = new Worker('./2.js')
+    console.log(w)
+
+
+    var a = {
+        name: 'zs',
+        age: 12,
+        child: {
+            name: 'lisi'
+        }
+    }
+    var ipt1 = document.querySelector('.ipt1')
+    var ipt2 = document.querySelector('.ipt2')
+    ipt1.onchange = ipt2.onchange = function () {
+        w.postMessage([ipt1.value, ipt2.value])
+    }
+    w.onmessage = function (e) {
+        console.log(e.data)
+        document.querySelector('.result').innerText = e.data
+    }
+</script>
+</body>
+</html>
