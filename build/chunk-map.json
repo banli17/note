@@ -1,10 +1,10 @@
 {
   "main": [
-    "/main.bbc709372bf077a04344.css",
-    "/main.bbc709372bf077a04344.js"
+    "/main.432a635204bc89dffdd3.css",
+    "/main.432a635204bc89dffdd3.js"
   ],
   "component---users-banli-banli-blog-src-pages-index-jsfb-7-c6b": [
-    "/component---users-banli-banli-blog-src-pages-index-jsfb-7-c6b.64c772664544ce641348.js"
+    "/component---users-banli-banli-blog-src-pages-index-jsfb-7-c6b.c4c1223bafdb31d86c23.js"
   ],
   "metadata---8-ab-efb": [
     "/metadata---8-ab-efb.0c1ac0abf40bd6f0bab6.js"
@@ -32,7 +32,7 @@
     "/component---theme-doc-legacy-page-9-e-7-ca5.3bfa4f0846a8d250a2df.js"
   ],
   "docsMetadata---docs-76-d-edd": [
-    "/docsMetadata---docs-76-d-edd.05d176aea4ff69f6b335.js"
+    "/docsMetadata---docs-76-d-edd.9071b98a5c774b522704.js"
   ],
   "component---theme-doc-legacy-item-031-769": [
     "/component---theme-doc-legacy-item-031-769.e87f91ae817e976e9afb.css",
@@ -74,11 +74,11 @@
   "metadata---docs-base-compute-combined-1-b-754": [
     "/metadata---docs-base-compute-combined-1-b-754.678cf9107686983a4a65.js"
   ],
-  "content---docs-demo-indexcd-2-3c4": [
-    "/content---docs-demo-indexcd-2-3c4.65c1ed564dda3fad12d7.js"
+  "content---docs-database-mongoc-49-83b": [
+    "/content---docs-database-mongoc-49-83b.d96a454642b8d2bbe431.js"
   ],
-  "metadata---docs-demo-index-5-fe-1de": [
-    "/metadata---docs-demo-index-5-fe-1de.8740737d973e8fdd91bf.js"
+  "metadata---docs-database-mongoe-54-98e": [
+    "/metadata---docs-database-mongoe-54-98e.1a0faa2dfe436382286d.js"
   ],
   "content---docs-base-h-52-ae-fd8": [
     "/content---docs-base-h-52-ae-fd8.d3cda311159603dba4e1.js"
@@ -92,23 +92,23 @@
   "metadata---docs-database-mysqlc-31-563": [
     "/metadata---docs-database-mysqlc-31-563.35cf61764a76d453e90f.js"
   ],
-  "content---docs-database-mongoc-49-83b": [
-    "/content---docs-database-mongoc-49-83b.de48a308a4b1c1c3d713.js"
-  ],
-  "metadata---docs-database-mongoe-54-98e": [
-    "/metadata---docs-database-mongoe-54-98e.cb345c03243191a00573.js"
-  ],
   "content---docs-database-redis-861-47c": [
-    "/content---docs-database-redis-861-47c.00142b86ecec0e2345ed.js"
+    "/content---docs-database-redis-861-47c.1e00f7a1295ce939165e.js"
   ],
   "metadata---docs-database-redisb-45-9ea": [
-    "/metadata---docs-database-redisb-45-9ea.7faf2ce05d290a0ae12e.js"
+    "/metadata---docs-database-redisb-45-9ea.28d359803fa0395b8b6e.js"
   ],
-  "content---docs-linux-indexe-08-943": [
-    "/content---docs-linux-indexe-08-943.28815c3938546b034bef.js"
+  "content---docs-demo-indexcd-2-3c4": [
+    "/content---docs-demo-indexcd-2-3c4.c2e58f27a03506b60398.js"
   ],
-  "metadata---docs-linux-index-885-30a": [
-    "/metadata---docs-linux-index-885-30a.c0c7be9c4aecc838c0f8.js"
+  "metadata---docs-demo-index-5-fe-1de": [
+    "/metadata---docs-demo-index-5-fe-1de.424ccc442cbbfb2310b5.js"
+  ],
+  "content---docs-nginx-index-711-8c5": [
+    "/content---docs-nginx-index-711-8c5.ea489a7e0d1b7d43b027.js"
+  ],
+  "metadata---docs-nginx-index-4-b-5-890": [
+    "/metadata---docs-nginx-index-4-b-5-890.bf9e596cef29fc7a69a2.js"
   ],
   "content---docs-linux-file-2-b-0-31b": [
     "/content---docs-linux-file-2-b-0-31b.bec46f9ea77a7b879ac4.js"
@@ -116,23 +116,23 @@
   "metadata---docs-linux-file-561-309": [
     "/metadata---docs-linux-file-561-309.f055de763d03239c6f68.js"
   ],
-  "content---docs-linux-soft-56-f-db0": [
-    "/content---docs-linux-soft-56-f-db0.1b444873fba9b3fcdce9.js"
-  ],
-  "metadata---docs-linux-soft-3-e-2-aec": [
-    "/metadata---docs-linux-soft-3-e-2-aec.831f4f4a672bd9878ae1.js"
-  ],
   "content---docs-linux-servicea-63-423": [
-    "/content---docs-linux-servicea-63-423.a9f0d0fb95394fdf8df2.js"
+    "/content---docs-linux-servicea-63-423.97d67778ffcc43f00971.js"
   ],
   "metadata---docs-linux-service-241-737": [
-    "/metadata---docs-linux-service-241-737.387c788085bb52e2928a.js"
+    "/metadata---docs-linux-service-241-737.40af8ca4b1bf7590261f.js"
   ],
-  "content---docs-nginx-index-711-8c5": [
-    "/content---docs-nginx-index-711-8c5.5d5d26c70e7921730737.js"
+  "content---docs-linux-soft-56-f-db0": [
+    "/content---docs-linux-soft-56-f-db0.b660261c452651772d8c.js"
   ],
-  "metadata---docs-nginx-index-4-b-5-890": [
-    "/metadata---docs-nginx-index-4-b-5-890.9b28f9663de1a92a3a35.js"
+  "metadata---docs-linux-soft-3-e-2-aec": [
+    "/metadata---docs-linux-soft-3-e-2-aec.1d184964690ad414e672.js"
+  ],
+  "content---docs-linux-indexe-08-943": [
+    "/content---docs-linux-indexe-08-943.a64afef1e5d9dfa30da9.js"
+  ],
+  "metadata---docs-linux-index-885-30a": [
+    "/metadata---docs-linux-index-885-30a.84b1f81fc44f32f8c443.js"
   ],
   "content---docs-other-kindle-rss-994-ba6": [
     "/content---docs-other-kindle-rss-994-ba6.7a7235cdbccc89622b85.js"
@@ -146,23 +146,23 @@
   "metadata---docs-patterns-action-356-eae": [
     "/metadata---docs-patterns-action-356-eae.ced213e9ebc3c8dabc8b.js"
   ],
-  "content---docs-patterns-bridgeb-01-6e3": [
-    "/content---docs-patterns-bridgeb-01-6e3.1ebcad046be8c46fa131.js"
-  ],
-  "metadata---docs-patterns-bridge-543-b80": [
-    "/metadata---docs-patterns-bridge-543-b80.99711177c93bb9705706.js"
-  ],
   "content---docs-other-mace-02-121": [
-    "/content---docs-other-mace-02-121.f4aff5c705f72be624e2.js"
+    "/content---docs-other-mace-02-121.5a11c903ee5e6c97d618.js"
   ],
   "metadata---docs-other-macc-2-b-c65": [
-    "/metadata---docs-other-macc-2-b-c65.43d3b5b4045823c7052d.js"
+    "/metadata---docs-other-macc-2-b-c65.0b9f71b60e79baea9d46.js"
   ],
   "content---docs-patterns-adapter-26-a-b15": [
-    "/content---docs-patterns-adapter-26-a-b15.a7c66ce493fc116b9dcb.js"
+    "/content---docs-patterns-adapter-26-a-b15.26cca4ecc8ba62e887e1.js"
   ],
   "metadata---docs-patterns-adapter-6-f-5-981": [
-    "/metadata---docs-patterns-adapter-6-f-5-981.dd0c41188bc68595d4d3.js"
+    "/metadata---docs-patterns-adapter-6-f-5-981.38de364c6b586b671082.js"
+  ],
+  "content---docs-patterns-bridgeb-01-6e3": [
+    "/content---docs-patterns-bridgeb-01-6e3.6c8b22029d83e5094bb8.js"
+  ],
+  "metadata---docs-patterns-bridge-543-b80": [
+    "/metadata---docs-patterns-bridge-543-b80.463cd0e630a83544dd3f.js"
   ],
   "content---docs-patterns-builderb-63-6c6": [
     "/content---docs-patterns-builderb-63-6c6.49a78e505401d6d2db40.js"
@@ -200,17 +200,17 @@
   "metadata---docs-patterns-facade-718-580": [
     "/metadata---docs-patterns-facade-718-580.038597ba9f9ecd2696bb.js"
   ],
-  "content---docs-patterns-flyweight-3-df-87f": [
-    "/content---docs-patterns-flyweight-3-df-87f.f80180780c49a0a8e09f.js"
-  ],
-  "metadata---docs-patterns-flyweight-2-c-4-e78": [
-    "/metadata---docs-patterns-flyweight-2-c-4-e78.1160e32eb1cbbb2d76d9.js"
-  ],
   "content---docs-patterns-factoryb-82-d10": [
-    "/content---docs-patterns-factoryb-82-d10.93031ad622f1c6d931ab.js"
+    "/content---docs-patterns-factoryb-82-d10.e5c164410e7d1676bd5e.js"
   ],
   "metadata---docs-patterns-factory-893-3ea": [
-    "/metadata---docs-patterns-factory-893-3ea.e0ff8f65dad8e7c19228.js"
+    "/metadata---docs-patterns-factory-893-3ea.10ed3d7b16898ef32f9f.js"
+  ],
+  "content---docs-patterns-flyweight-3-df-87f": [
+    "/content---docs-patterns-flyweight-3-df-87f.82ed43c7fde1c2ee7a3e.js"
+  ],
+  "metadata---docs-patterns-flyweight-2-c-4-e78": [
+    "/metadata---docs-patterns-flyweight-2-c-4-e78.8c0b1d803c494045c508.js"
   ],
   "content---docs-patterns-index-317-93f": [
     "/content---docs-patterns-index-317-93f.73b632937c52727d3917.js"
@@ -296,17 +296,17 @@
   "metadata---docs-f-2-e-browser-cache-66-d-0e1": [
     "/metadata---docs-f-2-e-browser-cache-66-d-0e1.1501d122f5feceef2fba.js"
   ],
-  "content---docs-f-2-e-browser-devtool-008-9d4": [
-    "/content---docs-f-2-e-browser-devtool-008-9d4.8d39badac7224e274303.js"
-  ],
-  "metadata---docs-f-2-e-browser-devtool-9-c-8-3ff": [
-    "/metadata---docs-f-2-e-browser-devtool-9-c-8-3ff.acc146d9dd9ca99f0e20.js"
-  ],
   "content---docs-f-2-e-browser-eventloopb-0-b-2fc": [
-    "/content---docs-f-2-e-browser-eventloopb-0-b-2fc.5f0e737c84b8ca323dd6.js"
+    "/content---docs-f-2-e-browser-eventloopb-0-b-2fc.91e7b0342c5a2f7b921d.js"
   ],
   "metadata---docs-f-2-e-browser-eventloop-95-f-34d": [
-    "/metadata---docs-f-2-e-browser-eventloop-95-f-34d.714a5cdf3431367af914.js"
+    "/metadata---docs-f-2-e-browser-eventloop-95-f-34d.4e1ea706770044d07fd1.js"
+  ],
+  "content---docs-f-2-e-browser-devtool-008-9d4": [
+    "/content---docs-f-2-e-browser-devtool-008-9d4.070418ca225890060699.js"
+  ],
+  "metadata---docs-f-2-e-browser-devtool-9-c-8-3ff": [
+    "/metadata---docs-f-2-e-browser-devtool-9-c-8-3ff.9af88266ccff0ba76d41.js"
   ],
   "content---docs-f-2-e-browser-v-87-cf-519": [
     "/content---docs-f-2-e-browser-v-87-cf-519.59feb686f951af03d85e.js"
@@ -314,17 +314,17 @@
   "metadata---docs-f-2-e-browser-v-8-a-7-a-da9": [
     "/metadata---docs-f-2-e-browser-v-8-a-7-a-da9.d9d4f57590660a2847fa.js"
   ],
-  "content---docs-f-2-e-css-index-66-e-798": [
-    "/content---docs-f-2-e-css-index-66-e-798.97fe38a9ff7df6d894a8.js"
-  ],
-  "metadata---docs-f-2-e-css-indexaa-5-0b7": [
-    "/metadata---docs-f-2-e-css-indexaa-5-0b7.7f55d10d23dcf98f6eb7.js"
-  ],
   "content---docs-f-2-e-browser-work-837-ec4": [
-    "/content---docs-f-2-e-browser-work-837-ec4.6898df361465a2e0e73a.js"
+    "/content---docs-f-2-e-browser-work-837-ec4.15d8a47d9ea04b6d6819.js"
   ],
   "metadata---docs-f-2-e-browser-work-840-646": [
-    "/metadata---docs-f-2-e-browser-work-840-646.f67c5287edec38b3c38c.js"
+    "/metadata---docs-f-2-e-browser-work-840-646.a2186ddff8898d145bd2.js"
+  ],
+  "content---docs-f-2-e-css-index-66-e-798": [
+    "/content---docs-f-2-e-css-index-66-e-798.902ae371a7560243ebc8.js"
+  ],
+  "metadata---docs-f-2-e-css-indexaa-5-0b7": [
+    "/metadata---docs-f-2-e-css-indexaa-5-0b7.012d370d2edda95675ee.js"
   ],
   "content---docs-f-2-e-html-index-4-b-3-85a": [
     "/content---docs-f-2-e-html-index-4-b-3-85a.8686b0760cc3d4caa13d.js"
@@ -332,17 +332,17 @@
   "metadata---docs-f-2-e-html-index-576-ef7": [
     "/metadata---docs-f-2-e-html-index-576-ef7.3c85bdcd167180015f3c.js"
   ],
-  "content---docs-f-2-e-javascript-async-79-c-4c2": [
-    "/content---docs-f-2-e-javascript-async-79-c-4c2.db9c8be3fb6840fd4db0.js"
-  ],
-  "metadata---docs-f-2-e-javascript-async-1-ff-0d6": [
-    "/metadata---docs-f-2-e-javascript-async-1-ff-0d6.ccf8db0ccb7774669e83.js"
-  ],
   "content---docs-f-2-e-javascript-grammer-0-fc-f4a": [
-    "/content---docs-f-2-e-javascript-grammer-0-fc-f4a.c8128d2c10a2b48c6e37.js"
+    "/content---docs-f-2-e-javascript-grammer-0-fc-f4a.af4a9d72e90d88df3679.js"
   ],
   "metadata---docs-f-2-e-javascript-grammer-1-ab-807": [
-    "/metadata---docs-f-2-e-javascript-grammer-1-ab-807.24f2471f61504f29980b.js"
+    "/metadata---docs-f-2-e-javascript-grammer-1-ab-807.a587d15148c4e459fdd0.js"
+  ],
+  "content---docs-f-2-e-javascript-async-79-c-4c2": [
+    "/content---docs-f-2-e-javascript-async-79-c-4c2.e73f7735e19392ee3151.js"
+  ],
+  "metadata---docs-f-2-e-javascript-async-1-ff-0d6": [
+    "/metadata---docs-f-2-e-javascript-async-1-ff-0d6.d78b749939273d19300a.js"
   ],
   "content---docs-f-2-e-javascript-modulef-3-b-4b5": [
     "/content---docs-f-2-e-javascript-modulef-3-b-4b5.747fba5fddacdb4229b7.js"
@@ -374,47 +374,47 @@
   "metadata---docs-f-2-e-monitor-indexc-62-dba": [
     "/metadata---docs-f-2-e-monitor-indexc-62-dba.f68868b92908056d3430.js"
   ],
-  "content---docs-f-2-e-react-indexc-1-a-4a9": [
-    "/content---docs-f-2-e-react-indexc-1-a-4a9.1056df92c213cf3d4c39.js"
-  ],
-  "metadata---docs-f-2-e-react-index-742-376": [
-    "/metadata---docs-f-2-e-react-index-742-376.2a5657056111d428d4eb.js"
-  ],
   "content---docs-f-2-e-react-native-alertc-12-b90": [
-    "/content---docs-f-2-e-react-native-alertc-12-b90.5cf52d149609e248c148.js"
+    "/content---docs-f-2-e-react-native-alertc-12-b90.b225ebd383460543b073.js"
   ],
   "metadata---docs-f-2-e-react-native-alert-467-f53": [
-    "/metadata---docs-f-2-e-react-native-alert-467-f53.977c573510fbb41bc443.js"
+    "/metadata---docs-f-2-e-react-native-alert-467-f53.87adbdbc2df05987c438.js"
   ],
   "content---docs-f-2-e-react-native-android-1-ed-5c6": [
-    "/content---docs-f-2-e-react-native-android-1-ed-5c6.04bc3cc278075fcd13ca.js"
+    "/content---docs-f-2-e-react-native-android-1-ed-5c6.b825daf4573f95fac6ac.js"
   ],
   "metadata---docs-f-2-e-react-native-androidfcb-4a5": [
-    "/metadata---docs-f-2-e-react-native-androidfcb-4a5.c423e8609f8eb23aefbf.js"
+    "/metadata---docs-f-2-e-react-native-androidfcb-4a5.0946497dee33cd25fae3.js"
   ],
-  "content---docs-f-2-e-react-native-bugly-04-b-c0b": [
-    "/content---docs-f-2-e-react-native-bugly-04-b-c0b.c8ab2f28c3a83bed09b6.js"
+  "content---docs-f-2-e-react-indexc-1-a-4a9": [
+    "/content---docs-f-2-e-react-indexc-1-a-4a9.3d1cddb7212c7ff32998.js"
   ],
-  "metadata---docs-f-2-e-react-native-buglyd-52-a13": [
-    "/metadata---docs-f-2-e-react-native-buglyd-52-a13.ef5004851b31addec66f.js"
+  "metadata---docs-f-2-e-react-index-742-376": [
+    "/metadata---docs-f-2-e-react-index-742-376.9bc719acfd1aa8c9d3f4.js"
   ],
   "content---docs-f-2-e-react-native-camera-665-c81": [
-    "/content---docs-f-2-e-react-native-camera-665-c81.27e3dbfaf85f4f11a012.js"
+    "/content---docs-f-2-e-react-native-camera-665-c81.2f5581392e3b7e75520e.js"
   ],
   "metadata---docs-f-2-e-react-native-cameraf-85-14a": [
-    "/metadata---docs-f-2-e-react-native-cameraf-85-14a.8113cc1330e9590aeebe.js"
+    "/metadata---docs-f-2-e-react-native-cameraf-85-14a.05b6e4fc516f44147b74.js"
   ],
-  "content---docs-f-2-e-react-native-code-push-401-40d": [
-    "/content---docs-f-2-e-react-native-code-push-401-40d.69500103d3cdea42b003.js"
+  "content---docs-f-2-e-react-native-bugly-04-b-c0b": [
+    "/content---docs-f-2-e-react-native-bugly-04-b-c0b.945e9036ccf1e7bc59e9.js"
   ],
-  "metadata---docs-f-2-e-react-native-code-push-6-c-1-262": [
-    "/metadata---docs-f-2-e-react-native-code-push-6-c-1-262.cb37e0d6241c9dbf921d.js"
+  "metadata---docs-f-2-e-react-native-buglyd-52-a13": [
+    "/metadata---docs-f-2-e-react-native-buglyd-52-a13.26b0a1a74b6d39f7c61d.js"
   ],
   "content---docs-f-2-e-react-native-deploya-02-718": [
-    "/content---docs-f-2-e-react-native-deploya-02-718.31ba50cfc2fa88df22fb.js"
+    "/content---docs-f-2-e-react-native-deploya-02-718.a9f92a3cab44eb31f31d.js"
   ],
   "metadata---docs-f-2-e-react-native-deploy-349-3e3": [
-    "/metadata---docs-f-2-e-react-native-deploy-349-3e3.b4bc5260d5159561c269.js"
+    "/metadata---docs-f-2-e-react-native-deploy-349-3e3.726c455ffb1076a0dd6f.js"
+  ],
+  "content---docs-f-2-e-react-native-code-push-401-40d": [
+    "/content---docs-f-2-e-react-native-code-push-401-40d.6edbcc4cb40e03c31212.js"
+  ],
+  "metadata---docs-f-2-e-react-native-code-push-6-c-1-262": [
+    "/metadata---docs-f-2-e-react-native-code-push-6-c-1-262.81cc9b9bf7eb41223e85.js"
   ],
   "content---docs-f-2-e-react-native-fetchb-22-ed3": [
     "/content---docs-f-2-e-react-native-fetchb-22-ed3.eab5c34c96d475eed8bc.js"
@@ -422,17 +422,17 @@
   "metadata---docs-f-2-e-react-native-fetch-29-e-cbf": [
     "/metadata---docs-f-2-e-react-native-fetch-29-e-cbf.015ee21daf5afa48f697.js"
   ],
-  "content---docs-f-2-e-react-native-formfef-a5f": [
-    "/content---docs-f-2-e-react-native-formfef-a5f.08262f38cad29203675e.js"
-  ],
-  "metadata---docs-f-2-e-react-native-form-4-e-3-47e": [
-    "/metadata---docs-f-2-e-react-native-form-4-e-3-47e.e94951c3d2b6b3e7eccd.js"
-  ],
   "content---docs-f-2-e-react-native-git-24-e-b6a": [
-    "/content---docs-f-2-e-react-native-git-24-e-b6a.359c86a1dff1265c9f18.js"
+    "/content---docs-f-2-e-react-native-git-24-e-b6a.4eb9d9afd718a6e29e20.js"
   ],
   "metadata---docs-f-2-e-react-native-git-183-0de": [
-    "/metadata---docs-f-2-e-react-native-git-183-0de.e2db12b45bd0418cbb10.js"
+    "/metadata---docs-f-2-e-react-native-git-183-0de.7365e12ce4154ab3c24f.js"
+  ],
+  "content---docs-f-2-e-react-native-formfef-a5f": [
+    "/content---docs-f-2-e-react-native-formfef-a5f.f531356178aa8445c0b8.js"
+  ],
+  "metadata---docs-f-2-e-react-native-form-4-e-3-47e": [
+    "/metadata---docs-f-2-e-react-native-form-4-e-3-47e.71f89af8ede6e39bba25.js"
   ],
   "content---docs-f-2-e-react-native-indexf-7-d-928": [
     "/content---docs-f-2-e-react-native-indexf-7-d-928.c1515b8d0a84d1c802a8.js"
@@ -452,35 +452,35 @@
   "metadata---docs-f-2-e-react-native-loadingbb-1-c0e": [
     "/metadata---docs-f-2-e-react-native-loadingbb-1-c0e.24589b97ae38dc726a4f.js"
   ],
-  "content---docs-f-2-e-react-native-save-to-camera-331-958": [
-    "/content---docs-f-2-e-react-native-save-to-camera-331-958.2d86ef91206f9bf4b6bb.js"
-  ],
-  "metadata---docs-f-2-e-react-native-save-to-camera-28-e-f8f": [
-    "/metadata---docs-f-2-e-react-native-save-to-camera-28-e-f8f.5cd8423a5638018473a9.js"
-  ],
   "content---docs-f-2-e-react-native-react-native-videoe-21-6ce": [
-    "/content---docs-f-2-e-react-native-react-native-videoe-21-6ce.fe5f59d12e13ba84b754.js"
+    "/content---docs-f-2-e-react-native-react-native-videoe-21-6ce.826c8d6aaaa966b02f6f.js"
   ],
   "metadata---docs-f-2-e-react-native-react-native-video-4-c-7-eb3": [
-    "/metadata---docs-f-2-e-react-native-react-native-video-4-c-7-eb3.ccf916cb0d0891601e30.js"
+    "/metadata---docs-f-2-e-react-native-react-native-video-4-c-7-eb3.edf98366d487b7b6b21d.js"
   ],
   "content---docs-f-2-e-react-native-share-to-wechat-69-e-cbe": [
-    "/content---docs-f-2-e-react-native-share-to-wechat-69-e-cbe.1d01f3c7359ae97b4f86.js"
+    "/content---docs-f-2-e-react-native-share-to-wechat-69-e-cbe.932c741ebc2a3f81ae32.js"
   ],
   "metadata---docs-f-2-e-react-native-share-to-wechat-5-e-1-8ff": [
-    "/metadata---docs-f-2-e-react-native-share-to-wechat-5-e-1-8ff.22c3813a7f0f2646bce2.js"
-  ],
-  "content---docs-f-2-e-react-native-sizebba-63d": [
-    "/content---docs-f-2-e-react-native-sizebba-63d.dc5394bf04f0d73cbb67.js"
-  ],
-  "metadata---docs-f-2-e-react-native-size-9-b-3-745": [
-    "/metadata---docs-f-2-e-react-native-size-9-b-3-745.aa29a4e1929e6e3f9bf4.js"
+    "/metadata---docs-f-2-e-react-native-share-to-wechat-5-e-1-8ff.58865a6757c28d7b1e34.js"
   ],
   "content---docs-f-2-e-react-native-source-8-a-6-4e4": [
-    "/content---docs-f-2-e-react-native-source-8-a-6-4e4.5aefa13476d1b15d2b71.js"
+    "/content---docs-f-2-e-react-native-source-8-a-6-4e4.019874ee08ccd1fd48c9.js"
   ],
   "metadata---docs-f-2-e-react-native-sourceb-4-c-cef": [
-    "/metadata---docs-f-2-e-react-native-sourceb-4-c-cef.dacd01d08c7e5e172df6.js"
+    "/metadata---docs-f-2-e-react-native-sourceb-4-c-cef.6f79f5e1693588f3c1d1.js"
+  ],
+  "content---docs-f-2-e-react-native-save-to-camera-331-958": [
+    "/content---docs-f-2-e-react-native-save-to-camera-331-958.6352b968d47373d2e0d6.js"
+  ],
+  "metadata---docs-f-2-e-react-native-save-to-camera-28-e-f8f": [
+    "/metadata---docs-f-2-e-react-native-save-to-camera-28-e-f8f.573e12fc166ee8003f6b.js"
+  ],
+  "content---docs-f-2-e-react-native-sizebba-63d": [
+    "/content---docs-f-2-e-react-native-sizebba-63d.d8e0d510fb6150bd2cfd.js"
+  ],
+  "metadata---docs-f-2-e-react-native-size-9-b-3-745": [
+    "/metadata---docs-f-2-e-react-native-size-9-b-3-745.2124447e24698e9d9b9c.js"
   ],
   "content---docs-f-2-e-react-native-tech-9-cc-59d": [
     "/content---docs-f-2-e-react-native-tech-9-cc-59d.3e43885bb33a58b81fe7.js"
