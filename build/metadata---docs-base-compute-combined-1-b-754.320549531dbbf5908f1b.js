@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[39],{50:function(e){e.exports=JSON.parse('{"title":"计算机组成原理","date":"2016-09-04T14:53:15.000Z","tags":null,"toc":true,"id":"base/compute-combine","description":"## 计算机系统概论","source":"/Users/banli/banli_blog/docs/base/compute-combine.md","permalink":"/docs/base/compute-combine"}')}}]);

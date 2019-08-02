@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[54],{78:function(t){t.exports=JSON.parse('{"title":"js设计模式","date":"2017-06-17T14:36:48.000Z","tags":null,"id":"patterns/patterns","description":"设计模式是一套让代码可重用，可读，可靠的经验总结。它可以分为三类：","source":"/Users/banli/banli_blog/docs/patterns/patterns.md","permalink":"/docs/patterns/patterns","sidebar":"patterns","category":"设计模式"}')}}]);

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[41],{54:function(a){a.exports=JSON.parse('{"title":"mongodb","id":"database/mongo","description":"brew install mongo","source":"/Users/banli/banli_blog/docs/database/mongo.md","permalink":"/docs/database/mongo","sidebar":"database","category":"数据库","next":"database/mysql","next_title":"mysql学习(1): 基本概念"}')}}]);

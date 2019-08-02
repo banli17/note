@@ -7,35 +7,106 @@
 
 module.exports = {
   docs: {
-    Html: ['html/doc1'],
-    Css: ['mdx'],
+    Html: ['f2e/html/index'],
+    Css: ['f2e/css/index'],
     Javascript: [
-      'javascript/type',
-      'javascript/oop',
-      'javascript/async',
+      'f2e/javascript/grammer',
+      'f2e/javascript/type',
+      'f2e/javascript/oop',
+      'f2e/javascript/module',
+      'f2e/javascript/async',
     ],
     浏览器原理与API: [
-      'browser/work'
+      'f2e/browser/work',
+      'f2e/browser/eventloop',
+      'f2e/browser/devtool',
+      'f2e/browser/cache',
+      'f2e/browser/v8',
+    ],
+    其它: [
+      'f2e/monitor/index',
+      'f2e/test/index',
+      'f2e/safe/index',
+      'f2e/performance/index',
+      'f2e/webpack/basic/index',
+      'f2e/webpack/principle/index',
+      'f2e/react/index',
+    ],
+    vue: [
+      'f2e/vue/index',
+      'f2e/vue/origin',
     ]
+    // ReactNative:[
+    //   'f2e/react-native/android'
+    // ]
   },
   patterns: {
-    设计模式: ['patterns/patterns']
+    设计: [
+      'patterns/index',
+    ],
+    "创建型模式(4)": [
+      'patterns/factory',
+      'patterns/singleton',
+      'patterns/builder',
+      'patterns/prototype',
+    ],
+    "构造型模式(7)": [
+      'patterns/adapter',
+      'patterns/bridge',
+      'patterns/composite',
+      'patterns/decorator',
+      'patterns/facade',
+      'patterns/flyweight',
+      'patterns/proxy',
+    ],
+    "行为型模式(11)": [
+      'patterns/interpreter',
+      'patterns/visitor',
+      'patterns/memento',
+      'patterns/command',
+      'patterns/template',
+      'patterns/chain-of-responsibility',
+      'patterns/iterator',
+      'patterns/mediator',
+      'patterns/strategy',
+      'patterns/observer',
+      'patterns/state',
+    ]
   },
   algo: {
     数据结构: ['algo/index'],
     算法: ['algo/index']
   },
-  database: {
+  src: {
+    linux操作系统: [
+      'linux/index',
+      'linux/file',
+      'linux/soft',
+      'linux/service',
+    ],
+    nginx: [
+      'nginx/index'
+    ],
     数据库: ['database/mongo',
       'database/mysql',
       'database/redis'
     ]
   },
-  服务器: {
-    linux: ['linux/index'],
-    nginx: ['nginx/index']
+  base: {
+    计算机基础: [
+      'base/h5',
+      'base/compute-combine'
+    ]
   },
-  工具集: {
-    工具集: ['other/mac']
+  tool: {
+    工具: [
+      'other/mac',
+      'other/kindle-rss',
+    ]
+  },
+  demo: {
+    demo: [
+      'demo/index',
+    ]
   }
 };

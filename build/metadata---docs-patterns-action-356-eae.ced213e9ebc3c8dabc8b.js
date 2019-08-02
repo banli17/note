@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[161],{78:function(n){n.exports=JSON.parse('{"title":"行为型模式","id":"patterns/action","description":"### 中介者模式","source":"/Users/banli/banli_blog/docs/patterns/action.md","permalink":"/docs/patterns/action"}')}}]);

@@ -7,27 +7,64 @@
 
 module.exports = {
   title: '板栗17的博客',
-  tagline: 'The tagline of my site',
+  tagline: '',
   url: 'https://www.banli17.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: '', // Usually your GitHub org/user name.
+  projectName: '', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'banli17.com',
       logo: {
-        alt: 'My Site Logo',
+        alt: '板栗17的博客',
         src: 'img/logo.svg',
       },
-      links: [
-        {to: 'docs/html/doc1', label: '前端必备', position: 'left'},
-        {to: 'docs/patterns/patterns', label: '设计模式', position: 'left'},
-        {to: 'docs/algo/index', label: '数据结构与算法', position: 'left'},
-        {to: 'docs/database/mongo', label: '数据库', position: 'left'},
-        {to: 'docs/linux/index', label: '服务器', position: 'left'},
-        {to: 'docs/other/mac', label: '工具集', position: 'left'},
-        {to: 'blog', label: '博客', position: 'left'},
+      links: [{
+          to: 'docs/f2e/html/index',
+          label: '前端',
+          position: 'left'
+        },
+        {
+          to: 'docs/node/index',
+          label: 'NodeJS',
+          position: 'left'
+        },
+        {
+          to: 'docs/patterns/index',
+          label: '设计模式',
+          position: 'left'
+        },
+        {
+          to: 'docs/algo/index',
+          label: '算法',
+          position: 'left'
+        },
+        {
+          to: 'docs/linux/index',
+          label: '服务器',
+          position: 'left'
+        },
+        {
+          to: 'docs/base/h5',
+          label: '计算机基础',
+          position: 'left'
+        },
+        {
+          to: 'docs/other/mac',
+          label: '工具',
+          position: 'left'
+        },
+        // {
+        //   to: 'docs/demo/index',
+        //   label: 'demo',
+        //   position: 'left',
+        // },
+        {
+          to: 'blog',
+          label: '博客',
+          position: 'right'
+        },
         {
           to: 'docs/about',
           label: '关于',
@@ -40,43 +77,43 @@ module.exports = {
         },
       ],
     },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Docs',
-              to: 'docs/html/doc1',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'Social',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-          ],
-        },
-      ],
-      logo: {
-        alt: ' Open Source Logo',
-        src: 'https://docusaurus.io/img/oss_logo.png',
-      },
-      copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc. Built with Docusaurus.`,
-    },
+    // footer: {
+    // style: 'dark',
+    // links: [
+    //   {
+    //     title: 'Docs',
+    //     items: [
+    //       {
+    //         label: 'Docs',
+    //         to: 'docs/html/doc1',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     title: 'Community',
+    //     items: [
+    //       {
+    //         label: 'Discord',
+    //         href: 'https://discordapp.com/invite/docusaurus',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     title: 'Social',
+    //     items: [
+    //       {
+    //         label: 'Blog',
+    //         to: 'blog',
+    //       },
+    //     ],
+    //   },
+    // ],
+    // logo: {
+    //   alt: ' Open Source Logo',
+    //   src: 'https://docusaurus.io/img/oss_logo.png',
+    // },
+    // copyright: `Copyright © ${new Date().getFullYear()} banli17.com`,
+    // },
   },
   presets: [
     [
@@ -91,4 +128,8 @@ module.exports = {
       },
     ],
   ],
+  themes: ['@docusaurus/theme-classic', '@docusaurus/theme-live-codeblock'],
+  // themeConfig: {
+  //   prismTheme: require('prism-react-renderer/themes/nightOwl.js')
+  // }
 };

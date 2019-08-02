@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[154],{66:function(i){i.exports=JSON.parse('{"title":"linux操作系统笔记","sidebar_label":"linux操作系统","id":"linux/index","description":"## 常用系统工作命令","source":"/Users/banli/banli_blog/docs/linux/index.md","permalink":"/docs/linux/index","sidebar":"src","category":"linux操作系统","next":"linux/file","next_title":"linux文件和目录操作"}')}}]);
