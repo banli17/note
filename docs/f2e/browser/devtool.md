@@ -1,6 +1,47 @@
 ---
 id: devtool
-title: "Chrome 调试工具"
-sidebar_label: Chrome 调试工具
+title: "Chrome 开发者工具"
+sidebar_label: Chrome 开发者工具
 ---
 
+本文是对 [Chrome 开发者工具官方文档](https://developers.google.cn/web/tools/chrome-devtools/) 的总结。
+
+- DOM断点
+- Ajax  、EventListener断点
+
+## 总览
+
+
+## 设备模式
+
+## 元素面板
+
+## 控制台面板
+
+## 源代码面板
+
+## 网络面板
+
+## 性能面板
+
+### 性能数据
+
+### 分析结果
+
+测量任何动画性能的主要指标是每秒帧数（FPS）。当动画以60 FPS运行时，用户会很高兴。
+
+1. 看看FPS图表。如果看到FPS上方的红色条形时，就意味着帧速率下降得太低，可能会损害用户体验。通常，绿色条越高，FPS越高。
+2. 
+
+## 内存面板
+
+## 应用面板
+
+## 安全面板
+
+## 一些快捷键
+
+|描述|快捷键|
+|--|--|
+打开调试窗口|Ctrl+Shift+I (Windows) 或 Cmd+Opt+I (Mac)
+打开

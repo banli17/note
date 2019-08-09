@@ -1,10 +1,75 @@
 ---
-id: oop
 title: "javascript 面向对象"
 sidebar_label: 面向对象
 ---
 
-## new
+## 构造函数
+
+### 什么是构造函数
+
+构造函数本身就是一个函数，为了规范，一般首字母大写。普通函数和构造函数的不同在于调用方式，如果是`fn()`这样调用，则是普通函数。如果通过`new`关键字调用，就是构造函数。
+
+```js
+function Person(name){
+    this.name = name
+}
+
+Person()  // 普通函数
+let p = new Person()  // 构造函数
+```
+
+### constructor
+
+对于实例，都有一个 constructor 属性指向其构造函数(实际在其原型上)。
+
+constructor 属性是可修改的，但是对基本类型来说是只读的，因为装箱操作。
+
+```js
+// -------引用类型--------
+function A(){}
+function B(){}
+let b = new B()
+b.constructor // B
+
+b.constructor = A 
+b.constructor // A
+
+// -------基本类型--------
+var one = 1
+one.constructor  // ƒ Number() { [native code] }
+one.constructor = A
+one.constructor  // ƒ Number() { [native code] }
+
+null.constructor  // TypeError: Cannot read property 'constructor' of null
+undefined.constructor  // TypeError: Cannot read property 'constructor' of undefined
+```
+
+可以看到，对于引用类型，constructor 属性是可以修改的。对于基本类型，是只读的，而且`null`和`undefined`是不能调 constructor 属性的。
+
+### Symbol是构造函数吗
+
+要注意的是`Symbol`。`Symbol`是基本数据类型，但是作为构造函数，它不能`new`调用，在 chrome 下，`new Symbol`会报错。
+
+```js
+new Symbol(); // Symbol is not a constructor
+```
+
+`Symbol('hi')`是基本类型，但是可以获取 constructor 属性值。实际就是`Symbol.prototype.constructor`，它返回的就是`Symbol`函数，
+
+```js
+var s = Symbol('hi')
+
+s  // Symbol(hi)
+s.constructor  // ƒ Symbol() { [native code] }
+
+Symbol.prototype.constructor === Symbol  // true
+```
+
+
+
+
+
+### new
 
 > new 的原理是什么？通过 new 的方式创建对象和通过字面量创建有什么区别？
 
@@ -17,13 +82,16 @@ sidebar_label: 面向对象
 ```js
 function myNew(constor, ...args) {
     let o = Object.create(null)
-    o.__proto__ = constor.prototype
+    // o.__proto__ = constor.prototype
+    Object.setPrototypeOf(o, constor.prototype)
     let res = constor.call(o, ...args)
     return res instanceof Object ? res : o
 }
 ```
 
-## instanceof
+要注意的是，`__proto__`属性是非标准属性，建议用`Object.setPrototypeOf()`代替。
+
+### instanceof
 
 > 面试题：instanceof 的原理是什么？
 
@@ -81,7 +149,7 @@ child.constructor  // [Function: Parent]
 Child.prototype.constructor = Child
 ```
 
-![](/static/img/oop/3.png)
+![](/img/oop/3.png)
 
 ### 寄生组合继承
 
@@ -112,7 +180,7 @@ child.getName()  // 'zs'
 child instanceof Parent  // true
 ```
 
-![](/static/img/oop/4.png)
+![](/img/oop/4.png)
 
 ### Class 继承
 
@@ -137,8 +205,7 @@ child.getName() // 'zs', 12
 child instanceof Parent // true
 ```
 
-![](/static/img/oop/5.png)
-
+![](/img/oop/5.png)
 
 
 ## 关于 this
@@ -373,17 +440,18 @@ newObj.b.c = 1
 console.log(obj.b.c) // 2
 ```
 
- 原型链如何处理、DOM 如何处理
+原型链如何处理、DOM 如何处理
 
 4. lodash 的深拷贝
 
-## 原型
 
-> 面试题：如何理解原型？如何理解原型链？
+## 原型和原型链
 
-原型是实现面向对象的一种方式。可以通过原型将对象关联起来。
+### 原型
 
-![](/static/img/oop/2.webp)
+常见的面向对象都是通过类实现的，但 JavaScript 是通过原型来实现的。每个对象都以一个原型对象作为模版，可以继承属性和方法。
+
+![](/img/oop/2.webp)
 
 通过上图可以看出：
 
@@ -391,9 +459,8 @@ console.log(obj.b.c) // 2
 2. Foo 构造的实例 new Foo() 的`__proto__`属性指向 Foo 的原型。
 3. 所有对象都是 Object 类的实例。所有函数都是 Function 类的实例。
 4. `Object.prototype.__proto__`为 null。
-5. `Function.prototype.__proto__` 为 Object.prototype。
-
-注：`__proto__`不是标准属性，这只是浏览器在早期为了让我们访问到内部属性`[[prototype]]`来实现的一个东西。
+5. `Function.prototype.__proto__`为 Object.prototype。
+6. 
 
 ```js
 `函数.__proto__.constructor == Function`
@@ -403,14 +470,162 @@ Function instanceof Object
 Object instanceof Function
 ```
 
+注：`__proto__`在 ES6 才归为标准属性，它是一个访问器属性(即getter和setter)，可以通过它访问到内部属性`[[prototype]]`。不过建议使用`Object.getPrototypeOf()`。因为`__proto__`可能有兼容问题和性能问题。
+
+原型相关的方法有：
+
+```js
+// 获取
+Object.getPrototypeOf()
+Reflect.getPrototypeOf()
+
+// 设置
+Object.setPrototypeOf()
+Reflect.setPrototypeOf()
+
+// 创建
+Object.create()
+```
+
+### 原型链
+
+每个对象拥有一个原型对象，通过`__proto__`指针指向上一个原型 ，并从中继承方法和属性，同时原型对象也可能拥有原型，这样一层一层，最终指向 null。这种关系被称为原型链 (prototype chain)。
+
+```js
+function A(){}
+let a = new A()
+
+a.__proto__ === A.prototype // true
+a.__proto__.__proto__ === Object.prototype  // true
+a.__proto__.__proto_.__proto__  // null
+
+a.name  // undefined
+```
+
+要注意的是，null 并非原型对象。上面代码显示，`a.name`找到最终的原型对象`a.__proto__.__proto__`(非null)上，发现没有 name 属性，即返回`undefined`。
+
+### Function、Object鸡蛋问题
+
+函数都是 Function 创建的，对象都是 Object 创建的。Function、Object 既是对象，也是函数，它们之间有如下关系：
+
+```js
+Object instanceof Function  // true
+Function instanceof Object  // true
+Object instanceof Object    // true
+Function instanceof Function  // true
+```
+
+**Object.prototype**
+
+`Object.prototype`是对象的最顶层原型对象。根据 ECMAScript 上[关于Object.prototype的定义](http://www.ecma-international.org/ecma-262/5.1/#sec-15.2.4)。
+
+```
+Object.prototype.[[Prototype]] = null
+Object.prototype.[[Class]] = Object
+Object.prototype.[[Extensible]] = true
+```
+
+如果`Object.prototype`是通过 Object 函数创建的，其`[[Prototype]]`属性应该是`Object.prototype`。所以它并不是 Object 函数创建的。实际上，`Object.prototype`是浏览器底层根据 ECMAScript 规范创建的对象。
+
+`Object.prototype`是原型链的顶端(不考虑 null)。所有对象都继承了它的 toString 等属性和方法。
+
+**Function.prototype**
+
+`Function.prototype`是函数实例的最顶层原型对象。根据 ECMAScript 上[关于Function.prototype的定义](http://www.ecma-international.org/ecma-262/5.1/#sec-15.3.4)。
+
+```js
+Function.prototype.[[Class]] = Function   // typeof Function.prototype == 'function'
+Function.prototype.[[Prototype]] = Object.prototype
+Function.prototype.valueOf 实际是继承自 Object.prototype.valueOf
+
+
+Function.prototype
+// ƒ () { [native code] }
+
+Function.prototype.prototype
+// undefined
+
+let fun = Function.prototype.bind()
+// ƒ () { [native code] }
+
+fun.prototype
+// undefined
+```
+
+根据上面内容可以发现，并不是所有的函数都有 prototype 属性，函数`Function.prototype`就没有 prototype 属性。
+
+**Object()**
+
+Object 构造函数的`[[Prototype]]`属性值是`Function.prototype`。
+
+```js
+Object.__proto__ === Function.prototype  // true
+```
+
+**Function()**
+
+```js
+Function.[[Class]] = Function
+Function.[[Prototype]] = Function.prototype
+```
+
+上面代码可以看出，Function 构造函数本身是一个函数类型对象。它的原型指向`Function.prototype`。
+
+```js
+typeof Function === 'function'  // true
+Function.__proto__ === Function.prototype // true
+```
+
+> 面试题：Function 对象是不是 Function 函数的实例？
+
+虽然在 JavaScript 层面上来看，Function 对象确实是 Function 函数的实例。
+
+```js
+Function instanceof Function  // true
+Function.constructor === Function  // true
+```
+
+但是 Function 是一个内置对象，是在C/C++层面处理(具体需要看 V8 源码)，我们写一个函数`function f(){}`时，并没有调用 Function 构造器。所以个人认为它不是 Function 的实例。
+
+```js
+let f = Function
+Function = function (...args) {
+    console.log('调用了Function')  // 没有输出
+    return f(...args)
+}
+function a() {
+    console.log(1)
+}
+a()  // 1
+```
+
+上面代码可以看出，写`function a()`并没有调用 Function 构造函数。
+
+**内置类型构建过程**
+
+浏览器自带的 Javascript 内置对象是在 C/C++ 层面实现的，其初始化过程如下：
+
+1. 用 C/C++ 构造内部数据结构创建一个 OP 即 (Object.prototype) 以及初始化其内部属性但不包括行为。
+2. 用 C/C++ 构造内部数据结构创建一个 FP 即 (Function.prototype) 以及初始化其内部属性但不包括行为。
+3. 将 FP 的 [[Prototype]] 指向 OP。
+4. 用 C/C++ 构造内部数据结构创建各种内置引用类型。
+5. 将各内置引用类型的[[Prototype]]指向 FP。
+6. 将 Function 的 prototype 指向 FP。
+7. 将 Object 的 prototype 指向 OP。
+8. 用 Function 实例化出 OP，FP，以及 Object 的行为并挂载。
+9. 用 Object 实例化出除 Object 以及 Function 的其他内置引用类型的 prototype 属性对象。
+10. 用 Function 实例化出除Object 以及 Function 的其他内置引用类型的 prototype 属性对象的行为并挂载。
+11. 实例化内置对象 Math 以及 Grobal
+
+至此，所有内置类型构建完成。
+
+
 ## map、filter、reduce
 
 `map`和`filter`返回一个新数组
 
 
 `reduce`可以挨个处理数组的元素，最终返回一个值。
-
-
 
 
 ## 实现call、apply 和 bind
@@ -469,3 +684,17 @@ Function.prototype.myBind = function (context) {
 要注意 myBind 返回一个函数，可以通过普通方式和 new 调用。
 
 
+## 面试题
+
+1. bind、call、apply的区别?
+1. 介绍下原型链（解决的是继承问题吗）?
+1. 深拷贝和浅拷贝?lodash深拷贝实现原理？
+1. JS继承方案?平常是怎么做继承?
+1. 介绍this是什么，this的各种情况?
+1. 怎么实现this对象的深拷贝?
+1. 介绍原型？原型链？使用原型最大的好处?
+1. 栈和堆具体怎么存储?
+1. 栈和堆的区别?
+1. `prototype`和`__proto__`区别?
+1. `constructor`是什么?
+1. new 是怎么实现的?

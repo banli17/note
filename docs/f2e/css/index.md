@@ -1543,3 +1543,8 @@ background 系列、transform 系列、transtion 系列、animation 系列、fle
   background: rgba(0, 0, 0, 0.15);
 }
 ```
+
+
+## 参考资料
+
+- [如何居中一个元素（终结版）](https://github.com/ljianshu/Blog/issues/29)

@@ -794,3 +794,19 @@ String(a)
 2. NaN，占用了 9007199254740990，这个叙述不对
 留言里很多童鞋都提出了 9007199254740990 被占用是什么意思的疑问，实际是第一点描述的关于NaN 规定和参考双精度浮点数的表达方式，尾数共有53位，指数固定为2^e – 1并去掉±∞两个值，那么NaN其 实是 2^53-2 个特殊数字的合集(2^53-2 = 9007199254740990 );
 并不是 9007199254740990 被占用，而是 9007199254740990 个特殊值被占用来表示 NaN 扩展一下，我们就可以理解为什么NaN !== NaN了，它确实不是一个值，而是一群值呢0 0!
+
+## 函数
+
+
+
+## 参考资料
+
+- [js中0-1-0-2为什么不等于0-3](https://coolcao.com/2016/10/12/js%E4%B8%AD0-1-0-2%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E0-3/)
+- [How to compare numbers correctly in JavaScript](https://dev.to/alldanielscott/how-to-compare-numbers-correctly-in-javascript-1l4i)
+- [js中精度问题以及解决方案](https://xwjgo.github.io/2018/03/17/js%E4%B8%AD%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/)
+- [https://floating-point-gui.de/references/](https://floating-point-gui.de/references/)
+- [JavaScript数字精度丢失问题总结](https://www.cnblogs.com/snandy/p/4943138.html)
+- [你对Number一无所知](https://segmentfault.com/a/1190000013632163#articleHeader14)
+- [程序员必知之浮点数运算原理详解](https://www.cnblogs.com/icmzn/p/5060195.html)
+- [谈 JavaScript 浮点数计算精度问题（如0.1+0.2!==0.3）](https://juejin.im/post/5cbd604be51d456e7f0ba59a)
+- [抓住数据的小尾巴 - JS浮点数陷阱及解法](https://zhuanlan.zhihu.com/p/30703042)

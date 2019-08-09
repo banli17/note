@@ -15,10 +15,14 @@ module.exports = {
       'f2e/javascript/oop',
       'f2e/javascript/module',
       'f2e/javascript/async',
+      'f2e/javascript/regexp',
     ],
     浏览器原理与API: [
       'f2e/browser/work',
       'f2e/browser/eventloop',
+      'f2e/browser/event',
+      'f2e/browser/fetch',
+      'f2e/browser/storage',
       'f2e/browser/devtool',
       'f2e/browser/cache',
       'f2e/browser/v8',
@@ -102,6 +106,7 @@ module.exports = {
     工具: [
       'other/mac',
       'other/kindle-rss',
+      'other/resource',
     ]
   },
   demo: {

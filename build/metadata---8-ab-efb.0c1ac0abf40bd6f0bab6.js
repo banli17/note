@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[97],{37:function(s){s.exports=JSON.parse('{"permalink":"/","source":"/Users/banli/banli_blog/src/pages/index.js"}')}}]);
