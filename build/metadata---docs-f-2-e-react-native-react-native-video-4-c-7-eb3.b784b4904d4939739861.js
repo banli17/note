@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[158],{204:function(e){e.exports=JSON.parse('{"title":"react-native-video 使用总结","date":"2018-06-16T15:18:39.000Z","toc":true,"id":"f2e/react-native/react-native-video","description":"## 全屏播放","source":"@site/docs/f2e/react-native/react-native-video.md","permalink":"/docs/f2e/react-native/react-native-video"}')}}]);

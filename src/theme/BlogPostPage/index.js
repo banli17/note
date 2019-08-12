@@ -19,7 +19,7 @@ class GitTalk extends Component{
     var gitalk = new Gitalk({
       clientID: '92f9ff601fd031145a24',
       clientSecret: '92e5c59ae06a2ce34caeedf85a9d1666a20f36c0',
-      repo: 'https://github.com/banli17/blog_comment',
+      repo: 'blog_comment',
       owner: 'banli17',
       admin: ['banli17'],
       id: location.pathname,      // Ensure uniqueness and length less than 50
