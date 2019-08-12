@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[136],{155:function(e){e.exports=JSON.parse('{"id":"f2e/html/index","title":"HTML 基础知识总结","sidebar_label":"HTML","description":"## 元素","source":"@site/docs/f2e/html/index.md","permalink":"/docs/f2e/html/index","sidebar":"docs","category":"Html","next":"f2e/css/index","next_title":"css基础"}')}}]);

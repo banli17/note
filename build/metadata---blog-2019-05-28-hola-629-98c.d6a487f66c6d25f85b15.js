@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[104],{37:function(o){o.exports=JSON.parse('{"permalink":"/blog/2019/05/28/hola","source":"/Users/banli/banli_blog/blog/2019-05-28-hola.md","description":"","date":"2019-05-28T06:00:00.000Z","tags":[],"title":"0.1 + 0.2 != 0.3"}')}}]);

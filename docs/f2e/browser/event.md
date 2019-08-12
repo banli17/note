@@ -8,14 +8,101 @@ sidebar_label: 事件机制
 与事件绑定相关的方法有：
 
 - `addEventListener()`
-
-`addEventListener()`方法的第三个参数还可以是一个对象，它可以使用如下属性：
-    - capture
-    - once
-    - passive
-
 - `removeEventListener()`
 - `dispatchEvent()`
+
+### addEventListener
+
+```
+addEventListener(type, listener, useCapture)
+```
+
+addEventListener 方法的参数如下：
+
+- `type <String>`: 事件名
+- `listener <Function>`: 事件处理程序
+- `useCapture <Boolean|Object>`: 是否冒泡，这个参数还可以是一个对象，它有属性：
+    - `capture`:布尔值，是否冒泡
+    - `once`:布尔值，是否只触发一次
+    - `passive`: 布尔值，设为 true 时，表示事件处理程序 listener 永远不会调用`preventDefault()`，如果 listener 还是调用了`preventDefault()`，客户端将忽略它并抛出一个控制台警告。
+
+
+## 事件传播
+
+事件的传播分为三个阶段：捕获(从 window 到目标元素)、到达目标元素、冒泡(从目标元素到 window)。
+
+要注意的是，给目标元素同时绑定捕获或冒泡事件，会按照绑定的顺序执行。
+
+```js
+target.addEventListener('click', e => console.log("冒泡") , false)
+target.addEventListener('click', e => console.log("捕获") , true)
+```
+
+上面代码，点击 target，将依次输出`冒泡`、`捕获`。
+
+
+## 阻止事件传播
+
+阻止事件传播的方法有 2 个：
+
+- `stopPropagation()`: 这个方法会阻止当前绑定的事件传播，不会阻止其它的同名事件传播。
+- `stopImmediatePropagation()`: 这个方法会阻止当前绑定事件的传播，以及之后绑定事件的传播。
+
+```js
+var b = document.body
+
+document.addEventListener('click', (e) => {
+    console.log('document capture')
+}, true)
+
+document.addEventListener('click', (e) => {
+    console.log('document bubble')
+}, false)
+
+b.addEventListener('click', (e) => {
+    console.log('body click 0')
+}, false)
+
+b.addEventListener('click', (e) => {
+    // e.stopPropagation()
+    e.stopImmediatePropagation()
+    console.log('body click 1')
+}, false)
+
+b.addEventListener('click', (e) => {
+    console.log('body click 2')
+}, false)
+
+// 如果使用 e.stopPropagation()，将输出
+// document capture
+// body click 0
+// body click 1
+// body click 2
+
+// 如果使用 e.stopImmediatePropagation()，将输出
+// document capture
+// body click 0
+// body click 1
+```
+
+上面的例子中，如果使用`e.stopImmediatePropagation()`，不会输出`body click 2`，也就是将自身后面写的事件也阻止了。
+
+另外，要注意它是阻止冒泡，并没有阻止捕获。所以`document capture`总是会输出的。
+
+## 阻止默认事件
+
+默认事件就是浏览器自带的一些事件。比如鼠标右键时会打开菜单，选中文字后可以按住拖动等。有时候，这些默认事件会影响我们的开发，所以需要阻止它。
+
+阻止默认事件的方法是使用事件对象的`preventDefault()`方法。
+
+```js
+b.addEventListener('contextmenu', (e) => {
+    console.log('body click 1')
+    e.preventDefault()
+}, false)
+```
+
+上面例子中，禁止了右键菜单，所以鼠标右键点击时，不再出现菜单。
 
 ### 创建与触发自定义事件
 
@@ -67,32 +154,31 @@ textarea.addEventListener('input', e => e.target.dispatchEvent(eventAwesome));
 ```
 
 
-
-
-## 事件传播
-
-事件的传播分为三个阶段：捕获(从 window 到目标元素)、到达目标元素、冒泡(从目标元素到 window)。
-
-要注意的是，给目标元素同时绑定捕获或冒泡事件，会按照绑定的顺序执行。
+## 事件委托
 
 ```js
-target.addEventListener('click', e => console.log("冒泡") , false)
-target.addEventListener('click', e => console.log("捕获") , true)
+// 给100个li元素绑定事件
+for(let i = 0; i < li.length; i++){
+    li.addEventListener('click', handler, false)
+}
 ```
 
-上面代码，点击 target，将依次输出`冒泡`、`捕获`。
+上面例子中，在给大量元素(如列表`<li>`)绑定事件时，传统的事件绑定会有一些问题：
 
-## 阻止事件传播
+0. 大量事件绑定，消耗性能，而且 IE 还需要解绑，否则会内存泄露。
+0. 绑定元素必须存在，后期插入的元素，需要重新绑定事件。
+0. 语法过于复杂
 
-## 阻止默认事件
-
-## 事件代理
-
-事件代理是将本来绑定到子节点的事件，绑定到上级元素上。好处是：
+优化的办法就是使用`事件委托`。事件委托就是将事件处理函数绑定在目标对象的父级或祖先级节点上，目标对象的事件会通过冒泡或捕获传递给它。主要的好处是：
 
 - 新增子节点时，无需再重新绑定事件
 - 节省内存
 
+不足点是：
+
+- 并非所有的事件都能冒泡，如`load`、`change`、`submit`、`focus`、`blur`。
+- 加大管理复杂。
+- 不好模拟用户触发事件。
 
 ## 鼠标事件
 
@@ -176,8 +262,52 @@ type 是事件类型，目前只能是`wheel`。第二个参数是事件配置�
 
 ### 其它常见事件
 
-###
+## jQuery事件绑定
+
+### 简介
+
+jQuery 事件绑定主要有下面几个 API。
+
+- `bind`、`unbind()`
+- `delegate()`、`undelegate()`
+- `on()`、`off()`
+- `one()`
+- `trigger()`、`triggerHandler()`
+
+其中`bind`、`live`、`delegate`都是通过 on 实现的。`unbind`、`undelegate`都是通过 off 实现的。
+
+**.bind()**
+
+直接给元素绑定事件处理程序，没有利用事件委托。3.0 已废弃。
+
+**.live() []**
+
+1.7 已废弃，它的作用是将事件处理程序委托绑定到 document 上，从而简化使用。
+
+```js
+$('a').live('click', function() { alert("!!!") });
+```
+
+这个方法的缺点是：
+
+1. 调用 live() 前，jQuery 会搜索匹配元素，这一点对大型文档比较耗时。
+2. 不支持链式写法。$("a").find(".offsite, .external").live( ... ) 是不支持的。
+3. 由于添加在 document 上，事件传播链较长，所以事件处理程序的触发较慢。
+
+**.delegate()** 
+
+利用事件委托绑定事件处理程序。jQuery 扫描文档，查找`#element`，并使用 click 事件和 a 选择器将事件处理函数绑定到 `#element`上，只要有事件冒泡到`#element`，它就查看该事件是否是 click，该事件目标元素是否是 a，如果都匹配，则执行事件处理程序。
+
+```js
+$('#element).delegate('a', 'click', function() {  });
+```
+
+**.on()**
+
+
 
 ## 参考资料
 
 - [](https://developer.mozilla.org/en-US/docs/Web/Guide/Events)
+- [jQuery源码分析系列(17 - 22) 事件绑定](https://www.cnblogs.com/aaronjs/p/3279314.html)
+- [jquery 1.9 API中文文档](https://www.html.cn/jqapi-1.9/)

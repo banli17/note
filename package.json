@@ -5,14 +5,14 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "docusaurus build && git add . && git commit -m'update' && git push",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.23",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.23",
-    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.23",
+    "@docusaurus/core": "^2.0.0-alpha.24",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.24",
+    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.24",
     "classnames": "^2.2.6",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"

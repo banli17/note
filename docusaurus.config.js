@@ -26,7 +26,12 @@ module.exports = {
           position: 'left'
         },
         {
-          to: 'docs/node/index',
+          to: 'docs/source/jquery/event',
+          label: '源码笔记',
+          position: 'left'
+        },
+        {
+          to: 'docs/nodejs/util',
           label: 'NodeJS',
           position: 'left'
         },

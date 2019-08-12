@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[150],{198:function(e){e.exports=JSON.parse('{"title":"react-native 一键分享多图到微信","date":"2016-10-13T01:51:25.000Z","toc":true,"id":"f2e/react-native/share-to-wechat","description":"## 一键分享多图到微信","source":"/Users/banli/banli_blog/docs/f2e/react-native/share-to-wechat.md","permalink":"/docs/f2e/react-native/share-to-wechat"}')}}]);

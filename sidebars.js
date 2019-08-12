@@ -44,6 +44,14 @@ module.exports = {
     //   'f2e/react-native/android'
     // ]
   },
+  nodejs: {
+    nodejs: [
+      'nodejs/util',
+      'nodejs/test',
+      'nodejs/async',
+      'nodejs/safe',
+    ]
+  },
   patterns: {
     设计: [
       'patterns/index',
@@ -100,6 +108,10 @@ module.exports = {
     计算机基础: [
       'base/h5',
       'base/compute-combine'
+    ],
+    网络协议: [
+      'base/net/tcp',
+      'base/net/http'
     ]
   },
   tool: {
@@ -109,9 +121,9 @@ module.exports = {
       'other/resource',
     ]
   },
-  demo: {
-    demo: [
-      'demo/index',
+  source: {
+    jQuery源码: [
+      'source/jquery/event',
     ]
   }
 };
