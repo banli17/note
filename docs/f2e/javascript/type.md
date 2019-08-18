@@ -460,10 +460,6 @@ console.log(p2) // -> { name: 'yyy', age: 30 }
 上面代码将 p1 传递给 test 时，person 就是 p1 执行的空间，
 
 
-
-
-
-
 > 为什么给对象添加的方法能用在基本类型上？
 
 `.` 运算符提供了装箱操作，会根据基础类型创建一个临时对象，使得我们可以在基本类型上调用对象的方法。。Number、String、Boolean 使用 new 时，会产生对象。当直接调用时，表示强制转换类型。Symbol 使用 new 会报错，但是它仍然 Symbol 对象的是构造器。
@@ -491,6 +487,27 @@ for (let i of o) {
 ```
 
 > 涉及面试题：对象类型和原始类型的不同之处？函数参数是对象会发生什么问题？
+
+### Set、Map、WeakSet 和 WeakMap
+
+**Set 和 WeakSet**
+
+Set 数据结构类似于数组，但是它的成员是唯一的，没有重复值。属性和方法如下：
+
+- `add(value)`
+- `delete(value)`
+- `has(value)`
+- `clear()`
+- `keys()`
+- `values()`
+- `entries()`
+- `forEach()`
+
+```
+```
+
+
+
 
 ## 类型判断
 

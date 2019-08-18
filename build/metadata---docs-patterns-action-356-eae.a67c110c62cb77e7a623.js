@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[188],{91:function(t){t.exports=JSON.parse('{"title":"行为型模式","id":"patterns/action","description":"### 中介者模式","source":"@site/docs/patterns/action.md","permalink":"/docs/patterns/action"}')}}]);

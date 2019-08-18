@@ -13,7 +13,7 @@
       8,
       9,
       10,
-      215,
+      217,
       0
     ],
     "1": [
@@ -25,7 +25,7 @@
       7,
       8,
       10,
-      215,
+      217,
       1
     ],
     "2": [
@@ -120,55 +120,55 @@
     "@site/docs/demo/index.md": [
       22
     ],
-    "@site/docs/doc2.md": [
+    "@site/docs/f2e/browser/cache.md": [
       23
     ],
-    "@site/docs/doc3.md": [
+    "@site/docs/f2e/browser/devtool.md": [
       24
     ],
-    "@site/docs/f2e/browser/cache.md": [
+    "@site/docs/f2e/browser/dom.md": [
       25
     ],
-    "@site/docs/f2e/browser/devtool.md": [
+    "@site/docs/f2e/browser/event.md": [
       26
     ],
-    "@site/docs/f2e/browser/event.md": [
+    "@site/docs/f2e/browser/eventloop.md": [
       27
     ],
-    "@site/docs/f2e/browser/eventloop.md": [
+    "@site/docs/f2e/browser/fetch.md": [
       28
     ],
-    "@site/docs/f2e/browser/fetch.md": [
+    "@site/docs/f2e/browser/storage.md": [
       29
     ],
-    "@site/docs/f2e/browser/storage.md": [
+    "@site/docs/f2e/browser/v8.md": [
       30
     ],
-    "@site/docs/f2e/browser/v8.md": [
+    "@site/docs/f2e/browser/work.md": [
       31
     ],
-    "@site/docs/f2e/browser/work.md": [
+    "@site/docs/f2e/css/index.md": [
       32
     ],
-    "@site/docs/f2e/css/index.md": [
+    "@site/docs/f2e/html/index.md": [
       33
     ],
-    "@site/docs/f2e/html/index.md": [
+    "@site/docs/f2e/javascript/async.md": [
       34
     ],
-    "@site/docs/f2e/javascript/async.md": [
+    "@site/docs/f2e/javascript/grammer.md": [
       35
     ],
-    "@site/docs/f2e/javascript/grammer.md": [
+    "@site/docs/f2e/javascript/module.md": [
       36
     ],
-    "@site/docs/f2e/javascript/module.md": [
+    "@site/docs/f2e/javascript/oop.md": [
       37
     ],
-    "@site/docs/f2e/javascript/oop.md": [
+    "@site/docs/f2e/javascript/regexp.md": [
       38
     ],
-    "@site/docs/f2e/javascript/regexp.md": [
+    "@site/docs/f2e/javascript/skill.md": [
       39
     ],
     "@site/docs/f2e/javascript/type.md": [
@@ -261,25 +261,25 @@
     "@site/docs/f2e/vue/origin.md": [
       69
     ],
-    "@site/docs/f2e/webpack/basic/index.md": [
+    "@site/docs/f2e/vue/zf.md": [
       70
     ],
-    "@site/docs/f2e/webpack/principle/index.md": [
+    "@site/docs/f2e/webpack/basic/index.md": [
       71
     ],
-    "@site/docs/linux/file.md": [
+    "@site/docs/f2e/webpack/principle/index.md": [
       72
     ],
-    "@site/docs/linux/index.md": [
+    "@site/docs/linux/file.md": [
       73
     ],
-    "@site/docs/linux/service.md": [
+    "@site/docs/linux/index.md": [
       74
     ],
-    "@site/docs/linux/soft.md": [
+    "@site/docs/linux/service.md": [
       75
     ],
-    "@site/docs/mdx.md": [
+    "@site/docs/linux/soft.md": [
       76
     ],
     "@site/docs/nginx/index.md": [
@@ -297,420 +297,426 @@
     "@site/docs/nodejs/util.md": [
       81
     ],
-    "@site/docs/other/kindle-rss.md": [
+    "@site/docs/other/blog.md": [
       82
     ],
-    "@site/docs/other/mac.md": [
+    "@site/docs/other/kindle-rss.md": [
       83
     ],
-    "@site/docs/other/resource.md": [
+    "@site/docs/other/mac.md": [
       84
     ],
-    "@site/docs/patterns/action.md": [
+    "@site/docs/other/resource.md": [
       85
     ],
-    "@site/docs/patterns/adapter.md": [
+    "@site/docs/patterns/action.md": [
       86
     ],
-    "@site/docs/patterns/bridge.md": [
+    "@site/docs/patterns/adapter.md": [
       87
     ],
-    "@site/docs/patterns/builder.md": [
+    "@site/docs/patterns/bridge.md": [
       88
     ],
-    "@site/docs/patterns/chain-of-responsibility.md": [
+    "@site/docs/patterns/builder.md": [
       89
     ],
-    "@site/docs/patterns/command.md": [
+    "@site/docs/patterns/chain-of-responsibility.md": [
       90
     ],
-    "@site/docs/patterns/composite.md": [
+    "@site/docs/patterns/command.md": [
       91
     ],
-    "@site/docs/patterns/decorator.md": [
+    "@site/docs/patterns/composite.md": [
       92
     ],
-    "@site/docs/patterns/facade.md": [
+    "@site/docs/patterns/decorator.md": [
       93
     ],
-    "@site/docs/patterns/factory.md": [
+    "@site/docs/patterns/facade.md": [
       94
     ],
-    "@site/docs/patterns/flyweight.md": [
+    "@site/docs/patterns/factory.md": [
       95
     ],
-    "@site/docs/patterns/index.md": [
+    "@site/docs/patterns/flyweight.md": [
       96
     ],
-    "@site/docs/patterns/interpreter.md": [
+    "@site/docs/patterns/index.md": [
       97
     ],
-    "@site/docs/patterns/iterator.md": [
+    "@site/docs/patterns/interpreter.md": [
       98
     ],
-    "@site/docs/patterns/mediator.md": [
+    "@site/docs/patterns/iterator.md": [
       99
     ],
-    "@site/docs/patterns/memento.md": [
+    "@site/docs/patterns/mediator.md": [
       100
     ],
-    "@site/docs/patterns/observer.md": [
+    "@site/docs/patterns/memento.md": [
       101
     ],
-    "@site/docs/patterns/prototype.md": [
+    "@site/docs/patterns/observer.md": [
       102
     ],
-    "@site/docs/patterns/proxy.md": [
+    "@site/docs/patterns/prototype.md": [
       103
     ],
-    "@site/docs/patterns/singleton.md": [
+    "@site/docs/patterns/proxy.md": [
       104
     ],
-    "@site/docs/patterns/state.md": [
+    "@site/docs/patterns/singleton.md": [
       105
     ],
-    "@site/docs/patterns/strategy.md": [
+    "@site/docs/patterns/state.md": [
       106
     ],
-    "@site/docs/patterns/template.md": [
+    "@site/docs/patterns/strategy.md": [
       107
     ],
-    "@site/docs/patterns/visitor.md": [
+    "@site/docs/patterns/template.md": [
       108
     ],
-    "@site/docs/source/jquery/event.md": [
+    "@site/docs/patterns/visitor.md": [
       109
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-b5f.json": [
+    "@site/docs/source/jquery/event.md": [
       110
     ],
-    "main": [
-      213,
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-b5f.json": [
       111
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-2019-08-12-think-house-6ef.json": [
+    "main": [
+      215,
       112
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-c06.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-2019-08-12-think-house-6ef.json": [
       113
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-tags-house-45d.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-c06.json": [
       114
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-tags-think-7e5.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-tags-house-45d.json": [
       115
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-about-5c5.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-tags-think-7e5.json": [
       116
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-algo-index-5bf.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-about-5c5.json": [
       117
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-base-compute-combine-e5b.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-algo-index-5bf.json": [
       118
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-base-h-5-88e.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-base-compute-combine-e5b.json": [
       119
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-base-net-http-770.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-base-h-5-88e.json": [
       120
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-base-net-tcp-71c.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-base-net-http-770.json": [
       121
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-database-mongo-4b5.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-base-net-tcp-71c.json": [
       122
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-database-mysql-1e3.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-database-mongo-4b5.json": [
       123
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-database-redis-08c.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-database-mysql-1e3.json": [
       124
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-demo-index-a9e.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-database-redis-08c.json": [
       125
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-doc-2-29a.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-demo-index-a9e.json": [
       126
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-doc-3-72e.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-cache-449.json": [
       127
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-cache-449.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-devtool-478.json": [
       128
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-devtool-478.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-dom-567.json": [
       129
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-event-f10.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-event-f10.json": [
       130
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-eventloop-c5c.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-eventloop-c5c.json": [
       131
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-fetch-321.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-fetch-321.json": [
       132
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-storage-388.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-storage-388.json": [
       133
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-v-8-5d5.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-v-8-5d5.json": [
       134
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-work-df4.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-browser-work-df4.json": [
       135
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-css-index-d26.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-css-index-d26.json": [
       136
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-html-index-f36.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-html-index-f36.json": [
       137
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-async-c19.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-async-c19.json": [
       138
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-grammer-be7.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-grammer-be7.json": [
       139
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-module-300.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-module-300.json": [
       140
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-oop-e46.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-oop-e46.json": [
       141
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-regexp-28a.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-regexp-28a.json": [
       142
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-type-20a.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-skill-2f2.json": [
       143
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-monitor-index-7ba.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-javascript-type-20a.json": [
       144
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-performance-index-300.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-monitor-index-7ba.json": [
       145
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-index-495.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-performance-index-300.json": [
       146
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-alert-a43.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-index-495.json": [
       147
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-android-65e.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-alert-a43.json": [
       148
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-bugly-286.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-android-65e.json": [
       149
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-camera-9c1.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-bugly-286.json": [
       150
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-code-push-79d.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-camera-9c1.json": [
       151
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-deploy-963.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-code-push-79d.json": [
       152
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-fetch-1f4.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-deploy-963.json": [
       153
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-form-9eb.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-fetch-1f4.json": [
       154
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-git-124.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-form-9eb.json": [
       155
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-index-6e8.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-git-124.json": [
       156
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-issue-9f2.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-index-6e8.json": [
       157
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-loading-1ea.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-issue-9f2.json": [
       158
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-react-native-video-b7b.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-loading-1ea.json": [
       159
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-save-to-camera-103.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-react-native-video-b7b.json": [
       160
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-share-to-wechat-646.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-save-to-camera-103.json": [
       161
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-size-0d9.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-share-to-wechat-646.json": [
       162
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-source-bd2.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-size-0d9.json": [
       163
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-tech-257.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-source-bd2.json": [
       164
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-update-rn-70e.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-tech-257.json": [
       165
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-waterfall-359.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-update-rn-70e.json": [
       166
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-wechat-7d4.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-waterfall-359.json": [
       167
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-safe-index-ee0.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-react-native-wechat-7d4.json": [
       168
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-test-index-c7d.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-safe-index-ee0.json": [
       169
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-test-jest-e99.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-test-index-c7d.json": [
       170
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-vue-index-b66.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-test-jest-e99.json": [
       171
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-vue-origin-f45.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-vue-index-b66.json": [
       172
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-webpack-basic-index-a30.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-vue-origin-f45.json": [
       173
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-webpack-principle-index-361.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-vue-zf-c18.json": [
       174
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-linux-file-0ef.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-webpack-basic-index-a30.json": [
       175
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-linux-index-1fa.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-f-2-e-webpack-principle-index-361.json": [
       176
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-linux-service-8e1.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-linux-file-0ef.json": [
       177
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-linux-soft-bfd.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-linux-index-1fa.json": [
       178
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-mdx-04f.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-linux-service-8e1.json": [
       179
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nginx-index-bac.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-linux-soft-bfd.json": [
       180
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nodejs-async-4ca.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nginx-index-bac.json": [
       181
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nodejs-safe-1a9.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nodejs-async-4ca.json": [
       182
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nodejs-test-447.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nodejs-safe-1a9.json": [
       183
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nodejs-util-0b8.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nodejs-test-447.json": [
       184
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-other-kindle-rss-67d.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-nodejs-util-0b8.json": [
       185
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-other-mac-041.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-other-blog-684.json": [
       186
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-other-resource-a43.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-other-kindle-rss-67d.json": [
       187
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-action-331.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-other-mac-041.json": [
       188
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-adapter-9a9.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-other-resource-a43.json": [
       189
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-bridge-86f.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-action-331.json": [
       190
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-builder-db5.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-adapter-9a9.json": [
       191
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-chain-of-responsibility-785.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-bridge-86f.json": [
       192
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-command-db0.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-builder-db5.json": [
       193
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-composite-fdb.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-chain-of-responsibility-785.json": [
       194
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-decorator-113.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-command-db0.json": [
       195
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-facade-fe8.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-composite-fdb.json": [
       196
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-factory-32e.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-decorator-113.json": [
       197
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-flyweight-766.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-facade-fe8.json": [
       198
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-index-feb.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-factory-32e.json": [
       199
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-interpreter-f7e.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-flyweight-766.json": [
       200
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-iterator-f9d.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-index-feb.json": [
       201
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-mediator-7da.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-interpreter-f7e.json": [
       202
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-memento-0cb.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-iterator-f9d.json": [
       203
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-observer-d95.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-mediator-7da.json": [
       204
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-prototype-320.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-memento-0cb.json": [
       205
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-proxy-937.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-observer-d95.json": [
       206
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-singleton-2b7.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-prototype-320.json": [
       207
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-state-f3e.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-proxy-937.json": [
       208
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-strategy-9dc.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-singleton-2b7.json": [
       209
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-template-adb.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-state-f3e.json": [
       210
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-visitor-848.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-strategy-9dc.json": [
       211
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-source-jquery-event-8b6.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-template-adb.json": [
       212
     ],
-    "runtime~main": [
-      111,
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-patterns-visitor-848.json": [
       213
     ],
-    "/Users/banli/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-tags-tags-4c2.json": [
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-docs/docs-source-jquery-event-8b6.json": [
       214
+    ],
+    "runtime~main": [
+      112,
+      215
+    ],
+    "/Users/banli/Desktop/banli_blog/.docusaurus/docusaurus-plugin-content-blog/blog-tags-tags-4c2.json": [
+      216
     ],
     "@theme/NotFound": [
       0,
       1,
-      215
+      217
     ]
   },
   "assets": {
     "0": {
       "js": [
         {
-          "file": "0.16af387a65ebed0a8269.js",
-          "hash": "937d9d28662fdf99b053",
-          "publicPath": "/0.16af387a65ebed0a8269.js"
+          "file": "0.c9587aaf32602224b53a.js",
+          "hash": "2edd2e80bdf2871f98e6",
+          "publicPath": "/0.c9587aaf32602224b53a.js"
         }
       ]
     },
@@ -718,15 +724,15 @@
       "css": [
         {
           "file": "1.196ce05925ea6d776920.css",
-          "hash": "64cb25752ede069f6322",
+          "hash": "95d1c1505af2be3849ca",
           "publicPath": "/1.196ce05925ea6d776920.css"
         }
       ],
       "js": [
         {
-          "file": "1.c8be69cf2132cbcf4ef5.js",
-          "hash": "64cb25752ede069f6322",
-          "publicPath": "/1.c8be69cf2132cbcf4ef5.js"
+          "file": "1.b87e7195a03649b49435.js",
+          "hash": "95d1c1505af2be3849ca",
+          "publicPath": "/1.b87e7195a03649b49435.js"
         }
       ]
     },
@@ -734,15 +740,15 @@
       "css": [
         {
           "file": "2.76ced7e22babc8d30c3a.css",
-          "hash": "aa74c15614c4cb8c34ba",
+          "hash": "7a85ccf1e3e802f50c8f",
           "publicPath": "/2.76ced7e22babc8d30c3a.css"
         }
       ],
       "js": [
         {
-          "file": "2.4fb8b682bb18f529e158.js",
-          "hash": "aa74c15614c4cb8c34ba",
-          "publicPath": "/2.4fb8b682bb18f529e158.js"
+          "file": "2.e8f1f759c4320c5032f6.js",
+          "hash": "7a85ccf1e3e802f50c8f",
+          "publicPath": "/2.e8f1f759c4320c5032f6.js"
         }
       ]
     },
@@ -750,15 +756,15 @@
       "css": [
         {
           "file": "3.76fc2d47232fd1193413.css",
-          "hash": "2897b722034c6fe9223e",
+          "hash": "e557e0f275a18b5b96dc",
           "publicPath": "/3.76fc2d47232fd1193413.css"
         }
       ],
       "js": [
         {
-          "file": "3.460c75fdeaa7cfe797a5.js",
-          "hash": "2897b722034c6fe9223e",
-          "publicPath": "/3.460c75fdeaa7cfe797a5.js"
+          "file": "3.7c5f5d1df2cb93bbc10a.js",
+          "hash": "e557e0f275a18b5b96dc",
+          "publicPath": "/3.7c5f5d1df2cb93bbc10a.js"
         }
       ]
     },
@@ -774,52 +780,52 @@
     "5": {
       "js": [
         {
-          "file": "component---theme-blog-list-pagea-6-a-7ba.4e69195dcb253fcf7397.js",
-          "hash": "345097c80b7c7c5702e3",
-          "publicPath": "/component---theme-blog-list-pagea-6-a-7ba.4e69195dcb253fcf7397.js"
+          "file": "component---theme-blog-list-pagea-6-a-7ba.0a21799c9e5ea3fceb3b.js",
+          "hash": "74daf31e5dee2951f877",
+          "publicPath": "/component---theme-blog-list-pagea-6-a-7ba.0a21799c9e5ea3fceb3b.js"
         }
       ]
     },
     "6": {
       "js": [
         {
-          "file": "component---theme-blog-post-pageccc-cab.a451db0146855b682be1.js",
-          "hash": "50d1ca9e46cd407a62e3",
-          "publicPath": "/component---theme-blog-post-pageccc-cab.a451db0146855b682be1.js"
+          "file": "component---theme-blog-post-pageccc-cab.8e2d2ee446add4b2b98b.js",
+          "hash": "e56dc70b62c74d72d983",
+          "publicPath": "/component---theme-blog-post-pageccc-cab.8e2d2ee446add4b2b98b.js"
         }
       ]
     },
     "7": {
       "js": [
         {
-          "file": "component---theme-blog-tags-list-page-01-a-d0b.f425b7d55c26c12854a6.js",
-          "hash": "e729b45a138801e1668e",
-          "publicPath": "/component---theme-blog-tags-list-page-01-a-d0b.f425b7d55c26c12854a6.js"
+          "file": "component---theme-blog-tags-list-page-01-a-d0b.c1d0294e65cf51f7434b.js",
+          "hash": "c7697c1fb49b29bd44b0",
+          "publicPath": "/component---theme-blog-tags-list-page-01-a-d0b.c1d0294e65cf51f7434b.js"
         }
       ]
     },
     "8": {
       "js": [
         {
-          "file": "component---theme-blog-tags-posts-page-687-b6c.dabda3009357984bd788.js",
-          "hash": "5909bb8f85a1c396081c",
-          "publicPath": "/component---theme-blog-tags-posts-page-687-b6c.dabda3009357984bd788.js"
+          "file": "component---theme-blog-tags-posts-page-687-b6c.cdc359f6a4d913ae5117.js",
+          "hash": "67a5f93f92e3817c6d84",
+          "publicPath": "/component---theme-blog-tags-posts-page-687-b6c.cdc359f6a4d913ae5117.js"
         }
       ]
     },
     "9": {
       "css": [
         {
-          "file": "component---theme-doc-legacy-item-031-769.2b73e3d00e20547d80b3.css",
-          "hash": "f63544ad27a3cb55c6bd",
-          "publicPath": "/component---theme-doc-legacy-item-031-769.2b73e3d00e20547d80b3.css"
+          "file": "component---theme-doc-legacy-item-031-769.2f2552f02b6a918fee59.css",
+          "hash": "64721852b9e5e7bbdba4",
+          "publicPath": "/component---theme-doc-legacy-item-031-769.2f2552f02b6a918fee59.css"
         }
       ],
       "js": [
         {
-          "file": "component---theme-doc-legacy-item-031-769.6dced88da14b8c4a1cd5.js",
-          "hash": "f63544ad27a3cb55c6bd",
-          "publicPath": "/component---theme-doc-legacy-item-031-769.6dced88da14b8c4a1cd5.js"
+          "file": "component---theme-doc-legacy-item-031-769.63af36fb5b293fb44f17.js",
+          "hash": "64721852b9e5e7bbdba4",
+          "publicPath": "/component---theme-doc-legacy-item-031-769.63af36fb5b293fb44f17.js"
         }
       ]
     },
@@ -827,1867 +833,1885 @@
       "css": [
         {
           "file": "component---theme-doc-legacy-page-9-e-7-ca5.3c38a2f40a51efdd72a0.css",
-          "hash": "47ffd1c2478ed4742015",
+          "hash": "4d08b2c3c0eda80c6c15",
           "publicPath": "/component---theme-doc-legacy-page-9-e-7-ca5.3c38a2f40a51efdd72a0.css"
         }
       ],
       "js": [
         {
-          "file": "component---theme-doc-legacy-page-9-e-7-ca5.3c362ce04210fe984260.js",
-          "hash": "47ffd1c2478ed4742015",
-          "publicPath": "/component---theme-doc-legacy-page-9-e-7-ca5.3c362ce04210fe984260.js"
+          "file": "component---theme-doc-legacy-page-9-e-7-ca5.1085c0ca4dac1d879092.js",
+          "hash": "4d08b2c3c0eda80c6c15",
+          "publicPath": "/component---theme-doc-legacy-page-9-e-7-ca5.1085c0ca4dac1d879092.js"
         }
       ]
     },
     "11": {
       "js": [
         {
-          "file": "content---blog-2019-08-12-think-house-362-b31.193e591ffd97c180ef22.js",
-          "hash": "c544f6d4611fafe8ddcc",
-          "publicPath": "/content---blog-2019-08-12-think-house-362-b31.193e591ffd97c180ef22.js"
+          "file": "content---blog-2019-08-12-think-house-362-b31.9dd4d64cef8935947cc6.js",
+          "hash": "ce2171e82410f6a7901c",
+          "publicPath": "/content---blog-2019-08-12-think-house-362-b31.9dd4d64cef8935947cc6.js"
         }
       ]
     },
     "12": {
       "js": [
         {
-          "file": "content---bloga-55-f4d.ba60c0c362c0710ea220.js",
-          "hash": "faa6d5fbe7fca2340c11",
-          "publicPath": "/content---bloga-55-f4d.ba60c0c362c0710ea220.js"
+          "file": "content---bloga-55-f4d.489c2054c790952ef46d.js",
+          "hash": "ad3e9e095984e2589f65",
+          "publicPath": "/content---bloga-55-f4d.489c2054c790952ef46d.js"
         }
       ]
     },
     "13": {
       "js": [
         {
-          "file": "content---docs-about-3-d-8-538.b7d28b108bed7c683d86.js",
-          "hash": "f74864a5873404261199",
-          "publicPath": "/content---docs-about-3-d-8-538.b7d28b108bed7c683d86.js"
+          "file": "content---docs-about-3-d-8-538.b22f4002fb1de87b1230.js",
+          "hash": "689fcb7aa12efea847ec",
+          "publicPath": "/content---docs-about-3-d-8-538.b22f4002fb1de87b1230.js"
         }
       ]
     },
     "14": {
       "js": [
         {
-          "file": "content---docs-algo-indexb-4-f-54a.1cce68fcabf52af2e688.js",
-          "hash": "ecc207db2c843bca9a1a",
-          "publicPath": "/content---docs-algo-indexb-4-f-54a.1cce68fcabf52af2e688.js"
+          "file": "content---docs-algo-indexb-4-f-54a.f544321e6098b7e21cb2.js",
+          "hash": "a29a80f86c423db26c69",
+          "publicPath": "/content---docs-algo-indexb-4-f-54a.f544321e6098b7e21cb2.js"
         }
       ]
     },
     "15": {
       "js": [
         {
-          "file": "content---docs-base-compute-combinef-7-f-933.a6ba59c8e045c5039b1f.js",
-          "hash": "b489ed8e84acee0b93a4",
-          "publicPath": "/content---docs-base-compute-combinef-7-f-933.a6ba59c8e045c5039b1f.js"
+          "file": "content---docs-base-compute-combinef-7-f-933.bbe804fc4e1766f967d3.js",
+          "hash": "4e8548c7085461f0e76f",
+          "publicPath": "/content---docs-base-compute-combinef-7-f-933.bbe804fc4e1766f967d3.js"
         }
       ]
     },
     "16": {
       "js": [
         {
-          "file": "content---docs-base-h-5586-54d.731c053525aa30b9eb24.js",
-          "hash": "ce1a3f6260adfcfbea60",
-          "publicPath": "/content---docs-base-h-5586-54d.731c053525aa30b9eb24.js"
+          "file": "content---docs-base-h-5586-54d.2258338422d575187d27.js",
+          "hash": "0dc45fa3460e0b6a2fa1",
+          "publicPath": "/content---docs-base-h-5586-54d.2258338422d575187d27.js"
         }
       ]
     },
     "17": {
       "js": [
         {
-          "file": "content---docs-base-net-http-1-cc-352.a911ab72fad3ec5f83b5.js",
-          "hash": "9e508da21a464290358c",
-          "publicPath": "/content---docs-base-net-http-1-cc-352.a911ab72fad3ec5f83b5.js"
+          "file": "content---docs-base-net-http-1-cc-352.8c0532a7b7d2b66979ee.js",
+          "hash": "88c5e417307f6e9c5308",
+          "publicPath": "/content---docs-base-net-http-1-cc-352.8c0532a7b7d2b66979ee.js"
         }
       ]
     },
     "18": {
       "js": [
         {
-          "file": "content---docs-base-net-tcpd-0-c-487.05016cb9df1bc07a3ea5.js",
-          "hash": "af054ff6a0f92dc6ffa3",
-          "publicPath": "/content---docs-base-net-tcpd-0-c-487.05016cb9df1bc07a3ea5.js"
+          "file": "content---docs-base-net-tcpd-0-c-487.ded6692aa2655c6522aa.js",
+          "hash": "83ec5a9b5875ec250575",
+          "publicPath": "/content---docs-base-net-tcpd-0-c-487.ded6692aa2655c6522aa.js"
         }
       ]
     },
     "19": {
       "js": [
         {
-          "file": "content---docs-database-mongo-2-c-4-a31.3f8b2e20c9ae87c7c329.js",
-          "hash": "4a910125de80c16df863",
-          "publicPath": "/content---docs-database-mongo-2-c-4-a31.3f8b2e20c9ae87c7c329.js"
+          "file": "content---docs-database-mongo-2-c-4-a31.e91455dcec407920091d.js",
+          "hash": "e4a190e8e6934b7c0ae0",
+          "publicPath": "/content---docs-database-mongo-2-c-4-a31.e91455dcec407920091d.js"
         }
       ]
     },
     "20": {
       "js": [
         {
-          "file": "content---docs-database-mysql-561-697.c2d1e5b3d27333a7c266.js",
-          "hash": "b1e519c96ba70153bfab",
-          "publicPath": "/content---docs-database-mysql-561-697.c2d1e5b3d27333a7c266.js"
+          "file": "content---docs-database-mysql-561-697.8d9b06089ed38971996c.js",
+          "hash": "e2f003af13b0363571a0",
+          "publicPath": "/content---docs-database-mysql-561-697.8d9b06089ed38971996c.js"
         }
       ]
     },
     "21": {
       "js": [
         {
-          "file": "content---docs-database-redise-5-d-9ae.0f50eadac45bec2eb390.js",
-          "hash": "6de705e061d7d6dbc688",
-          "publicPath": "/content---docs-database-redise-5-d-9ae.0f50eadac45bec2eb390.js"
+          "file": "content---docs-database-redise-5-d-9ae.8da280d7a5afc1ada019.js",
+          "hash": "c1b644151f8aaf8c7da7",
+          "publicPath": "/content---docs-database-redise-5-d-9ae.8da280d7a5afc1ada019.js"
         }
       ]
     },
     "22": {
       "js": [
         {
-          "file": "content---docs-demo-index-648-2ab.4991a563ad558def5d5d.js",
-          "hash": "5fddced04075a6badde6",
-          "publicPath": "/content---docs-demo-index-648-2ab.4991a563ad558def5d5d.js"
+          "file": "content---docs-demo-index-648-2ab.7a9097eea3f4eb857d5f.js",
+          "hash": "8837fd7067ebec24d0d4",
+          "publicPath": "/content---docs-demo-index-648-2ab.7a9097eea3f4eb857d5f.js"
         }
       ]
     },
     "23": {
       "js": [
         {
-          "file": "content---docs-doc-2-df-3-eaa.23da38d778862642eda6.js",
-          "hash": "26b4dd35a3ed401d24b8",
-          "publicPath": "/content---docs-doc-2-df-3-eaa.23da38d778862642eda6.js"
+          "file": "content---docs-f-2-e-browser-cache-260-909.edf99a580762ddae6c5e.js",
+          "hash": "9b5d798a19dc00d19e53",
+          "publicPath": "/content---docs-f-2-e-browser-cache-260-909.edf99a580762ddae6c5e.js"
         }
       ]
     },
     "24": {
       "js": [
         {
-          "file": "content---docs-doc-3616-40c.c8f907d35e4938b88430.js",
-          "hash": "7d63c8a7bc65a9f569c4",
-          "publicPath": "/content---docs-doc-3616-40c.c8f907d35e4938b88430.js"
+          "file": "content---docs-f-2-e-browser-devtool-850-efc.5b23ab4200958d1b3637.js",
+          "hash": "d75fda050e9f1a1c27ec",
+          "publicPath": "/content---docs-f-2-e-browser-devtool-850-efc.5b23ab4200958d1b3637.js"
         }
       ]
     },
     "25": {
       "js": [
         {
-          "file": "content---docs-f-2-e-browser-cache-260-909.c3eb54269bc242502844.js",
-          "hash": "ec868e26b60656fcdf13",
-          "publicPath": "/content---docs-f-2-e-browser-cache-260-909.c3eb54269bc242502844.js"
+          "file": "content---docs-f-2-e-browser-dom-018-426.407ac50822c262f3ea09.js",
+          "hash": "7b25d5b02598d56a5c27",
+          "publicPath": "/content---docs-f-2-e-browser-dom-018-426.407ac50822c262f3ea09.js"
         }
       ]
     },
     "26": {
       "js": [
         {
-          "file": "content---docs-f-2-e-browser-devtool-850-efc.d3deea3b0ba8b8ad8e0a.js",
-          "hash": "543f2551a8e796012133",
-          "publicPath": "/content---docs-f-2-e-browser-devtool-850-efc.d3deea3b0ba8b8ad8e0a.js"
+          "file": "content---docs-f-2-e-browser-eventa-5-d-93e.ecfddb3e4b879bc8d4a6.js",
+          "hash": "4dedef09ad6bb2dee7e7",
+          "publicPath": "/content---docs-f-2-e-browser-eventa-5-d-93e.ecfddb3e4b879bc8d4a6.js"
         }
       ]
     },
     "27": {
       "js": [
         {
-          "file": "content---docs-f-2-e-browser-eventa-5-d-93e.727a9b03c68a0167fb51.js",
-          "hash": "4ab2cf7cf2cf46290208",
-          "publicPath": "/content---docs-f-2-e-browser-eventa-5-d-93e.727a9b03c68a0167fb51.js"
+          "file": "content---docs-f-2-e-browser-eventloop-473-bc4.88281ef36c33f14955d2.js",
+          "hash": "90fd794b8dd2924ac2ef",
+          "publicPath": "/content---docs-f-2-e-browser-eventloop-473-bc4.88281ef36c33f14955d2.js"
         }
       ]
     },
     "28": {
       "js": [
         {
-          "file": "content---docs-f-2-e-browser-eventloop-473-bc4.9b8274d59ab5261cc993.js",
-          "hash": "7a591bec9f3817b3621d",
-          "publicPath": "/content---docs-f-2-e-browser-eventloop-473-bc4.9b8274d59ab5261cc993.js"
+          "file": "content---docs-f-2-e-browser-fetch-147-732.73df2df1c899b03dcdb5.js",
+          "hash": "f5cdfc3119c474a67f07",
+          "publicPath": "/content---docs-f-2-e-browser-fetch-147-732.73df2df1c899b03dcdb5.js"
         }
       ]
     },
     "29": {
       "js": [
         {
-          "file": "content---docs-f-2-e-browser-fetch-147-732.541044e1d1d2f12ec2fd.js",
-          "hash": "26081bc4af86ccbc68d1",
-          "publicPath": "/content---docs-f-2-e-browser-fetch-147-732.541044e1d1d2f12ec2fd.js"
+          "file": "content---docs-f-2-e-browser-storage-0-e-2-cd2.e4c1c246ee4ee3ef5ef5.js",
+          "hash": "20c7799b26ab07df7a2c",
+          "publicPath": "/content---docs-f-2-e-browser-storage-0-e-2-cd2.e4c1c246ee4ee3ef5ef5.js"
         }
       ]
     },
     "30": {
       "js": [
         {
-          "file": "content---docs-f-2-e-browser-storage-0-e-2-cd2.5e10820c5be8537e7aa3.js",
-          "hash": "af00d5cf84098ee57d94",
-          "publicPath": "/content---docs-f-2-e-browser-storage-0-e-2-cd2.5e10820c5be8537e7aa3.js"
+          "file": "content---docs-f-2-e-browser-v-8-c-83-515.25aa6d0bfec445cd0539.js",
+          "hash": "74e4705d8feef3933423",
+          "publicPath": "/content---docs-f-2-e-browser-v-8-c-83-515.25aa6d0bfec445cd0539.js"
         }
       ]
     },
     "31": {
       "js": [
         {
-          "file": "content---docs-f-2-e-browser-v-8-c-83-515.da1039f2097639386e8c.js",
-          "hash": "ea10c0045cbf083b9b85",
-          "publicPath": "/content---docs-f-2-e-browser-v-8-c-83-515.da1039f2097639386e8c.js"
+          "file": "content---docs-f-2-e-browser-work-31-f-d77.a0c465be0361c3dbe22c.js",
+          "hash": "56bac771ed911ed1a6a9",
+          "publicPath": "/content---docs-f-2-e-browser-work-31-f-d77.a0c465be0361c3dbe22c.js"
         }
       ]
     },
     "32": {
       "js": [
         {
-          "file": "content---docs-f-2-e-browser-work-31-f-d77.e06552ae9eb8b3659d7b.js",
-          "hash": "cce134b82f47d30be055",
-          "publicPath": "/content---docs-f-2-e-browser-work-31-f-d77.e06552ae9eb8b3659d7b.js"
+          "file": "content---docs-f-2-e-css-indexf-55-541.f41dc6a33da05bec58f8.js",
+          "hash": "92f12e5aab206d50478f",
+          "publicPath": "/content---docs-f-2-e-css-indexf-55-541.f41dc6a33da05bec58f8.js"
         }
       ]
     },
     "33": {
       "js": [
         {
-          "file": "content---docs-f-2-e-css-indexf-55-541.efaa67a27cb86621a3e8.js",
-          "hash": "f6a2a47c51192d112a43",
-          "publicPath": "/content---docs-f-2-e-css-indexf-55-541.efaa67a27cb86621a3e8.js"
+          "file": "content---docs-f-2-e-html-index-9-d-1-79a.aa737df8610ee0edd562.js",
+          "hash": "a385b7e3cc85dc3b1cc5",
+          "publicPath": "/content---docs-f-2-e-html-index-9-d-1-79a.aa737df8610ee0edd562.js"
         }
       ]
     },
     "34": {
       "js": [
         {
-          "file": "content---docs-f-2-e-html-index-9-d-1-79a.7c52b984737f2535e5ae.js",
-          "hash": "a0bff97a9952f2af60c6",
-          "publicPath": "/content---docs-f-2-e-html-index-9-d-1-79a.7c52b984737f2535e5ae.js"
+          "file": "content---docs-f-2-e-javascript-asynceb-2-d37.1d92b62388af21ab94de.js",
+          "hash": "52cdb545af0629518eb6",
+          "publicPath": "/content---docs-f-2-e-javascript-asynceb-2-d37.1d92b62388af21ab94de.js"
         }
       ]
     },
     "35": {
       "js": [
         {
-          "file": "content---docs-f-2-e-javascript-asynceb-2-d37.13a52c8167f18c12cf21.js",
-          "hash": "b3518d664db508a19bbb",
-          "publicPath": "/content---docs-f-2-e-javascript-asynceb-2-d37.13a52c8167f18c12cf21.js"
+          "file": "content---docs-f-2-e-javascript-grammer-447-369.f7b80ec1b5e8db94c92a.js",
+          "hash": "5f7f4121daa92da9c194",
+          "publicPath": "/content---docs-f-2-e-javascript-grammer-447-369.f7b80ec1b5e8db94c92a.js"
         }
       ]
     },
     "36": {
       "js": [
         {
-          "file": "content---docs-f-2-e-javascript-grammer-447-369.08c02c555b6463682067.js",
-          "hash": "bbcda84c3386487af78c",
-          "publicPath": "/content---docs-f-2-e-javascript-grammer-447-369.08c02c555b6463682067.js"
+          "file": "content---docs-f-2-e-javascript-modulee-10-ff1.e8c585a2b0b180b14c2f.js",
+          "hash": "69e744f2b3e0b0e6c8aa",
+          "publicPath": "/content---docs-f-2-e-javascript-modulee-10-ff1.e8c585a2b0b180b14c2f.js"
         }
       ]
     },
     "37": {
       "js": [
         {
-          "file": "content---docs-f-2-e-javascript-modulee-10-ff1.101f193db0b8c94fe253.js",
-          "hash": "addf7d4360ec52583e5e",
-          "publicPath": "/content---docs-f-2-e-javascript-modulee-10-ff1.101f193db0b8c94fe253.js"
+          "file": "content---docs-f-2-e-javascript-oop-3-a-2-e5a.c65260e27d9db92b251e.js",
+          "hash": "da5b163a06cb5eb2fc52",
+          "publicPath": "/content---docs-f-2-e-javascript-oop-3-a-2-e5a.c65260e27d9db92b251e.js"
         }
       ]
     },
     "38": {
       "js": [
         {
-          "file": "content---docs-f-2-e-javascript-oop-3-a-2-e5a.38052ce202f61310d687.js",
-          "hash": "cfa11c574021c88cdf4c",
-          "publicPath": "/content---docs-f-2-e-javascript-oop-3-a-2-e5a.38052ce202f61310d687.js"
+          "file": "content---docs-f-2-e-javascript-regexp-987-85e.42bab3214e526417d3cf.js",
+          "hash": "263515912f7f382b959d",
+          "publicPath": "/content---docs-f-2-e-javascript-regexp-987-85e.42bab3214e526417d3cf.js"
         }
       ]
     },
     "39": {
       "js": [
         {
-          "file": "content---docs-f-2-e-javascript-regexp-987-85e.9bcdca5b23925a382148.js",
-          "hash": "d519099d9304baec7305",
-          "publicPath": "/content---docs-f-2-e-javascript-regexp-987-85e.9bcdca5b23925a382148.js"
+          "file": "content---docs-f-2-e-javascript-skill-687-c8f.74bd2f75577a97336731.js",
+          "hash": "c69dafcf3dd44af345f2",
+          "publicPath": "/content---docs-f-2-e-javascript-skill-687-c8f.74bd2f75577a97336731.js"
         }
       ]
     },
     "40": {
       "js": [
         {
-          "file": "content---docs-f-2-e-javascript-type-58-e-e47.cb34d0fd6a339bc2a9f8.js",
-          "hash": "cef3fa72ee5734957f6a",
-          "publicPath": "/content---docs-f-2-e-javascript-type-58-e-e47.cb34d0fd6a339bc2a9f8.js"
+          "file": "content---docs-f-2-e-javascript-type-58-e-e47.5ad3368307959460988d.js",
+          "hash": "9dcb72f99e7331a38b5b",
+          "publicPath": "/content---docs-f-2-e-javascript-type-58-e-e47.5ad3368307959460988d.js"
         }
       ]
     },
     "41": {
       "js": [
         {
-          "file": "content---docs-f-2-e-monitor-index-391-ad0.39c63795fdfa8f3dd85d.js",
-          "hash": "a7127aa195af26a78c0a",
-          "publicPath": "/content---docs-f-2-e-monitor-index-391-ad0.39c63795fdfa8f3dd85d.js"
+          "file": "content---docs-f-2-e-monitor-index-391-ad0.503db2e8f3fe2efaa097.js",
+          "hash": "5e96506e6ffe1e71f1bb",
+          "publicPath": "/content---docs-f-2-e-monitor-index-391-ad0.503db2e8f3fe2efaa097.js"
         }
       ]
     },
     "42": {
       "js": [
         {
-          "file": "content---docs-f-2-e-performance-indexaef-e1d.4c682db8d3ef4a860816.js",
-          "hash": "c4ff3c12a7f52c7ab03e",
-          "publicPath": "/content---docs-f-2-e-performance-indexaef-e1d.4c682db8d3ef4a860816.js"
+          "file": "content---docs-f-2-e-performance-indexaef-e1d.a19b9d087cde8aa1b16c.js",
+          "hash": "b3a1461d416f7a4e66e0",
+          "publicPath": "/content---docs-f-2-e-performance-indexaef-e1d.a19b9d087cde8aa1b16c.js"
         }
       ]
     },
     "43": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-index-0-cb-3f0.407d67511ef5e83e8a21.js",
-          "hash": "99fff3ac3d5978a944d5",
-          "publicPath": "/content---docs-f-2-e-react-index-0-cb-3f0.407d67511ef5e83e8a21.js"
+          "file": "content---docs-f-2-e-react-index-0-cb-3f0.815aee0de96f4a421b3b.js",
+          "hash": "7aa4dd194bcc61ca759b",
+          "publicPath": "/content---docs-f-2-e-react-index-0-cb-3f0.815aee0de96f4a421b3b.js"
         }
       ]
     },
     "44": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-alert-6-d-1-303.19309440d51a7bf94760.js",
-          "hash": "831a0ad9084f6a72190c",
-          "publicPath": "/content---docs-f-2-e-react-native-alert-6-d-1-303.19309440d51a7bf94760.js"
+          "file": "content---docs-f-2-e-react-native-alert-6-d-1-303.a904ff079c64362e4f44.js",
+          "hash": "b42a0fdd3260e34a84e2",
+          "publicPath": "/content---docs-f-2-e-react-native-alert-6-d-1-303.a904ff079c64362e4f44.js"
         }
       ]
     },
     "45": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-androide-34-3a4.b279e1db648923ccf79a.js",
-          "hash": "d339f78770abdd5a243c",
-          "publicPath": "/content---docs-f-2-e-react-native-androide-34-3a4.b279e1db648923ccf79a.js"
+          "file": "content---docs-f-2-e-react-native-androide-34-3a4.117d7a94fad5167e51ad.js",
+          "hash": "75a91fcf33ba3325c6aa",
+          "publicPath": "/content---docs-f-2-e-react-native-androide-34-3a4.117d7a94fad5167e51ad.js"
         }
       ]
     },
     "46": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-bugly-8-d-4-ab2.6500f37b63076cacddb9.js",
-          "hash": "aa4c0ca804f753b8fa40",
-          "publicPath": "/content---docs-f-2-e-react-native-bugly-8-d-4-ab2.6500f37b63076cacddb9.js"
+          "file": "content---docs-f-2-e-react-native-bugly-8-d-4-ab2.d2acf37aa28e499cfb67.js",
+          "hash": "dd17c21c8076367eb9f3",
+          "publicPath": "/content---docs-f-2-e-react-native-bugly-8-d-4-ab2.d2acf37aa28e499cfb67.js"
         }
       ]
     },
     "47": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-camera-597-89d.3f7df8cec57d324a184c.js",
-          "hash": "78fe68b3705aa61db6df",
-          "publicPath": "/content---docs-f-2-e-react-native-camera-597-89d.3f7df8cec57d324a184c.js"
+          "file": "content---docs-f-2-e-react-native-camera-597-89d.59bbc0f5548e77f8f4dd.js",
+          "hash": "fc9d4f6f4ec95c926120",
+          "publicPath": "/content---docs-f-2-e-react-native-camera-597-89d.59bbc0f5548e77f8f4dd.js"
         }
       ]
     },
     "48": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-code-pusha-39-174.0414b9ad9c660635f577.js",
-          "hash": "b1895e11b4a0a0a80a30",
-          "publicPath": "/content---docs-f-2-e-react-native-code-pusha-39-174.0414b9ad9c660635f577.js"
+          "file": "content---docs-f-2-e-react-native-code-pusha-39-174.a2b0a669c96b1cdfaf9c.js",
+          "hash": "8c931f5d23d451a40fcc",
+          "publicPath": "/content---docs-f-2-e-react-native-code-pusha-39-174.a2b0a669c96b1cdfaf9c.js"
         }
       ]
     },
     "49": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-deploy-500-e54.9c04fe4b27344b01d92e.js",
-          "hash": "7a12efbf6c575c7aab58",
-          "publicPath": "/content---docs-f-2-e-react-native-deploy-500-e54.9c04fe4b27344b01d92e.js"
+          "file": "content---docs-f-2-e-react-native-deploy-500-e54.fbe7dc438cca9b471128.js",
+          "hash": "2e5a714300a17d03fea3",
+          "publicPath": "/content---docs-f-2-e-react-native-deploy-500-e54.fbe7dc438cca9b471128.js"
         }
       ]
     },
     "50": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-fetch-756-af5.6a7d9b75a55083c05e0a.js",
-          "hash": "46dc7155cfd7d31e93c8",
-          "publicPath": "/content---docs-f-2-e-react-native-fetch-756-af5.6a7d9b75a55083c05e0a.js"
+          "file": "content---docs-f-2-e-react-native-fetch-756-af5.18e0f039ff3be3fe54ec.js",
+          "hash": "558127a109f129e085f7",
+          "publicPath": "/content---docs-f-2-e-react-native-fetch-756-af5.18e0f039ff3be3fe54ec.js"
         }
       ]
     },
     "51": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-form-7-a-1-0fb.db7695f5750900a34db4.js",
-          "hash": "a4f500eabc03afb04048",
-          "publicPath": "/content---docs-f-2-e-react-native-form-7-a-1-0fb.db7695f5750900a34db4.js"
+          "file": "content---docs-f-2-e-react-native-form-7-a-1-0fb.2edc8f77f59028df5ad3.js",
+          "hash": "e1f0fbdc5e76f78c39e2",
+          "publicPath": "/content---docs-f-2-e-react-native-form-7-a-1-0fb.2edc8f77f59028df5ad3.js"
         }
       ]
     },
     "52": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-gitf-9-e-d83.d46fffc0cef2006dda9a.js",
-          "hash": "a5531b2565bcf274c3cd",
-          "publicPath": "/content---docs-f-2-e-react-native-gitf-9-e-d83.d46fffc0cef2006dda9a.js"
+          "file": "content---docs-f-2-e-react-native-gitf-9-e-d83.dd440a13b75c0c6c9de6.js",
+          "hash": "45b7369c48f576447822",
+          "publicPath": "/content---docs-f-2-e-react-native-gitf-9-e-d83.dd440a13b75c0c6c9de6.js"
         }
       ]
     },
     "53": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-index-889-a61.5f8ccc965bad9a77b68e.js",
-          "hash": "73efe63575ecbddb1169",
-          "publicPath": "/content---docs-f-2-e-react-native-index-889-a61.5f8ccc965bad9a77b68e.js"
+          "file": "content---docs-f-2-e-react-native-index-889-a61.6cf777c526246692245b.js",
+          "hash": "42713c3fe14f04024e84",
+          "publicPath": "/content---docs-f-2-e-react-native-index-889-a61.6cf777c526246692245b.js"
         }
       ]
     },
     "54": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-issue-0-f-6-864.c37eab0bd3161347c279.js",
-          "hash": "621cccee9e7071139e58",
-          "publicPath": "/content---docs-f-2-e-react-native-issue-0-f-6-864.c37eab0bd3161347c279.js"
+          "file": "content---docs-f-2-e-react-native-issue-0-f-6-864.2d17cdbc4910fa8fe779.js",
+          "hash": "aabf0e8884a4f270f905",
+          "publicPath": "/content---docs-f-2-e-react-native-issue-0-f-6-864.2d17cdbc4910fa8fe779.js"
         }
       ]
     },
     "55": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-loading-84-c-73a.cd630242b3b99a6e7f98.js",
-          "hash": "10b4729410a3419d433d",
-          "publicPath": "/content---docs-f-2-e-react-native-loading-84-c-73a.cd630242b3b99a6e7f98.js"
+          "file": "content---docs-f-2-e-react-native-loading-84-c-73a.65ca63a01b7b73bce402.js",
+          "hash": "7739d80e2815fa457d0a",
+          "publicPath": "/content---docs-f-2-e-react-native-loading-84-c-73a.65ca63a01b7b73bce402.js"
         }
       ]
     },
     "56": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-react-native-videoc-1-d-e43.f990d7755e9188df1364.js",
-          "hash": "e816be2c090c2ec2a87e",
-          "publicPath": "/content---docs-f-2-e-react-native-react-native-videoc-1-d-e43.f990d7755e9188df1364.js"
+          "file": "content---docs-f-2-e-react-native-react-native-videoc-1-d-e43.cfbf91fed2c4623a6b3a.js",
+          "hash": "554e20d69688d6f5feba",
+          "publicPath": "/content---docs-f-2-e-react-native-react-native-videoc-1-d-e43.cfbf91fed2c4623a6b3a.js"
         }
       ]
     },
     "57": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-save-to-camera-693-68d.5302fecfd0710d252190.js",
-          "hash": "00f47f5584d42ef113be",
-          "publicPath": "/content---docs-f-2-e-react-native-save-to-camera-693-68d.5302fecfd0710d252190.js"
+          "file": "content---docs-f-2-e-react-native-save-to-camera-693-68d.59f7e8c3896af23a1bc5.js",
+          "hash": "fbbeeb80295c2eabd0ae",
+          "publicPath": "/content---docs-f-2-e-react-native-save-to-camera-693-68d.59f7e8c3896af23a1bc5.js"
         }
       ]
     },
     "58": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-share-to-wechatf-7-d-17b.0a97d5274aae7fcdfbdf.js",
-          "hash": "d3034521257c1b51c7d1",
-          "publicPath": "/content---docs-f-2-e-react-native-share-to-wechatf-7-d-17b.0a97d5274aae7fcdfbdf.js"
+          "file": "content---docs-f-2-e-react-native-share-to-wechatf-7-d-17b.c1714b30c6abed71a055.js",
+          "hash": "50927edc0b93c1c709e1",
+          "publicPath": "/content---docs-f-2-e-react-native-share-to-wechatf-7-d-17b.c1714b30c6abed71a055.js"
         }
       ]
     },
     "59": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-size-5-b-4-c24.17ef38f6f5d666e3beab.js",
-          "hash": "f4c5ec04cfb76a68393e",
-          "publicPath": "/content---docs-f-2-e-react-native-size-5-b-4-c24.17ef38f6f5d666e3beab.js"
+          "file": "content---docs-f-2-e-react-native-size-5-b-4-c24.65d77f6a064b0605331f.js",
+          "hash": "e286650a78c5668fdf23",
+          "publicPath": "/content---docs-f-2-e-react-native-size-5-b-4-c24.65d77f6a064b0605331f.js"
         }
       ]
     },
     "60": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-source-877-2ea.a321ee908c620c916294.js",
-          "hash": "6a590896b3db58c68d2a",
-          "publicPath": "/content---docs-f-2-e-react-native-source-877-2ea.a321ee908c620c916294.js"
+          "file": "content---docs-f-2-e-react-native-source-877-2ea.acf2e5e3a1130e890d40.js",
+          "hash": "7b0f98994fd0bd328760",
+          "publicPath": "/content---docs-f-2-e-react-native-source-877-2ea.acf2e5e3a1130e890d40.js"
         }
       ]
     },
     "61": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-tech-226-30f.a7740702379f54c3a371.js",
-          "hash": "966deb6f67a3d560e64e",
-          "publicPath": "/content---docs-f-2-e-react-native-tech-226-30f.a7740702379f54c3a371.js"
+          "file": "content---docs-f-2-e-react-native-tech-226-30f.f3c520f2a64e6686cd7b.js",
+          "hash": "0d7382b34716594e24ed",
+          "publicPath": "/content---docs-f-2-e-react-native-tech-226-30f.f3c520f2a64e6686cd7b.js"
         }
       ]
     },
     "62": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-update-rn-93-f-50e.b1a4c4fdb42367ec1457.js",
-          "hash": "7b2f570855bb34c5238c",
-          "publicPath": "/content---docs-f-2-e-react-native-update-rn-93-f-50e.b1a4c4fdb42367ec1457.js"
+          "file": "content---docs-f-2-e-react-native-update-rn-93-f-50e.7e2e2a951faab482273b.js",
+          "hash": "c1b66a9e159692367acb",
+          "publicPath": "/content---docs-f-2-e-react-native-update-rn-93-f-50e.7e2e2a951faab482273b.js"
         }
       ]
     },
     "63": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-waterfall-629-6ad.91163b9899018fd45c91.js",
-          "hash": "fb497cd4d1bdedf854a0",
-          "publicPath": "/content---docs-f-2-e-react-native-waterfall-629-6ad.91163b9899018fd45c91.js"
+          "file": "content---docs-f-2-e-react-native-waterfall-629-6ad.c9d69ecd70b3af367874.js",
+          "hash": "a837ada078f96bae7d23",
+          "publicPath": "/content---docs-f-2-e-react-native-waterfall-629-6ad.c9d69ecd70b3af367874.js"
         }
       ]
     },
     "64": {
       "js": [
         {
-          "file": "content---docs-f-2-e-react-native-wechate-7-f-088.5b819183ead3ee789b5e.js",
-          "hash": "7c1a6b00d8f27df83ae2",
-          "publicPath": "/content---docs-f-2-e-react-native-wechate-7-f-088.5b819183ead3ee789b5e.js"
+          "file": "content---docs-f-2-e-react-native-wechate-7-f-088.6a6ebdeabe884a34c622.js",
+          "hash": "5ce522fd1f27c5a40ec9",
+          "publicPath": "/content---docs-f-2-e-react-native-wechate-7-f-088.6a6ebdeabe884a34c622.js"
         }
       ]
     },
     "65": {
       "js": [
         {
-          "file": "content---docs-f-2-e-safe-index-165-7db.f09e7426503bd97b8fc8.js",
-          "hash": "a1399ad670c3b45f8227",
-          "publicPath": "/content---docs-f-2-e-safe-index-165-7db.f09e7426503bd97b8fc8.js"
+          "file": "content---docs-f-2-e-safe-index-165-7db.4b6e7f8e05e788bbb2e6.js",
+          "hash": "839f0315b7437133db0f",
+          "publicPath": "/content---docs-f-2-e-safe-index-165-7db.4b6e7f8e05e788bbb2e6.js"
         }
       ]
     },
     "66": {
       "js": [
         {
-          "file": "content---docs-f-2-e-test-index-1-ae-bf1.d69830f81e876f81ee9e.js",
-          "hash": "77f176f3dd66d2132017",
-          "publicPath": "/content---docs-f-2-e-test-index-1-ae-bf1.d69830f81e876f81ee9e.js"
+          "file": "content---docs-f-2-e-test-index-1-ae-bf1.f1822f2f4ac5eea69f74.js",
+          "hash": "27ecb939af593c787e90",
+          "publicPath": "/content---docs-f-2-e-test-index-1-ae-bf1.f1822f2f4ac5eea69f74.js"
         }
       ]
     },
     "67": {
       "js": [
         {
-          "file": "content---docs-f-2-e-test-jestfc-3-df1.308137364e5e0ec20049.js",
-          "hash": "b0894487ce1e95fcaabf",
-          "publicPath": "/content---docs-f-2-e-test-jestfc-3-df1.308137364e5e0ec20049.js"
+          "file": "content---docs-f-2-e-test-jestfc-3-df1.d040b9a2bcc6ee4112db.js",
+          "hash": "33dcd36a139d05a5b548",
+          "publicPath": "/content---docs-f-2-e-test-jestfc-3-df1.d040b9a2bcc6ee4112db.js"
         }
       ]
     },
     "68": {
       "js": [
         {
-          "file": "content---docs-f-2-e-vue-index-02-b-a5c.4cca71863e52a68443b7.js",
-          "hash": "4cbfa317758ca983e6a6",
-          "publicPath": "/content---docs-f-2-e-vue-index-02-b-a5c.4cca71863e52a68443b7.js"
+          "file": "content---docs-f-2-e-vue-index-02-b-a5c.1a89ee7799561a11c838.js",
+          "hash": "6480071370ff0fdaa35a",
+          "publicPath": "/content---docs-f-2-e-vue-index-02-b-a5c.1a89ee7799561a11c838.js"
         }
       ]
     },
     "69": {
       "js": [
         {
-          "file": "content---docs-f-2-e-vue-origind-8-a-797.b4d949a5ad24c6df6e6f.js",
-          "hash": "f8fee2504292984484ec",
-          "publicPath": "/content---docs-f-2-e-vue-origind-8-a-797.b4d949a5ad24c6df6e6f.js"
+          "file": "content---docs-f-2-e-vue-origind-8-a-797.d2a1c92c815111e5ae49.js",
+          "hash": "1d7734b6bba9a5aa226b",
+          "publicPath": "/content---docs-f-2-e-vue-origind-8-a-797.d2a1c92c815111e5ae49.js"
         }
       ]
     },
     "70": {
       "js": [
         {
-          "file": "content---docs-f-2-e-webpack-basic-indexb-92-061.77e36f8fcbd7ab4ebe70.js",
-          "hash": "2c017abb3cdf44487866",
-          "publicPath": "/content---docs-f-2-e-webpack-basic-indexb-92-061.77e36f8fcbd7ab4ebe70.js"
+          "file": "content---docs-f-2-e-vue-zf-6-bb-fd6.692f41b8d417fafc6e9b.js",
+          "hash": "1e0f94df9b6dad12c7a4",
+          "publicPath": "/content---docs-f-2-e-vue-zf-6-bb-fd6.692f41b8d417fafc6e9b.js"
         }
       ]
     },
     "71": {
       "js": [
         {
-          "file": "content---docs-f-2-e-webpack-principle-indexab-1-27c.9d8ed6ac1fed7ef551bc.js",
-          "hash": "9a83d3556e645afb5527",
-          "publicPath": "/content---docs-f-2-e-webpack-principle-indexab-1-27c.9d8ed6ac1fed7ef551bc.js"
+          "file": "content---docs-f-2-e-webpack-basic-indexb-92-061.a356aab10b36725975a9.js",
+          "hash": "cfa26b42d44326d99460",
+          "publicPath": "/content---docs-f-2-e-webpack-basic-indexb-92-061.a356aab10b36725975a9.js"
         }
       ]
     },
     "72": {
       "js": [
         {
-          "file": "content---docs-linux-fileec-1-765.5616c172043ee9abd8e5.js",
-          "hash": "57d06008361bd76d0b21",
-          "publicPath": "/content---docs-linux-fileec-1-765.5616c172043ee9abd8e5.js"
+          "file": "content---docs-f-2-e-webpack-principle-indexab-1-27c.72e6a91cc91a1c9ba7fb.js",
+          "hash": "38f97cc5e87a1fe1135d",
+          "publicPath": "/content---docs-f-2-e-webpack-principle-indexab-1-27c.72e6a91cc91a1c9ba7fb.js"
         }
       ]
     },
     "73": {
       "js": [
         {
-          "file": "content---docs-linux-indexcb-8-9a7.6ac31af62743c6857385.js",
-          "hash": "0fa05e267f17b8486cb4",
-          "publicPath": "/content---docs-linux-indexcb-8-9a7.6ac31af62743c6857385.js"
+          "file": "content---docs-linux-fileec-1-765.b668459315fc826dbf36.js",
+          "hash": "613088c3950ee11bb512",
+          "publicPath": "/content---docs-linux-fileec-1-765.b668459315fc826dbf36.js"
         }
       ]
     },
     "74": {
       "js": [
         {
-          "file": "content---docs-linux-service-49-b-272.0118bb585736d13cc27e.js",
-          "hash": "206b2d91ce12e252f0d2",
-          "publicPath": "/content---docs-linux-service-49-b-272.0118bb585736d13cc27e.js"
+          "file": "content---docs-linux-indexcb-8-9a7.f47eeb5f2d9d73fc2a84.js",
+          "hash": "4a1283b9412d3665189a",
+          "publicPath": "/content---docs-linux-indexcb-8-9a7.f47eeb5f2d9d73fc2a84.js"
         }
       ]
     },
     "75": {
       "js": [
         {
-          "file": "content---docs-linux-soft-422-6cf.dd71f73038793c35d074.js",
-          "hash": "6cc238a6eecd46c013d8",
-          "publicPath": "/content---docs-linux-soft-422-6cf.dd71f73038793c35d074.js"
+          "file": "content---docs-linux-service-49-b-272.88cddff68450d2d288ad.js",
+          "hash": "2111b2b51ef5b7919e46",
+          "publicPath": "/content---docs-linux-service-49-b-272.88cddff68450d2d288ad.js"
         }
       ]
     },
     "76": {
       "js": [
         {
-          "file": "content---docs-mdxce-3-7d1.5d84216d2ac05af7f152.js",
-          "hash": "95ee638621a0a340cc58",
-          "publicPath": "/content---docs-mdxce-3-7d1.5d84216d2ac05af7f152.js"
+          "file": "content---docs-linux-soft-422-6cf.5f724b64dea651a6dd94.js",
+          "hash": "fc7122d5000c93fecae7",
+          "publicPath": "/content---docs-linux-soft-422-6cf.5f724b64dea651a6dd94.js"
         }
       ]
     },
     "77": {
       "js": [
         {
-          "file": "content---docs-nginx-index-16-d-468.5be40c18275708631191.js",
-          "hash": "b3f62b2d149bbe3e9904",
-          "publicPath": "/content---docs-nginx-index-16-d-468.5be40c18275708631191.js"
+          "file": "content---docs-nginx-index-16-d-468.d2297635196c4020956c.js",
+          "hash": "e50125c589757b7ad0ea",
+          "publicPath": "/content---docs-nginx-index-16-d-468.d2297635196c4020956c.js"
         }
       ]
     },
     "78": {
       "js": [
         {
-          "file": "content---docs-nodejs-async-7-f-4-0af.bbb61dd3127c653d7eb9.js",
-          "hash": "6a8110362347234a519f",
-          "publicPath": "/content---docs-nodejs-async-7-f-4-0af.bbb61dd3127c653d7eb9.js"
+          "file": "content---docs-nodejs-async-7-f-4-0af.5454ce07fa8ff7325eaa.js",
+          "hash": "048b31f77d127ec9d384",
+          "publicPath": "/content---docs-nodejs-async-7-f-4-0af.5454ce07fa8ff7325eaa.js"
         }
       ]
     },
     "79": {
       "js": [
         {
-          "file": "content---docs-nodejs-safee-0-a-532.55d0d534634e7530de2c.js",
-          "hash": "983fe5986f9d0eaddbea",
-          "publicPath": "/content---docs-nodejs-safee-0-a-532.55d0d534634e7530de2c.js"
+          "file": "content---docs-nodejs-safee-0-a-532.656a522f1e2499551386.js",
+          "hash": "b0d38fb12b6ccd96e664",
+          "publicPath": "/content---docs-nodejs-safee-0-a-532.656a522f1e2499551386.js"
         }
       ]
     },
     "80": {
       "js": [
         {
-          "file": "content---docs-nodejs-testaf-7-5fa.0a280bf85ae10e106a2e.js",
-          "hash": "dc18dc827a29d795479a",
-          "publicPath": "/content---docs-nodejs-testaf-7-5fa.0a280bf85ae10e106a2e.js"
+          "file": "content---docs-nodejs-testaf-7-5fa.c53522930b8dc8c26e7c.js",
+          "hash": "fc3bb242932173dd70b5",
+          "publicPath": "/content---docs-nodejs-testaf-7-5fa.c53522930b8dc8c26e7c.js"
         }
       ]
     },
     "81": {
       "js": [
         {
-          "file": "content---docs-nodejs-utild-25-062.4b846da41316b55c524e.js",
-          "hash": "7de78b7889bd196c2dc2",
-          "publicPath": "/content---docs-nodejs-utild-25-062.4b846da41316b55c524e.js"
+          "file": "content---docs-nodejs-utild-25-062.7abc674669aa1b8e7b27.js",
+          "hash": "4e85be598bf3b72df51f",
+          "publicPath": "/content---docs-nodejs-utild-25-062.7abc674669aa1b8e7b27.js"
         }
       ]
     },
     "82": {
       "js": [
         {
-          "file": "content---docs-other-kindle-rss-789-941.17d746dc81f22fdaecc7.js",
-          "hash": "bd971dc9bf1c2c28d573",
-          "publicPath": "/content---docs-other-kindle-rss-789-941.17d746dc81f22fdaecc7.js"
+          "file": "content---docs-other-blogaab-295.90b83606127347166591.js",
+          "hash": "a71825fa1b2523cab773",
+          "publicPath": "/content---docs-other-blogaab-295.90b83606127347166591.js"
         }
       ]
     },
     "83": {
       "js": [
         {
-          "file": "content---docs-other-maced-3-b03.0e862ba0ba1acdf19259.js",
-          "hash": "9ce955288a1c957db629",
-          "publicPath": "/content---docs-other-maced-3-b03.0e862ba0ba1acdf19259.js"
+          "file": "content---docs-other-kindle-rss-789-941.191a58e9a0d6983d3b18.js",
+          "hash": "03c65a7842bdc4e7de46",
+          "publicPath": "/content---docs-other-kindle-rss-789-941.191a58e9a0d6983d3b18.js"
         }
       ]
     },
     "84": {
       "js": [
         {
-          "file": "content---docs-other-resourceea-2-ecf.d92c8b74c915e4f07087.js",
-          "hash": "2a57d921416e7a98e173",
-          "publicPath": "/content---docs-other-resourceea-2-ecf.d92c8b74c915e4f07087.js"
+          "file": "content---docs-other-maced-3-b03.144f24782733bff7f170.js",
+          "hash": "e9921ae548df80184aad",
+          "publicPath": "/content---docs-other-maced-3-b03.144f24782733bff7f170.js"
         }
       ]
     },
     "85": {
       "js": [
         {
-          "file": "content---docs-patterns-action-61-d-c76.be5df6a89d6c2298bdc2.js",
-          "hash": "1fbdbe7348bbd6584902",
-          "publicPath": "/content---docs-patterns-action-61-d-c76.be5df6a89d6c2298bdc2.js"
+          "file": "content---docs-other-resourceea-2-ecf.79aff6c31eaaa438938c.js",
+          "hash": "74106c7ef33641bfc86c",
+          "publicPath": "/content---docs-other-resourceea-2-ecf.79aff6c31eaaa438938c.js"
         }
       ]
     },
     "86": {
       "js": [
         {
-          "file": "content---docs-patterns-adapter-555-7ec.13532c36311478dedc36.js",
-          "hash": "143b2292a776f6fac26a",
-          "publicPath": "/content---docs-patterns-adapter-555-7ec.13532c36311478dedc36.js"
+          "file": "content---docs-patterns-action-61-d-c76.1db7f876e899fec516eb.js",
+          "hash": "737d212d4c5b3e05d8e6",
+          "publicPath": "/content---docs-patterns-action-61-d-c76.1db7f876e899fec516eb.js"
         }
       ]
     },
     "87": {
       "js": [
         {
-          "file": "content---docs-patterns-bridge-335-1e9.435331fb6638774e36be.js",
-          "hash": "32b65d610996e5a97149",
-          "publicPath": "/content---docs-patterns-bridge-335-1e9.435331fb6638774e36be.js"
+          "file": "content---docs-patterns-adapter-555-7ec.2112961b332c479ac795.js",
+          "hash": "f07d307fc6a49633b707",
+          "publicPath": "/content---docs-patterns-adapter-555-7ec.2112961b332c479ac795.js"
         }
       ]
     },
     "88": {
       "js": [
         {
-          "file": "content---docs-patterns-builder-5-e-5-e3a.bbace4f210b8debf582a.js",
-          "hash": "cbbc7f8af2c9dc56a754",
-          "publicPath": "/content---docs-patterns-builder-5-e-5-e3a.bbace4f210b8debf582a.js"
+          "file": "content---docs-patterns-bridge-335-1e9.b15592c2851328564e6b.js",
+          "hash": "cb684f43bce6f15b3c94",
+          "publicPath": "/content---docs-patterns-bridge-335-1e9.b15592c2851328564e6b.js"
         }
       ]
     },
     "89": {
       "js": [
         {
-          "file": "content---docs-patterns-chain-of-responsibility-579-dfa.f21d7c0a62ff1872dba1.js",
-          "hash": "a628b08a0870def80653",
-          "publicPath": "/content---docs-patterns-chain-of-responsibility-579-dfa.f21d7c0a62ff1872dba1.js"
+          "file": "content---docs-patterns-builder-5-e-5-e3a.e6629fbefca8e3a8aac2.js",
+          "hash": "b916ff66b8ed06582b1b",
+          "publicPath": "/content---docs-patterns-builder-5-e-5-e3a.e6629fbefca8e3a8aac2.js"
         }
       ]
     },
     "90": {
       "js": [
         {
-          "file": "content---docs-patterns-commande-85-4af.28ea1f7c7661bfa12aa0.js",
-          "hash": "be180f15e232f6ccafb0",
-          "publicPath": "/content---docs-patterns-commande-85-4af.28ea1f7c7661bfa12aa0.js"
+          "file": "content---docs-patterns-chain-of-responsibility-579-dfa.66dea4296433b6cf98c9.js",
+          "hash": "6288f9726650286ed54a",
+          "publicPath": "/content---docs-patterns-chain-of-responsibility-579-dfa.66dea4296433b6cf98c9.js"
         }
       ]
     },
     "91": {
       "js": [
         {
-          "file": "content---docs-patterns-composite-33-e-80d.08ca6844aaf807869cae.js",
-          "hash": "4f20e715b4ebe77b80e4",
-          "publicPath": "/content---docs-patterns-composite-33-e-80d.08ca6844aaf807869cae.js"
+          "file": "content---docs-patterns-commande-85-4af.2c197182cb87c0ae1f68.js",
+          "hash": "2e863dd92904147d5fb5",
+          "publicPath": "/content---docs-patterns-commande-85-4af.2c197182cb87c0ae1f68.js"
         }
       ]
     },
     "92": {
       "js": [
         {
-          "file": "content---docs-patterns-decorator-944-f6d.ce54cbd677e89dca57f5.js",
-          "hash": "080d9a0ca0ba805a0926",
-          "publicPath": "/content---docs-patterns-decorator-944-f6d.ce54cbd677e89dca57f5.js"
+          "file": "content---docs-patterns-composite-33-e-80d.2dd077321435164de2fc.js",
+          "hash": "c6ab108608393b3f2466",
+          "publicPath": "/content---docs-patterns-composite-33-e-80d.2dd077321435164de2fc.js"
         }
       ]
     },
     "93": {
       "js": [
         {
-          "file": "content---docs-patterns-facade-4-ef-b2f.ead8612348312a6e024c.js",
-          "hash": "bba186deed9cefda12f8",
-          "publicPath": "/content---docs-patterns-facade-4-ef-b2f.ead8612348312a6e024c.js"
+          "file": "content---docs-patterns-decorator-944-f6d.231b091ccecdcf27e54c.js",
+          "hash": "04ad0c1ec06504dc0e57",
+          "publicPath": "/content---docs-patterns-decorator-944-f6d.231b091ccecdcf27e54c.js"
         }
       ]
     },
     "94": {
       "js": [
         {
-          "file": "content---docs-patterns-factoryf-00-197.c6a27f5b67fb85cf6337.js",
-          "hash": "71fb8b0b4fe51dfb2db9",
-          "publicPath": "/content---docs-patterns-factoryf-00-197.c6a27f5b67fb85cf6337.js"
+          "file": "content---docs-patterns-facade-4-ef-b2f.2f3608c06db80e48fffa.js",
+          "hash": "5563c022ac1028fe9b2f",
+          "publicPath": "/content---docs-patterns-facade-4-ef-b2f.2f3608c06db80e48fffa.js"
         }
       ]
     },
     "95": {
       "js": [
         {
-          "file": "content---docs-patterns-flyweighte-43-831.f60465623d25fe036a3d.js",
-          "hash": "610ca81d1ad794d23f35",
-          "publicPath": "/content---docs-patterns-flyweighte-43-831.f60465623d25fe036a3d.js"
+          "file": "content---docs-patterns-factoryf-00-197.a5183b1395d1ee6b4c04.js",
+          "hash": "fd4eeaaf15031195ff76",
+          "publicPath": "/content---docs-patterns-factoryf-00-197.a5183b1395d1ee6b4c04.js"
         }
       ]
     },
     "96": {
       "js": [
         {
-          "file": "content---docs-patterns-index-90-d-78a.a6120fea1b0d61ed6fa1.js",
-          "hash": "ffbc73b642d63105457f",
-          "publicPath": "/content---docs-patterns-index-90-d-78a.a6120fea1b0d61ed6fa1.js"
+          "file": "content---docs-patterns-flyweighte-43-831.e3ac10a150bc7e94cbc5.js",
+          "hash": "9cfa9f8bd64b2e85d8e4",
+          "publicPath": "/content---docs-patterns-flyweighte-43-831.e3ac10a150bc7e94cbc5.js"
         }
       ]
     },
     "97": {
       "js": [
         {
-          "file": "content---docs-patterns-interpreterc-34-4ff.9acb3237d2de85f56b87.js",
-          "hash": "0b1d67d4b8560e71ed42",
-          "publicPath": "/content---docs-patterns-interpreterc-34-4ff.9acb3237d2de85f56b87.js"
+          "file": "content---docs-patterns-index-90-d-78a.40dac31f5fafd19ace72.js",
+          "hash": "98ba6849627970b84c8a",
+          "publicPath": "/content---docs-patterns-index-90-d-78a.40dac31f5fafd19ace72.js"
         }
       ]
     },
     "98": {
       "js": [
         {
-          "file": "content---docs-patterns-iterator-3-bc-1d4.a09911f89af14855fd33.js",
-          "hash": "aa52fd9e371ce5e54e73",
-          "publicPath": "/content---docs-patterns-iterator-3-bc-1d4.a09911f89af14855fd33.js"
+          "file": "content---docs-patterns-interpreterc-34-4ff.b26bdf0f10f33e86db6e.js",
+          "hash": "0e12f21fbc84bb3e17eb",
+          "publicPath": "/content---docs-patterns-interpreterc-34-4ff.b26bdf0f10f33e86db6e.js"
         }
       ]
     },
     "99": {
       "js": [
         {
-          "file": "content---docs-patterns-mediator-685-4ef.ed1623b00a8dcd8fe188.js",
-          "hash": "3d9d88f893445be8f8af",
-          "publicPath": "/content---docs-patterns-mediator-685-4ef.ed1623b00a8dcd8fe188.js"
+          "file": "content---docs-patterns-iterator-3-bc-1d4.553678cbac18b755d2c1.js",
+          "hash": "d77e7616d8033d5dc0da",
+          "publicPath": "/content---docs-patterns-iterator-3-bc-1d4.553678cbac18b755d2c1.js"
         }
       ]
     },
     "100": {
       "js": [
         {
-          "file": "content---docs-patterns-memento-740-286.621725a6ffa330270ebc.js",
-          "hash": "3de2c5ac2b8e25aa4a67",
-          "publicPath": "/content---docs-patterns-memento-740-286.621725a6ffa330270ebc.js"
+          "file": "content---docs-patterns-mediator-685-4ef.af8aaa2f6c46fba56ffa.js",
+          "hash": "fa1f7d020f40988cd061",
+          "publicPath": "/content---docs-patterns-mediator-685-4ef.af8aaa2f6c46fba56ffa.js"
         }
       ]
     },
     "101": {
       "js": [
         {
-          "file": "content---docs-patterns-observer-73-f-441.f0087971a98f03287ff9.js",
-          "hash": "b22bb5cc2581bd6209c7",
-          "publicPath": "/content---docs-patterns-observer-73-f-441.f0087971a98f03287ff9.js"
+          "file": "content---docs-patterns-memento-740-286.883958ef8d16f3e8537c.js",
+          "hash": "9f72f6d4e05d606866ef",
+          "publicPath": "/content---docs-patterns-memento-740-286.883958ef8d16f3e8537c.js"
         }
       ]
     },
     "102": {
       "js": [
         {
-          "file": "content---docs-patterns-prototype-93-c-d70.b96d2cef0243354728ff.js",
-          "hash": "d244e5b55dbb9ff4b8c1",
-          "publicPath": "/content---docs-patterns-prototype-93-c-d70.b96d2cef0243354728ff.js"
+          "file": "content---docs-patterns-observer-73-f-441.ab60d4d039ef9ba8920d.js",
+          "hash": "958f4792cd82cf33c755",
+          "publicPath": "/content---docs-patterns-observer-73-f-441.ab60d4d039ef9ba8920d.js"
         }
       ]
     },
     "103": {
       "js": [
         {
-          "file": "content---docs-patterns-proxyb-6-e-4ef.5d0546b466eeb2c39e1d.js",
-          "hash": "dc3f90551f29638d5b93",
-          "publicPath": "/content---docs-patterns-proxyb-6-e-4ef.5d0546b466eeb2c39e1d.js"
+          "file": "content---docs-patterns-prototype-93-c-d70.28f4edaac5325115ccb2.js",
+          "hash": "2641b5f9427238ad4f11",
+          "publicPath": "/content---docs-patterns-prototype-93-c-d70.28f4edaac5325115ccb2.js"
         }
       ]
     },
     "104": {
       "js": [
         {
-          "file": "content---docs-patterns-singleton-710-727.68595efac9d1f77f0b85.js",
-          "hash": "d43644e6814358261310",
-          "publicPath": "/content---docs-patterns-singleton-710-727.68595efac9d1f77f0b85.js"
+          "file": "content---docs-patterns-proxyb-6-e-4ef.cca080c448d090f41be7.js",
+          "hash": "1d3c3516876888fd31a9",
+          "publicPath": "/content---docs-patterns-proxyb-6-e-4ef.cca080c448d090f41be7.js"
         }
       ]
     },
     "105": {
       "js": [
         {
-          "file": "content---docs-patterns-stated-4-a-502.b4f1920a204e6714b4d2.js",
-          "hash": "480f22d9fac67fc98200",
-          "publicPath": "/content---docs-patterns-stated-4-a-502.b4f1920a204e6714b4d2.js"
+          "file": "content---docs-patterns-singleton-710-727.45783f8b86cf328f4660.js",
+          "hash": "25a649f90f01907f00b9",
+          "publicPath": "/content---docs-patterns-singleton-710-727.45783f8b86cf328f4660.js"
         }
       ]
     },
     "106": {
       "js": [
         {
-          "file": "content---docs-patterns-strategy-9-e-9-61c.57b49f9d90a14d49c13f.js",
-          "hash": "793949cdbe9410533ccf",
-          "publicPath": "/content---docs-patterns-strategy-9-e-9-61c.57b49f9d90a14d49c13f.js"
+          "file": "content---docs-patterns-stated-4-a-502.aff490fbcfbd4d613e22.js",
+          "hash": "4d77ed76353818c482c2",
+          "publicPath": "/content---docs-patterns-stated-4-a-502.aff490fbcfbd4d613e22.js"
         }
       ]
     },
     "107": {
       "js": [
         {
-          "file": "content---docs-patterns-templateee-1-6e8.d954024691489d6418af.js",
-          "hash": "97353e5fa9b174a0258f",
-          "publicPath": "/content---docs-patterns-templateee-1-6e8.d954024691489d6418af.js"
+          "file": "content---docs-patterns-strategy-9-e-9-61c.2154ac691f82d145481e.js",
+          "hash": "f98dc4f2fbc93149fdcb",
+          "publicPath": "/content---docs-patterns-strategy-9-e-9-61c.2154ac691f82d145481e.js"
         }
       ]
     },
     "108": {
       "js": [
         {
-          "file": "content---docs-patterns-visitorff-6-bda.028ad34660156e89f269.js",
-          "hash": "0dda6ac23c671b9ff996",
-          "publicPath": "/content---docs-patterns-visitorff-6-bda.028ad34660156e89f269.js"
+          "file": "content---docs-patterns-templateee-1-6e8.99542a775d4d7331ab97.js",
+          "hash": "425f83b4f322d6590299",
+          "publicPath": "/content---docs-patterns-templateee-1-6e8.99542a775d4d7331ab97.js"
         }
       ]
     },
     "109": {
       "js": [
         {
-          "file": "content---docs-source-jquery-event-088-dda.461458e58b57768b1916.js",
-          "hash": "47d72781934c67203387",
-          "publicPath": "/content---docs-source-jquery-event-088-dda.461458e58b57768b1916.js"
+          "file": "content---docs-patterns-visitorff-6-bda.4551872699bc75006cb1.js",
+          "hash": "a14db4dbabbb1acbfa9d",
+          "publicPath": "/content---docs-patterns-visitorff-6-bda.4551872699bc75006cb1.js"
         }
       ]
     },
     "110": {
       "js": [
         {
-          "file": "docsMetadata---docs-76-d-edd.e2c51fa6c15b625f5d20.js",
-          "hash": "9619d74bc0eef25c2548",
-          "publicPath": "/docsMetadata---docs-76-d-edd.e2c51fa6c15b625f5d20.js"
+          "file": "content---docs-source-jquery-event-088-dda.f6e5868415ea4e65585a.js",
+          "hash": "7460f2bd12f934fed27c",
+          "publicPath": "/content---docs-source-jquery-event-088-dda.f6e5868415ea4e65585a.js"
         }
       ]
     },
     "111": {
-      "css": [
-        {
-          "file": "main.cf96eb97e7d5d7563dca.css",
-          "hash": "840ef9eed411a874b0d4",
-          "publicPath": "/main.cf96eb97e7d5d7563dca.css"
-        }
-      ],
       "js": [
         {
-          "file": "main.d2133d254be990e5de74.js",
-          "hash": "840ef9eed411a874b0d4",
-          "publicPath": "/main.d2133d254be990e5de74.js"
+          "file": "docsMetadata---docs-9-a-9-239.efc62167d7e7e974bd14.js",
+          "hash": "51ec63b657dafbc6a727",
+          "publicPath": "/docsMetadata---docs-9-a-9-239.efc62167d7e7e974bd14.js"
         }
       ]
     },
     "112": {
+      "css": [
+        {
+          "file": "main.d719e73e126f22665d27.css",
+          "hash": "2211b75602f56fde2c4a",
+          "publicPath": "/main.d719e73e126f22665d27.css"
+        }
+      ],
       "js": [
         {
-          "file": "metadata---blog-2019-08-12-think-housee-55-e28.a757871a1787e7209c4b.js",
-          "hash": "310baa1b25fbc91ac2a2",
-          "publicPath": "/metadata---blog-2019-08-12-think-housee-55-e28.a757871a1787e7209c4b.js"
+          "file": "main.477abd2e0f7ae11842aa.js",
+          "hash": "2211b75602f56fde2c4a",
+          "publicPath": "/main.477abd2e0f7ae11842aa.js"
         }
       ]
     },
     "113": {
       "js": [
         {
-          "file": "metadata---blog-8-d-5-403.dbb093216daad950fe37.js",
-          "hash": "d039772bad38aef86ec5",
-          "publicPath": "/metadata---blog-8-d-5-403.dbb093216daad950fe37.js"
+          "file": "metadata---blog-2019-08-12-think-house-3-b-6-904.d9830d5a5942cab785a0.js",
+          "hash": "99fc7310679126d1ee7e",
+          "publicPath": "/metadata---blog-2019-08-12-think-house-3-b-6-904.d9830d5a5942cab785a0.js"
         }
       ]
     },
     "114": {
       "js": [
         {
-          "file": "metadata---blog-tags-house-295-25f.b667dfd805fe31b4ad4c.js",
-          "hash": "cb6465eb9895f117f00f",
-          "publicPath": "/metadata---blog-tags-house-295-25f.b667dfd805fe31b4ad4c.js"
+          "file": "metadata---blog-92-a-15c.5ff7289cd93f83a7673d.js",
+          "hash": "0781728e4930938c946a",
+          "publicPath": "/metadata---blog-92-a-15c.5ff7289cd93f83a7673d.js"
         }
       ]
     },
     "115": {
       "js": [
         {
-          "file": "metadata---blog-tags-think-4-ca-4c3.a4fa16c3f5753c9f206d.js",
-          "hash": "79281d95ceff98b437b2",
-          "publicPath": "/metadata---blog-tags-think-4-ca-4c3.a4fa16c3f5753c9f206d.js"
+          "file": "metadata---blog-tags-house-375-d32.e20a6720ecb0953ce25d.js",
+          "hash": "f9661e28f2dd1c49b0c6",
+          "publicPath": "/metadata---blog-tags-house-375-d32.e20a6720ecb0953ce25d.js"
         }
       ]
     },
     "116": {
       "js": [
         {
-          "file": "metadata---docs-abouta-4-f-846.429b0c83416bb49509f4.js",
-          "hash": "0b391146f17dacc3cad9",
-          "publicPath": "/metadata---docs-abouta-4-f-846.429b0c83416bb49509f4.js"
+          "file": "metadata---blog-tags-thinkd-55-455.465f7f9506ae524a47b1.js",
+          "hash": "ffddb95b595060e13604",
+          "publicPath": "/metadata---blog-tags-thinkd-55-455.465f7f9506ae524a47b1.js"
         }
       ]
     },
     "117": {
       "js": [
         {
-          "file": "metadata---docs-algo-index-3-da-9b7.a90d9b397b0799409c51.js",
-          "hash": "4bbbaa493324fd8084bf",
-          "publicPath": "/metadata---docs-algo-index-3-da-9b7.a90d9b397b0799409c51.js"
+          "file": "metadata---docs-about-443-9ff.73c084d649e4c149a16d.js",
+          "hash": "8a5e57d40b842a71bd49",
+          "publicPath": "/metadata---docs-about-443-9ff.73c084d649e4c149a16d.js"
         }
       ]
     },
     "118": {
       "js": [
         {
-          "file": "metadata---docs-base-compute-combined-1-b-754.302d0f35f7a68cacb87c.js",
-          "hash": "b680f9a90750be76e733",
-          "publicPath": "/metadata---docs-base-compute-combined-1-b-754.302d0f35f7a68cacb87c.js"
+          "file": "metadata---docs-algo-index-812-55b.967a6c554af6d0ec71c7.js",
+          "hash": "1d74607b74fe9bcd51a4",
+          "publicPath": "/metadata---docs-algo-index-812-55b.967a6c554af6d0ec71c7.js"
         }
       ]
     },
     "119": {
       "js": [
         {
-          "file": "metadata---docs-base-h-528-a-c2b.b148155014533589efae.js",
-          "hash": "d9a6e08c2d6041acbf7e",
-          "publicPath": "/metadata---docs-base-h-528-a-c2b.b148155014533589efae.js"
+          "file": "metadata---docs-base-compute-combine-480-a12.3f3c4e034751065ae378.js",
+          "hash": "23e864f5b67c51b76241",
+          "publicPath": "/metadata---docs-base-compute-combine-480-a12.3f3c4e034751065ae378.js"
         }
       ]
     },
     "120": {
       "js": [
         {
-          "file": "metadata---docs-base-net-httpe-52-14d.981947984aac148c2f12.js",
-          "hash": "60bd7b1d07f0b45897c2",
-          "publicPath": "/metadata---docs-base-net-httpe-52-14d.981947984aac148c2f12.js"
+          "file": "metadata---docs-base-h-515-a-1cb.50cde03a6341136d8e1e.js",
+          "hash": "6695895224e644b4dfd0",
+          "publicPath": "/metadata---docs-base-h-515-a-1cb.50cde03a6341136d8e1e.js"
         }
       ]
     },
     "121": {
       "js": [
         {
-          "file": "metadata---docs-base-net-tcp-1-af-502.5b5a00f142a2ae79da20.js",
-          "hash": "9ec5427f2b3cce7d4713",
-          "publicPath": "/metadata---docs-base-net-tcp-1-af-502.5b5a00f142a2ae79da20.js"
+          "file": "metadata---docs-base-net-http-373-f55.a21647d861d5aaf9bd51.js",
+          "hash": "a313854036d1fadc16c6",
+          "publicPath": "/metadata---docs-base-net-http-373-f55.a21647d861d5aaf9bd51.js"
         }
       ]
     },
     "122": {
       "js": [
         {
-          "file": "metadata---docs-database-mongoe-54-98e.59ddfa2778d4bc1a6e74.js",
-          "hash": "be82300a750f2e414295",
-          "publicPath": "/metadata---docs-database-mongoe-54-98e.59ddfa2778d4bc1a6e74.js"
+          "file": "metadata---docs-base-net-tcp-212-c6f.8dd35e78bad2b65b9006.js",
+          "hash": "8b3062f48f6ccac3185a",
+          "publicPath": "/metadata---docs-base-net-tcp-212-c6f.8dd35e78bad2b65b9006.js"
         }
       ]
     },
     "123": {
       "js": [
         {
-          "file": "metadata---docs-database-mysqlc-31-563.95709c186202f2140a86.js",
-          "hash": "19d210dc9f75728320df",
-          "publicPath": "/metadata---docs-database-mysqlc-31-563.95709c186202f2140a86.js"
+          "file": "metadata---docs-database-mongo-0-c-2-f76.af6ba28657bd992ab268.js",
+          "hash": "ebd309f0f6e690073672",
+          "publicPath": "/metadata---docs-database-mongo-0-c-2-f76.af6ba28657bd992ab268.js"
         }
       ]
     },
     "124": {
       "js": [
         {
-          "file": "metadata---docs-database-redisb-45-9ea.88936c655e40ffa3874e.js",
-          "hash": "090c161faf1c16390b28",
-          "publicPath": "/metadata---docs-database-redisb-45-9ea.88936c655e40ffa3874e.js"
+          "file": "metadata---docs-database-mysql-2-f-1-3e5.b8ec8aff626a76d0b3f1.js",
+          "hash": "60b9a7cfdb0f79366404",
+          "publicPath": "/metadata---docs-database-mysql-2-f-1-3e5.b8ec8aff626a76d0b3f1.js"
         }
       ]
     },
     "125": {
       "js": [
         {
-          "file": "metadata---docs-demo-index-5-fe-1de.c81c4d765b6b7a39b2d4.js",
-          "hash": "97f5b900d010fee875a0",
-          "publicPath": "/metadata---docs-demo-index-5-fe-1de.c81c4d765b6b7a39b2d4.js"
+          "file": "metadata---docs-database-redis-4-a-0-66e.1e20f9eb218cd3aaa120.js",
+          "hash": "75cca68d31212682553f",
+          "publicPath": "/metadata---docs-database-redis-4-a-0-66e.1e20f9eb218cd3aaa120.js"
         }
       ]
     },
     "126": {
       "js": [
         {
-          "file": "metadata---docs-doc-2-bed-d62.5f7d35725065623e4c7a.js",
-          "hash": "6df4174d02dbb8098eca",
-          "publicPath": "/metadata---docs-doc-2-bed-d62.5f7d35725065623e4c7a.js"
+          "file": "metadata---docs-demo-indexa-04-089.d02205114cc145ec515a.js",
+          "hash": "67ee8fd882136df9af9c",
+          "publicPath": "/metadata---docs-demo-indexa-04-089.d02205114cc145ec515a.js"
         }
       ]
     },
     "127": {
       "js": [
         {
-          "file": "metadata---docs-doc-312-d-57d.c7d92c284235e060ec3e.js",
-          "hash": "7cf32545123880658ac1",
-          "publicPath": "/metadata---docs-doc-312-d-57d.c7d92c284235e060ec3e.js"
+          "file": "metadata---docs-f-2-e-browser-cache-361-a94.28e7216342319a1a6962.js",
+          "hash": "52b4f0d358c336a9aef3",
+          "publicPath": "/metadata---docs-f-2-e-browser-cache-361-a94.28e7216342319a1a6962.js"
         }
       ]
     },
     "128": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-browser-cache-66-d-0e1.0b287d4c7523a298a9c1.js",
-          "hash": "882d630ffb1d4e0da647",
-          "publicPath": "/metadata---docs-f-2-e-browser-cache-66-d-0e1.0b287d4c7523a298a9c1.js"
+          "file": "metadata---docs-f-2-e-browser-devtool-3-ab-d05.9fe5ea30673d765636ce.js",
+          "hash": "64a9dbf943fa8631e1ef",
+          "publicPath": "/metadata---docs-f-2-e-browser-devtool-3-ab-d05.9fe5ea30673d765636ce.js"
         }
       ]
     },
     "129": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-browser-devtool-9-c-8-3ff.603da1e90dce7d64e366.js",
-          "hash": "657d3c24b395d8cce899",
-          "publicPath": "/metadata---docs-f-2-e-browser-devtool-9-c-8-3ff.603da1e90dce7d64e366.js"
+          "file": "metadata---docs-f-2-e-browser-domb-41-90c.40c3d9385d9932dc62ef.js",
+          "hash": "fc9eeed4bb976e59653b",
+          "publicPath": "/metadata---docs-f-2-e-browser-domb-41-90c.40c3d9385d9932dc62ef.js"
         }
       ]
     },
     "130": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-browser-eventfce-f58.5f25b4104c0251631ae3.js",
-          "hash": "3138698c2a85e1c30469",
-          "publicPath": "/metadata---docs-f-2-e-browser-eventfce-f58.5f25b4104c0251631ae3.js"
+          "file": "metadata---docs-f-2-e-browser-event-0-cc-f3c.eb85d5e63ff050f42c82.js",
+          "hash": "f7162d4ae77b0b15c992",
+          "publicPath": "/metadata---docs-f-2-e-browser-event-0-cc-f3c.eb85d5e63ff050f42c82.js"
         }
       ]
     },
     "131": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-browser-eventloop-95-f-34d.2bb02ffed99f28dbbc52.js",
-          "hash": "044592ef70f22fc60c63",
-          "publicPath": "/metadata---docs-f-2-e-browser-eventloop-95-f-34d.2bb02ffed99f28dbbc52.js"
+          "file": "metadata---docs-f-2-e-browser-eventloopcbb-9eb.44ebbe5e3e5a0be45b22.js",
+          "hash": "3c4c31c50817393204ab",
+          "publicPath": "/metadata---docs-f-2-e-browser-eventloopcbb-9eb.44ebbe5e3e5a0be45b22.js"
         }
       ]
     },
     "132": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-browser-fetch-66-e-43c.1f4162ea8688f61a5fd6.js",
-          "hash": "0fdb5e70c812993bfec2",
-          "publicPath": "/metadata---docs-f-2-e-browser-fetch-66-e-43c.1f4162ea8688f61a5fd6.js"
+          "file": "metadata---docs-f-2-e-browser-fetch-918-58f.67ea03597bbedee8f8cb.js",
+          "hash": "e14508c8f27bb6b9df1e",
+          "publicPath": "/metadata---docs-f-2-e-browser-fetch-918-58f.67ea03597bbedee8f8cb.js"
         }
       ]
     },
     "133": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-browser-storage-3-be-211.26a87cd8d2fd0c7cd234.js",
-          "hash": "76e2f2b8aeab2175e9bb",
-          "publicPath": "/metadata---docs-f-2-e-browser-storage-3-be-211.26a87cd8d2fd0c7cd234.js"
+          "file": "metadata---docs-f-2-e-browser-storagea-21-a7b.2693ccc675c0f98748f7.js",
+          "hash": "5e2987b37dd111553654",
+          "publicPath": "/metadata---docs-f-2-e-browser-storagea-21-a7b.2693ccc675c0f98748f7.js"
         }
       ]
     },
     "134": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-browser-v-8-a-7-a-da9.fe4f87a944638df55b81.js",
-          "hash": "0252cbae58f9b6674249",
-          "publicPath": "/metadata---docs-f-2-e-browser-v-8-a-7-a-da9.fe4f87a944638df55b81.js"
+          "file": "metadata---docs-f-2-e-browser-v-8-e-60-c45.772e0b55782ed70ec81e.js",
+          "hash": "0c72d9ca72cec99c41a0",
+          "publicPath": "/metadata---docs-f-2-e-browser-v-8-e-60-c45.772e0b55782ed70ec81e.js"
         }
       ]
     },
     "135": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-browser-work-840-646.b61bbee9039bac962dcf.js",
-          "hash": "534b6cb9acce09e03e09",
-          "publicPath": "/metadata---docs-f-2-e-browser-work-840-646.b61bbee9039bac962dcf.js"
+          "file": "metadata---docs-f-2-e-browser-work-9-d-7-1ef.259c8c7b2df2b3dead04.js",
+          "hash": "300a02dd5503fc80b07e",
+          "publicPath": "/metadata---docs-f-2-e-browser-work-9-d-7-1ef.259c8c7b2df2b3dead04.js"
         }
       ]
     },
     "136": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-css-indexaa-5-0b7.8814a6bf6befbba14161.js",
-          "hash": "d3fb6827652d613bd047",
-          "publicPath": "/metadata---docs-f-2-e-css-indexaa-5-0b7.8814a6bf6befbba14161.js"
+          "file": "metadata---docs-f-2-e-css-indexe-08-461.621a33c5d05c74a2bd99.js",
+          "hash": "a187d5416694e35cce23",
+          "publicPath": "/metadata---docs-f-2-e-css-indexe-08-461.621a33c5d05c74a2bd99.js"
         }
       ]
     },
     "137": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-html-index-576-ef7.70a9dd97a9cd531129d0.js",
-          "hash": "c3dbf0c957bf5d3cf8bd",
-          "publicPath": "/metadata---docs-f-2-e-html-index-576-ef7.70a9dd97a9cd531129d0.js"
+          "file": "metadata---docs-f-2-e-html-index-24-f-1e4.70a9dd97a9cd531129d0.js",
+          "hash": "1afa78084c5f53107355",
+          "publicPath": "/metadata---docs-f-2-e-html-index-24-f-1e4.70a9dd97a9cd531129d0.js"
         }
       ]
     },
     "138": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-javascript-async-1-ff-0d6.d472eab1f9881365ada4.js",
-          "hash": "f58929ba2a2ca2fceff7",
-          "publicPath": "/metadata---docs-f-2-e-javascript-async-1-ff-0d6.d472eab1f9881365ada4.js"
+          "file": "metadata---docs-f-2-e-javascript-async-09-f-030.25a7228490d4cf49f2b2.js",
+          "hash": "9f7972dbaa2a7fc8bac2",
+          "publicPath": "/metadata---docs-f-2-e-javascript-async-09-f-030.25a7228490d4cf49f2b2.js"
         }
       ]
     },
     "139": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-javascript-grammer-1-ab-807.23d93ed5348e42d4d908.js",
-          "hash": "3f18db38115e03b0acab",
-          "publicPath": "/metadata---docs-f-2-e-javascript-grammer-1-ab-807.23d93ed5348e42d4d908.js"
+          "file": "metadata---docs-f-2-e-javascript-grammer-6-df-3af.23d93ed5348e42d4d908.js",
+          "hash": "f66c9995a5f663df9ec4",
+          "publicPath": "/metadata---docs-f-2-e-javascript-grammer-6-df-3af.23d93ed5348e42d4d908.js"
         }
       ]
     },
     "140": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-javascript-module-834-183.8ac6b1401e0a154eee23.js",
-          "hash": "20c7a2204050200e2ee1",
-          "publicPath": "/metadata---docs-f-2-e-javascript-module-834-183.8ac6b1401e0a154eee23.js"
+          "file": "metadata---docs-f-2-e-javascript-moduleee-6-b43.a7967cffe7804555bfc9.js",
+          "hash": "c111434c05299f460319",
+          "publicPath": "/metadata---docs-f-2-e-javascript-moduleee-6-b43.a7967cffe7804555bfc9.js"
         }
       ]
     },
     "141": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-javascript-oopc-06-9bf.a02aac86418a69969112.js",
-          "hash": "7f4e660c8d15f1ccba71",
-          "publicPath": "/metadata---docs-f-2-e-javascript-oopc-06-9bf.a02aac86418a69969112.js"
+          "file": "metadata---docs-f-2-e-javascript-oopaa-3-9b9.e942231bbc0e495f0e6a.js",
+          "hash": "21bfe99e410357bd632e",
+          "publicPath": "/metadata---docs-f-2-e-javascript-oopaa-3-9b9.e942231bbc0e495f0e6a.js"
         }
       ]
     },
     "142": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-javascript-regexp-9-b-1-5f3.b2d9ab92a18e2cff3f35.js",
-          "hash": "8c9999d0cb834383b25e",
-          "publicPath": "/metadata---docs-f-2-e-javascript-regexp-9-b-1-5f3.b2d9ab92a18e2cff3f35.js"
+          "file": "metadata---docs-f-2-e-javascript-regexp-239-ff9.ba4fb34bdc5dcc94e0bf.js",
+          "hash": "84b341a355951533d4c9",
+          "publicPath": "/metadata---docs-f-2-e-javascript-regexp-239-ff9.ba4fb34bdc5dcc94e0bf.js"
         }
       ]
     },
     "143": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-javascript-type-906-604.f2f2375448a6dedb3989.js",
-          "hash": "b6328355676e2bf250d4",
-          "publicPath": "/metadata---docs-f-2-e-javascript-type-906-604.f2f2375448a6dedb3989.js"
+          "file": "metadata---docs-f-2-e-javascript-skilld-97-3a2.cd114e7df341a974907b.js",
+          "hash": "d4ac0c8ffff123d582ea",
+          "publicPath": "/metadata---docs-f-2-e-javascript-skilld-97-3a2.cd114e7df341a974907b.js"
         }
       ]
     },
     "144": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-monitor-indexc-62-dba.9326744666b69c13695e.js",
-          "hash": "51114f504191d64a7051",
-          "publicPath": "/metadata---docs-f-2-e-monitor-indexc-62-dba.9326744666b69c13695e.js"
+          "file": "metadata---docs-f-2-e-javascript-typef-33-dde.e96ec684ec8263d46c9d.js",
+          "hash": "416c2de9e9e47bfeb9ff",
+          "publicPath": "/metadata---docs-f-2-e-javascript-typef-33-dde.e96ec684ec8263d46c9d.js"
         }
       ]
     },
     "145": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-performance-indexb-29-bdb.9503de37e2df5155db4f.js",
-          "hash": "099e923d3798a298dafd",
-          "publicPath": "/metadata---docs-f-2-e-performance-indexb-29-bdb.9503de37e2df5155db4f.js"
+          "file": "metadata---docs-f-2-e-monitor-indexa-56-d7f.970c636d0c0ec47b0bf0.js",
+          "hash": "669f2c0fb66f04d7ea48",
+          "publicPath": "/metadata---docs-f-2-e-monitor-indexa-56-d7f.970c636d0c0ec47b0bf0.js"
         }
       ]
     },
     "146": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-index-742-376.59b5c4e36f100374c2af.js",
-          "hash": "2e7c1d5075f35ae4fd3d",
-          "publicPath": "/metadata---docs-f-2-e-react-index-742-376.59b5c4e36f100374c2af.js"
+          "file": "metadata---docs-f-2-e-performance-index-3-de-87c.fa958c859c38b85285c6.js",
+          "hash": "570ebc9286b18b9f36be",
+          "publicPath": "/metadata---docs-f-2-e-performance-index-3-de-87c.fa958c859c38b85285c6.js"
         }
       ]
     },
     "147": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-alert-467-f53.81fb2b729089dbcc5e1f.js",
-          "hash": "64a9d4ea631c00a3079d",
-          "publicPath": "/metadata---docs-f-2-e-react-native-alert-467-f53.81fb2b729089dbcc5e1f.js"
+          "file": "metadata---docs-f-2-e-react-indexc-85-6a6.c4cf5f74ba2e693a1574.js",
+          "hash": "20858ded4c1a57bbd4be",
+          "publicPath": "/metadata---docs-f-2-e-react-indexc-85-6a6.c4cf5f74ba2e693a1574.js"
         }
       ]
     },
     "148": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-androidfcb-4a5.91051cd1324eaece1847.js",
-          "hash": "8bb9f3f146c0a91ccf37",
-          "publicPath": "/metadata---docs-f-2-e-react-native-androidfcb-4a5.91051cd1324eaece1847.js"
+          "file": "metadata---docs-f-2-e-react-native-alert-5-f-9-3e3.7968965bd72899a9fafe.js",
+          "hash": "aceaefcf94d005b7f11a",
+          "publicPath": "/metadata---docs-f-2-e-react-native-alert-5-f-9-3e3.7968965bd72899a9fafe.js"
         }
       ]
     },
     "149": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-buglyd-52-a13.f3d04e1c5709c8f589b4.js",
-          "hash": "f7ff9d8f9287e6257cb2",
-          "publicPath": "/metadata---docs-f-2-e-react-native-buglyd-52-a13.f3d04e1c5709c8f589b4.js"
+          "file": "metadata---docs-f-2-e-react-native-android-0-b-3-456.1636cbe5df919bbf3734.js",
+          "hash": "0fbb756b1e5769e05db8",
+          "publicPath": "/metadata---docs-f-2-e-react-native-android-0-b-3-456.1636cbe5df919bbf3734.js"
         }
       ]
     },
     "150": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-cameraf-85-14a.3df454442aac45846407.js",
-          "hash": "40fa051783ee2583694d",
-          "publicPath": "/metadata---docs-f-2-e-react-native-cameraf-85-14a.3df454442aac45846407.js"
+          "file": "metadata---docs-f-2-e-react-native-buglyadb-596.3394199ee5fbf770c1f4.js",
+          "hash": "ca2b2bf98cb8572df967",
+          "publicPath": "/metadata---docs-f-2-e-react-native-buglyadb-596.3394199ee5fbf770c1f4.js"
         }
       ]
     },
     "151": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-code-push-6-c-1-262.c9c40bd2210cf53b3bd8.js",
-          "hash": "c465cc393b4d8fee82c5",
-          "publicPath": "/metadata---docs-f-2-e-react-native-code-push-6-c-1-262.c9c40bd2210cf53b3bd8.js"
+          "file": "metadata---docs-f-2-e-react-native-camera-27-a-253.3005b4f4738ea37d8732.js",
+          "hash": "b653f78de9f63e5d51b9",
+          "publicPath": "/metadata---docs-f-2-e-react-native-camera-27-a-253.3005b4f4738ea37d8732.js"
         }
       ]
     },
     "152": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-deploy-349-3e3.7490801de25d1092ed74.js",
-          "hash": "91c40119bf2cf26ea7ec",
-          "publicPath": "/metadata---docs-f-2-e-react-native-deploy-349-3e3.7490801de25d1092ed74.js"
+          "file": "metadata---docs-f-2-e-react-native-code-push-7-b-7-231.d1b2c854735aec9d02de.js",
+          "hash": "df72f3e6e118a6736af7",
+          "publicPath": "/metadata---docs-f-2-e-react-native-code-push-7-b-7-231.d1b2c854735aec9d02de.js"
         }
       ]
     },
     "153": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-fetch-29-e-cbf.3c66673758578de2e577.js",
-          "hash": "1db9e77186e7742d6127",
-          "publicPath": "/metadata---docs-f-2-e-react-native-fetch-29-e-cbf.3c66673758578de2e577.js"
+          "file": "metadata---docs-f-2-e-react-native-deploy-4-cf-03c.42e8179692e50d9f2fa9.js",
+          "hash": "baaba1cf09d9c3013f48",
+          "publicPath": "/metadata---docs-f-2-e-react-native-deploy-4-cf-03c.42e8179692e50d9f2fa9.js"
         }
       ]
     },
     "154": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-form-4-e-3-47e.7591557b0ca7b4eacc65.js",
-          "hash": "f5679c98fc6270373af8",
-          "publicPath": "/metadata---docs-f-2-e-react-native-form-4-e-3-47e.7591557b0ca7b4eacc65.js"
+          "file": "metadata---docs-f-2-e-react-native-fetchd-41-27d.56ddedd34e8ac926dcc9.js",
+          "hash": "a4b1b59f9b78d0b8c179",
+          "publicPath": "/metadata---docs-f-2-e-react-native-fetchd-41-27d.56ddedd34e8ac926dcc9.js"
         }
       ]
     },
     "155": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-git-183-0de.557e9308cdbc48c20194.js",
-          "hash": "859a7965165b56c9ceaa",
-          "publicPath": "/metadata---docs-f-2-e-react-native-git-183-0de.557e9308cdbc48c20194.js"
+          "file": "metadata---docs-f-2-e-react-native-form-69-e-589.7d39120ee98e8a5d6192.js",
+          "hash": "3ed0e353cbc8872cca38",
+          "publicPath": "/metadata---docs-f-2-e-react-native-form-69-e-589.7d39120ee98e8a5d6192.js"
         }
       ]
     },
     "156": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-index-73-d-b28.a7a813a88049d74ea084.js",
-          "hash": "dc69cc81046b99984ce0",
-          "publicPath": "/metadata---docs-f-2-e-react-native-index-73-d-b28.a7a813a88049d74ea084.js"
+          "file": "metadata---docs-f-2-e-react-native-git-3-f-0-1e2.1303c9e04bf2f36d0e06.js",
+          "hash": "be0c3df8dc3ac30e901f",
+          "publicPath": "/metadata---docs-f-2-e-react-native-git-3-f-0-1e2.1303c9e04bf2f36d0e06.js"
         }
       ]
     },
     "157": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-issue-497-9a8.2820276809df0e3bec69.js",
-          "hash": "ccabfc82c674c3d6a37e",
-          "publicPath": "/metadata---docs-f-2-e-react-native-issue-497-9a8.2820276809df0e3bec69.js"
+          "file": "metadata---docs-f-2-e-react-native-indexb-92-e43.e937a026ddf6a55d3c88.js",
+          "hash": "0918ac5b4d6facfc7946",
+          "publicPath": "/metadata---docs-f-2-e-react-native-indexb-92-e43.e937a026ddf6a55d3c88.js"
         }
       ]
     },
     "158": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-loadingbb-1-c0e.1bb74d8916384dd96b75.js",
-          "hash": "769f71abce312bafc68a",
-          "publicPath": "/metadata---docs-f-2-e-react-native-loadingbb-1-c0e.1bb74d8916384dd96b75.js"
+          "file": "metadata---docs-f-2-e-react-native-issue-214-5cd.50942c03421bf7c141a7.js",
+          "hash": "64431ea76cac6676c8ff",
+          "publicPath": "/metadata---docs-f-2-e-react-native-issue-214-5cd.50942c03421bf7c141a7.js"
         }
       ]
     },
     "159": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-react-native-video-4-c-7-eb3.4953f9714782bed13b06.js",
-          "hash": "51972232dee943084f16",
-          "publicPath": "/metadata---docs-f-2-e-react-native-react-native-video-4-c-7-eb3.4953f9714782bed13b06.js"
+          "file": "metadata---docs-f-2-e-react-native-loadingf-98-f5d.63d4a7c73f4e5252a780.js",
+          "hash": "26cf82c33c71f52df99d",
+          "publicPath": "/metadata---docs-f-2-e-react-native-loadingf-98-f5d.63d4a7c73f4e5252a780.js"
         }
       ]
     },
     "160": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-save-to-camera-28-e-f8f.ca0488ddfcbda28acfec.js",
-          "hash": "74bc70f8dd15f1b754b1",
-          "publicPath": "/metadata---docs-f-2-e-react-native-save-to-camera-28-e-f8f.ca0488ddfcbda28acfec.js"
+          "file": "metadata---docs-f-2-e-react-native-react-native-video-97-c-eaa.6710af3d91d98cca7324.js",
+          "hash": "b8e863240cf788b9dff3",
+          "publicPath": "/metadata---docs-f-2-e-react-native-react-native-video-97-c-eaa.6710af3d91d98cca7324.js"
         }
       ]
     },
     "161": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-share-to-wechat-5-e-1-8ff.29158544e7380f1e887e.js",
-          "hash": "dec855676779b8009e2a",
-          "publicPath": "/metadata---docs-f-2-e-react-native-share-to-wechat-5-e-1-8ff.29158544e7380f1e887e.js"
+          "file": "metadata---docs-f-2-e-react-native-save-to-camera-7-a-4-735.86ebaa9c12e9f9eb3b00.js",
+          "hash": "96909da3983aeb8ee573",
+          "publicPath": "/metadata---docs-f-2-e-react-native-save-to-camera-7-a-4-735.86ebaa9c12e9f9eb3b00.js"
         }
       ]
     },
     "162": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-size-9-b-3-745.a12c20736ed591b25b6c.js",
-          "hash": "b89eaf1b0a1b4e9b5a77",
-          "publicPath": "/metadata---docs-f-2-e-react-native-size-9-b-3-745.a12c20736ed591b25b6c.js"
+          "file": "metadata---docs-f-2-e-react-native-share-to-wechatd-32-d2a.48c72ec3aec362b7906f.js",
+          "hash": "b32bfc4c727f2770f6c6",
+          "publicPath": "/metadata---docs-f-2-e-react-native-share-to-wechatd-32-d2a.48c72ec3aec362b7906f.js"
         }
       ]
     },
     "163": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-sourceb-4-c-cef.70adc7adf2c78c5ccd8a.js",
-          "hash": "7a30c369cf424487300a",
-          "publicPath": "/metadata---docs-f-2-e-react-native-sourceb-4-c-cef.70adc7adf2c78c5ccd8a.js"
+          "file": "metadata---docs-f-2-e-react-native-sizefa-9-e54.7f25ffec75b11ea6df77.js",
+          "hash": "3c0d6c9d3ab34762d0e1",
+          "publicPath": "/metadata---docs-f-2-e-react-native-sizefa-9-e54.7f25ffec75b11ea6df77.js"
         }
       ]
     },
     "164": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-tech-4-c-4-b0c.e0206586a449c7ef8c55.js",
-          "hash": "91d2db5beb646c83d39a",
-          "publicPath": "/metadata---docs-f-2-e-react-native-tech-4-c-4-b0c.e0206586a449c7ef8c55.js"
+          "file": "metadata---docs-f-2-e-react-native-source-9-b-5-f09.eba1114d7802361bed43.js",
+          "hash": "f277890f14e5180a4161",
+          "publicPath": "/metadata---docs-f-2-e-react-native-source-9-b-5-f09.eba1114d7802361bed43.js"
         }
       ]
     },
     "165": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-update-rn-9-e-4-2b4.f99bee34b26d2ef24350.js",
-          "hash": "86d0e4948e30846343b3",
-          "publicPath": "/metadata---docs-f-2-e-react-native-update-rn-9-e-4-2b4.f99bee34b26d2ef24350.js"
+          "file": "metadata---docs-f-2-e-react-native-techbca-407.60e8005e9f5a4d90463f.js",
+          "hash": "1d157d37a170a4eeabec",
+          "publicPath": "/metadata---docs-f-2-e-react-native-techbca-407.60e8005e9f5a4d90463f.js"
         }
       ]
     },
     "166": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-waterfall-2-a-3-93d.01a23133c8f128a7102e.js",
-          "hash": "fec16577a3cef2368ef1",
-          "publicPath": "/metadata---docs-f-2-e-react-native-waterfall-2-a-3-93d.01a23133c8f128a7102e.js"
+          "file": "metadata---docs-f-2-e-react-native-update-rn-323-92d.49766a88b8b68b2070db.js",
+          "hash": "75ff69d61f0295b33d07",
+          "publicPath": "/metadata---docs-f-2-e-react-native-update-rn-323-92d.49766a88b8b68b2070db.js"
         }
       ]
     },
     "167": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-react-native-wechat-7-dc-224.3f36f881ce45419c23f6.js",
-          "hash": "82e37f1d36459ec32496",
-          "publicPath": "/metadata---docs-f-2-e-react-native-wechat-7-dc-224.3f36f881ce45419c23f6.js"
+          "file": "metadata---docs-f-2-e-react-native-waterfall-2-d-9-e37.6586128947e8ed32f960.js",
+          "hash": "f20683ae479345dcd6ee",
+          "publicPath": "/metadata---docs-f-2-e-react-native-waterfall-2-d-9-e37.6586128947e8ed32f960.js"
         }
       ]
     },
     "168": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-safe-index-8-f-9-07f.a380096347412e09c3e7.js",
-          "hash": "b263dd740daeb353a5db",
-          "publicPath": "/metadata---docs-f-2-e-safe-index-8-f-9-07f.a380096347412e09c3e7.js"
+          "file": "metadata---docs-f-2-e-react-native-wechate-47-3f8.eae10f64ddc42ecc50cb.js",
+          "hash": "4a7d8f49b401a4b871fb",
+          "publicPath": "/metadata---docs-f-2-e-react-native-wechate-47-3f8.eae10f64ddc42ecc50cb.js"
         }
       ]
     },
     "169": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-test-index-10-d-3d8.10786db44f0e26362bc9.js",
-          "hash": "8a32230b788cbcfed57b",
-          "publicPath": "/metadata---docs-f-2-e-test-index-10-d-3d8.10786db44f0e26362bc9.js"
+          "file": "metadata---docs-f-2-e-safe-index-647-b0c.ebb3ccf6c878ce3fd8ac.js",
+          "hash": "84259a5b534fa7e8cb81",
+          "publicPath": "/metadata---docs-f-2-e-safe-index-647-b0c.ebb3ccf6c878ce3fd8ac.js"
         }
       ]
     },
     "170": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-test-jestf-2-a-9a8.338aab1eb21eb4f1fe9a.js",
-          "hash": "8eb92e78e68063489fa8",
-          "publicPath": "/metadata---docs-f-2-e-test-jestf-2-a-9a8.338aab1eb21eb4f1fe9a.js"
+          "file": "metadata---docs-f-2-e-test-index-47-d-1a6.f5a7d1897db19fd43e79.js",
+          "hash": "3c39041394ba0bdce636",
+          "publicPath": "/metadata---docs-f-2-e-test-index-47-d-1a6.f5a7d1897db19fd43e79.js"
         }
       ]
     },
     "171": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-vue-index-13-f-25b.1379fceb1dc2b9ad4955.js",
-          "hash": "a9031d7407db2dc43fca",
-          "publicPath": "/metadata---docs-f-2-e-vue-index-13-f-25b.1379fceb1dc2b9ad4955.js"
+          "file": "metadata---docs-f-2-e-test-jestda-3-2d2.adab61b10dc884940697.js",
+          "hash": "35527f002b1b46420716",
+          "publicPath": "/metadata---docs-f-2-e-test-jestda-3-2d2.adab61b10dc884940697.js"
         }
       ]
     },
     "172": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-vue-origine-87-9b7.e673c5748c8ffb4ec8f1.js",
-          "hash": "409c8553b39d6aa6d64b",
-          "publicPath": "/metadata---docs-f-2-e-vue-origine-87-9b7.e673c5748c8ffb4ec8f1.js"
+          "file": "metadata---docs-f-2-e-vue-indexefd-70b.cf1da06406c97aa9fa7e.js",
+          "hash": "fe943a63410a72f9f410",
+          "publicPath": "/metadata---docs-f-2-e-vue-indexefd-70b.cf1da06406c97aa9fa7e.js"
         }
       ]
     },
     "173": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-webpack-basic-indexaf-4-310.ab53f7a2f2d49c35e397.js",
-          "hash": "d7945c32e5ad9f7d89f2",
-          "publicPath": "/metadata---docs-f-2-e-webpack-basic-indexaf-4-310.ab53f7a2f2d49c35e397.js"
+          "file": "metadata---docs-f-2-e-vue-origin-587-f6e.e813ff92cd5be1db3996.js",
+          "hash": "9de2f313bfad751206e7",
+          "publicPath": "/metadata---docs-f-2-e-vue-origin-587-f6e.e813ff92cd5be1db3996.js"
         }
       ]
     },
     "174": {
       "js": [
         {
-          "file": "metadata---docs-f-2-e-webpack-principle-index-2-c-2-ae5.21778dd53f3dee492f7f.js",
-          "hash": "244d32b875a874139d81",
-          "publicPath": "/metadata---docs-f-2-e-webpack-principle-index-2-c-2-ae5.21778dd53f3dee492f7f.js"
+          "file": "metadata---docs-f-2-e-vue-zf-258-73c.20ff3796deb4b2fd5507.js",
+          "hash": "cec99bb8caacb77ab9fe",
+          "publicPath": "/metadata---docs-f-2-e-vue-zf-258-73c.20ff3796deb4b2fd5507.js"
         }
       ]
     },
     "175": {
       "js": [
         {
-          "file": "metadata---docs-linux-file-561-309.221f2b680c277bfc7336.js",
-          "hash": "046a4da4f5d067cb22a0",
-          "publicPath": "/metadata---docs-linux-file-561-309.221f2b680c277bfc7336.js"
+          "file": "metadata---docs-f-2-e-webpack-basic-indexe-25-12c.bc97bc27a12dd1743d78.js",
+          "hash": "b495f00c8092ae731c0a",
+          "publicPath": "/metadata---docs-f-2-e-webpack-basic-indexe-25-12c.bc97bc27a12dd1743d78.js"
         }
       ]
     },
     "176": {
       "js": [
         {
-          "file": "metadata---docs-linux-index-885-30a.7ea47c3baed7e095c36d.js",
-          "hash": "14583498d5a36312c3ca",
-          "publicPath": "/metadata---docs-linux-index-885-30a.7ea47c3baed7e095c36d.js"
+          "file": "metadata---docs-f-2-e-webpack-principle-index-6-fa-123.6036461c39812f0a9a54.js",
+          "hash": "c617984fa364743c36ee",
+          "publicPath": "/metadata---docs-f-2-e-webpack-principle-index-6-fa-123.6036461c39812f0a9a54.js"
         }
       ]
     },
     "177": {
       "js": [
         {
-          "file": "metadata---docs-linux-service-241-737.ea50e1d0f08957c8eca9.js",
-          "hash": "933fdde88de476865905",
-          "publicPath": "/metadata---docs-linux-service-241-737.ea50e1d0f08957c8eca9.js"
+          "file": "metadata---docs-linux-file-65-c-c93.06f1005462e771673c93.js",
+          "hash": "204bc1c5bf2020583100",
+          "publicPath": "/metadata---docs-linux-file-65-c-c93.06f1005462e771673c93.js"
         }
       ]
     },
     "178": {
       "js": [
         {
-          "file": "metadata---docs-linux-soft-3-e-2-aec.7c8948247dd45e45dc6c.js",
-          "hash": "ee616ad2be4b7ff3fc27",
-          "publicPath": "/metadata---docs-linux-soft-3-e-2-aec.7c8948247dd45e45dc6c.js"
+          "file": "metadata---docs-linux-index-73-e-38c.753c4d1a4f0cce68c442.js",
+          "hash": "937a6f77d95f537f01cc",
+          "publicPath": "/metadata---docs-linux-index-73-e-38c.753c4d1a4f0cce68c442.js"
         }
       ]
     },
     "179": {
       "js": [
         {
-          "file": "metadata---docs-mdxdf-2-f06.62983a0f4d0af5ab449d.js",
-          "hash": "4ee7015a88468774b561",
-          "publicPath": "/metadata---docs-mdxdf-2-f06.62983a0f4d0af5ab449d.js"
+          "file": "metadata---docs-linux-serviceac-8-d7f.a8db4496c4521adf47a9.js",
+          "hash": "4a4d7206d31fbb29db0d",
+          "publicPath": "/metadata---docs-linux-serviceac-8-d7f.a8db4496c4521adf47a9.js"
         }
       ]
     },
     "180": {
       "js": [
         {
-          "file": "metadata---docs-nginx-index-4-b-5-890.8fc856c9f6fd85de32ab.js",
-          "hash": "8053f4f20da0af885579",
-          "publicPath": "/metadata---docs-nginx-index-4-b-5-890.8fc856c9f6fd85de32ab.js"
+          "file": "metadata---docs-linux-softe-01-10b.dd8a48e3918d13d73eb8.js",
+          "hash": "19333606e3617faacc31",
+          "publicPath": "/metadata---docs-linux-softe-01-10b.dd8a48e3918d13d73eb8.js"
         }
       ]
     },
     "181": {
       "js": [
         {
-          "file": "metadata---docs-nodejs-async-672-a66.bef81a0adfe4d2eae2fd.js",
-          "hash": "f783dd841bcef017ec4f",
-          "publicPath": "/metadata---docs-nodejs-async-672-a66.bef81a0adfe4d2eae2fd.js"
+          "file": "metadata---docs-nginx-index-4-a-2-2e4.0ab02bb90f0c7bc8d6bd.js",
+          "hash": "ce43b8c642da7b1988e0",
+          "publicPath": "/metadata---docs-nginx-index-4-a-2-2e4.0ab02bb90f0c7bc8d6bd.js"
         }
       ]
     },
     "182": {
       "js": [
         {
-          "file": "metadata---docs-nodejs-safee-94-4de.688c9e593c4f6f709cd1.js",
-          "hash": "fa967235c677d33c1542",
-          "publicPath": "/metadata---docs-nodejs-safee-94-4de.688c9e593c4f6f709cd1.js"
+          "file": "metadata---docs-nodejs-asyncc-40-22b.f8e18069e6bfba6ea18c.js",
+          "hash": "6e5388b8c81882b16854",
+          "publicPath": "/metadata---docs-nodejs-asyncc-40-22b.f8e18069e6bfba6ea18c.js"
         }
       ]
     },
     "183": {
       "js": [
         {
-          "file": "metadata---docs-nodejs-testd-72-48b.8216f1a78ba2a07b5ba1.js",
-          "hash": "c7a08cc2ec0668233b9a",
-          "publicPath": "/metadata---docs-nodejs-testd-72-48b.8216f1a78ba2a07b5ba1.js"
+          "file": "metadata---docs-nodejs-safe-287-46f.a48c917a3ab21d94ff84.js",
+          "hash": "a2b924cc2a49c0bfd04e",
+          "publicPath": "/metadata---docs-nodejs-safe-287-46f.a48c917a3ab21d94ff84.js"
         }
       ]
     },
     "184": {
       "js": [
         {
-          "file": "metadata---docs-nodejs-util-7-f-8-7a8.6a08bbaed6a0d465d56a.js",
-          "hash": "569d6736be7dc2a71830",
-          "publicPath": "/metadata---docs-nodejs-util-7-f-8-7a8.6a08bbaed6a0d465d56a.js"
+          "file": "metadata---docs-nodejs-testbf-0-08d.a9a72c6fab71ce5736fd.js",
+          "hash": "c25394032edc2a64324b",
+          "publicPath": "/metadata---docs-nodejs-testbf-0-08d.a9a72c6fab71ce5736fd.js"
         }
       ]
     },
     "185": {
       "js": [
         {
-          "file": "metadata---docs-other-kindle-rssa-50-6fc.396ca3456e7992a9ee87.js",
-          "hash": "dab4aa4798bde55ae23f",
-          "publicPath": "/metadata---docs-other-kindle-rssa-50-6fc.396ca3456e7992a9ee87.js"
+          "file": "metadata---docs-nodejs-util-0-fd-711.d07acf2cb8f71bdf235d.js",
+          "hash": "88bb131b06b36159933e",
+          "publicPath": "/metadata---docs-nodejs-util-0-fd-711.d07acf2cb8f71bdf235d.js"
         }
       ]
     },
     "186": {
       "js": [
         {
-          "file": "metadata---docs-other-macc-2-b-c65.37511d5e476f18f3918e.js",
-          "hash": "ec66c740d179d47f5f7d",
-          "publicPath": "/metadata---docs-other-macc-2-b-c65.37511d5e476f18f3918e.js"
+          "file": "metadata---docs-other-blogc-8-f-558.85a843134419b7762136.js",
+          "hash": "44316bec6d5101f1440c",
+          "publicPath": "/metadata---docs-other-blogc-8-f-558.85a843134419b7762136.js"
         }
       ]
     },
     "187": {
       "js": [
         {
-          "file": "metadata---docs-other-resource-50-a-52d.e7a44e1d5ec84064eac1.js",
-          "hash": "415f7450925e0f6d63df",
-          "publicPath": "/metadata---docs-other-resource-50-a-52d.e7a44e1d5ec84064eac1.js"
+          "file": "metadata---docs-other-kindle-rssb-06-572.56dbcb3d237d53220829.js",
+          "hash": "6891b88b3fae2e7c08d2",
+          "publicPath": "/metadata---docs-other-kindle-rssb-06-572.56dbcb3d237d53220829.js"
         }
       ]
     },
     "188": {
       "js": [
         {
-          "file": "metadata---docs-patterns-action-356-eae.a67c110c62cb77e7a623.js",
-          "hash": "535968b20836e54967d8",
-          "publicPath": "/metadata---docs-patterns-action-356-eae.a67c110c62cb77e7a623.js"
+          "file": "metadata---docs-other-macc-8-c-bc8.f1056687ee296d57433a.js",
+          "hash": "a3bca1eed48f5885ba02",
+          "publicPath": "/metadata---docs-other-macc-8-c-bc8.f1056687ee296d57433a.js"
         }
       ]
     },
     "189": {
       "js": [
         {
-          "file": "metadata---docs-patterns-adapter-6-f-5-981.bf77464a39cc3f6b9926.js",
-          "hash": "082326f36d59c23f31a1",
-          "publicPath": "/metadata---docs-patterns-adapter-6-f-5-981.bf77464a39cc3f6b9926.js"
+          "file": "metadata---docs-other-resource-348-7b5.f36a0245c8152f928000.js",
+          "hash": "672c54da167718ccf08e",
+          "publicPath": "/metadata---docs-other-resource-348-7b5.f36a0245c8152f928000.js"
         }
       ]
     },
     "190": {
       "js": [
         {
-          "file": "metadata---docs-patterns-bridge-543-b80.8f81492aaef815a4b59c.js",
-          "hash": "53181e4a35de69d9987e",
-          "publicPath": "/metadata---docs-patterns-bridge-543-b80.8f81492aaef815a4b59c.js"
+          "file": "metadata---docs-patterns-action-124-4bd.81816e08d7e197fbc992.js",
+          "hash": "791b0215eed0c94b2798",
+          "publicPath": "/metadata---docs-patterns-action-124-4bd.81816e08d7e197fbc992.js"
         }
       ]
     },
     "191": {
       "js": [
         {
-          "file": "metadata---docs-patterns-builderb-36-b24.7bace823e1a19a02f25f.js",
-          "hash": "83363ef810203d084201",
-          "publicPath": "/metadata---docs-patterns-builderb-36-b24.7bace823e1a19a02f25f.js"
+          "file": "metadata---docs-patterns-adapter-464-f76.5b7ed24c6f3769df781c.js",
+          "hash": "ed00570777936a51c94a",
+          "publicPath": "/metadata---docs-patterns-adapter-464-f76.5b7ed24c6f3769df781c.js"
         }
       ]
     },
     "192": {
       "js": [
         {
-          "file": "metadata---docs-patterns-chain-of-responsibility-6-d-5-41a.95050b200de95226f643.js",
-          "hash": "1d8ed42bca9d004487d5",
-          "publicPath": "/metadata---docs-patterns-chain-of-responsibility-6-d-5-41a.95050b200de95226f643.js"
+          "file": "metadata---docs-patterns-bridgefbb-495.36847cfe0994f3493cb7.js",
+          "hash": "e2a6af79fdab16ecb33f",
+          "publicPath": "/metadata---docs-patterns-bridgefbb-495.36847cfe0994f3493cb7.js"
         }
       ]
     },
     "193": {
       "js": [
         {
-          "file": "metadata---docs-patterns-command-570-6f9.0d1f3ae8796b2b808ffa.js",
-          "hash": "97dc52413ffcd43cec02",
-          "publicPath": "/metadata---docs-patterns-command-570-6f9.0d1f3ae8796b2b808ffa.js"
+          "file": "metadata---docs-patterns-builderead-d21.d2361792867897216584.js",
+          "hash": "7df7040da8c73c889086",
+          "publicPath": "/metadata---docs-patterns-builderead-d21.d2361792867897216584.js"
         }
       ]
     },
     "194": {
       "js": [
         {
-          "file": "metadata---docs-patterns-composite-9-ae-076.84b9b673b06c841fe27e.js",
-          "hash": "402368f146d5e889cb5a",
-          "publicPath": "/metadata---docs-patterns-composite-9-ae-076.84b9b673b06c841fe27e.js"
+          "file": "metadata---docs-patterns-chain-of-responsibility-014-8a0.3df75643a5b906e0e95e.js",
+          "hash": "414fe491d76272ce6b5a",
+          "publicPath": "/metadata---docs-patterns-chain-of-responsibility-014-8a0.3df75643a5b906e0e95e.js"
         }
       ]
     },
     "195": {
       "js": [
         {
-          "file": "metadata---docs-patterns-decorator-092-cfc.fde9fdf7070996004cef.js",
-          "hash": "578e0843e78c9cba9d0d",
-          "publicPath": "/metadata---docs-patterns-decorator-092-cfc.fde9fdf7070996004cef.js"
+          "file": "metadata---docs-patterns-command-80-a-50e.9f9dded3c382b0277e99.js",
+          "hash": "e5b6830dd132fded2143",
+          "publicPath": "/metadata---docs-patterns-command-80-a-50e.9f9dded3c382b0277e99.js"
         }
       ]
     },
     "196": {
       "js": [
         {
-          "file": "metadata---docs-patterns-facade-718-580.e8f101aaf4e8535ee127.js",
-          "hash": "a4199f82b920d8881556",
-          "publicPath": "/metadata---docs-patterns-facade-718-580.e8f101aaf4e8535ee127.js"
+          "file": "metadata---docs-patterns-composite-238-38a.0501a960cff28811d86b.js",
+          "hash": "fdccc2a1deac100b54eb",
+          "publicPath": "/metadata---docs-patterns-composite-238-38a.0501a960cff28811d86b.js"
         }
       ]
     },
     "197": {
       "js": [
         {
-          "file": "metadata---docs-patterns-factory-893-3ea.7ed1e2160718292a31be.js",
-          "hash": "01c4b6d6d94772b54f17",
-          "publicPath": "/metadata---docs-patterns-factory-893-3ea.7ed1e2160718292a31be.js"
+          "file": "metadata---docs-patterns-decorator-142-9e2.af6480bb05e36aaf5bbc.js",
+          "hash": "df5d600ccd905b04e06c",
+          "publicPath": "/metadata---docs-patterns-decorator-142-9e2.af6480bb05e36aaf5bbc.js"
         }
       ]
     },
     "198": {
       "js": [
         {
-          "file": "metadata---docs-patterns-flyweight-2-c-4-e78.726f840fd7e28516bd19.js",
-          "hash": "56ab2faf7a7e9620980f",
-          "publicPath": "/metadata---docs-patterns-flyweight-2-c-4-e78.726f840fd7e28516bd19.js"
+          "file": "metadata---docs-patterns-facade-7-a-8-297.8994ec660f8979f26d3f.js",
+          "hash": "c24ca813e27debb8e562",
+          "publicPath": "/metadata---docs-patterns-facade-7-a-8-297.8994ec660f8979f26d3f.js"
         }
       ]
     },
     "199": {
       "js": [
         {
-          "file": "metadata---docs-patterns-index-540-d0e.2e0b983a3a6049c63637.js",
-          "hash": "2ef31ce860d25f3a56de",
-          "publicPath": "/metadata---docs-patterns-index-540-d0e.2e0b983a3a6049c63637.js"
+          "file": "metadata---docs-patterns-factory-659-5cc.64975baaafd3bc6b0d9a.js",
+          "hash": "6fe2cd132996c4eda305",
+          "publicPath": "/metadata---docs-patterns-factory-659-5cc.64975baaafd3bc6b0d9a.js"
         }
       ]
     },
     "200": {
       "js": [
         {
-          "file": "metadata---docs-patterns-interpreterc-12-25b.f3f6a09f7725129b6ec3.js",
-          "hash": "838edf808f559fef055d",
-          "publicPath": "/metadata---docs-patterns-interpreterc-12-25b.f3f6a09f7725129b6ec3.js"
+          "file": "metadata---docs-patterns-flyweightaba-d18.e87d091a67e991b4cbee.js",
+          "hash": "0b79afc04a23425b2953",
+          "publicPath": "/metadata---docs-patterns-flyweightaba-d18.e87d091a67e991b4cbee.js"
         }
       ]
     },
     "201": {
       "js": [
         {
-          "file": "metadata---docs-patterns-iterator-520-89a.6359c1c664583c3f3d53.js",
-          "hash": "5a8bff4d1eb067b9702f",
-          "publicPath": "/metadata---docs-patterns-iterator-520-89a.6359c1c664583c3f3d53.js"
+          "file": "metadata---docs-patterns-index-63-b-9e3.3a645f801826c6531d22.js",
+          "hash": "1743feb15465a616b9f2",
+          "publicPath": "/metadata---docs-patterns-index-63-b-9e3.3a645f801826c6531d22.js"
         }
       ]
     },
     "202": {
       "js": [
         {
-          "file": "metadata---docs-patterns-mediatorb-7-b-0e2.bd00e63c20ede11064d1.js",
-          "hash": "4fa4fd3d1e66543ee290",
-          "publicPath": "/metadata---docs-patterns-mediatorb-7-b-0e2.bd00e63c20ede11064d1.js"
+          "file": "metadata---docs-patterns-interpreter-484-b15.8bf5662275ef37990978.js",
+          "hash": "41f6073caba70bbcec78",
+          "publicPath": "/metadata---docs-patterns-interpreter-484-b15.8bf5662275ef37990978.js"
         }
       ]
     },
     "203": {
       "js": [
         {
-          "file": "metadata---docs-patterns-mementocaf-1b8.1eb8eb41054e8bb16404.js",
-          "hash": "80bae5db89e26e986152",
-          "publicPath": "/metadata---docs-patterns-mementocaf-1b8.1eb8eb41054e8bb16404.js"
+          "file": "metadata---docs-patterns-iterator-288-f03.096363b38361bcc943f6.js",
+          "hash": "99b4f6514af4b6de6b49",
+          "publicPath": "/metadata---docs-patterns-iterator-288-f03.096363b38361bcc943f6.js"
         }
       ]
     },
     "204": {
       "js": [
         {
-          "file": "metadata---docs-patterns-observer-7-d-9-bbb.0c5216383890fe021512.js",
-          "hash": "789494c8e5bcd4c4f4cc",
-          "publicPath": "/metadata---docs-patterns-observer-7-d-9-bbb.0c5216383890fe021512.js"
+          "file": "metadata---docs-patterns-mediator-421-d91.37e0d59a654f39db1d68.js",
+          "hash": "67d14556034a62456d05",
+          "publicPath": "/metadata---docs-patterns-mediator-421-d91.37e0d59a654f39db1d68.js"
         }
       ]
     },
     "205": {
       "js": [
         {
-          "file": "metadata---docs-patterns-prototype-9-e-9-e45.cea187554c1f6ab311d7.js",
-          "hash": "fe2fd5ae311931c94d7c",
-          "publicPath": "/metadata---docs-patterns-prototype-9-e-9-e45.cea187554c1f6ab311d7.js"
+          "file": "metadata---docs-patterns-memento-098-f69.a737176f488438f1d246.js",
+          "hash": "8bd5bd0c0226a3666d8f",
+          "publicPath": "/metadata---docs-patterns-memento-098-f69.a737176f488438f1d246.js"
         }
       ]
     },
     "206": {
       "js": [
         {
-          "file": "metadata---docs-patterns-proxy-92-c-ae1.5885827dfed8ddc56df1.js",
-          "hash": "c9c2f9cd47e4e99b6481",
-          "publicPath": "/metadata---docs-patterns-proxy-92-c-ae1.5885827dfed8ddc56df1.js"
+          "file": "metadata---docs-patterns-observere-90-4f8.6ced65f460928095c70c.js",
+          "hash": "014381a7f5e6b5d28c2c",
+          "publicPath": "/metadata---docs-patterns-observere-90-4f8.6ced65f460928095c70c.js"
         }
       ]
     },
     "207": {
       "js": [
         {
-          "file": "metadata---docs-patterns-singleton-6-ed-aff.56f7c00e391d5fddcbad.js",
-          "hash": "742afd2c2451dbd9a6ee",
-          "publicPath": "/metadata---docs-patterns-singleton-6-ed-aff.56f7c00e391d5fddcbad.js"
+          "file": "metadata---docs-patterns-prototype-8-ac-89b.81c1926ddca4c0ee17c5.js",
+          "hash": "ad6dd67dfc7c50d55ab0",
+          "publicPath": "/metadata---docs-patterns-prototype-8-ac-89b.81c1926ddca4c0ee17c5.js"
         }
       ]
     },
     "208": {
       "js": [
         {
-          "file": "metadata---docs-patterns-statea-8-b-f4a.c1dd08698574e26e9db6.js",
-          "hash": "986a76bba419030821f0",
-          "publicPath": "/metadata---docs-patterns-statea-8-b-f4a.c1dd08698574e26e9db6.js"
+          "file": "metadata---docs-patterns-proxye-47-a3c.234134dcae7db5ad9a43.js",
+          "hash": "0dd9cd406b71143af195",
+          "publicPath": "/metadata---docs-patterns-proxye-47-a3c.234134dcae7db5ad9a43.js"
         }
       ]
     },
     "209": {
       "js": [
         {
-          "file": "metadata---docs-patterns-strategya-20-dc6.a9340d614672f560b526.js",
-          "hash": "80d1508fcbea746ede59",
-          "publicPath": "/metadata---docs-patterns-strategya-20-dc6.a9340d614672f560b526.js"
+          "file": "metadata---docs-patterns-singletonb-35-b33.e4410205e4b63b2b0192.js",
+          "hash": "d0a85599609924239553",
+          "publicPath": "/metadata---docs-patterns-singletonb-35-b33.e4410205e4b63b2b0192.js"
         }
       ]
     },
     "210": {
       "js": [
         {
-          "file": "metadata---docs-patterns-template-4-e-7-bd2.9018422edfd35fa95003.js",
-          "hash": "5e63940773f784fab713",
-          "publicPath": "/metadata---docs-patterns-template-4-e-7-bd2.9018422edfd35fa95003.js"
+          "file": "metadata---docs-patterns-stateb-04-819.dbfb7b76a5f0bf1070ef.js",
+          "hash": "8f5e90b1b1341524ef69",
+          "publicPath": "/metadata---docs-patterns-stateb-04-819.dbfb7b76a5f0bf1070ef.js"
         }
       ]
     },
     "211": {
       "js": [
         {
-          "file": "metadata---docs-patterns-visitor-926-715.1c3c9a073a8f8dd623ea.js",
-          "hash": "d0747cbf64d90414ded4",
-          "publicPath": "/metadata---docs-patterns-visitor-926-715.1c3c9a073a8f8dd623ea.js"
+          "file": "metadata---docs-patterns-strategy-6-ce-04f.dc13e188379edea75baf.js",
+          "hash": "d776cf933c93ad24cafe",
+          "publicPath": "/metadata---docs-patterns-strategy-6-ce-04f.dc13e188379edea75baf.js"
         }
       ]
     },
     "212": {
       "js": [
         {
-          "file": "metadata---docs-source-jquery-event-046-3fd.e401de0858f60de24776.js",
-          "hash": "bfdaf06f8e47e90acf1f",
-          "publicPath": "/metadata---docs-source-jquery-event-046-3fd.e401de0858f60de24776.js"
+          "file": "metadata---docs-patterns-template-3-bc-bf3.daecb8563311a626ef0b.js",
+          "hash": "084149e8ff9797447038",
+          "publicPath": "/metadata---docs-patterns-template-3-bc-bf3.daecb8563311a626ef0b.js"
         }
       ]
     },
     "213": {
       "js": [
         {
-          "file": "runtime~main.4a2977139467a9935120.js",
-          "hash": "c473ed6b8be48f75f8b6",
-          "publicPath": "/runtime~main.4a2977139467a9935120.js"
+          "file": "metadata---docs-patterns-visitore-38-a38.6c1f416beb83d0fa4cc5.js",
+          "hash": "a9887c15fb36f147aacc",
+          "publicPath": "/metadata---docs-patterns-visitore-38-a38.6c1f416beb83d0fa4cc5.js"
         }
       ]
     },
     "214": {
       "js": [
         {
-          "file": "tags---blog-tags-3-c-9-4c8.77e27ad72cebe16d297a.js",
-          "hash": "0b2d6941c8297f6aab66",
-          "publicPath": "/tags---blog-tags-3-c-9-4c8.77e27ad72cebe16d297a.js"
+          "file": "metadata---docs-source-jquery-event-095-2e1.1c699411bca0b71a279d.js",
+          "hash": "6e9b0c1e4334c061ff05",
+          "publicPath": "/metadata---docs-source-jquery-event-095-2e1.1c699411bca0b71a279d.js"
         }
       ]
     },
     "215": {
       "js": [
         {
-          "file": "215.ea8dd146bc1758ada46d.js",
-          "hash": "6dd51f618dec5ce44028",
-          "publicPath": "/215.ea8dd146bc1758ada46d.js"
+          "file": "runtime~main.0b078f7cdcdfcdb429c2.js",
+          "hash": "ceead8dffe404abe3274",
+          "publicPath": "/runtime~main.0b078f7cdcdfcdb429c2.js"
+        }
+      ]
+    },
+    "216": {
+      "js": [
+        {
+          "file": "tags---blog-tagse-51-a7c.90fa7a1570bf6531abb5.js",
+          "hash": "6c6af2e6863eee4ffa9e",
+          "publicPath": "/tags---blog-tagse-51-a7c.90fa7a1570bf6531abb5.js"
+        }
+      ]
+    },
+    "217": {
+      "js": [
+        {
+          "file": "217.7593b3dc49186ab3fddf.js",
+          "hash": "d2965400c39c3f55f756",
+          "publicPath": "/217.7593b3dc49186ab3fddf.js"
         }
       ]
     }

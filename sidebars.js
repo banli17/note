@@ -16,8 +16,10 @@ module.exports = {
       'f2e/javascript/module',
       'f2e/javascript/async',
       'f2e/javascript/regexp',
+      'f2e/javascript/skill',
     ],
     浏览器原理与API: [
+      'f2e/browser/dom',
       'f2e/browser/work',
       'f2e/browser/eventloop',
       'f2e/browser/event',
@@ -119,6 +121,7 @@ module.exports = {
       'other/mac',
       'other/kindle-rss',
       'other/resource',
+      'other/blog',
     ]
   },
   source: {

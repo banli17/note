@@ -6,12 +6,13 @@
  */
 
 import React from 'react';
-
 import Head from '@docusaurus/Head';
 import DocLegacyPaginator from '@theme/DocLegacyPaginator';
 
 import styles from './styles.module.css';
 import GitalkComment from '../GitalkComment'
+
+import '../../../static/js/scrollSpy'
 
 function Headings({headings, isChild}) {
   if (!headings.length) return null;
@@ -19,7 +20,7 @@ function Headings({headings, isChild}) {
     <ul className={isChild ? '' : 'contents contents__left-border'}>
       {headings.map(heading => (
         <li key={heading.id}>
-          <a href={`#${heading.id}`} className="contents__link">
+          <a href={`#${heading.id}`} className='contents__link'>
             {heading.value}
           </a>
           <Headings isChild headings={heading.children} />

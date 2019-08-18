@@ -139,7 +139,6 @@ for (let i of o) {
 
 Generator 一般会配合 [co库](https://github.com/tj/co) 使用。
 
-
 ```javascript
 // co 返回一个promise，并且会将迭代器的最终执行结果传递
 let fs = require('fs')
@@ -706,3 +705,9 @@ function(callback) {
 </body>
 </html>
 ```
+
+## 参考资料
+
+- [setTimeout、Promise、Async/Await 的区别](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/33)
+- [Async/Await 如何通过同步的方式实现异步](https://juejin.im/post/5d2c814c6fb9a07ecd3d8e43)
+- [Generator 函数的异步应用](http://es6.ruanyifeng.com/#docs/generator-async)

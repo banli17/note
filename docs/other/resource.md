@@ -26,3 +26,4 @@ sidebar_label: 学习资源导航
 - [如何更优雅地交换a和b的值？](https://segmentfault.com/q/1010000000744107)
 - https://www.html5rocks.com/zh/tutorials/speed/high-performance-animations/
 - [jQuery源码分析系列](https://www.cnblogs.com/aaronjs/p/3279314.html)
+- [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis)

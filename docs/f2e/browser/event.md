@@ -13,7 +13,9 @@ sidebar_label: 事件机制
 
 ### addEventListener
 
-```
+addEventListener 方法用于绑定事件处理程序。
+
+```js
 addEventListener(type, listener, useCapture)
 ```
 
@@ -26,6 +28,7 @@ addEventListener 方法的参数如下：
     - `once`:布尔值，是否只触发一次
     - `passive`: 布尔值，设为 true 时，表示事件处理程序 listener 永远不会调用`preventDefault()`，如果 listener 还是调用了`preventDefault()`，客户端将忽略它并抛出一个控制台警告。
 
+DOM0 级还可以使用 onclick 方式绑定，但是它只能绑定一个事件处理函数。
 
 ## 事件传播
 
@@ -40,8 +43,65 @@ target.addEventListener('click', e => console.log("捕获") , true)
 
 上面代码，点击 target，将依次输出`冒泡`、`捕获`。
 
+### 事件兼容性
 
-## 阻止事件传播
+IE9 之前，事件有如下兼容性问题：
+
+1. 只支持冒泡，不支持捕获，所以实际开发中很少使用捕获。
+2. 不支持 addEventListener 和 removeEventListener，但是有对应的 attachEvent 和 detachEvent。
+3. 事件对象是挂在 window 上。
+4. 取消冒泡和取消默认行为
+
+```js
+// 取消冒泡
+e.cancelBubble = true
+
+// 取消默认行为
+e.returnValue = false
+
+// 事件目标元素
+e.srcElement
+```
+
+所以兼容的方法如下：
+
+```js
+/**
+ * 修复事件对象不兼容的地方
+ */
+function fixEventObj(e) {
+  e.target = e.target || e.srcElement;
+  e.preventDefault = e.preventDefault || function() {
+    e.returnValue = false;
+  };
+  e.stopPropagation = e.stopPropagation || function() {
+    e.cancelBubble = true;
+  };
+
+  return e;
+}
+
+/**
+ * 跨浏览器的绑定事件
+ */
+function on(elem, type, handle) {
+  if (elem.addEventListener) { // 检测是否有标准方法
+    elem.addEventListener(type, handle, false);
+  } else if (elem.attachEvent) { // 试图使用 `attachEvent`
+    elem.attachEvent('on' + type, function(event) {
+      event = fixEventObj(event);
+      handle.call(elem, event); // 使用 call 来改变 handle 的作用域，使其指向 elem
+    });
+  } else { // 兜底
+    elem['on' + type] = function() {
+      var event = fixEventObj(window.event);
+      handle.call(elem, event);
+    }
+  }
+}
+```
+
+### 阻止事件传播
 
 阻止事件传播的方法有 2 个：
 
@@ -89,9 +149,9 @@ b.addEventListener('click', (e) => {
 
 另外，要注意它是阻止冒泡，并没有阻止捕获。所以`document capture`总是会输出的。
 
-## 阻止默认事件
+### 阻止事件默认行为
 
-默认事件就是浏览器自带的一些事件。比如鼠标右键时会打开菜单，选中文字后可以按住拖动等。有时候，这些默认事件会影响我们的开发，所以需要阻止它。
+事件默认行为就是浏览器自带的一些事件行为。比如鼠标右键时会打开菜单，选中文字后可以按住拖动等。有时候，这些默认事件会影响我们的开发，所以需要阻止它。
 
 阻止默认事件的方法是使用事件对象的`preventDefault()`方法。
 
@@ -153,6 +213,16 @@ textarea.addEventListener('input', e => e.target.dispatchEvent(eventAwesome));
 // });
 ```
 
+## 事件对象
+
+### Event 
+
+### 实例属性
+
+- e.bubbles
+- e.eventPhase
+- e.currentTarget: 事件触发时经过的节点，因为总是在当前对象触发，所以相当于 this。
+- e.target: 事件触发目标
 
 ## 事件委托
 
@@ -177,8 +247,7 @@ for(let i = 0; i < li.length; i++){
 不足点是：
 
 - 并非所有的事件都能冒泡，如`load`、`change`、`submit`、`focus`、`blur`。
-- 加大管理复杂。
-- 不好模拟用户触发事件。
+- 事件传播链越长，越耗时，可以从 jQuery 取消 live(直接委托在 document 上) 方法可以看出。
 
 ## 鼠标事件
 
@@ -194,7 +263,7 @@ for(let i = 0; i < li.length; i++){
 - `mouseenter`: 鼠标移动进入节点时触发，进入子节点不会触发。
 - `mouseleave`: 鼠标离开节点时触发
 - `mouseover`: 鼠标进入节点时触发，进入子节点会再次触发。（记忆方法，over、out，两个o是一对）。
-- `mouseout`: 鼠标离开节点时触发，离开子节点会再次触发。
+- `mouseout`: 鼠标离开节点时触发(如进入子节点)，离开子节点会再次触发。
 - `contextmenu`：鼠标右键时触发。或按下上下文菜单键时触发。
 - `wheel`: 滚动鼠标的滚轮时触发，该事件继承自`WheelEvent`接口。
 
@@ -252,13 +321,234 @@ type 是事件类型，目前只能是`wheel`。第二个参数是事件配置�
 
 ### 键盘事件
 
+键盘事件继承自 KeyboardEvent 接口，主要有三个：
+
+- keydown: 按所有键都会触发
+- keypress: 按字符集触发，用于检测用户输入了什么字符。对Ctrl、Alt、Shift、Meta 键无效。
+- keyup: 松开键盘时触发
+
+如果用户一直按着键盘，会连续触发键盘事件，顺序为`keydown -> keypress -> keydown -> keypress ... -> keyup`。
+
+**新建键盘事件**
+
+```js
+new KeyboardEvent(type, options)
+```
+
+- type: 事件类型
+- options: 除了 Event 接口的属性，还有
+    - key: 字符串，当前按下的键，默认为''。
+    - code: 字符串，当前按下键的字符串形式，默认为''。
+    - location: 整数，当前按下的键的位置，默认为 0。
+    - ctrlKey: 是否按下 Ctrl 键，默认为false
+    - shiftKey
+    - altKey
+    - metaKey
+    - repeat: 是否重复按键，默认为 false
+
+**KeyboardEvent 实例属性**
+
+- e.ctrlKey
+- e.altKey
+- e.shiftKey
+- e.metaKey
+- e.key: 按下的键名，返回字符串，如`a`，如果无法识别，则返回字符串`Unidentified`。
+- e.keyCode: 已废弃。
+- e.code: [当前按键的字符串形式](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code#Code_values)，如`KeyA`。
+- e.location: 返回一个整数，表示按下的键的位置。
+    - 0: 主区域，或者无法判断在哪
+    - 1: 键盘的左侧，只适用哪些有两个位置的键(如 Ctrl 和 Shift)
+    - 2: 键盘的右侧，只适用哪些有两个位置的键(如 Ctrl 和 Shift)
+    - 3: 处于数字小键盘
+- `e.repeat`: 布尔值，表示用户是否按着不放
+- `e.getModifierState()`: 表示是否按下或激活指定的功能键。常用参数如下：
+    - `Alt`
+    - `CapsLock`: 大写锁定键
+    - `Control`: Ctrl 键
+    - `Meta`
+    - `NumLock`: 数字键盘开关
+    - `Shift`
+
+```js
+if (
+  event.getModifierState('Control') +
+  event.getModifierState('Alt') +
+  event.getModifierState('Meta') > 1
+) {
+  return;
+}
+```
+
+上面代码中，只要 Ctrl、Alt、Meta ，同时按下两个键，就返回。
+
+**键盘事件的兼容性问题**
+
+在IE中，只有一个keyCode属性，并且它的解释取决于事件类型。对于keydown来说，keyCode存储的是按键码，对于 keypress事件来说，keyCode存储的是一个字符码。而IE中没有which和charCode属性，所以which和charCode属性始终为undefined。
+
+FireFox中keyCode始终为0，时间keydown/keyup时，charCode=0，which为按键码。事件keypress时，which和charCode二者的值相同，存储了字符码。
+
+在Opera中，keyCode和which二者的值始终相同，在keydown/keyup事件中，它们存储按键码，在keypress时间中，它们存储字符码，而charCode没有定义，始终是undefined。
+
+```js
+let key = e.key || e.keyCode || e.which
+```
+
 ### 进度事件
+
+进度事件主要用于 ajax 或 底层资源的加载，如`<img>`, `<audio>`, `<video>`, `<style>`，`<link>`。继承自`ProgressEvent`接口。它主要有下几个事件。
+
+- abort
+- error
+- load
+- loadstart
+- loadend
+- progress
+- timeout
+
+除了资源下载，文件上传也存在这些事件。
+
+**ProgressEvent 接口**
+
+```
+new ProgressEvent(type, options)
+```
+
+- lengthComputable: 布尔值，表示加载的总量是否可以计算，默认是 false。
+- loaded: 整数，表示已经加载的量，默认是 0。
+- total: 整数，表示已经加载的总量，默认是 0。
+
+如果`ProgressEvent.lengthComputable`为`false`，`ProgressEvent.total`实际上是没有意义的。
+
+```js
+var xhr = new XMLHttpRequest();
+
+xhr.addEventListener('progress', updateProgress, false);
+xhr.addEventListener('load', transferComplete, false);
+xhr.addEventListener('error', transferFailed, false);
+xhr.addEventListener('abort', transferCanceled, false);
+
+xhr.open();
+
+function updateProgress(e) {
+  if (e.lengthComputable) {
+    var percentComplete = e.loaded / e.total;
+  } else {
+    console.log('不能计算进度');
+  }
+}
+
+function transferComplete(e) {
+  console.log('传输结束');
+}
+
+function transferFailed(evt) {
+  console.log('传输过程中发生错误');
+}
+
+function transferCanceled(evt) {
+  console.log('用户取消了传输');
+}
+```
+
+上面是下载过程的进度事件，上传过程的进度可以通过`xhr.upload`对象来监听。
+
+```javascript
+var xhr = new XMLHttpRequest();
+
+xhr.upload.addEventListener('progress', updateProgress, false);
+xhr.upload.addEventListener('load', transferComplete, false);
+xhr.upload.addEventListener('error', transferFailed, false);
+xhr.upload.addEventListener('abort', transferCanceled, false);
+
+xhr.open();
+```
 
 ### 表单事件
 
+**input 事件**
+
+`input`事件，当`<input>`、`<select>`、`<textarea>`的值发生变化时触发。对于复选框和单选框，用户改变选项时，也会触发这个事件。另外，对于 contenteditable 为 true 的元素，只要值发生变化，也就触发`input`事件。
+
+`input`事件继承自`inputEvent`接口。
+
+`input`事件和`change`事件的区别是，`input`事件在元素值发生变化后立即触发，而`change`在元素失去焦点时发生。`input`事件必然伴随`change`事件。
+
+**select 事件**
+
+`select`事件，在`<input>`、`<textarea>`里面选中文本时触发。
+
+选中文本可以通过事件对象的`selectionDirection`、`selectionEnd`、`selectionStart`和`value`属性拿到。
+
+**change 事件**
+
+`change`事件，当`<input>`、`<select>`、`<textarea>`的值发生变化时触发。具体如下：
+
+- 激活 radio 或 checkbox 时触发。
+- 用户提交时触发，如在`<select>`下拉列表完成选择，在日期或文件输入框完成选择。
+- 当文本框或`<textarea>`元素的值发生改变，并且丧失焦点时触发。
+
+**invalid 事件**
+
+用户提交表单时，如果表单的值不满足校验条件，就会触发`invalid`事件。
+
+```js
+<form>
+  <input type="text" required oninvalid="console.log('invalid input')" />
+  <button type="submit">提交</button>
+</form>
+```
+
+上面代码中，输入框是必填的。如果不填，用户点击按钮提交时，就会触发输入框的invalid事件，导致提交被取消。
+
+**reset 事件，submit 事件**
+
+这两个事件发生在表单对象`<form>`上，而不是发生在表单的成员上。
+
+`reset`事件当表单重置时触发。`submit`事件当表单数据向服务器提交时触发，注意它的发生对象时`<form>`，而不是`<button>`。
+
+**InputEvent 接口**
+
+```
+new InputEvent(type, options)
+```
+
+`InputEvent`实例属性主要有：
+
+- `data`: 表示改动的内容。如果手动在输入框里面输入`abc`，控制台会先输出`a`，再在下一行输出`b`，再在下一行输出`c`。然后选中`abc`，一次性将它们删除，控制台会输出`null`或一个空字符串。
+- `inputType`: 返回一个字符串，表示字符串发生变更的类型。具体看[文档](https://w3c.github.io/input-events/index.html#dom-inputevent-inputtype)，对于常见类型，Chrome 浏览器返回值如下：
+    - `insertText`: 手动插入文本
+    - `insertFromPaste`: 粘贴插入文本
+    - `deleteContentBackward`: 向后删除
+    - `deleteContentForward`: 向前删除
+- `dataTransfer`: 该属性只在文本框接收粘贴内容(insertFromPaste)或拖拽内容(insertFromDrop)时有效。
+
 ### 触摸事件
 
+**Touch 接口**
+
+Touch 接口表示单个触摸点，触摸可能是一个手指，或一根触摸笔。
+
+```js
+var touch = new Touch(touchOptions)
+```
+
+touchOptions 配置如下：
+
+- `identifier`: 必需，类型是整数，表示触摸点的唯一 ID。
+
+
+**TouchList 接口**
+**TouchEvent 接口**
+
 ### 拖拉事件
+
+在网页中，除了元素节点默认不可以拖拉，其它(图片、链接、选中的文字)都可以拖拉。如果要让元素可以拖拉，可以设置`draggable`属性为`true`。
+
+```js
+<div draggable="true">此区域可拖拉</div>
+```
+
+要注意，给默认可以拖拉的元素设置`draggable`为`false`，该元素还是可以拖拉。
 
 ### 其它常见事件
 
@@ -311,3 +601,4 @@ $('#element).delegate('a', 'click', function() {  });
 - [](https://developer.mozilla.org/en-US/docs/Web/Guide/Events)
 - [jQuery源码分析系列(17 - 22) 事件绑定](https://www.cnblogs.com/aaronjs/p/3279314.html)
 - [jquery 1.9 API中文文档](https://www.html.cn/jqapi-1.9/)
+

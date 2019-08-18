@@ -21,3 +21,9 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
 }
+
+
+.contents .contents__link.active {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}

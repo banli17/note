@@ -207,6 +207,10 @@ child instanceof Parent // true
 
 ![](/img/oop/5.png)
 
+ES6 class 继承与传统继承的区别：
+
+1. ES6 `Sub.__proto__ === Super`， 而 ES5 `Sub.__proto__ === Function`
+2. ES6 继承可以继承内置对象。因为 ES6 继承是先将父类实例的属性和方法加到 this 上(super)，再调用子类构造函数修改实例。而 ES5 是生成子类实例，再调用父类构造函数修改子类实例。
 
 ## 关于 this
 
@@ -683,6 +687,51 @@ Function.prototype.myBind = function (context) {
 
 要注意 myBind 返回一个函数，可以通过普通方式和 new 调用。
 
+## ES6 Class 
+
+### class的特点
+
+1. class 会提升声明，但不会初始化赋值。所以在它之前使用 class 是会报错的。
+2. class 内部会启用严格模式。
+
+```js
+// 引用一个未声明的变量
+function Bar() {
+  baz = 42; // it's ok
+}
+const bar = new Bar();
+
+class Foo {
+  constructor() {
+    fol = 42; // ReferenceError: fol is not defined
+  }
+}
+const foo = new Foo();
+```
+
+3. class 的所有方法都是不可枚举的，包括静态方法和实例方法。
+4. class 的所有方法都没有原型对象 prototype，所以也没有`[[construct]]`，不能使用`new`来调用。
+5. class 必须使用 new 调用，否则报错。
+6. class 内部无法重写类。
+
+```js
+function Bar() {
+  Bar = 'Baz'; // it's ok
+  this.bar = 42;
+}
+const bar = new Bar();
+// Bar: 'Baz'
+// bar: Bar {bar: 42}  
+
+class Foo {
+  constructor() {
+    this.foo = 42;
+    Foo = 'Fol'; // TypeError: Assignment to constant variable
+  }
+}
+const foo = new Foo();
+Foo = 'Fol'; // it's ok
+```
 
 ## 面试题
 
