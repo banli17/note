@@ -124,8 +124,73 @@ function throttle(func, wait) {
 
 ```
 
+
+## 数组展平 flatten
+
+已知如下数组：
+
+```
+var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
+```
+
+编写一个程序将数组扁平化去并除其中重复部分数据，最终得到一个升序且不重复的数组。[题目来源](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/8)
+
+这道题目考察 es6 API 知识了解的全不全。涉及到的 API 如下：
+
+- [Array.prototype.flat()](http://es6.ruanyifeng.com/#docs/array#%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B%E7%9A%84-flat%EF%BC%8CflatMap)
+- [Array.from()](http://es6.ruanyifeng.com/#docs/array#Array-from)
+- [Set](http://es6.ruanyifeng.com/#docs/set-map)
+
+`Array.prototype.flat(level)` 可以将数组展平，返回一个新数组。默认只能展开一级，可以传参数 level 控制展开层级，如果要全部展开多级，可以传入 Infinity。
+
+`Array.from()`可以将两类对象转为数组：类数组和可遍历对象(包括Set、Map)。
+
+`Set` 数据结构没有重复的值。
+
+知道了上面知识，答案就很容易了。
+
+```js
+function flatten(arr){
+    return Array.from(new Set(arr.flat(Infinity))).sort((a, b) => a - b)
+}
+```
+
+除了上面的方法之外，还有其它几种方法：
+
+1. 可以使用递归的方法来做。
+
+```js
+function flattern(arr) {
+    let len = arr.length
+    let newArr = []
+    for (let i = 0; i < len; i++) {
+        if (typeof arr[i] !== 'object') {
+            newArr = newArr.concat(arr[i])
+        } else {
+            newArr = newArr.concat(...flattern(arr[i]))
+        }
+    }
+    return Array.from(new Set(newArr)).sort((a, b) => a - b)
+}
+```
+
+2. 使用`arr.toString()`，会将数组拍平成字符串，但是会改变原来项的数据类型。
+
+```js
+arr.toString().split(",").sort((a,b)=>{ return a-b})
+```
+
+3. 使用 reduce，也还是递归。
+
+```js
+function flatten (arr) {
+  return arr.reduce((res,item) => item instanceof Array ? [...res, ...flatten(item)] : [...res,item], []);
+}
+```
+
 ## 参考文章
 
 - [JavaScript专题之跟着underscore学防抖](https://github.com/mqyqingfeng/Blog/issues/22)
 - [JavaScript专题之跟着underscore学节流](https://github.com/mqyqingfeng/Blog/issues/26)
 - [什么是防抖和节流？有什么区别？如何实现？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/5)
+- [第 11 题：将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/8)

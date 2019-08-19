@@ -81,9 +81,10 @@ Symbol.prototype.constructor === Symbol  // true
 
 ```js
 function myNew(constor, ...args) {
+    // 下面两句可以换成 Object.create(constor.prototype)
     let o = Object.create(null)
-    // o.__proto__ = constor.prototype
     Object.setPrototypeOf(o, constor.prototype)
+    // 上面一句可以换成 o.__proto__ = constor.prototype
     let res = constor.call(o, ...args)
     return res instanceof Object ? res : o
 }

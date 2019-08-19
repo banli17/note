@@ -48,6 +48,7 @@ module.exports = {
   },
   nodejs: {
     nodejs: [
+      'nodejs/npm',
       'nodejs/util',
       'nodejs/test',
       'nodejs/async',

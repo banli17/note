@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[163],{207:function(e){e.exports=JSON.parse('{"title":"react-native屏幕适配问题","date":"2016-08-06T13:49:26.000Z","toc":true,"id":"f2e/react-native/size","description":"# 移动端的长度单位","source":"@site/docs/f2e/react-native/size.md","permalink":"/docs/f2e/react-native/size"}')}}]);

@@ -394,7 +394,7 @@ systemctl list-dependencies httpd  # 查看依赖的树
 
 方法3: 将需要执行的脚本复制到`/etc/cron.{hourly,daily,weekly,monthly}`目录中
 
-比如自动更新 github 的脚本`w3croad_blog.cron`:
+比如自动更新 github 的脚本`banli_blog.cron`:
 
 ```bash
 #!/bin/bash
@@ -419,4 +419,12 @@ anacron 的配置，它只会检测上面几个目录中的任务。不会检测
 2. 和当前时间比较，超过1天则执行 cron.daily
 3. 执行工作只能在 03:00-22:00 之间
 4. 强制延迟5分钟，再随机延迟45分钟
-5. 使用nice设置默认优先级，在使用run-parts脚本执行/etc/cron.daily目录中所有的可执行文件
+5. 使用nice设置默认优先级，在使用run-parts脚本执行`/etc/cron.daily`目录中所有的可执行文件
+
+> daily，weekly，monthly由anacron调用，hourly由/etc/cron.d/0hourly调用。
+
+如果发现定时任务没有执行，看看文件是否有可执行权限，如果没有则修改：
+
+```js
+chmod -R 755 banli_blog.cron
+```

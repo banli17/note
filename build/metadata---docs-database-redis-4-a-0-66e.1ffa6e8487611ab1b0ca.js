@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[126],{49:function(s){s.exports=JSON.parse('{"title":"redis","id":"database/redis","description":"brew install mongo","source":"@site/docs/database/redis.md","permalink":"/docs/database/redis","sidebar":"src","category":"数据库","previous":"database/mysql","previous_title":"mysql学习(1): 基本概念"}')}}]);

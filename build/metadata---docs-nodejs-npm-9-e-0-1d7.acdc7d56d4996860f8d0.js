@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[184],{67:function(e){e.exports=JSON.parse('{"title":"npm 详解","sidebar_label":"npm 详解","id":"nodejs/npm","description":"## npm 模块安装机制","source":"@site/docs/nodejs/npm.md","permalink":"/docs/nodejs/npm","sidebar":"nodejs","category":"nodejs","next":"nodejs/util","next_title":"NodeJS Util"}')}}]);

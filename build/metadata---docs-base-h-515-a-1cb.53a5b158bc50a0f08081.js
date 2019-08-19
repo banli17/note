@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[121],{55:function(e){e.exports=JSON.parse('{"title":"h5开发实战","sidebar_label":"h5开发实战","id":"base/h5","description":"# 基础页面开发","source":"@site/docs/base/h5.md","permalink":"/docs/base/h5","sidebar":"base","category":"计算机基础","next":"base/compute-combine","next_title":"计算机组成原理"}')}}]);
