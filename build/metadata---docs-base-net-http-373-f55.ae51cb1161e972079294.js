@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[123],{139:function(e){e.exports=JSON.parse('{"title":"网络协议之 HTTP、HTTPS","sidebar_label":"HTTP、HTTPS","id":"base/net/http","description":"## URI、URL、URN","source":"@site/docs/base/net/http.md","permalink":"/docs/base/net/http","sidebar":"base","category":"网络协议","previous":"base/net/tcp","previous_title":"网络协议之 TCP、UDP"}')}}]);
