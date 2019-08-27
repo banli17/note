@@ -26,28 +26,8 @@ module.exports = {
           position: 'left'
         },
         {
-          to: 'docs/source/jquery/event',
-          label: '源码笔记',
-          position: 'left'
-        },
-        {
-          to: 'docs/nodejs/util',
-          label: 'NodeJS',
-          position: 'left'
-        },
-        {
-          to: 'docs/patterns/index',
-          label: '设计模式',
-          position: 'left'
-        },
-        {
-          to: 'docs/algo/index',
-          label: '算法',
-          position: 'left'
-        },
-        {
           to: 'docs/linux/index',
-          label: '服务器',
+          label: '服务端',
           position: 'left'
         },
         {
@@ -57,13 +37,13 @@ module.exports = {
         },
         {
           to: 'docs/other/mac',
-          label: '工具',
+          label: '经验集',
           position: 'left'
         },
         // {
-        //   to: 'docs/demo/index',
-        //   label: 'demo',
-        //   position: 'left',
+        //   to: 'docs/source/jquery/event',
+        //   label: '源码笔记',
+        //   position: 'left'
         // },
         {
           to: 'blog',

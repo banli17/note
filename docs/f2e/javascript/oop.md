@@ -65,10 +65,6 @@ s.constructor  // ƒ Symbol() { [native code] }
 Symbol.prototype.constructor === Symbol  // true
 ```
 
-
-
-
-
 ### new
 
 > new 的原理是什么？通过 new 的方式创建对象和通过字面量创建有什么区别？
@@ -253,56 +249,6 @@ a()()
 上面代码中，箭头函数是没有 this 的，所以 this 是函数 a 的，指向 window。
 
 
-## 闭包
-
-闭包是函数和声明该函数的词法环境的组合。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
-
-```
-function A() {
-  let a = 1
-  window.B = function () {
-      console.log(a)
-  }
-}
-A()
-B() // 1
-```
-
-> 面试题，循环中使用闭包解决 `var` 定义函数的问题
-
-```js
-for (var i = 1; i <= 5; i++) {
-  setTimeout(function timer() {
-    console.log(i)
-  }, i * 1000)
-}
-```
-
-上面代码中，setTimeout 的函数 timer 会在 for 循环执行完后再执行。这时 i 已经是 6 了。所以全部输出 6。
-
-解决方法有：
-1. 使用 let (推荐)
-2. 使用闭包
-
-```js
-for (var i = 1; i <= 5; i++) {
-    (function (i){
-        setTimeout(function timer() {
-            console.log(i)
-        }, i * 1000)
-    })(i);
-}
-```
-
-3. 使用 setTimeout 的第三个参数，它会当作 timer 函数的参数传入。
-
-```js
-for (var i = 1; i <= 5; i++) {
-    setTimeout(function timer(i) {
-        console.log(i)
-    }, i * 1000, i)
-}
-```
 
 ## 深浅拷贝
 
@@ -631,62 +577,6 @@ a()  // 1
 
 
 `reduce`可以挨个处理数组的元素，最终返回一个值。
-
-
-## 实现call、apply 和 bind
-
-> 面试题：call、apply 及 bind 函数内部实现是怎么样的？
-
-```js
-Function.prototype.myCall = function (context) {
-    if (typeof this !== 'function') {
-        throw new TypeError(`Error`)
-    }
-    // 如果 context 是基本类型，需要是对象才能挂载 .fn 属性
-    context = typeof context === 'object' ? context || window : Object.create(null)
-    // 下面最好用 Symbol，因为如果原对象可能有fn属性，这样会被覆盖掉
-    context.fn = this
-    var args = [...arguments].slice(1)
-    // 谁调用，this 就是谁
-    var result = context.fn(...args)
-    delete context.fn
-    return result
-}
-
-Function.prototype.myApply = function(context) {
-  if (typeof this !== 'function') {
-    throw new TypeError('Error')
-  }
-  context = typeof context === 'object' ? context || window : Object.create(null)
-  context.fn = this
-  let result
-  // 处理参数和 call 有区别
-  if (arguments[1]) {
-    result = context.fn(...arguments[1])
-  } else {
-    result = context.fn()
-  }
-  delete context.fn
-  return result
-}
-
-Function.prototype.myBind = function (context) {
-    if (typeof this !== 'function') {
-        throw new TypeError('Error')
-    }
-    const args = [...arguments].slice(1)
-    context = typeof context === 'object' ? context || window : Object.create(null)
-    context.fn = this
-    return function () {
-        if (new.target) {
-            return new context.fn(...args, ...arguments)
-        }
-        return context.fn(...args, ...arguments)
-    }
-}
-```
-
-要注意 myBind 返回一个函数，可以通过普通方式和 new 调用。
 
 ## ES6 Class 
 

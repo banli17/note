@@ -3,8 +3,9 @@ title: 前端监控
 sidebar_label: 前端监控
 ---
 
-前端监控主要有：
+前端监控主要是监控：
 
+- 用户行为
 - 性能监控
 - 错误收集
 - 上报
@@ -20,66 +21,31 @@ domReady 实际是 DOM 加载完成，图片等链接资源正在加载中。onl
 
 ## 简介
 
+前端监控，可以让我们及时发现线上出现的问题，根据出现问题时的场景，更快的解决它。还可以搜集用户行为，从而为用户提供更好的体验。总的来说，有了线上的监控数据统计，我们才能在问题和需求上制定更好的方案。
+
 ## 监控哪些数据
 
-访问：
-    - pv/uv
-    - 流量来源
-    - 操作系统
-    - 浏览器
-    - 分辨率
-    - 登录率
-    - 地域分布
-    - 网络类型
-    - 访问时段
-    - 停留时间
-    - 到达深度
-    - 访问路径
+监控数据主要是围绕着用户、性能和错误来展开。需要监控的数据有：
 
-
-性能
+- 用户和用户行为
+    - 流量来源 url(百度、google、广告等)、去向 url
+    - 客户端信息(操作系统、浏览器、分辨率、ip、地域、网络类型等)
+    - pv/uv、访问深度、访问路径、时间
+    - 点击量（总的、人均）、点击热力图、点击时间
+- 性能
     - 白屏时间
     - 首屏时间
     - 用户可操作时间
     - 页面总下载时间
     - 自定义的时间(开发者关注的)
-
-点击
-    - 页面总点击量
-    - 人均点击量
-    - 流出 url
-    - 点击时间
-    - 首次点击时间
-    - 点击热力图
-
-异常
-    - 异常提示信息
-    - js 文件名称
-    - 异常所在行
-    - 发生异常的浏览器
-    - 堆栈信息(可能需要截取)
-
-其它
+- 错误
+    - 错误的堆栈信息
+    - 发生错误时的环境(浏览器信息、网络等)
+- 其它自定义
     - 对特殊功能的支持程度(canvas)
     - 轮播图的翻页次数
 
-
-
-## 技术监控
-- 页面性能监控
-- 静态资源性能监控
-### 错误监控
-
-对于跨域的代码运行错误会显示 Script error. 对于这种情况我们需要给 script 标签添加 crossorigin 属性
-对于某些浏览器可能不会显示调用栈信息，这种情况可以通过 arguments.callee.caller 来做栈递归
-
-但是要注意线上运行的代码都是压缩过的，需要在打包时生成 sourceMap 文件便于 debug。
-
-另外接口异常就相对来说简单了，可以列举出出错的状态码。一旦出现此类的状态码就可以立即上报出错。接口异常上报可以让开发人员迅速知道有哪些接口出现了大面积的报错，以便迅速修复问题。
-
-### 接口性能监控
-
-## 行为监控
+## 用户和行为监控
 
 ### 用户行为路径
 ### 打点监控
@@ -99,66 +65,10 @@ domReady 实际是 DOM 加载完成，图片等链接资源正在加载中。onl
 
 ### 时效策略
 
-## 技术监控
 
-### 页面性能监控
+## 性能监控
 
-页面性能监控主要是使用 performance API。`performance.timing`对象包含页面在各个阶段的时间。
-
-![](/img/performance/1.png)
-
-具体属性如下：
-
-- navigationStart：当前浏览器窗口的前一个网页关闭，发生unload事件时的时间。如果没有上一个页面，这个值会和 fetchStart 相同。通常我们也理解为准备加载新页面的起始时间。
-- redirectStart：到当前页面的重定向开始的时间。当重定向的页面来自同一个域时这个属性才会有值，否则值为0。
-- redirectEnd：到当前页面的重定向结束的时间。当重定向的页面来自同一个域时这个属性才会有值，否则值为0。
-- fetchStart：准备使用HTTP请求(fetch)页面的时间。
-- domainLookupStart：域名查询开始的时间。
-- domainLookupEnd：域名查询结束的时间。
-- connectStart：返回HTTP请求开始向服务器发送的时间,如果使用持久连接（persistent connection），则返回值等同于 fetchStart 的值。
-- (secureConnectionStart)：可选特性。如果页面是HTTPS协议，则返回开始SSL握手的那个时间。如果当前网页不要求安全连接，则返回0。
-- connectEnd：返回浏览器与服务器之间的连接建立的时间。如果建立的是持久连接，则返回值等同于 fetchStart 属性的值。连接建立指的是所有握手和认证过程全部结束。
-- requestStart：返回浏览器向服务器发出HTTP请求时（或开始读取本地缓存时）的时间。
-- responseStart：返回浏览器从服务器收到（或从本地缓存读取）第一个字节时的时间。
-- responseEnd：返回浏览器从服务器收到（或从本地缓存读取）最后一个字节时的时间。
-- unloadEventStart：返回同一个域名前一个网页的 unload 事件触发时的时间。否则返回值为0。
-- unloadEventEnd：返回同一个域名前一个网页的 unload 事件触发时的时间。否则返回值为0。
-- domLoading：返回当前网页 DOM 结构开始解析时（即Document.readyState属性变为 loading、相应的readystatechange事件触发时）的时间
-- domInteractive：返回当前网页DOM结构结束解析、开始加载内嵌资源时（即Document.readyState属性变为 interactive 、相应的readystatechange事件触发时）的时间。
-- domContentLoadedEventStart：返回当解析器发送 DOMContentLoaded 事件的开始时间
-- domContentLoadedEventEnd：返回当文档的 DOMContentLoaded 事件的结束时间。
-- domComplete：返回当前文档解析完成，即Document.readyState 变为 complete 且相对应的readystatechange 被触发时的时间。
-- loadEventStart：返回该文档下，load 事件被发送时的时间。如果这个事件还未被发送，它的值将会是0。
-- loadEventEnd：返回当 load 事件结束，即加载事件完成时的时间。如果这个事件还未被发送，或者尚未完成，它的值将会是0。
-
-
-我们可以根据上面的属性，计算出一些网页性能相关的信息。
-
-```js
-var timing = performance.timing
-
-// 页面总耗时
-var pageLoadTime = timing.loadEventEnd - timing.navigationStart
-
-// DNS 域名解析耗时
-var dnsTime = timing.domainLookupEnd - timing.domainLookupStart
-
-// tcp 连接耗时
-var tcpTime = timing.connectEnd - timing.connectStart
-
-// 页面从加载到现在的时间,单位是微秒us，但精度比 Date.now() 高1000倍。
-var duration = performance.now()  // Date.now() 
-```
-
-    - 白屏时间
-    - 首屏时间
-    - 用户可操作时间
-    - 页面总下载时间
-    - 自定义的时间(开发者关注的)
-
-performance.getEntriesByType('navigation')
-![](/img/performance/2.png)
-
+性能优化是建立在性能监控前提之上的，只有统计了数据，才能对比优化前后是否达到了预期。具体查看另外一篇文章 [性能体系的建立](/docs/f2e/performance/index)。
 
 ## 错误监控
 
@@ -484,4 +394,4 @@ window.addEventListener('pushState', e => {
 - [解密 ARMS 前端监控数据上报技术内幕](https://zhuanlan.zhihu.com/p/37275225)
 - [别再让你的 Web 页面在用户浏览器端裸奔](https://mp.weixin.qq.com/s/Z8daa96JD5NbjTPn9mGPPg)
 - [浏览器端 JS 异常监控探索与实践](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247485669&idx=1&sn=a4d4aee73b606d412aba71abafb88325&source=41#wechat_redirect)
-- [前端开发核心知识进阶](https://gitbook.cn/gitchat/column/5c91c813968b1d64b1e08fde/topic/5c99c52fccb24267c1d01b87)
+- [重学前端](https://time.geekbang.org/column/article/94156)

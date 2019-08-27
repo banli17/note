@@ -5,6 +5,373 @@ sidebar_label: 正则表达式
 
 正则表达式是一种匹配字符串的模式。可以通过它来检测一个字符串是否满足这个模式，进而对字符串进行处理。
 
+## 创建正则
+
+创建正则表达式的方式有2种：
+
+```javascript
+// 1. 字面量方式
+const reg = /\w+/i
+
+// 2. 构造函数方式
+const reg = new RegExp('hello', 'i')
+const reg = new RegExp('\\w+', 'i')
+```
+
+这两种方式的区别是：
+
+1. 构造函数方式所有元字符都需要双重转义（比如\w要写成\\w）。
+2. 字面量方式会在引擎编译代码时创建正则表达式，构造函数方式是在运行时创建，所以前者效率更高。
+3. 构造函数方式可以拼接变量
+
+```javascript
+// 构造函数方式拼接变量
+const a = 'hello'
+const reg = new RegExp('x'+ a + 'y')
+```
+
+## 标志
+
+正则表达式可以加标志，比如上面例子中的字母`i`，表示忽略大小写。它的标志有3个：
+
+- g: 默认只匹配第一个就结束，加上g会匹配所有的。
+- i: 默认是区分大小写的，加上i表示忽略大小写。
+- m: 多行匹配。正则匹配时默认是将字符串当作一行来匹配的，只有一个^$；如果加了标志符m，就是以\n换行，每行都有^$。
+
+```javascript
+// 不加m，表示将字符串当作一行，所以匹配不到
+const reg = /^hello/
+const str = 'ahello \n\rhello'
+
+console.log(str.match(reg))  // null
+
+// 加m
+const reg = /^hello/m
+const str = 'ahello \n\rhello'
+
+console.log(str.match(reg))  // [ 'hello' ]
+```
+
+**正则实例的属性**
+
+- `RegExp.prototype.flags`: 获取实例的标志符，比如'm'
+- `RegExp.prototype.global`: 是否设置了g
+- `RegExp.prototype.ignoreCase`: 是否设置了i
+- `RegExp.prototype.multiline`: 是否设置了m
+- `RegExp.prototype.lastIndex`: 返回一个整数，表示下一次开始搜索的位置。可读写，只有在连续搜索时有意义。
+- `RegExp.protoptye.source`: 返回正则表达式的字符串形式，不包括反斜杠，只读。
+
+```javascript
+const r = /abc/igm;
+
+r.lastIndex // 0
+r.source // "abc"
+```
+
+**正则实例的方法**
+
+- `RegExp.protoptye.test(str)`: 返回布尔值，表示正则是否匹配字符串。
+
+如果有g标志，正则表达式会记住上次`lastIndex`属性，从`lastIndex`开始匹配。如果没有g标志，则每次`lastIndex`都是从0开始匹配。
+
+```javascript
+// 有 g 标志
+var r = /x/g;
+var s = '_x_x';
+
+r.lastIndex // 0
+r.test(s) // true
+
+r.lastIndex // 2
+r.test(s) // true
+
+r.lastIndex // 4
+r.test(s) // false
+
+// 之后lastIndex会重置为0
+r.lastIndex // 0
+r.test(s) // true
+
+// 没有g标志
+const reg = /a/
+const str = 'helnaixxa'
+console.log(reg.lastIndex)  // 0 
+console.log(reg.test(str)) //  true
+console.log(reg.lastIndex)  // 0
+console.log(reg.test(str)) // true
+```
+
+要注意的是，如果有g标志，正则表达式会记住上次`lastIndex`属性，所以不应该更换所要匹配的字符串，否则会出错。
+
+```javascript
+const r = /bb/g
+
+console.log(r.test('bb'))  // true
+console.log(r.test('bb')) // false ，这里lastIndex不是0了
+console.log(r.test('bb'))  // true
+```
+
+`lastIndex`属性只对同一个正则表达式有效，所以下面的代码是错误的。
+
+```javascript
+var count = 0;
+while (/a/g.test('babaa')) count++;
+```
+
+上面的代码每次循环都会创建一个新的正则，`lastIndex`每次都是0，所以会导致死循环。
+
+如果正则模式是空字符，则匹配所有字符串。
+
+```javascript
+new RegExp('').test('abc')  // true
+
+// 下面写法错误，是当作注释
+const r = //
+console.log(r.test('hello'))  // r is not defined
+```
+
+- `RegExp.prototype.exec()`: 用来返回匹配结果，如果发现匹配就返回一个数组，成员是匹配成功的子字符串，否则返回`null`。
+
+```javascript
+var s = '_x_x';
+var r1 = /x/;
+var r2 = /y/;
+
+r1.exec(s) // ["x"]
+r2.exec(s) // null
+```
+
+如果正则表达式包含圆括号(即组匹配)，则返回的数组会包含多个成员，第一个是匹配成功的结果，后面成员是圆括号对应的匹配成功的结果。
+
+```javascript
+var s = '_x_x';
+var r = /_(x)/;
+
+r.exec(s) // ["_x", "x"]
+```
+
+exec方法返回的数组还包括两个属性：
+
+- `input`: 原字符串
+- `index`: 整个模式匹配成功的开始位置
+
+```javascript
+var r = /a(b+)a/;
+var arr = r.exec('_abbba_aba_');
+
+arr // ["abbba", "bbb"]
+
+arr.index // 1
+arr.input // "_abbba_aba_"
+```
+
+`exec()`默认是匹配到第一个结果就返回；如果加上标志g，则可以使用多次`exec`方法，下次搜索的位置从上一次匹配成功结束的位置开始。
+
+```javascript
+const reg = /a/g
+const str = 'helloanihaoahia'
+
+while (true) {
+    let match = reg.exec(str)
+    console.log(match, reg.lastIndex)
+    if (!match) break
+}
+
+// [ 'a', index: 5, input: 'helloanihaoahia' ] 6
+// [ 'a', index: 9, input: 'helloanihaoahia' ] 10
+// [ 'a', index: 11, input: 'helloanihaoahia' ] 12
+// [ 'a', index: 14, input: 'helloanihaoahia' ] 15
+// null 0
+```
+
+每次调用正则的方法匹配，lastIndex会移动
+
+```javascript
+const reg = /ab/g
+const str = 'cabxxx_abeee_abcc'
+reg.test(str)
+reg.exec(str)
+console.log(reg.lastIndex) // 9
+```
+
+## 字符串的实例方法
+
+- `String.prototype.match()`: 返回一个数组，成员是所有匹配的子字符串；否则返回null。
+
+`match()`和`exec()`方法在没有标志g时返回结果类似；但是当有标志g时，它会返回匹配结果的数组，而且没有`input`，`index`属性。
+
+```javascript
+var s = '_x_x_';
+var r1 = /x(_)/;
+var r2 = /y/;
+
+console.log(s.match(r1)) // [ 'x_', '_', index: 1, input: '_x_x_' ]
+console.log(s.match(r2)) // null
+
+var s1 = '_x_x_';
+var r3 = /x(_)/g;
+var r4 = /y/;
+
+console.log(s.match(r3)) // [ 'x_', 'x_' ]  length 即为匹配到的个数
+console.log(s.match(r4)) // null
+```
+
+设置正则的`lastIndex`属性，对match方法无效，它总是从第一个字符开始匹配。
+
+```javascript
+var r = /a|b/g;
+r.lastIndex = 7;
+'xaxb'.match(r) // ['a', 'b']
+r.lastIndex // 0
+```
+
+- `String.prototype.search()`: 返回第一个匹配结果的位置，没有则返回-1。
+- `String.prototype.replace()`: 可以替换匹配的值。不会改变原字符串。返回改变后的字符串。
+
+如果不加标志g，则替换第一个匹配的值，否则替换所有的。
+
+```javascript
+'aaa'.replace('a', 'b') // "baa"
+'aaa'.replace(/a/, 'b') // "baa"
+'aaa'.replace(/a/g, 'b') // "bbb"
+```
+
+下面用replace去除字符串首尾空格：
+
+```javascript
+var str = '  #id div.class  ';
+str.replace(/^\s+|\s+$/g, '')
+// "#id div.class"
+```
+
+`replace`方法第二个参数可以使用$来指代所替换的内容。
+
+- $& 匹配的子字符串
+- $` 匹配结果前面的文本
+- $' 匹配结果后面的文本
+- $n 匹配成功的第n组内容，n从1开始
+- $$ 只带美元符号$
+
+```javascript
+'hello world'.replace(/(\w+)\s(\w+)/, '$2 $1')
+// "world hello"
+
+'abc'.replace('b', '[$`-$&-$\']')
+// "a[a-b-c]c"
+```
+
+`replace()`方法的第二个参数还可以是一个函数，将每一个匹配内容替换为函数返回值。
+
+```javascript
+'3 and 5'.replace(/[0-9]+/g, function (match) {
+  return 2 * match;
+})
+// "6 and 10"
+
+var a = 'The quick brown fox jumped over the lazy dog.';
+var pattern = /quick|brown|lazy/ig;
+
+a.replace(pattern, function replacer(match) {
+  return match.toUpperCase();
+});
+// The QUICK BROWN fox jumped over the LAZY dog.
+```
+
+作为replace方法第二个参数的替换函数，可以接受多个参数。其中，第一个参数是捕捉到的内容，第二个参数是捕捉到的组匹配（有多少个组匹配，就有多少个对应的参数）。此外，最后还可以添加两个参数，倒数第二个参数是捕捉到的内容在整个字符串中的位置（比如从第五个位置开始），最后一个参数是原字符串。
+
+```javascript
+const d = /hello(你)/g
+const str = 'hello你我他hello你我'
+
+let e = str.replace(d, function (a, b, c, d) {
+    console.log(a, b, c, d)
+})
+
+// hello你 你 0 hello你我他hello你我
+// hello你 你 8 hello你我他hello你我
+```
+
+下面是一个网页模板替换的例子。
+
+```javascript
+var prices = {
+    'p1': '$1.99',
+    'p2': '$9.99',
+    'p3': '$5.00'
+};
+
+var template = '<span id="p1"></span>'
+    + '<span id="p2"></span>'
+    + '<span id="p3"></span>';
+
+
+var t = template.replace(/(<span id="(.+?)">)(<\/span>)/, function (match, $1, $2, $3) {
+    return $1 + prices[$2] + $3
+})
+
+console.log(t) // <span id="p1">$1.99</span><span id="p2"></span><span id="p3"></span>
+```
+
+- `String.prototype.split(separator[, limit])`: 按照正则分割字符串。第一个参数是正则表达式，表示分隔规则，第二个参数是返回数组的最大成员数。
+
+```javascript
+// 非正则分隔
+'a,  b,c, d'.split(',')
+// [ 'a', '  b', 'c', ' d' ]
+
+// 正则分隔，去除多余的空格
+'a,  b,c, d'.split(/, */)
+// [ 'a', 'b', 'c', 'd' ]
+
+// 指定返回数组的最大成员
+'a,  b,c, d'.split(/, */, 2)
+// [ 'a', 'b' ]
+
+'aaa*a*'.split(/a*/)
+// [ '', '*', '*' ]
+
+'aaa**a*'.split(/a*/)
+// ["", "*", "*", "*"]
+
+// 如果有括号，会将括号里的匹配部分也当作数组元素返回
+'aaa*a*'.split(/(a*)/)
+// [ '', 'aaa', '*', 'a', '*' ]
+```
+
+**7.js中使用正则**
+
+js中使用正则，主要是字符串的match()、search()、replace()、split()方法，和正则的test()、exec()方法。
+
+- str.match(reg)
+- str.replace([RegExp|String],[String|Function])
+
+如果第二个参数是函数，函数的参数有四个：
+
+1. result: 本次匹配的结果
+2. $1,...$9: 正则表达式有多少个子表达式，就会传递几个参数
+3. offset: 本次匹配的开始位置
+4. source: 接受匹配的原始字符串
+
+```javascript
+var str1 = '2018-11-12'
+var reg2 = /(\d)(\d)/g
+var new_str2 = str1.replace(reg2, (...args)=> {
+	console.log(args)
+})
+
+// 结果
+[ '20', '2', '0', 0, '2018-11-12' ]
+[ '18', '1', '8', 2, '2018-11-12' ]
+[ '11', '1', '1', 5, '2018-11-12' ]
+[ '12', '1', '2', 8, '2018-11-12' ]
+```
+
+replace第二个参数还有一些符号有特殊含义，比如: $1 - $99，$& 表示整个匹配字符串，$`是匹配字符串左侧文本，$'是右侧文本。$$是直接量符号。
+
+- reg.test(str)  匹配则返回true，否则返回false
+- reg.exec(str)
+
+
 ## 元字符
 
 理解正则表达式要单个字符的理解，比如`/abcd/`要理解成匹配字符的第一个字符是a，后面是b，再后面是c，后面是d。而不要直接理解为匹配`abcd`字符串。
@@ -204,9 +571,9 @@ $[0-9]*(\.[0-9]{2})?
 - ? 表示0次或1次，相当于{0, 1}
 - {} 表示匹配的长度，比如\n{3}表示匹配3个数字，\d{1, 3}表匹配1-3个数字，\d{3,}表示匹配3个以上数字
 
-**6.存储**
+## 引用和反向引用
 
-- RegExp.$1 - RegExp.$9 存放着最近一次匹配9个子表达式结果，如果没有则是空字符串`""`。
+- 引用: RegExp.$1 - RegExp.$9 存放着最近一次匹配9个子表达式结果，如果没有则是空字符串`""`。
 - \n   如果n是正整数表示反向引用，比如\1,表示和对应子表达式一样。
 
 ```javascript
@@ -265,12 +632,30 @@ m // ["abc", "c"]
 var a = /(?:foo){1, 2}/
 ```
 
+
+```
+// 将元素全部换成 p
+var s = '<div id="babalala">paragraph </div><p>哈哈哈</p><span class="yellow">hello jsonp!</span><strong>呵呵呵pi!</strong>';
+var r = /<(\/)?.*?>/g; // 正则写在这里
+
+console.log(s.replace(r, '<$1p>'));
+```
+
 **正向预查和反向预查**
 
 - x(?=y)  先行断言，x只有在y前面才匹配，y不会被计入返回结果。
 - x(?!y)  先行否定断言，x只有不在y前面才匹配，y不会被计入返回结果。
 - x(?<=y) 后行断言
 - x(?<!y) 后行否定断言
+
+```js
+var a = "1.jpg 2.jpg main.js 3.jpg index.css"
+
+a.match(/(\w+)(?:\.jpg)/g)
+// ["1.jpg", "2.jpg", "3.jpg"]
+a.match(/(\w+)(?=\.jpg)/g)
+// ["1", "2", "3"]
+```
 
 ```javascript
 
@@ -411,391 +796,13 @@ console.log(d)  // 0,123,456,789
 - [阮一峰 regexp对象](https://wangdoc.com/javascript/stdlib/regexp.html)
 - [正则原理]
 - [JS正则表达式完整教程（略长）](https://juejin.im/post/5965943ff265da6c30653879)
+- [正则表达式之简易markdown文件解析器](http://ife.baidu.com/course/detail/id/30)
+- [正则表达式之入门](http://ife.baidu.com/course/detail/id/29)
+- [《构造正则表达式引擎》和 《构造可配置词法分析器》](http://www.cppblog.com/vczh/archive/2008/05/22/50763.aspx)
 
 **工具**
 
 - [Rubular在线正则工具](https://rubular.com/)
 - [scriptular在线正则工具](http://scriptular.com/)
 - [regexper正则学习工具](https://regexper.com/)
-
-## 简介
-
-### 创建正则表达式
-
-创建正则表达式的方式有2种：
-
-```javascript
-// 1. 字面量方式
-const reg = /\w+/i
-
-// 2. 构造函数方式
-const reg = new RegExp('hello', 'i')
-const reg = new RegExp('\\w+', 'i')
-```
-
-这两种方式的区别是：
-
-1. 构造函数方式所有元字符都需要双重转义（比如\w要写成\\w）。
-2. 字面量方式会在引擎编译代码时创建正则表达式，构造函数方式是在运行时创建，所以前者效率更高。
-3. 构造函数方式可以拼接变量
-
-```javascript
-// 构造函数方式拼接变量
-const a = 'hello'
-const reg = new RegExp('x'+ a + 'y')
-```
-
-### 标志
-
-正则表达式可以加标志，比如上面例子中的字母`i`，表示忽略大小写。它的标志有3个：
-
-- g: 默认只匹配第一个就结束，加上g会匹配所有的。
-- i: 默认是区分大小写的，加上i表示忽略大小写。
-- m: 多行匹配。正则匹配时默认是将字符串当作一行来匹配的，只有一个^$；如果加了标志符m，就是以\n换行，每行都有^$。
-
-```javascript
-// 不加m，表示将字符串当作一行，所以匹配不到
-const reg = /^hello/
-const str = 'ahello \n\rhello'
-
-console.log(str.match(reg))  // null
-
-// 加m
-const reg = /^hello/m
-const str = 'ahello \n\rhello'
-
-console.log(str.match(reg))  // [ 'hello' ]
-```
-
-**正则实例的属性**
-
-- `RegExp.prototype.flags`: 获取实例的标志符，比如'm'
-- `RegExp.prototype.global`: 是否设置了g
-- `RegExp.prototype.ignoreCase`: 是否设置了i
-- `RegExp.prototype.multiline`: 是否设置了m
-- `RegExp.prototype.lastIndex`: 返回一个整数，表示下一次开始搜索的位置。可读写，只有在连续搜索时有意义。
-- `RegExp.protoptye.source`: 返回正则表达式的字符串形式，不包括反斜杠，只读。
-
-```javascript
-const r = /abc/igm;
-
-r.lastIndex // 0
-r.source // "abc"
-```
-
-**正则实例的方法**
-
-- `RegExp.protoptye.test(str)`: 返回布尔值，表示正则是否匹配字符串。
-
-如果有g标志，正则表达式会记住上次`lastIndex`属性，从`lastIndex`开始匹配。如果没有g标志，则每次`lastIndex`都是从0开始匹配。
-
-```javascript
-// 有 g 标志
-var r = /x/g;
-var s = '_x_x';
-
-r.lastIndex // 0
-r.test(s) // true
-
-r.lastIndex // 2
-r.test(s) // true
-
-r.lastIndex // 4
-r.test(s) // false
-
-// 之后lastIndex会重置为0
-r.lastIndex // 0
-r.test(s) // true
-
-// 没有g标志
-const reg = /a/
-const str = 'helnaixxa'
-console.log(reg.lastIndex)  // 0 
-console.log(reg.test(str)) //  true
-console.log(reg.lastIndex)  // 0
-console.log(reg.test(str)) // true
-```
-
-要注意的是，如果有g标志，正则表达式会记住上次`lastIndex`属性，所以不应该更换所要匹配的字符串，否则会出错。
-
-```javascript
-const r = /bb/g
-
-console.log(r.test('bb'))  // true
-console.log(r.test('bb')) // false ，这里lastIndex不是0了
-console.log(r.test('bb'))  // true
-```
-
-`lastIndex`属性只对同一个正则表达式有效，所以下面的代码是错误的。
-
-```javascript
-var count = 0;
-while (/a/g.test('babaa')) count++;
-```
-
-上面的代码每次循环都会创建一个新的正则，`lastIndex`每次都是0，所以会导致死循环。
-
-如果正则模式是空字符，则匹配所有字符串。
-
-```javascript
-new RegExp('').test('abc')  // true
-
-// 下面写法错误，是当作注释
-const r = //
-console.log(r.test('hello'))  // r is not defined
-```
-
-- `RegExp.prototype.exec()`: 用来返回匹配结果，如果发现匹配就返回一个数组，成员是匹配成功的子字符串，否则返回`null`。
-
-```javascript
-var s = '_x_x';
-var r1 = /x/;
-var r2 = /y/;
-
-r1.exec(s) // ["x"]
-r2.exec(s) // null
-```
-
-如果正则表达式包含圆括号(即组匹配)，则返回的数组会包含多个成员，第一个是匹配成功的结果，后面成员是圆括号对应的匹配成功的结果。
-
-```javascript
-var s = '_x_x';
-var r = /_(x)/;
-
-r.exec(s) // ["_x", "x"]
-```
-
-exec方法返回的数组还包括两个属性：
-
-- `input`: 原字符串
-- `index`: 整个模式匹配成功的开始位置
-
-```javascript
-var r = /a(b+)a/;
-var arr = r.exec('_abbba_aba_');
-
-arr // ["abbba", "bbb"]
-
-arr.index // 1
-arr.input // "_abbba_aba_"
-```
-
-`exec()`默认是匹配到第一个结果就返回；如果加上标志g，则可以使用多次`exec`方法，下次搜索的位置从上一次匹配成功结束的位置开始。
-
-```javascript
-const reg = /a/g
-const str = 'helloanihaoahia'
-
-while (true) {
-    let match = reg.exec(str)
-    console.log(match, reg.lastIndex)
-    if (!match) break
-}
-
-// [ 'a', index: 5, input: 'helloanihaoahia' ] 6
-// [ 'a', index: 9, input: 'helloanihaoahia' ] 10
-// [ 'a', index: 11, input: 'helloanihaoahia' ] 12
-// [ 'a', index: 14, input: 'helloanihaoahia' ] 15
-// null 0
-```
-
-每次调用正则的方法匹配，lastIndex会移动
-
-```javascript
-const reg = /ab/g
-const str = 'cabxxx_abeee_abcc'
-reg.test(str)
-reg.exec(str)
-console.log(reg.lastIndex) // 9
-```
-
-## 字符串的实例方法
-
-- `String.prototype.match()`: 返回一个数组，成员是所有匹配的子字符串；否则返回null。
-
-`match()`和`exec()`方法在没有标志g时返回结果类似；但是当有标志g时，它会返回匹配结果的数组，而且没有`input`，`index`属性。
-
-```javascript
-var s = '_x_x_';
-var r1 = /x(_)/;
-var r2 = /y/;
-
-console.log(s.match(r1)) // [ 'x_', '_', index: 1, input: '_x_x_' ]
-console.log(s.match(r2)) // null
-
-var s1 = '_x_x_';
-var r3 = /x(_)/g;
-var r4 = /y/;
-
-console.log(s.match(r3)) // [ 'x_', 'x_' ]
-console.log(s.match(r4)) // null
-```
-
-设置正则的`lastIndex`属性，对match方法无效，它总是从第一个字符开始匹配。
-
-```javascript
-var r = /a|b/g;
-r.lastIndex = 7;
-'xaxb'.match(r) // ['a', 'b']
-r.lastIndex // 0
-```
-
-- `String.prototype.search()`: 返回第一个匹配结果的位置，没有则返回-1。
-- `String.prototype.replace()`: 可以替换匹配的值。不会改变原字符串。返回改变后的字符串。
-
-如果不加标志g，则替换第一个匹配的值，否则替换所有的。
-
-```javascript
-'aaa'.replace('a', 'b') // "baa"
-'aaa'.replace(/a/, 'b') // "baa"
-'aaa'.replace(/a/g, 'b') // "bbb"
-```
-
-下面用replace去除字符串首尾空格：
-
-```javascript
-var str = '  #id div.class  ';
-str.replace(/^\s+|\s+$/g, '')
-// "#id div.class"
-```
-
-`replace`方法第二个参数可以使用$来指代所替换的内容。
-
-- $& 匹配的子字符串
-- $` 匹配结果前面的文本
-- $' 匹配结果后面的文本
-- $n 匹配成功的第n组内容，n从1开始
-- $$ 只带美元符号$
-
-```javascript
-'hello world'.replace(/(\w+)\s(\w+)/, '$2 $1')
-// "world hello"
-
-'abc'.replace('b', '[$`-$&-$\']')
-// "a[a-b-c]c"
-```
-
-`replace()`方法的第二个参数还可以是一个函数，将每一个匹配内容替换为函数返回值。
-
-```javascript
-'3 and 5'.replace(/[0-9]+/g, function (match) {
-  return 2 * match;
-})
-// "6 and 10"
-
-var a = 'The quick brown fox jumped over the lazy dog.';
-var pattern = /quick|brown|lazy/ig;
-
-a.replace(pattern, function replacer(match) {
-  return match.toUpperCase();
-});
-// The QUICK BROWN fox jumped over the LAZY dog.
-```
-
-作为replace方法第二个参数的替换函数，可以接受多个参数。其中，第一个参数是捕捉到的内容，第二个参数是捕捉到的组匹配（有多少个组匹配，就有多少个对应的参数）。此外，最后还可以添加两个参数，倒数第二个参数是捕捉到的内容在整个字符串中的位置（比如从第五个位置开始），最后一个参数是原字符串。
-
-```javascript
-const d = /hello(你)/g
-const str = 'hello你我他hello你我'
-
-let e = str.replace(d, function (a, b, c, d) {
-    console.log(a, b, c, d)
-})
-
-// hello你 你 0 hello你我他hello你我
-// hello你 你 8 hello你我他hello你我
-```
-
-下面是一个网页模板替换的例子。
-
-```javascript
-var prices = {
-    'p1': '$1.99',
-    'p2': '$9.99',
-    'p3': '$5.00'
-};
-
-var template = '<span id="p1"></span>'
-    + '<span id="p2"></span>'
-    + '<span id="p3"></span>';
-
-
-var t = template.replace(/(<span id="(.+?)">)(<\/span>)/, function (match, $1, $2, $3) {
-    return $1 + prices[$2] + $3
-})
-
-console.log(t) // <span id="p1">$1.99</span><span id="p2"></span><span id="p3"></span>
-```
-
-- `String.prototype.split(separator[, limit])`: 按照正则分割字符串。第一个参数是正则表达式，表示分隔规则，第二个参数是返回数组的最大成员数。
-
-```javascript
-// 非正则分隔
-'a,  b,c, d'.split(',')
-// [ 'a', '  b', 'c', ' d' ]
-
-// 正则分隔，去除多余的空格
-'a,  b,c, d'.split(/, */)
-// [ 'a', 'b', 'c', 'd' ]
-
-// 指定返回数组的最大成员
-'a,  b,c, d'.split(/, */, 2)
-// [ 'a', 'b' ]
-
-'aaa*a*'.split(/a*/)
-// [ '', '*', '*' ]
-
-'aaa**a*'.split(/a*/)
-// ["", "*", "*", "*"]
-
-// 如果有括号，会将括号里的匹配部分也当作数组元素返回
-'aaa*a*'.split(/(a*)/)
-// [ '', 'aaa', '*', 'a', '*' ]
-```
-
-**7.js中使用正则**
-
-js中使用正则，主要是字符串的match()、search()、replace()、split()方法，和正则的test()、exec()方法。
-
-- str.match(reg)
-- str.replace([RegExp|String],[String|Function])
-
-如果第二个参数是函数，函数的参数有四个：
-
-1. result: 本次匹配的结果
-2. $1,...$9: 正则表达式有多少个子表达式，就会传递几个参数
-3. offset: 本次匹配的开始位置
-4. source: 接受匹配的原始字符串
-
-```javascript
-var str1 = '2018-11-12'
-var reg2 = /(\d)(\d)/g
-var new_str2 = str1.replace(reg2, (...args)=> {
-	console.log(args)
-})
-
-// 结果
-[ '20', '2', '0', 0, '2018-11-12' ]
-[ '18', '1', '8', 2, '2018-11-12' ]
-[ '11', '1', '1', 5, '2018-11-12' ]
-[ '12', '1', '2', 8, '2018-11-12' ]
-```
-
-replace第二个参数还有一些符号有特殊含义，比如: $1 - $99，$& 表示整个匹配字符串，$`是匹配字符串左侧文本，$'是右侧文本。$$是直接量符号。
-
-- reg.test(str)  匹配则返回true，否则返回false
-- reg.exec(str)
-
-
-
-## 实战
-
-- [正则表达式之简易markdown文件解析器](http://ife.baidu.com/course/detail/id/30)
-- [正则表达式之入门](http://ife.baidu.com/course/detail/id/29)
-
-
-
-
-## 学习资料
-
-- [《构造正则表达式引擎》和 《构造可配置词法分析器》](http://www.cppblog.com/vczh/archive/2008/05/22/50763.aspx)
+- regex101.com

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[187],{73:function(e){e.exports=JSON.parse('{"title":"NodeJS 安全","sidebar_label":"安全","id":"nodejs/safe","description":"## 安全","source":"@site/docs/nodejs/safe.md","permalink":"/docs/nodejs/safe","sidebar":"nodejs","category":"nodejs","previous":"nodejs/async","previous_title":"NodeJS 事件/异步"}')}}]);

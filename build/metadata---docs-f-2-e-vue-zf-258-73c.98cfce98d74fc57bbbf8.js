@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[205],{266:function(e){e.exports=JSON.parse('{"title":"vue 知识点","sidebar_label":"知识点","id":"f2e/vue/zf","description":"```","source":"@site/docs/f2e/vue/zf.md","permalink":"/docs/f2e/vue/zf"}')}}]);

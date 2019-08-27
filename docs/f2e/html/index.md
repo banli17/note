@@ -1,5 +1,4 @@
 ---
-id: index
 title: "HTML 基础知识总结"
 sidebar_label: HTML 
 ---
@@ -185,7 +184,68 @@ HTML这种语言，并不像严谨的编程语言一样，有一条非此即彼�
 
 ### DOCTYPE有什么用？
 
+Tim Berners-Lee 设计 HTML 时，使用了当前已有的一种语言 SGML，从它那继承了基本语法和 DTD。
+
+基本语法：包括标签、转义等。
+
+基本语法:
+- 标签 Element: 标签名只用英文
+    - 开始标签: `<tagname>`
+        - 带属性标签: `<tagname attr="attrValue">`: 属性可以不用引号、单引号或双引号，需要转义(可以用文本实体转义)的部分不同：
+            - 无引号属性: tab, lf, ff, space, & 五种字符
+            - 单引号属性: ' & 两种字符
+            - 双引号属性: " & 两种字符
+    - 结束标签: `</tagname>`
+    - 自闭合标签: `<tagname />`
+- 文本 Text: 
+    - `text`: < 和 & 必须转义
+    - `<![CDATA[text]]>`:CDATA HTML中没有任何意义。它只在 XHTML 中有效，它用在 script 标签中以避免解析<和&，只需要处理`]]>`字符，拆成两个 CDATA 节点。在HTML中，这不是必需的，因为在HTML中，script已经是#CDATA。。
+- 注释 Comment: `<!-- comments -->`
+- DTD Document Type Defination: `<!Doctype html>`
+- 处理信息 ProcessingInstruction: `<?a 1?>`，HTML 中没有规定它的具体内容，可以视为保留的扩展机制。浏览器中，它的作用类似注释。空格前 a 表示目标，一般是处理程序名，剩余的是它的文本信息。
+
+XHTML: 因为 HTML 太松散，标签错误也能被解析，而 XML 需要严格遵守约定，XHTML 是 HTML4.01 的严格版。
+
 DOCTYPE(`document type`)告诉浏览器用那种模式来渲染页面。它可以声明三种 DTD 类型。分别是标准模式、过度版本和基于框架的 HTML 文档。
+
+
+
+```
+// 严格模式
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+// 过渡模式，包含被移除的标签
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+// frameset模式，frameset基本不用了
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+```
+
+SGML 规定可以用一些标签不闭合，但是有些人喜欢严格遵守 XML 语法，保证标签闭合性，所以 HTML4.01 又规定了 XHTML 语法：
+
+```
+// 严格模式
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+// 过渡模式
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "
+http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+// frameset模式,frameset基本不用了
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+```
+
+因为浏览器根本不是用 SGML 引擎解析 HTML，所以 HTML5 放弃了它。只需要：
+
+```html
+<!DOCTYPE html>
+```
+
+DTD 规定了 HTML 包含了哪些标签、属性和文本实体。文本实体分布在三个文件中：HTMLsymbol.ent、HTMLspecial.ent 和 HTMLlat1.ent。
+
+文本实体由 & 开头，; 结束。实体可以用 # 后面跟一个十进制数字，表示字符 Unicode 值，除此之外，这两个符号之间内容由 DTD 决定。
 
 这是历史原因导致的，最初浏览器渲染页面没有统一的方式，叫做混杂模式(quirks mod)。W3C 标准化后，有了统一的渲染方式，即标准模式(严格模式)。但是为了保证之前的页面正常显示，所以浏览器保留了这两种渲染方式(标准兼容模式)。具体采用哪种方式渲染，就要看 DOCTYPE 中的 DTD。
 
@@ -197,3 +257,16 @@ DTD(Document Type Definition) 是一套为了数据交换而建立的标记符�
 
 html5 没有 DTD，没有标准模式和混杂模式区分。语法相对宽松，已经尽可能实现向后兼容。
 
+## ARIA
+
+
+## html5 新增
+
+- canvas
+- video audio
+- storage
+- 新的语义化标签
+- 新的表单控件
+
+
+web components

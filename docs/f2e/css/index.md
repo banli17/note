@@ -1,68 +1,6 @@
 ---
-id: index
 title: css基础
 ---
-
-## css语法
-
-CSS的顶层样式表由两种规则组成的规则列表构成，一种被称为 at-rule，也就是at 规则，另一种是 qualified rule，也就是普通规则。
-
-at 规则由 @关键字和后续的一个区块组成，如果没有区块，则以分号结束。普通规则就是选择器和属性指定结构的规则。
-
-## css 选择器
-
-```
-*
-div
-.box
-#box
-.box div : 后代选择器
-
-// 新增选择器
-father > child： 子元素选择器
-sibling + sibling：相邻兄弟选择器
-sibling ~ sibling: 后面兄弟选择器
-,        : 群组选择器
-
-// 属性选择器
-a[href]    : 有属性的
-a[href="#"]: 完全匹配#
-a[href~="#"]: 包含#的
-a[href^="#"]: 以#开头的
-a[href$="#"]: 以#结尾的
-a[href*="#"]: 包含#的
-a[href|="#"]: 以 # 开头或以 #- 开头
-
-// 伪类选择器，相当于是自身的属性
-// 动态伪类，用户交互时触发
-:link, :visited  锚点伪类,a自带的效果
-:hover, :active, :fouces 用户行为伪类
-
-// ui元素状态伪类
-:enabled, :disabled, :checked
-
-div:first-child 如果是父级的第一个子元素，且是div，则选中 
-div:last-child
-
-div:nth-child()  odd=2n+1,even=2n
-div:nth-last-child(n)  倒着数第n个，且是div
-
-div:nth-of-type(2)  父级的第二个 div 子元素
-div:nth-last-of-type(n)
-
-div:first-of-type
-div:last-of-type
-div:only-child  只有一个子元素，且是唯一的
-div:only-of-child  只有一个div子元素
-
-:empty  没有子元素(包括文本节点)
-
-a:not(:last-of-type)
-
-// 伪元素选择器，元素::伪元素
-:first-line  只用于块级元素
-:first-letter
-```
 
 
 ## background
@@ -124,55 +62,6 @@ background: url(1.jpg) 0 0 no-repeat;
 - 50%
 - cover
 - contain
-
-### 线性渐变
-
-```
-语法： linear-gradient([角度 | 方向词], color, ...,color)
-```
-
-- 角度：0是从下到上，90deg是从左到右
-- 方向词：top、right、bottom、left、left top、top right、bottom right 或 left bottom。默认是`to botton`。
-- color：表示渐变的色标，每个色标包括一个颜色和一个位置，位置可以是百分比或者绝对长度。
-
-```
-background: #fff url() no-repeat top left / 100px 100px;
-```
-- 渐变背景  background-image
-    - linear-gradient
-    - radius-gradient
-    
-**linear-gradient**
-
-线性渐变的语法如下：
-
-```
-<linear-gradient> = linear-gradient([ [ <angle> | to <side-or-corner> ] ,]? <color-stop>[, <color-stop>]+)
-<side-or-corner> = [left | right] || [top | bottom]
-<color-stop> = <color> [ <length> | <percentage> ]?
-```
-
-`angle` 默认是向上，也就是 `0deg`(to top)，比如 `90deg` 是顺时针旋转。
-
-`repeating-linear-gradient` 是重复线性渐变。
-
-**radial-gradient**
-
-```
--webkit-radial-gradient([<position> || <angle>,]?[<shape> || <size>,]?<color-stop>,<color-stop>[,<color-stop>]*);
-```
-
-- position 表示圆心的位置，默认是以盒子中心为圆心
-- angle 是角度
-- shape 可以指定 circle 和 ellipse（默认）
-- size 定义渐变的大小，closest-side，farthest-side，closest-corner，farthest-corner
-- color stop的百分比是以圆心到四边的长度来计算的
-
-repeating-radial-gradient
-
-- 雪碧图的原理和使用
-
-### 径向渐变
 
 
 css值的来源有：
@@ -326,14 +215,6 @@ string 表示子序号的连接符，style 表示 list-style-type。
 
 2. 应用举例：可以方便用于幻灯片的slide小圆点上。
 
-### 资料
-
-- [CSS counter计数器(content目录序号自动递增)详解](http://www.zhangxinxu.com/wordpress/2014/08/css-counters-automatic-number-content/)(都自己动手实践一遍)
-- [w3.org counter](https://www.w3.org/TR/CSS2/generate.html#scope)
-- [mdn Counters](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters)
-- [Automatic Numbering With CSS Counters](https://dev.opera.com/articles/automatic-numbering-with-css-counters/)
-
-
 
 
 ## css 盒模型
@@ -456,44 +337,11 @@ width
 margin
 ```
 
-## 单位
 
-相对单位 em rem % vw vh
-绝对单位  px in pt cm mm
+- 雪碧图的原理和使用
 
-font-size设置为em，是根据父元素的font-size来计算的，盒模型的em是根据当前元素的font-size来计算的。
 
-rem是根据html的font-size来计算的
-
-line-height: 2; 是根据当前元素的font-size来计算的。
-
-1px 在不同设备上，根据dpr来对应不同的点数。但是显示大小是一致的。
-
-- vmin: 根据视口小的方向计算
-- vmax: 根据视口大的方向计算
-
-## calc
-
-## 颜色
-
-rgb 和 十六进制的转换
-
-```
-// 16进制转成10进制
-ff -> 15*16 + 15
-00 -> 0*16 + 0
-```
-
-```
-.parent {
-    color: green;
-    border-color: currentColor;
-}
-```
-
-- currentColor 会找自己的color，如果没有，找父元素的color。
-- transparent
-- rgba() , `alpha-channel`透明度通道。
+## 形状
 
 ## 列表属性list-style
 
@@ -504,17 +352,6 @@ list-style 是三个属性的简写
 - list-style-image: 可以设置小图标为一个图片
 
 不过一般都是设置 `list-style: none`，小图标直接用 `background` 来实现。
-
-## 参考资料
-
-- http://www.w3school.com.cn/cssref/pr_list-style-type.asp
-
-
-
-
-
-
-
 
 
 
@@ -795,7 +632,7 @@ transition
 animation
 
 
-# css颜色
+## css颜色
 
 颜色的值可以设置为关键词(如red)，16进制(#ff0000)或rgb(255,0,0)，除此之外，还有2个关键词：transparent 和 currentColor。currentColor表示当前元素的文字颜色，如果没有则继承父元素的color。
 
@@ -1002,31 +839,6 @@ display的取值大致分为四类：
 
 
 
-# flex布局
-
-flex布局刚开始学习的时候会感觉比较复杂，因为网上介绍它的很多文章都比较长。但是其实静下心来学习一遍后，会发现它很简单。
-
-当给一个盒子设置了 `display: flex` 属性后，它的子元素就形成了 flex 布局模型。
-
-关于父盒子有如下属性
-
-- flex-direction
-- flex-wrap
-- flex-flow: 上面2个属性的缩写
-- justify-content
-- align-items
-- align-content
-
-下面是子盒子的属性：
-
-- flex-grow: 父盒子空间有富余时，子元素怎么占用
-- flex-shrink: 子盒子空间超出父盒子空间时，子元素怎么收缩
-- flex-basis: 在主轴上的长度，会覆盖width或height属性
-- flex: 上面3个属性的缩写,默认是 0 1 auto。auto (1 1 auto) 和 none (0 0 auto)。
-- align-self: 子盒子自身在副轴上的分布，覆盖align-items
-- order
-
-
 
 引入css有四种方式
 
@@ -1169,22 +981,12 @@ media_feature: width | min-width | max-width
 ```
 这样做的好处是移动端首先加载，另外移动端一般样式简单，pc端需要覆盖的样式会很少。
 
-## 参考文章
-
-- https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries#Media_features
-- http://www.cnblogs.com/august-8/p/4537685.html
-
-
-
-
 
 ## border
 
 - `border-width` 不能是百分比，还可以设置为`thin`(1px),`normal`(3px),`thick`(5px)。
 - `border-style`的值可以是`solid`、`dashed`和`dotted`，`dashed`虚线在`ie`(长宽比2/1)和`chrome`(长宽比3/1)表现不一致。`dotted`在`chrome`为方点，而在`ie`为园点。另外还有些属性`double`(双线)、`groove`(凹槽)、`ridge`（垄状）、`inset`、`outset`。3d属性在各浏览器表现都不一致，另外现在流行扁平化，所以基本不用。
 - `border-color`会继承`color`的颜色。
-
-
 
 ## filter
 
@@ -1194,10 +996,6 @@ media_feature: width | min-width | max-width
 filter: url(resource.svg#c1)   
 blur()
 ```
-
-
-
-
 
 css选择器的解析是从右往左的，比如`#div a`并不是先查找id为div的元素，然后再找里面的a元素。而是首先在页面中找所有的a，再看每一个a有没有一个id为div的祖先元素。
 
@@ -1228,78 +1026,6 @@ css选择器的解析是从右往左的，比如`#div a`并不是先查找id为d
 
 
 
-# css形状
-
-## 三角形
-
-### 朝上三角形
-
-
-```
-#triangle-up {
-	width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-bottom: 100px solid red;
-}
-```
-### 朝下三角形
-
-
-```
-#triangle-down {
-	width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-top: 100px solid red;
-}
-```
-
-### 朝左三角形
-
-
-```
-#triangle-left {
-	width: 0;
-	height: 0;
-	border-top: 50px solid transparent;
-	border-right: 100px solid red;
-	border-bottom: 50px solid transparent;
-}
-```
-
-### 朝右三角形
-
-
-```
-#triangle-left {
-	width: 0;
-	height: 0;
-	border-top: 50px solid transparent;
-	border-left: 100px solid red;
-	border-bottom: 50px solid transparent;
-}
-```
-
-### 上左
-
-```
-#triangle-topleft {
-	width: 0;
-	height: 0;
-	border-top: 100px solid red;
-	border-right: 100px solid transparent;
-}
-```
-
-## 参考资料
-- https://css-tricks.com/examples/ShapesOfCSS/
-
-
-- <a href='http://apps.eky.hk/css-triangle-generator/zh-hant'>css三角形生成器</a>
-
 
 # table表格样式
 
@@ -1312,73 +1038,187 @@ table css属性有下面几个：
 - table-layout
 
 
+## 属性和值
 
-css的单位主要有以下几个：
+### 单位
+
+单位分为绝对单位和相对单位。
+
+绝对单位有：
+
+- px
+- cm
+- mm
+- pt
+- in
+
+相对单位有：
+
+- %: 是相对于父元素的。
+- em: 不建议使用。是按照父元素的 font-size 计算的，另外元素的 border、width、height、padding、margin、line-height 如果单位设置为 em，则是按照自身的 font-size 计算。
+- rem：按照根元素 html 的 font-size 计算，修改 html 的 font-size，所有尺寸都会变化。浏览器默认字体大小是 16px，可以设置`html{font-size: 625%}`将默认字体设为 100px 方便计算。因为chrome 最小字体为 12px，所以不设置为 62.5%。
+- vw: 1vw 表示视窗宽度的 1%。
+- vh：1vh 表示视窗高度的 1%。
+- vmin：
+- vmax：
+
+css 的单位主要有以下几个：
+
 - px：px是绝对单位
 - em：1em 等于父元素设置的字体大小。如果父元素没有设置字体大小，则继续往父级元素查找，直到有设置大小的，如果都没有设置大小，则使用浏览器默认的字体大小。其它属性border, width, height, padding, margin, line-height是参照该元素的font-size计算的，如果没有设置，则往父级查找，都没有设置，则使用浏览器默认的字体大小。计算较复杂，不建议使用
 - rem：r表示root，是相对于根元素html的font-size来计算的。修改了html的font-size，则所有的尺寸都会变化。
 
+
+calc 可以进行长度运算，支持 IE9+。注意括号里面运算符左右两边要有空格，如`calc(1rem - 10px)`，否则无效。
+
+
+### 颜色
+
+- RGB
+- CMYK
+- HLS
+- RGBA
+- 内置名称型颜色(140种)
+- 渐变
+    - 线性渐变
+    - 径向渐变
+
+
+**rgb 和 十六进制的转换**
+
+```js
+// 16进制转成10进制
+ff -> 15*16 + 15
+00 -> 0*16 + 0
 ```
-html {
- font-size: 625%; /* 相当于100px = 625% * 16px */
+
+**currentColor** 
+
+`currentColor` 会找自己的 color 属性，如果没有，找父元素的color。
+
+```
+.parent {
+    color: green;
+    border-color: currentColor;
 }
-div {
- font-size: 20px; 
- width: 2rem; /* 2rem = 2 * 100px(根元素的font-size) */
- height: 4rem; /* 4rem = 4 * 100px(根元素的font-size) */
- padding: 0.1rem; /* 0.1rem = 0.1 * 100px(根元素的font-size) */
+```
+
+#### 渐变
+
+background-image 的值可以设置为渐变色，渐变分为线性渐变和径向渐变。
+
+**线性渐变**
+
+线性渐变的语法如下
+
+```css
+linear-gradient([角度 | 方向词], color-stop1, color-stop2, ...)
+```
+
+- 角度：方向从 x 轴开始正方向旋转。0 是从下到上，90deg 是从左到右，3.14rad 表示从上到下。
+- 方向词：top、right、bottom、left、left top、top right、bottom right 或 left bottom。默认是`to bottom`。
+- color：表示渐变的色标
+    - `rgba(0, 0, 0, 0)`
+    - `yellow 10%`
+    - `orange 20px`
+
+下面是一个金色盒子的例子。
+
+```jsx live 
+class GoldBox extends Component{
+    render(){
+        return <div style={{display: 'flex'}}>
+            <div style={{
+                width: '100px',
+                height: '50px',
+                marginRight: '50px',
+                background: 'linear-gradient(90deg, gold 10%, yellow 50%, gold 90%)'
+            }}>线性渐变</div>
+
+            <div style={{
+                width: '100px',
+                height: '50px',
+                marginRight: '10px',
+                background: 'repeating-linear-gradient(90deg, gold, yellow 10%)'
+            }}>重复线性渐变</div>
+        </div>
+    }
 }
 ```
 
-- %：如果html font-size为62.5%，是以浏览器默认字体计算的，即（62.5% * 16px = 10px），所有浏览器默认字体大小为16px
-- vw,vh,vmin,vmax：是基于视窗大小来计算的。1vw是视窗宽度(html，不是body，因为body有margin:8px;)的的百分之一。vmin表示vw和vh中最小值。安卓4.3以下不兼容，以后再用。
+```jsx live
+class A extends Component{
+    constructor(){
+        this.state = {
+            borderColor: 'transparent',
+            background: 'transparent'
+        }
+    }
 
-```
-.box {
- height: 50vh; /* 视窗高度的50% */
- width: 25vw; /* 视窗宽度的25% */
- background: red;
+    componentDidMount(){
+        let h = 25
+        setInterval(()=>{
+            h ++
+            h = h % 360
+            this.setState({
+                borderColor: `hsl(${h}, 95%, 40%)`,
+                background: `linear-gradient(to bottom, hsl(${h}, 95%, 54.1%), hsl(${h}, 95%, 84.1%))`
+            })
+            
+        }, 100)
+    }
+
+    render(){
+        return <div style={{
+            display: 'inline-block',
+            textAlign: 'center',
+            textDecoration: 'none',
+            padding: '.5em 2em .55em',
+            border: 'solid 1px',
+            borderColor: this.state.borderColor,
+            background: this.state.background
+        }}>变色按钮</div>
+    }
 }
 ```
 
-- 单位运算：
 
 ```
-.box {
- height: calc(50vh - 20px); /* 50% 的视窗高度减掉20px */
- width: calc(100% - 10px);  /* 三分之一的父容器宽度 */
- background: red;
+background: #fff url() no-repeat top left / 100px 100px;
+```
+
+
+**径向渐变**
+
+径向渐变的语法如下:
+
+```css
+radial-gradient([<position> | <angle>,]?[<shape> | <size>,]?<color-stop>,<color-stop>[,<color-stop>]*);
+repeat-radial-gradient([<position> | <angle>,]?[<shape> | <size>,]?<color-stop>,<color-stop>[,<color-stop>]*);
+```
+
+- position 表示圆心的位置，默认是 center，以盒子中心为圆心，还可以是`top`、`bottom`。
+- angle 是角度
+- shape 可以指定 circle 和 ellipse（默认）
+- size 定义渐变的大小，closest-side，farthest-side，closest-corner，farthest-corner
+- color stop 的百分比是以圆心到四边的长度来计算的
+
+
+```jsx live
+function A(){
+    return <div style={{
+        width: 50,
+        height: 50,
+        background: 'radial-gradient(10px 10px, red, yellow)'
+    }}></div>
 }
 ```
 
-兼容性不好，先不用。
 
 
+## 样式计算
 
-# 常用 css 样式大全
-
-## 修改 placeholder 的颜色
-
-```
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
-    color: #666; 
-} 
-input:-moz-placeholder, textarea:-moz-placeholder { 
-    color: #666; 
-} 
-input::-moz-placeholder, textarea::-moz-placeholder { 
-    color: #666; 
-} 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
-    color: #666; 
-} 
-```
-
-
-
-# 样式计算
-
-## 样式的继承
+### 样式的继承
 
 样式的来源有三种：
 
@@ -1390,7 +1230,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 比如背景、border这些不会被继承，font-size可以被继承。是通用的属性。
 
-## 一些概念
+### 一些概念
 
 - 应用值，如果有自定义，则使用自定义，如果没有，则看是否继承。
     - 继承：则使用父元素的应用值，这种方式叫做继承值inherit
@@ -1399,11 +1239,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 - 指定值
 - 计算值
 
-## 样式的层叠
+### 样式的层叠
 
 自定义样式 > 浏览器默认样式 > 继承
 
-## 样式优先级
+### 样式优先级
 
 !import > style > id > class 伪类 属性选择器> tag 伪元素 > * > 浏览器默认 > 继承
 
@@ -1472,6 +1312,7 @@ background 系列、transform 系列、transtion 系列、animation 系列、fle
 
 
 
+## 网格布局
 
 
 
@@ -1488,63 +1329,15 @@ background 系列、transform 系列、transtion 系列、animation 系列、fle
 
 
 
-
-
-
-
-
-
-
-
-# 网格布局
-
-## 自定义chrome滚动条样式
-
-```css
-::-webkit-scrollbar {
-  width: 6px;
-  height: 4px;
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
-}
-
-::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-::-webkit-scrollbar-thumb:vertical {
-  height: 4px;
-  background: rgba(0, 0, 0, 0.15);
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-  width: 4px;
-  background: rgba(0, 0, 0, 0.15);
-}
-
-::-webkit-scrollbar-thumb:vertical:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-::-webkit-scrollbar-thumb:vertical:active {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
-}
-
-::-webkit-scrollbar-track-piece {
-  background: rgba(0, 0, 0, 0.15);
-}
-```
 
 
 ## 参考资料
 
+- [CSS counter计数器(content目录序号自动递增)详解](http://www.zhangxinxu.com/wordpress/2014/08/css-counters-automatic-number-content/)(都自己动手实践一遍)
+- [w3.org counter](https://www.w3.org/TR/CSS2/generate.html#scope)
+- [mdn Counters](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters)
+- [Automatic Numbering With CSS Counters](https://dev.opera.com/articles/automatic-numbering-with-css-counters/)
 - [如何居中一个元素（终结版）](https://github.com/ljianshu/Blog/issues/29)
+- https://css-tricks.com/examples/ShapesOfCSS/
+- https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries#Media_features
+- http://www.cnblogs.com/august-8/p/4537685.html

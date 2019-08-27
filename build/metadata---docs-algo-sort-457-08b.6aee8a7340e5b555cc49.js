@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[140],{54:function(e){e.exports=JSON.parse('{"title":"排序算法汇总","sidebar_label":"排序算法","id":"algo/sort","description":"排序算法有很多。","source":"@site/docs/algo/sort.md","permalink":"/docs/algo/sort","sidebar":"base","category":"数据结构与算法","next":"base/h5","previous":"algo/hash-table","previous_title":"哈希表","next_title":"h5开发实战"}')}}]);

@@ -393,7 +393,15 @@ var a = 1;
 
 ## 表达式语句
 
+
+
+
+## 词法 
+
+
+
 ## 参考资料
 
 - [重学前端](https://time.geekbang.org/column/article/87179)
-
+- [小心你复制的内容：使用零宽字符将用户名不可见的插入文本中](https://www.codesky.me/archives/be-careful-what-you-copy-invisibly-inserting-usernames-into-text-with-zero-width-characters.wind)
+- [零宽度字符：和谐？屏蔽？不存在的](https://juejin.im/post/5b87a6e26fb9a019b953ee8b)

@@ -8,7 +8,7 @@ sidebar_label: 异步编程
 
 ### 并发和并行
 
-![Erlang 之父 Joe Armstrong画的并发和并行图片](/static/img/js/async-1.jpg)
+![Erlang 之父 Joe Armstrong画的并发和并行图片](/img/js/async-1.jpg)
 
 上图可以看到，并发(concurrency)同时来了多个任务；并行(parallelism)是多个任务同时在处理。
 
@@ -17,7 +17,7 @@ sidebar_label: 异步编程
 javascript 异步的发展大致经历了下面几个过程：
 
 1. 回调函数
-2. Generator
+2. Generator + co 方式模拟(Generator 并非异步)
 3. Promise
 4. async + await 
 
@@ -586,10 +586,28 @@ await 内部实现了 generator，它是 generator 和 Promise 的语法糖，�
 
 ### setTimeout
 
+setTimeout 的语法如下：
+
+```js
+setTimeout(code, milliseconds, param1, param2, ...)
+setTimeout(function, milliseconds, param1, param2, ...)
+```
+
 setTimeout 要注意的几点：
 
+1. 从第三个参数开始，表示传给执行函数的参数(ie9及之前版本不支持)
 1. 因为 javascript 是单线程的，所以 setTimeout 的时间并不准确，具体可以看浏览器事件环。
-2. `setTimeout()`的返回值表示定时器的编号，可以传递给`clearTimeout()`取消定时器，浏览器中返回一个数字，NodeJs 中返回一个 Timeout 对象。`setTimeout()`和`setInterval()`公用一个编号池。
+1. `setTimeout()`的返回值表示定时器的编号，可以传递给`clearTimeout()`取消定时器，浏览器中返回一个数字，NodeJs 中返回一个 Timeout 对象。`setTimeout()`和`setInterval()`公用一个编号池。
+
+我们可以结合 Promise 封装一个 sleep 方法。
+
+```js
+function sleep(time){
+    return new Promise(resolve=>{
+        setTimeout(resolve, time * 1000)
+    })
+}
+```
 
 ### setInterval
 

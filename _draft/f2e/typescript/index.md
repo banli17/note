@@ -1,8 +1,5 @@
 ---
 title: "typescript"
-date: 2019-03-03 12:08:28
-tags:
-toc: true
 ---
 
 ## 安装

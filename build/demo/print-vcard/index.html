@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        .page {
+            width: 595pt;
+            height: 842pt;
+        }
+
+        .page:before, .page:after {
+            content: '\200b';
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        .grid {
+            width: 247.53883799009844pt;
+            height: 153.64479599385422pt;
+            border: 2pt solid #9fa0a0;
+            position: relative;
+            margin: 5pt 10pt;
+            float: left;
+        }
+
+        .grid .bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #eee url(./bg.jpg) no-repeat;
+            width: 247.53883799009844pt;
+            height: 153.64479599385422pt;
+        }
+
+        .grid .avatar {
+            position: absolute;
+            left: 6.828657599726854pt;
+            bottom: 3.9833835998406646pt;
+            width: 63.44961019746202pt;
+            height: 81.94389119672225pt;
+        }
+
+        .grid .rewm {
+            position: absolute;
+            bottom: 3.9833835998406646pt;
+            right: 6.828657599726854pt;
+            width: 52.6375689978945pt;
+            height: 52.6375689978945pt;
+        }
+
+        .grid p {
+            font-family: "微软雅黑";
+            font-size: 10pt;
+        }
+
+        .grid .line0 {
+            position: absolute;
+            left: 81.65936379673363pt;
+            top: 71.41637739714335pt;
+        }
+
+        .grid .line0 .text1 {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .grid .line0 .text2 {
+            position: absolute;
+            left: 30.1100551983156pt;
+            top: 0;
+            width: 78pt;
+        }
+
+        .grid .line1 {
+            position: absolute;
+            left: 81.65936379673363pt;
+            top: 94.46309679622149pt;
+        }
+
+        .grid .line0 .text1 {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .grid .line1 .text2 {
+            position: absolute;
+            left: 30.1100551983156pt;
+            top: 0;
+            width: 78pt;
+        }
+
+        .grid .line0 .text1 {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .grid .line2 {
+            position: absolute;
+            left: 81.65936379673363pt;
+            top: 118.36339839526548pt;
+        }
+
+        .grid .line2 .text2 {
+            position: absolute;
+            left: 30.1100551983156pt;
+            top: 0;
+            width: 78pt;
+        }
+
+        .operator {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            width: 200px;
+        }
+
+        .operator > div {
+            margin-bottom: 20px;
+        }
+
+        @media print {
+            .operator {
+                display: none;
+            }
+
+            @page {
+                size: 210mm 297mm ;
+            }
+        }
+
+    </style>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="page">
+        <div class="grid" v-for="l in ls">
+            <img class="bg" src="./bg.jpg">
+            <p class="line0">
+                <span class="text1" @click="startMove">姓名</span>
+                <span class="text2" @click="startMove">{{l.name}}</span>
+            </p>
+            <p class="line1">
+                <span class="text1" @click="startMove">{{userText[userType].line1}}</span>
+                <span class="text2" @click="startMove">{{l.zhiwu}}</span>
+            </p>
+            <p class="line2">
+                <span class="text1" @click="startMove">{{userText[userType].line2}}</span>
+                <span class="text2" @click="startMove">{{l.quyu}}</span>
+            </p>
+            <img class="avatar" :src="l.avatar"  @click="startMove"/>
+            <img class="rewm" :src="l.rewm"/>
+        </div>
+    </div>
+    <div class="operator">
+        <div>
+            说明：点击图片后，通过awsd控制宽高。选中文件后awsd控制位置，zx控制大小。
+        </div>
+        <div class="btn">1.选择图片<input type="file" multiple @change="avatarChange"></div>
+        <div class="btn">2.选择txt<input type="file" @change="txtChange"></div>
+
+        <div>用户类型：
+        <select name="userType" v-model="userType">
+            <option value="1">代理</option>
+            <option value="2">员工</option>
+        </select>
+        <br>
+        自定义修改用户文字： <br>
+        1：<input type="text" v-model="userText[userType].line1"> <br>
+        2：<input type="text" v-model="userText[userType].line2">
+        </div>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            lists: {},
+            pageNum: 0,
+            images: {},
+            ls: null,
+            target: null,
+            userType: 1,
+            userText: {
+                1:{
+                    line1: '职务',
+                    line2: '区域'
+                },
+                2:{
+                    line1: '部门',
+                    line2: '职务'
+                }
+            }
+        },
+        methods: {
+            startMove: function (e) {
+                this.target = e.target
+                console.log(this.target)
+            },
+            txtChange: function (e) {
+
+                var file = e.target.files[0]
+                var fr = new FileReader()
+                var _this = this
+                fr.onload = function (e) {
+                    console.log(e.target.result)
+                    var result = e.target.result
+                    var lists = result.split(/\r\n/)
+                    console.log(lists)
+                    lists.map((list) => {
+                        if (/^\s+$/.test(list)) return
+                        var line = list.split(/\s+/)
+                        _this.lists[line[0]] = {
+                            name: line[1],
+                            zhiwu: line[2],
+                            quyu: line[3],
+                            avatar: _this.images[line[0] + '.png'],
+                            rewm: _this.images[line[0] + 'a.png'],
+                        }
+                    })
+                    _this.pageNum = Math.ceil(Object.keys(_this.lists).length / 20)
+                    _this.ls = _this.lists
+                    console.log(_this.lists)
+                    _this.$set(_this, 'ls', _this.lists)
+
+                }
+                fr.readAsText(file)
+            },
+            avatarChange: function (e) {
+                var _this = this
+                var files = e.target.files
+                Object.keys(files).map((key) => {
+                    var fileName = files[key].name
+                    var fr = new FileReader()
+                    fr.onload = function (e) {
+                        _this.images[fileName] = e.target.result
+                    }
+                    fr.readAsDataURL(files[key])
+                })
+            }
+        },
+        created: function () {
+            let _this = this
+            document.onkeypress = function (e) {
+                if (!_this.target) return
+                // 左边
+                if (_this.target.tagName.toLowerCase() == 'img') {
+                    var curwidth= window.getComputedStyle(_this.target).width
+                    var curheight = window.getComputedStyle(_this.target).height
+                    if (e.key == 'w') {
+                        _this.target.style.height= (parseFloat(curheight) + 1) + 'px'
+                    } else if (e.key == 'x') {
+                        _this.target.style.height= (parseFloat(curheight) - 1) + 'px'
+                    }else if (e.key == 'a') {
+                        _this.target.style.width= (parseFloat(curwidth) -  1) + 'px'
+                    }else if (e.key == 'd') {
+                        _this.target.style.width= (parseFloat(curwidth) + 1) + 'px'
+                    }
+                    return
+                }
+
+                var curleft = window.getComputedStyle(_this.target).left
+                var curfont = window.getComputedStyle(_this.target).fontSize
+                var curtop = window.getComputedStyle(_this.target).top
+                if (e.key == 'a') {
+                    console.log(curleft)
+                    _this.target.style.left = (parseFloat(curleft) - 1) + 'px'
+                } else if (e.key == 'd') {
+                    _this.target.style.left = (parseFloat(curleft) + 1) + 'px'
+                } else if (e.key == 'w') {
+                    _this.target.style.top = (parseFloat(curtop) - 1) + 'px'
+                } else if (e.key == 's') {
+                    _this.target.style.top = (parseFloat(curtop) + 1) + 'px'
+                } else if (e.key == 'z') {
+                    _this.target.style.fontSize = (parseFloat(curfont) - 1) + 'px'
+                } else if (e.key == 'x') {
+                    _this.target.style.fontSize = (parseFloat(curfont) + 1) + 'px'
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
