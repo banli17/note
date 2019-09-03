@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[138],{50:function(e){e.exports=JSON.parse('{"title":"数据结构与算法","date":"2018-07-27T16:55:12.000Z","tags":null,"toc":true,"id":"algo/index","description":"## 链表","source":"@site/docs/algo/index.md","permalink":"/docs/algo/index","sidebar":"base","category":"数据结构与算法","next":"algo/linked-list","next_title":"链表"}')}}]);

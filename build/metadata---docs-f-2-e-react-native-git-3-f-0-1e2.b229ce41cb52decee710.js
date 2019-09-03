@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[194],{232:function(e){e.exports=JSON.parse('{"title":"react-native 项目版本管理","date":"2017-04-11T09:37:53.000Z","toc":true,"id":"f2e/react-native/git","description":"现在我们的项目代码管理是使用git，然后新建了三个主要的分支：","source":"@site/docs/f2e/react-native/git.md","permalink":"/docs/f2e/react-native/git"}')}}]);

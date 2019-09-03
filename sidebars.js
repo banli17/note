@@ -22,6 +22,7 @@ module.exports = {
     Javascript: [
       'f2e/javascript/grammer',
       'f2e/javascript/type',
+      'f2e/javascript/encode',
       'f2e/javascript/oop',
       'f2e/javascript/module',
       'f2e/javascript/async',
@@ -45,9 +46,10 @@ module.exports = {
       'f2e/performance/index',
       'f2e/test/index',
       'f2e/safe/index',
-      'f2e/webpack/basic/index',
-      'f2e/webpack/principle/index',
+      'f2e/webpack/basic',
+      'f2e/webpack/principle',
       'f2e/react/index',
+      'f2e/interview',
     ],
     vue: [
       'f2e/vue/index',

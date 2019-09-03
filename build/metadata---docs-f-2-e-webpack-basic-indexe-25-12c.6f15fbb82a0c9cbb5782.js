@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[214],{280:function(e){e.exports=JSON.parse('{"title":"webpack (1): 官方文档总结","id":"f2e/webpack/basic/index","description":"* [x] Markdown  ","source":"@site/docs/f2e/webpack/basic/index.md","permalink":"/docs/f2e/webpack/basic/index"}')}}]);
