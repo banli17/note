@@ -624,17 +624,6 @@ const foo = new Foo();
 Foo = 'Fol'; // it's ok
 ```
 
-## 面试题
+## 参考资料
 
-1. bind、call、apply的区别?
-1. 介绍下原型链（解决的是继承问题吗）?
-1. 深拷贝和浅拷贝?lodash深拷贝实现原理？
-1. JS继承方案?平常是怎么做继承?
-1. 介绍this是什么，this的各种情况?
-1. 怎么实现this对象的深拷贝?
-1. 介绍原型？原型链？使用原型最大的好处?
-1. 栈和堆具体怎么存储?
-1. 栈和堆的区别?
-1. `prototype`和`__proto__`区别?
-1. `constructor`是什么?
-1. new 是怎么实现的?
+- [如何写出一个惊艳面试官的深拷贝](https://juejin.im/post/5d6aa4f96fb9a06b112ad5b1#heading-15)

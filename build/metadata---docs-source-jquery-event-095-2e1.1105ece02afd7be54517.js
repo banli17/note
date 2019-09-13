@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[259],{272:function(e){e.exports=JSON.parse('{"title":"jQuery 事件绑定","sidebar_label":"事件绑定","id":"source/jquery/event","description":"## 参考资料","source":"@site/docs/source/jquery/event.md","permalink":"/docs/source/jquery/event","sidebar":"source","category":"jQuery源码"}')}}]);

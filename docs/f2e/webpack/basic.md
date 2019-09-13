@@ -7,26 +7,25 @@ title: "webpack 知识总结"
 思考下，一个理想的前端项目构建工具，需要有哪些功能：
 
 - 文件
-    - html: 压缩、支持 require 引入(如 header)
-    - js: 压缩混淆、合并，支持 es6+、jsx、ts 等语法
-    - css: 预处理(如less)、加浏览器私有前缀、合并
-    - 图片、字体：压缩
+  - html: 压缩、支持 require 引入(如 header)
+  - js: 压缩混淆、合并，支持 es6+、jsx、ts 等语法
+  - css: 预处理(如 less)、加浏览器私有前缀、合并
+  - 图片、字体：压缩
 - 体验
-    - 构建速度快
-    - 模块化开发
-    - 修改文件后，浏览器自动刷新/热更新
-    - 跨域时，proxy 请求代理
-    - 命令行输出关键日志
+  - 构建速度快
+  - 模块化开发
+  - 修改文件后，浏览器自动刷新/热更新
+  - 跨域时，proxy 请求代理
+  - 命令行输出关键日志
 - 质量
-    - 代码规范 eslint
-    - git 提交规范
-    - 测试
-    - 持续集成
+  - 代码规范 eslint
+  - git 提交规范
+  - 测试
+  - 持续集成
 - 部署
-    - 非覆盖式发布：文件指纹
+  - 非覆盖式发布：文件指纹
 - 优化
-    - 支持持续优化的方案
-
+  - 支持持续优化的方案
 
 ## 处理文件
 
@@ -42,31 +41,31 @@ webpack 中通常使用插件 HtmlWebpackPlugin 来处理 HTML 文件。它的�
 
 ```js
 new HtmlWebpackPlugin({
-    template: path.join(__dirname, 'src/search.html'),  // 模版文件
-    filename: 'search.html',  // 打包输出模版的名称
-    chunks: ['search'],  // 这个chunk会插入到输出模版中
-    inject: true,
-    minify:{
-        html5: true,           
-        collapseWhitespace: true,   // 移除空格
-        preserveLineBreaks: false,  // 必须与上面一起使用，多换行变成一行
-        minifyCSS: true,   // 用于压缩一开始就内联的 css
-        minifyJS: true,    // 用于压缩一开始就内联的 js
-        removeComments: false,             // 移除注释
-        removeRedundantAttributes: true,   // 移除默认匹配的属性 如 
-        removeScriptTypeAttributes: true,  // 移除 script  type 属性
-        removeStyleLinkTypeAttributes: true,  // 移除默认值属性，如input 默认值为 type="text" ，将被移除
-        useShortDoctype: true,           // 使用短 doctype
-        removeEmptyAttributes: true,     // 移除空属性 ，如 id="" id="\n"
-    }
-})
+  template: path.join(__dirname, "src/search.html"), // 模版文件
+  filename: "search.html", // 打包输出模版的名称
+  chunks: ["search"], // 这个chunk会插入到输出模版中
+  inject: true,
+  minify: {
+    html5: true,
+    collapseWhitespace: true, // 移除空格
+    preserveLineBreaks: false, // 必须与上面一起使用，多换行变成一行
+    minifyCSS: true, // 用于压缩一开始就内联的 css
+    minifyJS: true, // 用于压缩一开始就内联的 js
+    removeComments: false, // 移除注释
+    removeRedundantAttributes: true, // 移除默认匹配的属性 如
+    removeScriptTypeAttributes: true, // 移除 script  type 属性
+    removeStyleLinkTypeAttributes: true, // 移除默认值属性，如input 默认值为 type="text" ，将被移除
+    useShortDoctype: true, // 使用短 doctype
+    removeEmptyAttributes: true // 移除空属性 ，如 id="" id="\n"
+  }
+});
 ```
 
 另外 HTML 还需要支持`require('head.html')`语法，可以使用`raw-loader`，它可以读取文件并嵌入到页面中。由于 HtmlWebpackPlugin 默认是 ejs 语法，所以可以使用`${require}`。
 
 ```js
 // raw-loader 0.5.1
-<script>${require('raw-loader!babel-loader!./meta.html')}</script>
+<script>${require("raw-loader!babel-loader!./meta.html")}</script>
 ```
 
 ### CSS
@@ -90,11 +89,10 @@ CSS 文件一般要做的事情如下：
 - 支持预处理，如 less，可以使用`less-loader`。
 - 支持压缩，一般使用`optimize-css-asset-webpack-plugin`插件 +`cssnano`处理器。
 - 支持自动添加浏览器私有前缀，如 -webkit- 等，可以使用`postcss-loader` + `autoprefixer`插件，`autoprefixer`是一个 css 后置处理器，是代码生成后再处理的，它根据 can i use 规则进行添加私有前缀。
-    - Trident -ms
-    - Geko    -moz
-    - Webkit   -webkit
-    - Presto   -o
-
+  - Trident -ms
+  - Geko -moz
+  - Webkit -webkit
+  - Presto -o
 
 ```js
 const OptimizeCssAssetsPlugin = require('optimize-css-asset-webpack-plugin')
@@ -150,7 +148,7 @@ module.exports = {
 js 需要做的事情如下：
 
 - 压缩：webpack 内置了 uglifyjs-webpack-plugin，在 mode 为 production 时默认开启
-- 内联JS，`<script>${require('raw-loader!babel-loader!../node_modules/lib-flexible')}</script>`。
+- 内联 JS，`<script>${require('raw-loader!babel-loader!../node_modules/lib-flexible')}</script>`。
 - 解析 es6，需要使用`babel-loader`。添加配置文件`.babelrc`。
 
 ```
@@ -163,16 +161,12 @@ presets 对应一个功能集合，plugins 对应一个功能
 
 ```json
 {
-    "presets": [
-        "@babel/preset-env"
-    ],
-    "plugins": [
-        "@babel/plugin-proposal-class-properties"
-    ]
+  "presets": ["@babel/preset-env"],
+  "plugins": ["@babel/plugin-proposal-class-properties"]
 }
 ```
 
-**解析react**
+**解析 react**
 
 需要在 presets 配置里增加`@babel/preset-react`。
 
@@ -195,11 +189,10 @@ npm i react react-dom @babel/preset-react -D
 
 `imagemin`压缩原理是:
 
-- `pngquant`: 
+- `pngquant`:
 - `pngcrush`: 主要目的是通过尝试不同压缩级别和 PNG 过滤方法来降低 PNG IDAT 数据流的大小。
-- `optipng`: 
-- `tingpng`: 
-
+- `optipng`:
+- `tingpng`:
 
 ```js
 {
@@ -235,8 +228,6 @@ npm i react react-dom @babel/preset-react -D
 }
 ```
 
-
-
 ## 响应式开发
 
 - 支持响应式开发：可以使用`px2rem-loader` + `lib-flexible`。
@@ -251,10 +242,9 @@ npm i react react-dom @babel/preset-react -D
 
 w3c 对 rem 的定义：font-size of the root element。
 
-通过750的设计稿去写，然后用构建工具进行转换成 rem
+通过 750 的设计稿去写，然后用构建工具进行转换成 rem
 
 使用 px2rem-loader
-
 
 ```
 {
@@ -286,7 +276,6 @@ npm i px2rem-loader lib-flexible -D
 
 ## 体验
 
-
 ### 热更新
 
 实现热更新有两种方式：
@@ -308,18 +297,20 @@ new webpack.HotModuleReplacementPlugin()
 2. `webpack-dev-middleware`，它会将 webpack 输出的文件传给服务器，适合灵活的定制场景。
 
 ```js
-const express = require('express')
-const webpack = require('webpack')
-const webpackDevMiddleware = require('webpack-dev-middleware')
+const express = require("express");
+const webpack = require("webpack");
+const webpackDevMiddleware = require("webpack-dev-middleware");
 
-const app = express()
-const config = require('./webpack.config.js')
-const compiler = webpack(config)
+const app = express();
+const config = require("./webpack.config.js");
+const compiler = webpack(config);
 
-app.use(webpackDevMiddleware(compiler, {
+app.use(
+  webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
-}))
-app.listen(3000, function(){})
+  })
+);
+app.listen(3000, function() {});
 ```
 
 热更新的原理如下：
@@ -332,7 +323,7 @@ webpack-dev-server 会启动两个服务 Bundle Server 和 HMR Server，并通�
 
 构建速度的优化方法主要有下面几点：
 
-1. 升级最新版本工具(node、webpack等)
+1. 升级最新版本工具(node、webpack 等)
 1. 多进程构建
 1. 多进程压缩
 1. 分包
@@ -360,7 +351,7 @@ webpack-dev-server 会启动两个服务 Bundle Server 和 HMR Server，并通�
 
 有下面几种方案：
 
-1. 开启`terser-webpack-plugin`的 parallel 参数，默认线程数是 cpu * 2 - 1。
+1. 开启`terser-webpack-plugin`的 parallel 参数，默认线程数是 cpu \* 2 - 1。
 2. 使用`webpack-parellel-uglify-plugin`插件
 3. 开启`uglifyjs-webpack-plugin`的 parallel 参数
 
@@ -374,31 +365,50 @@ webpack-dev-server 会启动两个服务 Bundle Server 和 HMR Server，并通�
 
 DLLPlugin 通常用于基础包(框架基础包、业务基础包)的分离，SplitChunks 虽然也可以提取，但是它每次提取需要耗时，而 DLLPlugin 只需要编译一次，后面无需再编译。通常是单独写一个`webpack.dll.js`文件，并配置命令`npm run dll`。
 
+**webpack.dll.config.js**
+
+```js
+const path = require("path");
+const webpack = require("webpack");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
+const dllPath = "./public/vendor";
+
+module.exports = {
+  entry: {
+    vendor: ["vue", "vue-router", "vuex", "axios"]
+  },
+  output: {
+    path: path.resolve(__dirname, dllPath),
+    filename: "[name].dll.js",
+    library: "[name]_[hash]" // 打包的库暴露的名称
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new webpack.DllPlugin({
+      // 生成一个 json 文件，用于 DllReferencePlugin 映射到相关的依赖上去的
+      path: path.join(__dirname, dllPath, "[name]-manifest.json"),
+      name: "[name]_[hash]",
+      context: process.cwd() // 生成的 manifest.json 里 content 路径的上下文，如../
+    })
+  ]
+};
 ```
-{
-    context: process.cwd(),
-    resolve: {
-        extensions: ['.js', '.jsx', '.json', '.less', '.css'],
-        module: [__dirname, 'node_modules']
-    },
-    entry: {
-        library: [
-            'react',
-            'react-dom',
-            'redux'
-        ]
-    },
-    output: {
-        filename: '[name].dll.js',
-        path: path.resolve(__dirname, './build/library'),
-        library: '[name]'
-    },
+
+**webpack.prod.config.js**
+
+```js
+module.exports = {
     plugins: [
-        new webpack.DllPlugin({
-            name: '[name]',
-            path: './build/library/[name].json'
-        })
-    ]
+      new webpack.DllReferencePlugin({
+        context: process.cwd(),
+        manifest: require("./public/vendor/vendor-manifest.json")
+      }),
+      new AddAssetHtmlPlugin({
+        filepath: path.resolve(__dirname, "./public/vendor/*.js"),
+        publicPath: "./vendor",
+        outputPath: "./vendor" // 输出文件目录，这里会和原先的dll重复
+    })
 }
 ```
 
@@ -408,9 +418,26 @@ DLLPlugin 通常用于基础包(框架基础包、业务基础包)的分离，Sp
 
 缓存的方案有：
 
-- `babel-loader` 开启缓存`babel-loader?cacheDirectory`。
-- `terser-webpack-plugin`开启缓存。
-- 使用`cache-loader`或者`hard-source-webpack-plugin`提升模块转换阶段缓存。
+1. 开启 babel 转换的缓存。`babel-loader?cacheDirectory`。
+2. 开启代码压缩缓存，使用`terser-webpack-plugin`。
+3. 开启模块转换的缓存。使用`cache-loader`或者`hard-source-webpack-plugin`提升模块转换阶段缓存。
+
+```js
+const TerserWebpackPlugin = require("terser-webpack-plugin");
+var HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
+
+module.exports = {
+  plugins: [new HardSourceWebpackPlugin()],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserWebpackPlugin({
+        cache: true
+      })
+    ]
+  }
+};
+```
 
 ### 缩小构建目标
 
@@ -420,10 +447,11 @@ DLLPlugin 通常用于基础包(框架基础包、业务基础包)的分离，Sp
 
 - `babel-loader`不解析 node_modules 目录的文件。通过配置`exclude: 'node_modules'`。
 - 配置 resolve 模块查找
-    - 优化 resolve.modules，resolve.mainFields，resolve.extensions。
-    - 合理使用 alias
-    - 设置resolve.symlinks: false，如果不使用 npm link。
-    - 设置resolve.cacheWithContext: false，关闭根据上下文解析插件。
+  - 优化 resolve.modules，resolve.mainFields，resolve.extensions。
+  - 合理使用 alias
+  - 设置 resolve.symlinks: false，如果不使用 npm link。
+  - 设置 resolve.cacheWithContext: false，关闭根据上下文解析插件。
+
 ```
 resolve:{
     alias: {
@@ -436,8 +464,6 @@ mainFields: ['main']
 ```
 
 ## 优化构建大小
-
-
 
 ## 参考资料
 

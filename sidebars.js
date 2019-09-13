@@ -49,6 +49,7 @@ module.exports = {
       'f2e/webpack/basic',
       'f2e/webpack/principle',
       'f2e/react/index',
+      'f2e/guide',
       'f2e/interview',
     ],
     vue: [
@@ -94,7 +95,8 @@ module.exports = {
     ],
     网络协议: [
       'base/net/tcp',
-      'base/net/http'
+      'base/net/http',
+      'base/net/https',
     ],
     设计: [
       'patterns/index',
