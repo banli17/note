@@ -1,15 +1,10 @@
 ---
 title: git使用总结
-date: 2018-10-19 10:32:00
-tags:
-toc: true
 ---
 
+## git 分支
 
-
-## git分支
-
-1、git保存的是每个文件的快照。git commit 第一次提交前，会计算每个子目录的校验和，然后将这些目录保存成树对象。之后创建的提交对象，包含提交信息和这个树对象的指针。
+1、git 保存的是每个文件的快照。git commit 第一次提交前，会计算每个子目录的校验和，然后将这些目录保存成树对象。之后创建的提交对象，包含提交信息和这个树对象的指针。
 
 2、提交的对象看起来像下图。
 
@@ -19,7 +14,7 @@ toc: true
 
 ![](./git/3-2.png)
 
-4、分支实际是指向 commit 对象的可变指针。git 会使用 master 作为分支的默认名。多次提交后，HEAD指针会指向最后一次提交对象的 master 分支。每次提交，指针会向前移动。
+4、分支实际是指向 commit 对象的可变指针。git 会使用 master 作为分支的默认名。多次提交后，HEAD 指针会指向最后一次提交对象的 master 分支。每次提交，指针会向前移动。
 
 ![](./git/3-3.png)
 
@@ -29,14 +24,13 @@ toc: true
 git branch testing
 ```
 
-创建后，HEAD还是指向 master 分支，切换分支需要使用下面命令。
+创建后，HEAD 还是指向 master 分支，切换分支需要使用下面命令。
 
 ```bash
 git checkout testing
 ```
 
 6、每个分支都是相互独立的，可以在各个分支进行修改提交，只需要在最后合适的时候，将分支合并即可。
-
 
 ## 其它
 
@@ -52,18 +46,18 @@ git push origin --delete dev
 git branch -a
 ```
 
-## 远程git地址修改了
+## 远程 git 地址修改了
 
 ```
 git remote remove origin
 git remote add origin [new_git_url]
 git pull origin [branch_name]
-git push 
+git push
 ```
 
-## 服务器上的git
+## 服务器上的 git
 
-### 生成SSH公钥
+### 生成 SSH 公钥
 
 ```bash
 ssh-keygen
@@ -71,8 +65,7 @@ ssh-keygen
 
 通过下面命令生成秘钥，会存储在用户主目录下的`~/.ssh`目录。`id_dsa`是秘钥，`id_dsa.pub`是公钥。
 
-在window下，`ssh-keygen`如果不是内部命令，需要将`ssh-keygen.exe`的路径`C:\Program Files\Git\usr\bin`加入到环境变量中。
-
+在 window 下，`ssh-keygen`如果不是内部命令，需要将`ssh-keygen.exe`的路径`C:\Program Files\Git\usr\bin`加入到环境变量中。
 
 ## 初始化
 
@@ -85,7 +78,6 @@ git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
 
-
 ## 切换版本
 
 ```
@@ -96,7 +88,7 @@ git checkout fdss22
 
 ## 创建和合并分支
 
-1、新建w0分支开发新需求。
+1、新建 w0 分支开发新需求。
 
 ```
 // 新建分支
@@ -107,7 +99,7 @@ git branch w0  // 创建分支
 git checkout w0  // 切换到分支
 ```
 
-2、开发完新需求后，在w0下提交(commit)分支内容，再切换到主分支，将w0分支合并到主分支。
+2、开发完新需求后，在 w0 下提交(commit)分支内容，再切换到主分支，将 w0 分支合并到主分支。
 
 ```
 // branch w0下
@@ -119,13 +111,13 @@ git checkout master
 git merge w0
 ```
 
-3、删除分支w0。
+3、删除分支 w0。
 
 ```
 git branch -d w0  // 删除w0分支
 ```
 
-4、如果产生冲突时，则处理之后再add提交。这样我们就可以在master分支发布更新后的项目了。
+4、如果产生冲突时，则处理之后再 add 提交。这样我们就可以在 master 分支发布更新后的项目了。
 
 其它一些命令:
 
@@ -145,9 +137,9 @@ git branch -a 查看本地分支和远程分支
 git branch -m old_name new_name
 ```
 
-## .gitignore文件
+## .gitignore 文件
 
-1、在git项目根目录新建文件`.gitignore`，内容为要忽略的文件或目录：
+1、在 git 项目根目录新建文件`.gitignore`，内容为要忽略的文件或目录：
 
 ```
 **/node_modules
@@ -164,22 +156,22 @@ git branch -m old_name new_name
 
 这样在提交的时候，就会忽略上面的这些文件。
 
-2、如果后来修改了`.gitignore`文件，默认git不会根据新的规则执行，需要执行下面命令：
+2、如果后来修改了`.gitignore`文件，默认 git 不会根据新的规则执行，需要执行下面命令：
 
 ```bash
 # 有时候需要突然修改 .gitignore 文件，随后要立即生效
 
-git rm -r --cached .  #清除缓存  
-git add . #重新trace file  
-git commit -m "update .gitignore" #提交和注释  
-git push origin master #可选，如果需要同步到remote上的话  
+git rm -r --cached .  #清除缓存
+git add . #重新trace file
+git commit -m "update .gitignore" #提交和注释
+git push origin master #可选，如果需要同步到remote上的话
 ```
 
-## 将本地代码同步到github
+## 将本地代码同步到 github
 
-我本地写了一些学习时的demo，想要同步到github上面去。
+我本地写了一些学习时的 demo，想要同步到 github 上面去。
 
-1、首先在github上新建一个项目，比如`w3croad-demo`。
+1、首先在 github 上新建一个项目，比如`w3croad-demo`。
 
 2、在我本地的项目根目录执行下面命令。
 
@@ -200,7 +192,7 @@ git pull origin master --allow-unrelated-histories
 git push --set-upstream origin master  // 以后就可以直接git push
 ```
 
-如果我一开始就时从github上拉取下来的新项目，就没有这么多问题了。
+如果我一开始就时从 github 上拉取下来的新项目，就没有这么多问题了。
 
 ## 问题
 
@@ -214,23 +206,20 @@ git commit -m "提交"
 
 2. 不能直接 `push`，需要先 `commit`。
 
-
-3. `git status` 时，中文转义了，解决方法是让 `git` 不处理 `utf-8` 文件名。
+3) `git status` 时，中文转义了，解决方法是让 `git` 不处理 `utf-8` 文件名。
 
 ```
 git config --global core.quotepath false
 ```
 
-
-4. 删除github上所有文件
+4. 删除 github 上所有文件
 
 ## 参考资料
 
 - 清空提交记录https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github
-- 教学全程使用git实现协同开发
-- 深入学习和使用git
+- 教学全程使用 git 实现协同开发
+- 深入学习和使用 git
 - 代码管理思想
-
 
 ## 一些报错的解决方法
 
@@ -246,36 +235,32 @@ git push -u origin master -f
 git config core.autocrlf false
 ```
 
+**3. windows 上 git 提交的内容，在 mac 上报错了。env: bash\r: No such file or directory**
 
-**3. windows上git提交的内容，在mac上报错了。env: bash\r: No such file or directory**
-
-如果上Mac
+如果上 Mac
 
 ```bash
 brew install dos2unix # Installs dos2unix Mac
 find . -type f -exec dos2unix {} \; # recursively removes windows related stuff
 ```
 
-如果上Linux
+如果上 Linux
 
 ```bash
 sudo apt-get install -y dos2unix # Installs dos2unix Linux
 sudo find . -type f -exec dos2unix {} \; # recursively removes windows related stuff
 ```
 
-之后确保windows上首先配置一下提交始终使用linux行结束符\n。
+之后确保 windows 上首先配置一下提交始终使用 linux 行结束符\n。
 
 ```bash
 git config --global core.autocrlf input
 ```
 
-
 ## 常用的图形化软件
 
-- [sourcetree支持mac和windows](https://www.sourcetreeapp.com/)
+- [sourcetree 支持 mac 和 windows](https://www.sourcetreeapp.com/)
 - [GUI Clients](https://git-scm.com/downloads/guis/)
-
-
 
 ## 学习资料
 
