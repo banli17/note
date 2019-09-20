@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[177],{112:function(e){e.exports=JSON.parse('{"title":"前端项目规范总结","id":"f2e/guide","description":"## 代码格式","source":"@site/docs/f2e/guide.md","permalink":"/docs/f2e/guide","sidebar":"docs","category":"其它","next":"f2e/interview","previous":"f2e/react/index","previous_title":"React 知识点总结","next_title":"壹题面试题解答"}')}}]);

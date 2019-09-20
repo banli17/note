@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[194],{226:function(e){e.exports=JSON.parse('{"title":"android基础知识","date":"2017-12-30T03:40:47.000Z","toc":true,"id":"f2e/react-native/android","description":"## R.string是什么?","source":"@site/docs/f2e/react-native/android.md","permalink":"/docs/f2e/react-native/android"}')}}]);

@@ -1,35 +1,30 @@
 {
-  "name": "banli-blog",
-  "version": "0.0.0",
-  "private": true,
+  "name": "banli_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "banli_blog": "publish.js"
+  },
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build && git add . && git commit -m'update' && git push",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy"
+    "dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
-  "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.24",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.24",
-    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.24",
-    "gitalk": "^1.5.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banli17/blog.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/banli17/blog/issues"
   },
+  "homepage": "https://github.com/banli17/blog#readme",
   "devDependencies": {
-    "classnames": "^2.2.6"
+    "vuepress": "^1.0.4"
   }
 }

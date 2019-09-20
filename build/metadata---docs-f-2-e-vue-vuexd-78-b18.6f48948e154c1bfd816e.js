@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[218],{290:function(e){e.exports=JSON.parse('{"title":"vuex","id":"f2e/vue/vuex","description":"","source":"@site/docs/f2e/vue/vuex.md","permalink":"/docs/f2e/vue/vuex"}')}}]);

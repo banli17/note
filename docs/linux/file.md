@@ -1,15 +1,14 @@
 ---
-title: linux文件和目录操作
-sidebar_label: 文件&目录操作
+title: 文件和目录操作
 ---
 
+# linux 文件和目录操作
 
-
-### pwd
+## pwd
 
 pwd 命令用于显示当前用户所处的工作目录。
 
-### cd
+## cd
 
 cd 命令用于切换工作目录。
 
@@ -18,7 +17,7 @@ cd 命令用于切换工作目录。
 - `..`: 返回上级目录。
 - `~username`：进入其它用户的家目录。
 
-### ls
+## ls
 
 ls 命令用于显示目录的文件信息。
 
@@ -34,7 +33,7 @@ ls -al
 ls -ld /etc
 ```
 
-### cat
+## cat
 
 cat 命令用于查看纯文本(内容较少的)。
 
@@ -44,11 +43,11 @@ cat 命令用于查看纯文本(内容较少的)。
 cat -n initial-setup-ks.cfg
 ```
 
-### more
+## more
 
 more 命令用于查看纯文本文件(内容较多的)。会提示进度，可以用空格键或回车键向下翻页。
 
-### head
+## head
 
 head 命令用于查看纯文本的前 N 行。
 
@@ -57,7 +56,7 @@ head 命令用于查看纯文本的前 N 行。
 head -n 20 init-setup-ks.cfg
 ```
 
-### tail
+## tail
 
 tail 命令用于查看文本文档的后 N 行或持续刷新内容(如实时日志)。
 
@@ -67,7 +66,7 @@ tail 命令用于查看文本文档的后 N 行或持续刷新内容(如实时�
 tail -f /var/log/messages
 ```
 
-### tr
+## tr
 
 tr 命令用于替换文本文件的字符。格式为`tr [原始字符] [目标字符]`。
 
@@ -77,7 +76,7 @@ tr 命令用于替换文本文件的字符。格式为`tr [原始字符] [目标
 cat anaconda-ks.cfg | tr [a-z] [A-Z]
 ```
 
-### wc
+## wc
 
 wc 命令用于统计指定文本的行数、字数、字节数，格式为`wc [参数] 文本`。
 
@@ -91,11 +90,11 @@ wc 命令用于统计指定文本的行数、字数、字节数，格式为`wc [
 wc -l /etc/passwd
 ```
 
-### stat
+## stat
 
 stat 命令用于查看文件的具体存储信息和时间等信息。格式为`stat 文件名`。
 
-### cut 
+## cut
 
 cut 命令用于按列提取文本字符。
 
@@ -142,9 +141,6 @@ awk 用于处理文本，它依次处理文件每一行，并读取每一个字�
 
 具体查看[手册](https://www.gnu.org/software/gawk/manual/html_node/Built_002din.html#Built_002din)
 
-
-
-
 ```bash
 # print是打印命令，$0表示当前行,$1,$2...表示字段
 echo 'this is a test' | awk '{print $0}'
@@ -181,7 +177,7 @@ touch 命令用于创建空白文件或设置文件的时间，格式为`touch [
 
 - `a`: 设置文件的读取时间(atime)。
 - `m`: 设置文件的修改时间(mtime)。
-- `d`: 设置文件的atime和mtime。
+- `d`: 设置文件的 atime 和 mtime。
 
 ```bash
 # 修改文件后，将文件的时间改成修改之前的时间
@@ -206,7 +202,7 @@ mkdir -p a/b/c
 
 ### cp
 
-cp 命令用于复制文件或目录，格式为`cp [选项] 源文件 目标文件`。复制有3种情况：
+cp 命令用于复制文件或目录，格式为`cp [选项] 源文件 目标文件`。复制有 3 种情况：
 
 - 如果目标文件是目录，则会把源文件复制到该目录中。
 - 如果目标文件是普通文件，则会询问是否覆盖。
@@ -232,16 +228,16 @@ mv 命令用于剪切文件或重命名文件，格式为`mv [选项] 源文件 
 mv a.txt c.txt
 ```
 
-### rm 
+### rm
 
 rm 命令用于删除文件或目录，格式为`mv [选项] 文件`。
 
-- `f`: 系统默认会询问是否删除，可以加-f强制删除，不询问。
+- `f`: 系统默认会询问是否删除，可以加-f 强制删除，不询问。
 - `r`: 删除目录。
 
 ### dd
 
-dd 命令用于按照指定大小和个数的数据块来复制文件或转换文件，格式为`dd [参数]`。linux系统中有个设备文件`/dev/zero`，不占用系统存储空间，却可以提供无穷无尽的数据，可以用它做为 dd 命令的输入文件，来生成指定大小的文件。
+dd 命令用于按照指定大小和个数的数据块来复制文件或转换文件，格式为`dd [参数]`。linux 系统中有个设备文件`/dev/zero`，不占用系统存储空间，却可以提供无穷无尽的数据，可以用它做为 dd 命令的输入文件，来生成指定大小的文件。
 
 - `if`: 输入的文件名称。
 - `of`: 输出的文件名称。
@@ -258,7 +254,7 @@ dd if=/dev/cdrom of=RHEL-server-7.0-x86_64-linux.iso
 
 ### file
 
-file 命令用于查看文件的类型，格式为`file 文件名`。linux中，一切都是文件，不能单凭后缀知道文件类型，所以需要使用file命令。
+file 命令用于查看文件的类型，格式为`file 文件名`。linux 中，一切都是文件，不能单凭后缀知道文件类型，所以需要使用 file 命令。
 
 ```
 [root@localhost ~]# file package-lock.json
@@ -267,7 +263,7 @@ package-lock.json: ASCII text
 
 ### tar
 
-tar 命令用于对文件进行压缩或解压，格式为`tar [选项] [文件]`。linux常用的格式为.tar或.tar.gz或.tar.bz2格式。
+tar 命令用于对文件进行压缩或解压，格式为`tar [选项] [文件]`。linux 常用的格式为.tar 或.tar.gz 或.tar.bz2 格式。
 
 - `c`: 创建压缩文件。
 - `x`: 解开压缩文件。
@@ -298,7 +294,7 @@ grep 命令用于在文本中执行关键词搜索，并显示匹配的结果，
 - `n`: 显示行号。
 - `v`: 反向选择，即列出没有关键词的行。
 
-linux系统中，`/etc/passwd`文件保存着所有用户的信息，一旦用户的终端登陆被设置为`/sbin/nologin`，将不再允许登陆。可以用grep来搜索不允许登陆的用户的信息。
+linux 系统中，`/etc/passwd`文件保存着所有用户的信息，一旦用户的终端登陆被设置为`/sbin/nologin`，将不再允许登陆。可以用 grep 来搜索不允许登陆的用户的信息。
 
 ```bash
 grep /sbin/nologin /etc/passwd
@@ -312,19 +308,19 @@ find 命令用于按照指定条件来查找文件，格式为`find [查找路�
 - `perm`: 匹配权限。
 - `user`: 匹配所有者。
 - `group`: 匹配所有组。
-- `mtime -n +n`: 匹配修改内容的时间，-n表示n天内，+n表示n天以前。
-- `atime -n +n`: 匹配访问文件的时间，-n表示n天内，+n表示n天以前。
-- `ctime -n +n`: 匹配修改文件权限的时间，-n表示n天内，+n表示n天以前。
+- `mtime -n +n`: 匹配修改内容的时间，-n 表示 n 天内，+n 表示 n 天以前。
+- `atime -n +n`: 匹配访问文件的时间，-n 表示 n 天内，+n 表示 n 天以前。
+- `ctime -n +n`: 匹配修改文件权限的时间，-n 表示 n 天内，+n 表示 n 天以前。
 - `nouser`: 匹配无所有者的文件。
 - `nogroup`: 匹配无所有组的文件。
-- `newer f1 !f2`: 匹配比文件f1新但比f2旧的文件。
+- `newer f1 !f2`: 匹配比文件 f1 新但比 f2 旧的文件。
 - `--type b/d/c/p/l/f`: 匹配文件类型(后面的字母参数依次是块设备、目录、字符设备、管道、链接文件、文本文件)。
-- `size`: 匹配文件的大小，+50KB为查找超过50KB的文件，-50KB表示小于50KB。
+- `size`: 匹配文件的大小，+50KB 为查找超过 50KB 的文件，-50KB 表示小于 50KB。
 - `prune`: 忽略某个目录。
 - `exec ... {} \`: 后面可跟用于进一步处理搜索结果的命令。
 - `o` 或者
 
-根据文件系统层次标准(Filesystem Hierarchy Standard)协议，Linux系统中的配置文件会保存到`/etc`目录。如果要获取所有以host开头的文件列表，可以执行如下命令：
+根据文件系统层次标准(Filesystem Hierarchy Standard)协议，Linux 系统中的配置文件会保存到`/etc`目录。如果要获取所有以 host 开头的文件列表，可以执行如下命令：
 
 ```bash
 # 搜索文件名以host开头的文件
@@ -340,11 +336,10 @@ find / -user banli -exec cp -a {} /home \
 find . -path  "./node_modules" -prune -o -type f -name 'yarn.lock' -print
 ```
 
-在 RHEL 7 系统及众多的 Linux 系统中，最常使用的 Shell 终端是Bash(Bourne-Again SHell)解释器。
+在 RHEL 7 系统及众多的 Linux 系统中，最常使用的 Shell 终端是 Bash(Bourne-Again SHell)解释器。
 
 ## 学习资料
 
-- linux就该这样学
+- linux 就该这样学
 - [awk 入门教程](http://www.ruanyifeng.com/blog/2018/11/awk.html)
-- [mail配置](https://www.cnblogs.com/findyou/p/5760970.html)
-
+- [mail 配置](https://www.cnblogs.com/findyou/p/5760970.html)

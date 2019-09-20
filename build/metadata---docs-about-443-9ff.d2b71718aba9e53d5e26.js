@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[145],{52:function(o){o.exports=JSON.parse('{"title":"关于我","id":"about","description":"我是贺昱皓，网名 banli17，你可以叫我板栗。","source":"@site/docs/about.md","permalink":"/docs/about"}')}}]);
