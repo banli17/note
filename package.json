@@ -11,6 +11,7 @@
   },
   "scripts": {
     "dev": "vuepress dev docs",
+    "work": "vuepress dev mywork",
     "docs:build": "vuepress build docs"
   },
   "repository": {

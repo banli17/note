@@ -1,8 +1,10 @@
-# jQuery 整体架构
+---
+title: "extend()"
+---
 
-## 整体架构
+# extend 源码分析
 
-## extend 源码分析
+## 用法
 
 jQuery 里的 extend 主要有下面几种用法：
 
@@ -49,6 +51,8 @@ $.fn.extend({
 $("div").show();
 ```
 
+## 原理
+
 看完上面的用法之后，再去看 extend 的源码就简单了。它最核心的技巧就是：`参数规格化`。也就是保证 extend 调用方式一致。
 
 我们来看看上面几个使用方法，实际上 extend 源码将它们进行了统一处理。即都转成了下面的形式来调用:
@@ -85,3 +89,7 @@ $.fn.extend(false, this, {
   show() {}
 });
 ```
+
+## 练习
+
+- [extend 练习地址](https://github.com/banli17/practice/tree/master/jquery)

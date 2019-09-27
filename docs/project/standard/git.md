@@ -85,7 +85,7 @@ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitl
 {
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
