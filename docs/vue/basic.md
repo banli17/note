@@ -1,7 +1,5 @@
 ---
 title: hello
-feed:
-    enable: true
 ---
 
 # hello

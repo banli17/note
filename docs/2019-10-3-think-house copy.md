@@ -1,7 +1,5 @@
 ---
 title: 关于房子的思考
-feed:
-    enable: true
 author: banli17
 authorTitle: just do it
 authorURL: https://github.com/banli17

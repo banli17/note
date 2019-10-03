@@ -1,5 +1,8 @@
 const feed_options = {
-    canonical_base: "https://www.banli17.com"
+    canonical_base: "https://www.banli17.com",
+    frontmatter: {
+        feed: { enable: true }
+    }
     // description_sources: ["content"]
 };
 
