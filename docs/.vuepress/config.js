@@ -1,5 +1,6 @@
 const feed_options = {
     canonical_base: "https://www.banli17.com",
+    is_feed_page: () => true,
     feeds: {
         rss2: {
             enable: true,
