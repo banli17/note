@@ -7,9 +7,9 @@
 
 ## DP vs 回溯 vs 贪心
 
-- 回溯(递归) - 重复计算
-- 贪心 - 永远局部最优
-- DP - 记录局部最优子结构/多种记录值
+-   回溯(递归) - 重复计算
+-   贪心 - 永远局部最优
+-   DP - 记录局部最优子结构/多种记录值
 
 ## 斐波那契数列（Fibonacci sequence）
 
@@ -17,12 +17,12 @@
 
 ```js
 function fib(n, c = [0, 1]) {
-  if (n <= 1) return c[n];
+    if (n <= 1) return c[n];
 
-  for (let i = 2; i <= n; i++) {
-    c[i] = c[i - 1] + c[i - 2];
-  }
-  return c[n];
+    for (let i = 2; i <= n; i++) {
+        c[i] = c[i - 1] + c[i - 2];
+    }
+    return c[n];
 }
 ```
 
@@ -32,18 +32,18 @@ function fib(n, c = [0, 1]) {
 
 <img src="./imgs/dynamic-program-1.png" style="max-width:400px">
 
-- 一个格子的走法 = 它下面格子的走法 + 它右边格子的走法。
-- 最下面格子，和最右边格子的走法都是 1。石头格子的走法是 0。
-- 从最右下角，开始往左上角递推。
+-   一个格子的走法 = 它下面格子的走法 + 它右边格子的走法。
+-   最下面格子，和最右边格子的走法都是 1。石头格子的走法是 0。
+-   从最右下角，开始往左上角递推。
 
 ```js
 let stone = {
-  1: [2, 6],
-  2: [1, 3, 4],
-  3: [5],
-  4: [2, 5, 7],
-  5: [3],
-  6: [1, 5]
+    1: [2, 6],
+    2: [1, 3, 4],
+    3: [5],
+    4: [2, 5, 7],
+    5: [3],
+    6: [1, 5]
 };
 
 /**
@@ -52,37 +52,37 @@ let stone = {
  * @param {*} n 格子列数
  */
 function createMap(m, n) {
-  let steps = [];
-  for (let i = 0; i <= m; i++) {
-    for (let j = 0; j <= n; j++) {
-      if (!steps[i]) steps[i] = [];
-      steps[i][j] = i == 0 || j == 0 ? 1 : 0;
+    let steps = [];
+    for (let i = 0; i <= m; i++) {
+        for (let j = 0; j <= n; j++) {
+            if (!steps[i]) steps[i] = [];
+            steps[i][j] = i == 0 || j == 0 ? 1 : 0;
+        }
     }
-  }
-  return steps;
+    return steps;
 }
 
 /**
  *  检测是否是石头
  */
 function isStone(stone, i, j) {
-  return stone && stone[i] && stone[i].includes(j);
+    return stone && stone[i] && stone[i].includes(j);
 }
 
 /**
  * 动态规划走法
  */
 function step(steps, m, n) {
-  for (let i = 1; i <= m; i++) {
-    for (let j = 1; j <= n; j++) {
-      if (isStone(stone, i, j)) {
-        steps[i][j] = 0;
-      } else {
-        steps[i][j] = steps[i - 1][j] + steps[i][j - 1];
-      }
+    for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+            if (isStone(stone, i, j)) {
+                steps[i][j] = 0;
+            } else {
+                steps[i][j] = steps[i - 1][j] + steps[i][j - 1];
+            }
+        }
     }
-  }
-  return steps;
+    return steps;
 }
 ```
 
@@ -94,15 +94,17 @@ leetcode 70 题：楼梯一次只能爬 1 或者 2 步，第 n 层有多少种�
 
 ```js
 var climbStairs = function(n) {
-  if (n <= 2) return n;
-  let all = [0, 1, 2];
-  for (let i = 3; i <= n; i++) {
-    all[i] = all[i - 1] + all[i - 2];
-  }
-  return all[n];
+    if (n <= 2) return n;
+    let all = [0, 1, 2];
+    for (let i = 3; i <= n; i++) {
+        all[i] = all[i - 1] + all[i - 2];
+    }
+    return all[n];
 };
 ```
 
+## 三角形最小路径和
+
 ## 练习地址
 
-- [https://github.com/banli17/practice/tree/master/algo](https://github.com/banli17/practice/tree/master/algo)
+-   [https://github.com/banli17/practice/tree/master/algo](https://github.com/banli17/practice/tree/master/algo)

@@ -1,6 +1,11 @@
+const feed_options = {
+    canonical_base: "https://banli17.com"
+};
+
 module.exports = {
+    plugins: [["feed", feed_options]],
     host: "127.0.0.1",
-    port: 5020,
+    port: 5010,
     themeConfig: {
         sidebarDepth: 2,
         nav: [
@@ -108,7 +113,8 @@ module.exports = {
                         "/linux/service",
                         "/linux/soft",
                         "/linux/file",
-                        "/linux/command"
+                        "/linux/command",
+                        "/linux/jenkins"
                     ]
                 }
             ],

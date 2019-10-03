@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/banli17/blog#readme",
   "devDependencies": {
-    "vuepress": "^1.0.4"
+    "vuepress": "^1.0.4",
+    "vuepress-plugin-feed": "^0.1.7"
   }
 }
