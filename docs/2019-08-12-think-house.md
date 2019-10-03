@@ -1,11 +1,4 @@
----
-title: 关于房子的思考
-author: banli17
-authorTitle: just do it
-authorURL: https://github.com/banli17
-authorImageURL: https://avatars3.githubusercontent.com/u/12556069?s=460&v=4
-tags: [house, think]
----
+# 关于房子的思考
 
 最近的几年一直为买房子的事情烦恼，有时候突然想直接买了算了，但是又钱不够，所以一直拖着。最近又想买房了，首付是够的，不过一看要贷款大几十万，就有点退缩了。想法也从最初的贷款 100 万到武汉买个 80 平的房子，转变为贷款 40 万到家乡买个 130 平的房子，最后转变为不买房。
 
