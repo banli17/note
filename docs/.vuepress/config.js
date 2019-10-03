@@ -1,5 +1,6 @@
 const feed_options = {
-    canonical_base: "https://banli17.com"
+    canonical_base: "https://www.banli17.com"
+    // description_sources: ["content"]
 };
 
 module.exports = {

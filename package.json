@@ -1,32 +1,32 @@
 {
-  "name": "banli_blog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "bin": {
-    "banli_blog": "publish.js"
-  },
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "dev": "vuepress dev docs",
-    "work": "vuepress dev mywork",
-    "docs:build": "vuepress build docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/banli17/blog.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/banli17/blog/issues"
-  },
-  "homepage": "https://github.com/banli17/blog#readme",
-  "devDependencies": {
-    "vuepress": "^1.0.4",
-    "vuepress-plugin-feed": "^0.1.7"
-  }
+    "name": "banli_blog",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "bin": {
+        "banli_blog": "publish.js"
+    },
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "dev": "vuepress dev docs",
+        "build": "vuepress build docs && git add . && git commit -m'feat: 更新' && git push"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/banli17/blog.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/banli17/blog/issues"
+    },
+    "homepage": "https://github.com/banli17/blog#readme",
+    "devDependencies": {
+        "vuepress": "^1.0.4",
+        "vuepress-plugin-feed": "^0.1.7",
+        "vuepress-plugin-rss": "^2.0.0"
+    }
 }
