@@ -10,33 +10,26 @@ const feed_options = {
                 type: "application/rss+xml",
                 title: "%%site_title%% RSS Feed"
             }
-        },
-
-        // -------------------------------------------------------------------------
-
-        atom1: {
-            enable: true,
-            file_name: "feed.atom",
-            head_link: {
-                enable: true,
-                type: "application/atom+xml",
-                title: "%%site_title%% Atom Feed"
-            }
-        },
-
-        // -------------------------------------------------------------------------
-
-        json1: {
-            enable: true,
-            file_name: "feed.json",
-            head_link: {
-                enable: true,
-                type: "application/json",
-                title: "%%site_title%% JSON Feed"
-            }
         }
+        // atom1: {
+        //     enable: true,
+        //     file_name: "feed.atom",
+        //     head_link: {
+        //         enable: true,
+        //         type: "application/atom+xml",
+        //         title: "%%site_title%% Atom Feed"
+        //     }
+        // },
+        // json1: {
+        //     enable: true,
+        //     file_name: "feed.json",
+        //     head_link: {
+        //         enable: true,
+        //         type: "application/json",
+        //         title: "%%site_title%% JSON Feed"
+        //     }
+        // }
     }
-    // description_sources: ["content"]
 };
 
 module.exports = {
