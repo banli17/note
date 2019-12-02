@@ -56,7 +56,7 @@ module.exports = {
                 text: "数据库",
                 items: [
                     { text: "mysql", link: "/language/chinese/" },
-                    { text: "mongodb", link: "/language/chinese/" },
+                    { text: "mongodb", link: "/mongo/" },
                     { text: "redis", link: "/language/japanese/" }
                 ]
             },
@@ -113,7 +113,7 @@ module.exports = {
             "/browser": [
                 {
                     title: "浏览器原理",
-                    children: ["/browser/gc"]
+                    children: ["/browser/", "/browser/gc"]
                 }
             ],
             "/project": [
@@ -140,11 +140,14 @@ module.exports = {
                     title: "linux",
                     children: [
                         "/linux/",
-                        "/linux/service",
-                        "/linux/soft",
-                        "/linux/file",
-                        "/linux/command",
-                        "/linux/jenkins"
+                        "/linux/3",
+                        "/linux/4",
+                        "/linux/5",
+                        // "/linux/service",
+                        // "/linux/soft",
+                        // "/linux/file",
+                        // "/linux/command",
+                        // "/linux/jenkins"
                     ]
                 }
             ],
@@ -152,6 +155,12 @@ module.exports = {
                 {
                     title: "nginx",
                     children: ["/nginx/", "/nginx/use", "/nginx/install"]
+                }
+            ],
+            "/mongo": [
+                {
+                    title: "mongoDB",
+                    children: ["/mongo/", "/mongo/mongoose"]
                 }
             ],
             "/algo": [
