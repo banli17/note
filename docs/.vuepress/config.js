@@ -44,7 +44,7 @@ module.exports = {
                 text: "前端",
                 items: [
                     { text: "html", link: "/f2e/html/1" },
-                    { text: "css", link: "/language/chinese/" },
+                    { text: "css", link: "/css/" },
                     { text: "javascript", link: "/language/japanese/" },
                     { text: "jQuery", link: "/jquery/" },
                     { text: "vue", link: "/vue/" },
@@ -64,7 +64,8 @@ module.exports = {
                 text: "运维",
                 items: [
                     { text: "linux", link: "/linux/" },
-                    { text: "nginx", link: "/nginx/" }
+                    { text: "nginx", link: "/nginx/" },
+                    { text: "python", link: "/python/" }
                 ]
             },
             {
@@ -103,7 +104,7 @@ module.exports = {
                 {
                     title: "webpack",
                     children: [
-                        "/project/webpack/basic",
+                        "/project/webpack",
                         "/project/webpack/optimize",
                         "/project/webpack/tapable",
                         "/project/webpack/principle"
@@ -154,7 +155,13 @@ module.exports = {
             "/nginx": [
                 {
                     title: "nginx",
-                    children: ["/nginx/", "/nginx/use", "/nginx/install"]
+                    children: ["/nginx/"]
+                }
+            ],
+            "/python": [
+                {
+                    title: "python",
+                    children: ["/python/"]
                 }
             ],
             "/mongo": [
@@ -172,7 +179,8 @@ module.exports = {
                         "/algo/linked-list",
                         "/algo/heap-stack",
                         "/algo/priority-queue",
-                        "/algo/dynamic-program"
+                        "/algo/dynamic-program",
+                        "/algo/tree",
                     ]
                 }
             ],
