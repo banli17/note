@@ -47,15 +47,16 @@ module.exports = {
                     { text: "css", link: "/css/" },
                     { text: "javascript", link: "/language/japanese/" },
                     { text: "jQuery", link: "/jquery/" },
-                    { text: "vue", link: "/vue/" },
+                    // { text: "vue", link: "/vue/" },
                     { text: "浏览器", link: "/browser/" },
-                    { text: "工程化", link: "/project/webpack/basic" }
+                    { text: "工程化", link: "/project/" }
                 ]
             },
             {
                 text: "数据库",
                 items: [
-                    { text: "mysql", link: "/language/chinese/" },
+                    { text: "sql 必知必会", link: "/sql/" },
+                    { text: "mysql", link: "/mysql/" },
                     { text: "mongodb", link: "/mongo/" },
                     { text: "redis", link: "/language/japanese/" }
                 ]
@@ -84,16 +85,16 @@ module.exports = {
             { text: "Github", link: "https://github.com/banli17" }
         ],
         sidebar: {
-            "/vue": [
-                {
-                    title: "vue 总结",
-                    children: ["/vue/basic"]
-                },
-                {
-                    title: "vue 源码分析",
-                    children: ["/vue/basic"]
-                }
-            ],
+            // "/vue": [
+            //     // {
+            //     //     title: "vue 总结",
+            //     //     children: ["/vue/basic"]
+            //     // },
+            //     {
+            //         title: "vue 源码分析",
+            //         children: ["/vue/", "/vue/basic", "/vue/issues"]
+            //     }
+            // ],
             "/jquery": [
                 {
                     title: "jQuery 源码分析",
@@ -104,10 +105,7 @@ module.exports = {
                 {
                     title: "webpack",
                     children: [
-                        "/project/webpack",
-                        "/project/webpack/optimize",
-                        "/project/webpack/tapable",
-                        "/project/webpack/principle"
+
                     ]
                 }
             ],
@@ -121,18 +119,12 @@ module.exports = {
                 {
                     title: "webpack",
                     children: [
-                        "/project/webpack/basic",
-                        "/project/webpack/optimize",
-                        "/project/webpack/tapable",
-                        "/project/webpack/principle"
+                        "/project/",
                     ]
                 },
                 {
                     title: "工程规范化",
                     children: [
-                        "/project/standard/prettier",
-                        "/project/standard/eslint",
-                        "/project/standard/git"
                     ]
                 }
             ],
@@ -141,6 +133,7 @@ module.exports = {
                     title: "linux",
                     children: [
                         "/linux/",
+                        "/linux/txt",
                         "/linux/3",
                         "/linux/4",
                         "/linux/5",
@@ -161,7 +154,19 @@ module.exports = {
             "/python": [
                 {
                     title: "python",
-                    children: ["/python/"]
+                    children: ["/python/", "/python/base", "python/crawl"]
+                }
+            ],
+            "/sql": [
+                {
+                    title: 'SQL 必知必会',
+                    children: ["/sql/"]
+                }
+            ],
+            "/mysql": [
+                {
+                    title: "mysql",
+                    children: ["/mysql/"]
                 }
             ],
             "/mongo": [

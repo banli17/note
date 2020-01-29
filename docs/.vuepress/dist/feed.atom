@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.banli17.com</id>
     <title></title>
-    <updated>2019-12-27T01:48:38.192Z</updated>
+    <updated>2020-01-29T08:19:44.034Z</updated>
     <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
     <link rel="alternate" href="https://www.banli17.com"/>
     <link rel="self" href="https://www.banli17.com/feed.atom"/>
@@ -11,7 +11,7 @@
         <id>https://www.banli17.com/</id>
         <link href="https://www.banli17.com/">
         </link>
-        <updated>2019-12-27T01:48:38.143Z</updated>
+        <updated>2020-01-29T08:19:43.979Z</updated>
         <summary type="html"><![CDATA[https://www.cnblogs.com/andong2015/p/9981363.html]]></summary>
     </entry>
     <entry>
@@ -19,7 +19,7 @@
         <id>https://www.banli17.com/algo/</id>
         <link href="https://www.banli17.com/algo/">
         </link>
-        <updated>2019-12-27T01:48:38.145Z</updated>
+        <updated>2020-01-29T08:19:43.981Z</updated>
         <summary type="html"><![CDATA[简介
 数据结构与算法是一块非常不太好学会的内容，平时工作中业务开发也不太会用到，但是它是一门非常重要的基本功。学习它没有其它好的方法，只有反复的练习，加深记忆。
 学习资料
@@ -33,7 +33,7 @@
         <id>https://www.banli17.com/algo/array.html</id>
         <link href="https://www.banli17.com/algo/array.html">
         </link>
-        <updated>2019-12-27T01:48:38.145Z</updated>
+        <updated>2020-01-29T08:19:43.981Z</updated>
         <summary type="html"><![CDATA[数组
 数组在内存一般是连续存储的。
 操作
@@ -48,7 +48,7 @@
         <id>https://www.banli17.com/algo/dynamic-program.html</id>
         <link href="https://www.banli17.com/algo/dynamic-program.html">
         </link>
-        <updated>2019-12-27T01:48:38.161Z</updated>
+        <updated>2020-01-29T08:19:43.997Z</updated>
         <summary type="html"><![CDATA[动态规划
 
 递归 + 记忆化 -&gt; 递推
@@ -152,7 +152,7 @@ https://github.com/banli17/practice/tree/master/algo
         <id>https://www.banli17.com/algo/heap-stack.html</id>
         <link href="https://www.banli17.com/algo/heap-stack.html">
         </link>
-        <updated>2019-12-27T01:48:38.162Z</updated>
+        <updated>2020-01-29T08:19:43.998Z</updated>
         <summary type="html"><![CDATA[堆和栈
 
 stack 数组或单双链表 查 O(n) 插入，删除 O(1)
@@ -184,7 +184,7 @@ do while 循环 replace () [] {}
         <id>https://www.banli17.com/algo/linked-list.html</id>
         <link href="https://www.banli17.com/algo/linked-list.html">
         </link>
-        <updated>2019-12-27T01:48:38.164Z</updated>
+        <updated>2020-01-29T08:19:44.000Z</updated>
         <summary type="html"><![CDATA[链表
 Linked List
 为了解决数组的插入和删除操作时间复杂度高的问题。
@@ -230,7 +230,7 @@ https://leetcode.com/problems/reverse-nodes-in-k-group/
         <id>https://www.banli17.com/algo/priority-queue.html</id>
         <link href="https://www.banli17.com/algo/priority-queue.html">
         </link>
-        <updated>2019-12-27T01:48:38.165Z</updated>
+        <updated>2020-01-29T08:19:44.000Z</updated>
         <summary type="html"><![CDATA[优先队列
 优先队列(PriorityQueue)
 正常⼊、按照优先级出
@@ -255,7 +255,7 @@ https://leetcode.com/problems/sliding-window-maximum/
         <id>https://www.banli17.com/algo/tree.html</id>
         <link href="https://www.banli17.com/algo/tree.html">
         </link>
-        <updated>2019-12-27T01:48:38.166Z</updated>
+        <updated>2020-01-29T08:19:44.001Z</updated>
         <summary type="html"><![CDATA[树和图
 理论
 链表是特殊的树(后继节点可以多个)，树是特殊的图(可以乱指)。
@@ -266,6 +266,12 @@ https://leetcode.com/problems/sliding-window-maximum/
 recursively，坐、右子树也分别为二叉搜索树。
 
 时间复杂度是O(logN)，最差是O(n)，比如只有右子节点，就是一个链表了。
+
+验证二叉排序树
+validate BST，leetcode 98 题。
+
+in-order 中序遍历（左、根、右），应该是一个升序的 array。
+递归
 ]]></summary>
     </entry>
     <entry>
@@ -273,7 +279,7 @@ recursively，坐、右子树也分别为二叉搜索树。
         <id>https://www.banli17.com/browser/</id>
         <link href="https://www.banli17.com/browser/">
         </link>
-        <updated>2019-12-27T01:48:38.172Z</updated>
+        <updated>2020-01-29T08:19:44.006Z</updated>
         <summary type="html"><![CDATA[概述
 chrome 架构
 多进程架构
@@ -487,37 +493,15 @@ keep-alive 是为了解决连接效率不高的问题，http1.0 时代，http �
         <id>https://www.banli17.com/browser/gc.html</id>
         <link href="https://www.banli17.com/browser/gc.html">
         </link>
-        <updated>2019-12-27T01:48:38.173Z</updated>
+        <updated>2020-01-29T08:19:44.007Z</updated>
         <summary type="html"><![CDATA[垃圾回收机制]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[css 常用]]></title>
-        <id>https://www.banli17.com/css/</id>
-        <link href="https://www.banli17.com/css/">
-        </link>
-        <updated>2019-12-27T01:48:38.178Z</updated>
-        <summary type="html"><![CDATA[css 常用
-滚动条样式
-::-webkit-scrollbar {
-    display: none;
-}
-]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[兼容性问题]]></title>
-        <id>https://www.banli17.com/css/compatible.html</id>
-        <link href="https://www.banli17.com/css/compatible.html">
-        </link>
-        <updated>2019-12-27T01:48:38.178Z</updated>
-        <summary type="html"><![CDATA[兼容性问题
-line-height android不居中]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[v8 工作原理]]></title>
         <id>https://www.banli17.com/browser/v8.html</id>
         <link href="https://www.banli17.com/browser/v8.html">
         </link>
-        <updated>2019-12-27T01:48:38.179Z</updated>
+        <updated>2020-01-29T08:19:44.008Z</updated>
         <summary type="html"><![CDATA[v8 工作原理
 垃圾回收
 栈中的垃圾回收
@@ -580,11 +564,61 @@ DOM 引用
 ]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[css 常用]]></title>
+        <id>https://www.banli17.com/css/</id>
+        <link href="https://www.banli17.com/css/">
+        </link>
+        <updated>2020-01-29T08:19:44.013Z</updated>
+        <summary type="html"><![CDATA[css 常用
+滚动条样式
+::-webkit-scrollbar {
+    display: none;
+}
+]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[兼容性问题]]></title>
+        <id>https://www.banli17.com/css/compatible.html</id>
+        <link href="https://www.banli17.com/css/compatible.html">
+        </link>
+        <updated>2020-01-29T08:19:44.020Z</updated>
+        <summary type="html"><![CDATA[兼容性问题
+line-height android 不居中
+css reset
+http://meyerweb.com/eric/tools/css/reset/
+多行文字显示几行
+文本超出 ...，只是 firefox 上文字会被截断。
+.box {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.box(@n) {
+    display: -webkit-box;
+    -webkit-line-clamp: @n;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+关于文字内容溢出用点点点(…)省略号表示
+
+滚动条隐藏
+&amp;::-webkit-scrollbar {
+    display: none;
+}
+
+vivo banner 没有显示，加个 width:100% 可以
+iphone 6p 10 系统，卡片商品名称内容不显示，
+]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[extend()]]></title>
         <id>https://www.banli17.com/jquery/extend.html</id>
         <link href="https://www.banli17.com/jquery/extend.html">
         </link>
-        <updated>2019-12-27T01:48:38.182Z</updated>
+        <updated>2020-01-29T08:19:44.022Z</updated>
         <summary type="html"><![CDATA[extend 源码分析
 用法
 jQuery 里的 extend 主要有下面几种用法：
@@ -665,15 +699,23 @@ extend 练习地址
         <id>https://www.banli17.com/jquery/overall.html</id>
         <link href="https://www.banli17.com/jquery/overall.html">
         </link>
-        <updated>2019-12-27T01:48:38.182Z</updated>
+        <updated>2020-01-29T08:19:44.022Z</updated>
         <summary type="html"><![CDATA[jQuery 整体架构]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[选择器]]></title>
+        <id>https://www.banli17.com/jquery/selector.html</id>
+        <link href="https://www.banli17.com/jquery/selector.html">
+        </link>
+        <updated>2020-01-29T08:19:44.022Z</updated>
+        <summary type="html"><![CDATA[选择器]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[3.系统组成和帮助命令]]></title>
         <id>https://www.banli17.com/linux/3.html</id>
         <link href="https://www.banli17.com/linux/3.html">
         </link>
-        <updated>2019-12-27T01:48:38.187Z</updated>
+        <updated>2020-01-29T08:19:44.028Z</updated>
         <summary type="html"><![CDATA[Linux 系统组成和获取命令帮助
 获取命令使用帮助详解
 命令的语法通用格式
@@ -1010,19 +1052,11 @@ Su Mo Tu We Th Fr Sa
 课外作用，学习 which, whereis who w 命令]]></summary>
     </entry>
     <entry>
-        <title type="html"><![CDATA[选择器]]></title>
-        <id>https://www.banli17.com/jquery/selector.html</id>
-        <link href="https://www.banli17.com/jquery/selector.html">
-        </link>
-        <updated>2019-12-27T01:48:38.187Z</updated>
-        <summary type="html"><![CDATA[选择器]]></summary>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[4.根文件系统和目录结构及bash特性]]></title>
         <id>https://www.banli17.com/linux/4.html</id>
         <link href="https://www.banli17.com/linux/4.html">
         </link>
-        <updated>2019-12-27T01:48:38.188Z</updated>
+        <updated>2020-01-29T08:19:44.029Z</updated>
         <summary type="html"><![CDATA[Linux根文件系统和目录结构及bash特性
 10、Linux目录结构和根文件系统全面讲解
 Linux: glibc
@@ -1087,7 +1121,7 @@ log
         <id>https://www.banli17.com/linux/5.html</id>
         <link href="https://www.banli17.com/linux/5.html">
         </link>
-        <updated>2019-12-27T01:48:38.188Z</updated>
+        <updated>2020-01-29T08:19:44.029Z</updated>
         <summary type="html"><![CDATA[Linux用户组管理及用户权限]]></summary>
     </entry>
 </feed>

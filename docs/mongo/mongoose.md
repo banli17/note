@@ -182,3 +182,52 @@ npm i mongoose
 ```
 
 ```
+
+## 
+
+![](2019-12-28-18-17-39.png)
+![](2019-12-28-18-22-06.png)
+![](2019-12-28-18-24-35.png)
+![](2019-12-28-18-24-57.png)
+![](2019-12-28-18-26-33.png)
+![](2019-12-28-18-27-13.png)
+![](2019-12-28-18-29-25.png)
+
+
+## 导入样本
+
+```sh
+curl -O -k x.com/x.gz
+tar -xvf dump.tar.gz
+
+cd 到 dump 上一层
+mongorestore
+
+启动 mongodb
+$ mongo
+> show dbs
+admin   0.000GB
+config  0.000GB
+eshop   0.000GB
+geek    0.000GB
+local   0.000GB
+mock    0.047GB
+test    0.000GB
+> use mock
+switched to db mock
+> show collections
+orders
+> db.orders.findOne()
+```
+
+## 备份
+
+```
+>mongodump -h dbhost -d dbname -o dbdirectory
+mongodump --host HOST_NAME --port PORT_NUMBER	
+mongodump --dbpath DB_PATH --out BACKUP_DIRECTORY	
+mongodump --collection COLLECTION --db DB_NAME	
+```
+
+
+## 6.mongo 基本操作
