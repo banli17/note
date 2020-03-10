@@ -46,6 +46,7 @@ module.exports = {
                     { text: "html", link: "/f2e/html/1" },
                     { text: "css", link: "/css/" },
                     { text: "javascript", link: "/language/japanese/" },
+                    { text: "es6", link: "/es6/" },
                     { text: "jQuery", link: "/jquery/" },
                     // { text: "vue", link: "/vue/" },
                     { text: "浏览器", link: "/browser/" },
@@ -72,15 +73,15 @@ module.exports = {
             {
                 text: "计算机基础",
                 items: [
-                    { text: "网络协议", link: "/language/chinese/" },
-                    { text: "计算机组成原理", link: "/language/chinese/" },
-                    { text: "设计模式", link: "/language/chinese/" },
+                    { text: "网络协议", link: "" },
+                    { text: "计算机组成原理", link: "" },
+                    { text: "设计模式", link: "" },
                     { text: "数据结构与算法", link: "/algo/" }
                 ]
             },
             {
                 text: "安排",
-                link: "/task/2019"
+                link: "/task/2020"
             },
             { text: "Github", link: "https://github.com/banli17" }
         ],
@@ -98,7 +99,14 @@ module.exports = {
             "/jquery": [
                 {
                     title: "jQuery 源码分析",
-                    children: ["/jquery/overall", "/jquery/extend"]
+                    children: [
+                        "/jquery/",
+                        "/jquery/overall",
+                        "/jquery/extend",
+                        "/jquery/selector",
+                        "/jquery/callbacks",
+                        "/jquery/deferred",
+                    ]
                 }
             ],
             "/f2e": [
@@ -109,10 +117,19 @@ module.exports = {
                     ]
                 }
             ],
+            "/es6": [
+                {
+                    title: "ES6系列",
+                    children: [
+                        "/es6/",
+                        "/es6/let_const",
+                    ]
+                }
+            ],
             "/browser": [
                 {
                     title: "浏览器原理",
-                    children: ["/browser/", "/browser/gc"]
+                    children: ["/browser/", "/browser/macro"]
                 }
             ],
             "/project": [
@@ -191,8 +208,8 @@ module.exports = {
             ],
             "/task": [
                 {
-                    title: "安排",
-                    children: ["/task/2019"]
+                    title: "日记",
+                    children: ["/task/2020"]
                 }
             ]
         }

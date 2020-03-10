@@ -1,10 +1,10 @@
 ---
 home: true
 heroImage: /hero.png
-heroText: Hero 标题
+heroText: 博客
 tagline: Hero 副标题
-actionText: 快速上手 →
-actionLink: /zh/guide/
+actionText: 进入 →
+actionLink: /f2e/html/1.html
 footer: MIT Licensed | Copyright © 2019 banli17.com
 ---
 

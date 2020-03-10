@@ -159,9 +159,9 @@ security:
 # 创建
 db.createUser(
   {
-    user: "admin",
-    pwd: "admin",
-    roles: [ { role: "root", db: "admin" } ]
+    user: "mongodb",
+    pwd: "hs15415162",
+    roles: [ { role: "readWrite", db: "qinkuaikan" } ]
   }
 )
 
@@ -183,7 +183,7 @@ npm i mongoose
 
 ```
 
-## 
+##
 
 ![](2019-12-28-18-17-39.png)
 ![](2019-12-28-18-22-06.png)
@@ -192,7 +192,6 @@ npm i mongoose
 ![](2019-12-28-18-26-33.png)
 ![](2019-12-28-18-27-13.png)
 ![](2019-12-28-18-29-25.png)
-
 
 ## 导入样本
 
@@ -224,10 +223,9 @@ orders
 
 ```
 >mongodump -h dbhost -d dbname -o dbdirectory
-mongodump --host HOST_NAME --port PORT_NUMBER	
-mongodump --dbpath DB_PATH --out BACKUP_DIRECTORY	
-mongodump --collection COLLECTION --db DB_NAME	
+mongodump --host HOST_NAME --port PORT_NUMBER
+mongodump --dbpath DB_PATH --out BACKUP_DIRECTORY
+mongodump --collection COLLECTION --db DB_NAME
 ```
-
 
 ## 6.mongo 基本操作

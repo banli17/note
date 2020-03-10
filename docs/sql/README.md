@@ -466,3 +466,78 @@ SELECT ... FROM ... WHERE ... GROUP BY ... HAVING ... ORDER BY ...
 ```
 
 ![](./imgs/8.png)
+
+## 9 子查询
+
+嵌套在查询中的查询叫做子查询。
+
+目标：
+
+-   子查询可以分为关联子查询和非关联子查询
+-   子查询关键词
+-   子查询怎么作为主查询的列
+
+子查询从数据表查询了结果，如果这个数据结果只执行一次，然后这个结果作为主查询的条件进行执行，这样的子查询叫做非关联子查询。
+
+如果子查询需要执行多次，即采用循环的方式，先从外部查询开始，每次都传入子查询进行查询，然后再将结果反馈给外部，这样的嵌套执行方式叫做关联子查询。
+
+## 10 常用的 SQL 标准和连接
+
+SQL 的核心就是关系，关系的核心就是连接。 SQL 有 2 个主要的标准：SQL92(SQL-2) 和 SQL99(SQL-3)。
+
+SQL92 的 5 种连接方式：笛卡尔积、等值连接、非等值连接、外连接(左连接、右连接)和自连接。
+
+**笛卡尔积**
+
+X 和 Y 的笛卡尔积就是 X 和 Y 的所有可能组合。
+
+笛卡尔积也叫做交叉连接（CROSS JOIN)，它的作用就是把任意表进行连接，即使两个表不相关。
+
+```sql
+SELECT * FROM player, team_score;
+```
+
+**等值连接**
+
+等值连接就是将两张表中都存在的列进行连接。
+
+```sql
+SELECT player_id, player.team_id, player_name, height, team_name FROM player, team WHERE player.team_id = team.team_id;
+
+# 上面可以使用别名，但是一旦用了别名，查询中的子段也需要用别名
+SELECT player_id, a.team_id, player_name, height, team_name FROM player AS a, team AS b WHERE a.team_id = b.team_id;
+```
+
+**非等值连接**
+
+当进行多表查询时，如果连接多个表的条件是等号时，就是等值连接，其它的运算符连接就是非等值连接。
+
+```sql
+# 查询每个球员的身高级别
+SELECT player_name, height_level from player AS a, height_grades AS b WHERE a.height BETWEEN b.height_lowest AND b.height_highest;
+```
+
+**外连接**
+
+左外连接就是左边的表为主表，需要显示左边表的全部行，而右侧的表是从表，(+) 表示哪个是从表。
+
+```sql
+# sql92
+SELECT * FROM player, team where player.team_id = team.team_id(+);
+
+# sql99
+SELECT * FROM player LEFT JOIN team on player.team_id = team.team_id;
+```
+
+**自连接**
+
+查询条件中使用了当前表的字段。
+
+```sql
+SELECT b.player_name, b.height FROM player as a, player as b WHERE a.player_name = '布雷克-格里芬' and a.height < b.height;
+
+# 不用自连接，需要查询两次
+SELECT player_name, height FROM player WHERE height > (SELECT height FROM player WHERE player_name = '布雷克-格里芬');
+```
+
+![](./imgs/10.png)

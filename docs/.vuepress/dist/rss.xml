@@ -4,22 +4,73 @@
         <title></title>
         <link>https://www.banli17.com</link>
         <description></description>
-        <lastBuildDate>Wed, 29 Jan 2020 08:19:44 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Mar 2020 12:17:51 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="https://www.banli17.com/feed.atom" rel="self" type="application/rss+xml"/>
         <item>
+            <title><![CDATA[数据结构与算法]]></title>
+            <link>https://www.banli17.com/algo/1.html</link>
+            <guid>https://www.banli17.com/algo/1.html</guid>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <description><![CDATA[数据结构与算法
+1
+职业训练：拆分知识点、刻意练习、反馈(学习别人、被别人指点)
+切题四件套(单个题目)：
+
+Clarification: 多看题目，反复沟通，保证理解正确
+Possible solutions: 列出所有可能的解法
+
+compare(time/space): 比较时空复杂度
+optimal(加强)：找最优
+
+Coding 多些
+Test Case: 测试用例
+
+五步刷题法：
+
+第一遍： 5 分钟读题+思考，没思路就直接看解法：注意！多解法，比较解法优劣。背诵
+第二遍: 马上自己写 -&gt; leetcode 提交；各种解法比较(执行时间)、体会 -&gt; 优化！
+第三遍: 过了一天后，练习
+第四遍 : 够了一周后，练习
+第五遍 : 面试前，练习
+
+误区： 不要只练习一遍
+https://naotu.baidu.com/file/b832f043e2ead159d584cca4efb19703?token=7a6a56eb2630548c
+https://naotu.baidu.com/file/0a53d3a5343bd86375f348b2831d3610?token=5ab1de1c90d5f3ec
+2-1 编辑器、代码风格
+快捷键，google 代码风格 ，自顶向下代码
+2-2 时间复杂度
+大 O 表示法
+O(1)
+O(N)
+O(N^2)
+O(log(n))
+O(K^n)
+
+二叉树搜索：前序、中序、后序 O(n)
+图的遍历 O(n)
+搜索算法: DFS、BFS O(n)
+二分查找 O(logn)
+归并排序： O(nlogn)
+
+如何理解算法时间复杂度的表示法https://www.zhihu.com/question/21387264
+Master theorem http://en.wikipedia.org/wiki/Mastertheorem(analysisofalgorithms)
+主定理http://zh.wikipedia.org/wiki/%E4%B8%BB%E5%AE%9A%E7%90%86
+]]></description>
+        </item>
+        <item>
             <title><![CDATA[Home]]></title>
             <link>https://www.banli17.com/</link>
             <guid>https://www.banli17.com/</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:43 GMT</pubDate>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
             <description><![CDATA[https://www.cnblogs.com/andong2015/p/9981363.html]]></description>
         </item>
         <item>
             <title><![CDATA[简介]]></title>
             <link>https://www.banli17.com/algo/</link>
             <guid>https://www.banli17.com/algo/</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:43 GMT</pubDate>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
             <description><![CDATA[简介
 数据结构与算法是一块非常不太好学会的内容，平时工作中业务开发也不太会用到，但是它是一门非常重要的基本功。学习它没有其它好的方法，只有反复的练习，加深记忆。
 学习资料
@@ -32,7 +83,7 @@
             <title><![CDATA[数组]]></title>
             <link>https://www.banli17.com/algo/array.html</link>
             <guid>https://www.banli17.com/algo/array.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:43 GMT</pubDate>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
             <description><![CDATA[数组
 数组在内存一般是连续存储的。
 操作
@@ -46,7 +97,7 @@
             <title><![CDATA[动态规划]]></title>
             <link>https://www.banli17.com/algo/dynamic-program.html</link>
             <guid>https://www.banli17.com/algo/dynamic-program.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:43 GMT</pubDate>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
             <description><![CDATA[动态规划
 
 递归 + 记忆化 -&gt; 递推
@@ -151,7 +202,7 @@ https://github.com/banli17/practice/tree/master/algo
             <title><![CDATA[堆和栈]]></title>
             <link>https://www.banli17.com/algo/heap-stack.html</link>
             <guid>https://www.banli17.com/algo/heap-stack.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:43 GMT</pubDate>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
             <description><![CDATA[堆和栈
 
 stack 数组或单双链表 查 O(n) 插入，删除 O(1)
@@ -179,10 +230,34 @@ do while 循环 replace () [] {}
 ]]></description>
         </item>
         <item>
+            <title><![CDATA[优先队列]]></title>
+            <link>https://www.banli17.com/algo/priority-queue.html</link>
+            <guid>https://www.banli17.com/algo/priority-queue.html</guid>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <description><![CDATA[优先队列
+优先队列(PriorityQueue)
+正常⼊、按照优先级出
+实现可以是
+
+堆
+
+二叉堆 查找是 O(1)，删除、插入是 O(logn)，合并是 O(n)
+fibonacci 堆 查、插入、合并都是 O(1)，删除是 O(logn)
+
+二分查找树
+
+复杂度
+题目
+
+https://leetcode.com/problems/kth-largest-element-in-a-stream
+https://leetcode.com/problems/sliding-window-maximum/
+]]></description>
+        </item>
+        <item>
             <title><![CDATA[链表]]></title>
             <link>https://www.banli17.com/algo/linked-list.html</link>
             <guid>https://www.banli17.com/algo/linked-list.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
             <description><![CDATA[链表
 Linked List
 为了解决数组的插入和删除操作时间复杂度高的问题。
@@ -224,34 +299,10 @@ https://leetcode.com/problems/reverse-nodes-in-k-group/
 ]]></description>
         </item>
         <item>
-            <title><![CDATA[优先队列]]></title>
-            <link>https://www.banli17.com/algo/priority-queue.html</link>
-            <guid>https://www.banli17.com/algo/priority-queue.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
-            <description><![CDATA[优先队列
-优先队列(PriorityQueue)
-正常⼊、按照优先级出
-实现可以是
-
-堆
-
-二叉堆 查找是 O(1)，删除、插入是 O(logn)，合并是 O(n)
-fibonacci 堆 查、插入、合并都是 O(1)，删除是 O(logn)
-
-二分查找树
-
-复杂度
-题目
-
-https://leetcode.com/problems/kth-largest-element-in-a-stream
-https://leetcode.com/problems/sliding-window-maximum/
-]]></description>
-        </item>
-        <item>
             <title><![CDATA[树和图]]></title>
             <link>https://www.banli17.com/algo/tree.html</link>
             <guid>https://www.banli17.com/algo/tree.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
             <description><![CDATA[树和图
 理论
 链表是特殊的树(后继节点可以多个)，树是特殊的图(可以乱指)。
@@ -273,232 +324,10 @@ in-order 中序遍历（左、根、右），应该是一个升序的 array。
             </enclosure>
         </item>
         <item>
-            <title><![CDATA[概述]]></title>
-            <link>https://www.banli17.com/browser/</link>
-            <guid>https://www.banli17.com/browser/</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
-            <description><![CDATA[概述
-chrome 架构
-多进程架构
-
-为什么打开一个页面，有 4 个进程？
-
-进程和线程
-线程是用来执行任务的，它不能独立存在，必须由进程来启动和管理。
-进程是程序的运行实例，程序启动时，操作系统给程序分配的一块内存，用来存放代码、运行中的数据和一个执行任务的主线程。这样一个运行环境叫做进程。
-进程使用多线程来提高运算效率。
-特点：
-
-进程中一个线程出错，会导致整个进程崩溃。
-线程之间共享进程的数据。
-当一个进程关闭后，操作系统会回收进程所占用的内存。
-进程之间是相互隔离的，一个挂了不影响另一个。之间数据通信需要使用 IPC 的机制。
-
-单进程
-
-不稳定，一个线程出错，就导致进程崩溃。
-不流畅，如果只有一个线程，死循环时，其它的任务都要等待。
-不安全，插件或页面代码能使用主进程数据，对系统进行操作,，直接控制电脑。因为主进程不可能隔离，这样浏览器就不能读写系统了。另外，其它页面的内容，如果是在写邮件，也没了。
-
-多进程
-
-解决不稳定，因为进程是隔离的，互不影响
-解决不流畅，即使 js 阻塞，也不影响浏览器和其它页面，死循环只影响当前 tab
-解决不安全，使用安全沙箱，给渲染进程和插件进程上锁。无法获取系统权限。
-
-架构
-
-渲染进程: 负责 html css js 转成网页，排版引擎 blink 和 js 引擎 v8 都在这，默认情况下，每个 tab 会创建一个渲染进程。同一个站点如,x.y.com z.y.com 新页面会复用同一个进程，因为有时需要共享 js 执行环境。iframe 也会新开进程。
-插件进程
-网络进程
-浏览器主进程： 负责界面显示，用户交互，子进程管理，存储
-GPU 进程：初衷是实现 css 3d，后来用来绘制 UI 界面
-v8 代理解析工具 chrome 支持 js 写连接代理的脚本，叫在线 pac 代理脚本，这个进程叫 Utility: V8 Proxy Resolver。
-Audio 服务进程，对所有页面提供基础服务。
-
-缺点：
-
-更高的资源占用
-更复杂的体系架构：耦合高、扩展性差
-
-未来的架构
-
-面向服务的架构，将原来的模块重构成服务，每个服务定义好接口，通过 IPc 来通信，从而内聚，松耦合，易于维护和扩展
-
-此外，chrome 还提供了灵活的弹性架构，在资源受限制的设备上，会将很多服务整合到一个进程，节省内存
-
-TCP 协议
-衡量 web 性能有个重要的指标 FP(first paint)，是从页面加载到首次开始绘制的时长，这个指标直接影响了用户的跳出率。更快的页面响应意味着更多的 pv，更高的参与度，以及更高的转换率。
-影响 FP 的一个重要因素是网络加载速度。
-
-ip 把数据包送达目的主机
-
-传输前，数据包会带上自身的 ip 地址(为了可以让目标主机回复)、目标主机的 ip 地址信息(为了可以送达)。
-ip 头包含 ip 版本、源 ip 地址、目标 ip 地址、生存时间等信息。
-
-UDP 把数据包送达应用程序
-
-ip 层并不知道数据要交给哪个应用程序，所以需要用户数据包协议 UDP(user datagram protocol)。
-UDP 中有端口号，通过端口号将数据包发送给指定程序。发送数据时，端口号也会被放入到 UDP 头中，到达目标主机时，也会拆开 UDP 头。
-UDP 的特点
-
-能校验数据
-不能保证数据可靠性(只管发，不确认)，传输速度快
-不能将乱序小包组成完整文件
-
-TCP
-
-transmission contrl protocol 传输控制协议，是一种面向连接的、可靠的、基于字节流的传输层通信协议。
-
-对于数据包丢失的情况，会重传
-引入了数据包排序机制(有序号)，可以把乱序的数据包组合成完整的文件
-
-一个 tcp 完整的连接:
-
-建立连接阶段，三次握手。
-传输数据阶段，接收端需要对每个数据包进行确认操作，在规定时间内没有收到接收端的反馈，就判断为数据包丢失，会触发重发机制。大文件传输时会拆成小包，在接收端按照 tcp 头里的序号进行排序，组成完整的包。
-断开连接阶段，四次挥手。
-
-所以 tcp 为了保证数据传输的可靠性，牺牲了数据包的传输速度，三次握手和数据包校验机制等在传输过程中将数据包的数量提升了一倍。
-网络进程知道每个 tcp 链接所对应的标签是那个，所以接收到数据后，会把数据分发给对应的渲染进程。
-一个包从主机 A 到主机 B 的旅程：
-
-应用层加上 http 头，发给 tcp 层。
-tcp 层加上 tcp 头，包含端口号。
-数据包交给网络层，网络层加上 ip 头，组成新的 ip 数据包交给底层。
-底层通过物理网络将数据包发送给 B。
-数据包传输到 B 的网络层，拆开数据包的 ip 头信息，并将拆开的数据部分交给 tcp 层。
-tcp 进行拆包取出端口号，交给浏览器。
-浏览器的网络进程知道 tcp 连接对应的标签。所以收到数据后，会分发给对应的渲染进程。
-
-tcp 交给 http 时丢包？应该会重新再发给 http，tcp 已经收到包了，本地给 http 很快。
-http 过程
-请求
-
-构建请求
-
-GET /index.html HTTP1.1
-
-查找缓存
-
-发起请求之前，会查找缓存。如果有，则直接返回并结束，而不会发起请求。好处是：缓解服务器压力，提升性能。如果没有缓存，则发请求
-
-为 tcp 连接准备 ip 和端口
-
-http 工作前，浏览器会通过 tcp 与服务器建立连接，也就是 http 的内容是通过 tcp 传输数据阶段来实现的。
-但是现在只有一个域名，所以需要 DNS(域名系统) 解析，将域名映射为 ip。
-浏览器还有 DNS 数据缓存服务，如果没有过期会直接使用，这样会减少一次网络请求。
-拿到 ip 后，开始获取端口号，如果没有指明，http 协议默认是 80 端口。
-
-等待 tcp 队列
-
-chrome 有个机制，同一个域名最多只有 6 个 tcp 连接，超出的会进入排队等待。如果数量小于 6，会直接进行下一步，建立 tcp 连接。
-
-建立 tcp 连接
-
-发起 http 请求
-
-浏览器会发送请求行：请求方法、请求 uri(uniform resource identifier) 和 http 版本号。
-
-服务器处理 http 请求。
-
-并不是所有请求都会被服务器处理，服务器通过状态码告诉浏览器它的处理结果。如 200、400。
-
-断开连接
-
-一旦服务器向客户端返回了结果，它就要关闭 tcp 连接，不过如果有头信息:
-Connection: Keep-Alive
-
-那么 tcp 连接会在发送完后保持打开，保持 tcp 连接可以省去下次建立连接的时间，提升资源加载速度。
-
-重定向
-
-浏览器收到 301，会根据响应头的 Location 字段重新导航。
-返回 301 不返回 location 会怎么样？
-为什么很多站点第二次打开速度会很快？
-主要是第一次缓存了数据。哪些数据会缓存？DNS 缓存和页面资源缓存。
-
-服务器响应头返回 Cache-Control 字段设置资源是否缓存。
-Cache-Control: Max-age=2000
-
-缓存过期，会发送网络请求，请求头会带上:
-If-None-Match:&quot;4f80f-13c-3a1xb&quot;
-
-服务器收到后，会根据 If-None-Match 判断请求资源是否有更新。
-
-如果没有更新，则返回 304，告诉浏览器这个缓存可以继续用，这次就不发送重复数据给你了。
-如果资源有更新，服务器就直接返回最新资源。
-
-登录状态是如何保持的？
-服务器返回 Set-Cookie，客户端每次发送 Cookie 字段。
-
-如果一个网络请求时间过久，怎么分析是哪个地方出了问题？
-
-首先猜测最可能的出问题的地方，网络传输丢包比较严重，需要不断重传。然后通过 ping curl 看看对应的时延高不高。
-然后通过 wireshake 看看具体哪里出了问题。
-假如别人访问很快，自己电脑很慢，就要看看自己客户端是否有问题了。
-
-导航流程
-
-从输入 URL 到页面展示，这中间发生了什么？
-
-整个过程需要各个进程之间的配合。
-
-浏览器进程主要负责用户交互、子进程管理和文件存储等功能。
-网络进程是面向浏览器和渲染进程等提供网络下载功能。
-渲染进程主要是把网络进程下载的 html、js、css、图片等解析为可以显示和交互的页面，因为渲染进程所有内容都是通过网络获取的，会存在一些恶意代码利用浏览器漏洞对系统进行攻击，所以运行在渲染进程的代码是不被信任的，渲染进程在安全沙箱里运行。
-
-整个过程大致如下：
-
-用户在浏览器进程里输入请求信息。
-网络进程发起 URL 请求。
-服务器响应 URL 请求之后，浏览器进程开始准备渲染进程。
-渲染进程准备好之后，需要先向渲染进程提交页面数据，称为提交文档阶段。
-渲染进程接受完文档信息之后，便开始解析页面和加载子资源，完成页面的渲染。
-
-这其中，用户发出 URL 请求到页面开始解析的过程，叫做导航。
-1.用户输入。
-用户输入时，地址栏会判断用户输入的是关键字，还是请求的 URL。如果是关键字，地址栏会使用浏览器默认搜索引擎来合成带搜索关键字的 URL。如果输入的内容符合 URL 规则，那么地址栏会根据规则，将内容加上协议，合成完整的 URL。
-回车之后，浏览器刚开始加载地址，标签页图标进入加载状态，开始转圈。但是页面显示的内容还是之前的，需要等到提交文档阶段，页面内容才会被替换。
-2.URL 请求过程
-接下来，开始页面请求资源过程，浏览器进程会通过进程间通信(IPC)把 URL 请求发送给网络进程，网络进程收到 URL 请求后，发起真正的 URL 请求过程。
-首先，网络进程查看本地缓存，如果有缓存，则直接返回给浏览器进程；如果没有，则进入网络请求流程，第一步是 DNS 解析，获取 IP 地址，如果请求协议是 HTTPS，则需要建立 TLS 连接。
-然后，利用 IP 和服务器建立 TCP 连接，建立连接后，浏览器构建 http 报文。包括请求行、请求头等信息，并把 cookie 等数据附加在请求头中，发送给服务器。
-服务器收到请求后，会根据请求信息生成响应数据，发送给网络进程，网络进程收到响应行和响应头后，开始解析响应头。
-
-重定向
-
-网络进程发现状态码是 301 或 302，会从头的 Location 字段读取重定向地址，然后发起新的请求。
-
-响应数据的类型处理 content-type
-
-它告诉浏览器返回的响应体数据是什么类型，如果是application/octet-stream(字节流)，浏览器会按照下载类型来处理，该请求会交给浏览器的下载管理器，同时该 URL 请求的导航流程就此结束。如果是 HTML，浏览器会继续进行导航流程。
-3.准备渲染进程
-默认情况下，chrome 会给每个页面分配一个渲染进程，但是同一个站点（协议和顶级域名相同）会运行在一个渲染进程中，这个策略叫 process-per-site-instance。
-在碰到rel=noopener属性时，它告诉浏览器新打开的子窗口不需要访问父窗口的任何内容，这是为了防止一些钓鱼网站窃取父窗口的信息。浏览器解析时，会新开一个渲染进程。
-4.提交文档
-渲染进程准备好之后，浏览器进程会发出提交文档的消息，渲染进程收到消息后，会和网络进程建立传输数据的管道，等文档数据传输完成后，渲染进程会发送确认提交消息给浏览器进程。浏览器进程收到确认提交消息后，会更新浏览器界面状态，包括安全状态、地址栏 URL、前进后退的历史状态，并更新 Web 页面。
-5.渲染进程
-一旦文档被提交，渲染开始页面解析和子资源加载。如果页面生成完成，渲染进程会发送一个消息给浏览器进程，浏览器收到后，会停止标签图标的加载动画。
-
-keep-alive 是为了解决连接效率不高的问题，http1.0 时代，http 请求都是短连接的形式，也即是每次请求一个资源都需要和服务器建立连接+传输数据+断开连接。为什么是 6 个请求而不是更多了，这是为了服务器性能考虑，如果同一时刻无限制连接，那么可能会导致服务器忙不过来。
-
-渲染流程]]></description>
-            <enclosure url="https://www.banli17.com/imgs/1-1.png">
-            </enclosure>
-        </item>
-        <item>
-            <title><![CDATA[垃圾回收机制]]></title>
-            <link>https://www.banli17.com/browser/gc.html</link>
-            <guid>https://www.banli17.com/browser/gc.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
-            <description><![CDATA[垃圾回收机制]]></description>
-        </item>
-        <item>
             <title><![CDATA[v8 工作原理]]></title>
             <link>https://www.banli17.com/browser/v8.html</link>
             <guid>https://www.banli17.com/browser/v8.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
             <description><![CDATA[v8 工作原理
 垃圾回收
 栈中的垃圾回收
@@ -561,10 +390,207 @@ DOM 引用
 ]]></description>
         </item>
         <item>
+            <title><![CDATA[宏观视角下的浏览器]]></title>
+            <link>https://www.banli17.com/browser/macro.html</link>
+            <guid>https://www.banli17.com/browser/macro.html</guid>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <description><![CDATA[宏观视角下的浏览器
+Chrome 架构
+查看 Chrome 进程情况： Chrome 又上角选项 -&gt; 更多工具 -&gt; 任务管理器。
+并行处理：同一时刻处理多个任务。举例:
+A = 1+1
+B = 2*3
+C = A*B
+
+单线程从上到下计算，多线程同时计算 A、B，最后计算 C，性能提高了。
+线程：不能单独存在，由进程来启动和管理。
+进程：一个进程就是一个程序的运行实例，启动程序时，操作系统会为程序分配内存，用来存放代码、运行时数据和一个执行任务的主线程，这样的一个运行环境叫做进程。
+线程依附于进程，而进程中使用多线程能并行处理提升运算效率。
+关系：
+
+进程中任意线程出错，都会导致整个进程崩溃。如 B 计算 1/0 出错。
+线程之间共享进程的数据。
+进程关闭后，操作系统回收所占用的内存。
+进程之间的内容相互隔离。一个进程崩溃，不会影响其它进程。进程通信需要 IPC 机制。
+
+单进程浏览器：网络、插件、js 运行环境、渲染引擎和页面都在一个进程。问题：
+
+不稳定
+不流畅
+不安全：运行插件可以获取操作系统的任意资源。恶意插件可以释放病毒，盗取密码。页面脚本也可以通过浏览器漏洞获取系统权限。
+
+多进程浏览器
+
+解决不稳定：多进程
+不流畅：js 运行在渲染进程中，即使阻塞进程，也只影响当前渲染页面，而不会影响浏览器和其它页面。
+安全问题：安全沙箱，即沙箱里的程序可以运行，单不能在硬盘上写入数据，也不能读取敏感位置的数据。插件进程和渲染进程在沙箱中。
+目前多进程架构
+
+浏览器进程： 负责界面显示、用户交互、子进程管理、提供存储等功能。
+渲染进程：将 html/css/js 转为用户可交互的网页，排版引擎 Blick 和 js 引擎 v8 都在该进程中，默认 Chrome 会给每个同站点页面共享一个渲染进程(process-per-site-instance，查看更多)。运行在沙箱模式下。
+GPU 进程: 初衷是为了实现 3D CSS，后来网页、Chrome UI 界面都采用 GPU 来绘制。
+网络进程
+插件进程
+
+多进程模型的问题：
+
+更高的资源占用。每个进程都包含公共基础结构的副本(如 js 运行环境)。
+更复杂的体系架构：浏览器各模块之间耦合性高，扩展性差。
+
+面向未来服务的架构
+2016 年,Chrome 提出了 面向服务的架构(Services Oriented Architecture，简称 SOA)。将原来各种模块重构为独立的服务，每个服务都可以在独立的进程中运行，访问服务必须使用定义好的接口，通过 IPC 通信，从而构建一个更内聚、松耦合、易于维护和扩展的系统。
+
+同时，如果资源受限制的设备上，Chrome 会整合服务到一个进程中，节省内存。
+
+v8 官网
+chrome 设计文档
+
+TCP 协议
+FP(first paint): 从页面加载到首次开始绘制的时长。这个指标直接影响用户跳出率。
+大数据拆成小数据包来传输。数据包从 A 到 B 传输过程：
+
+ip: 数据包要在互联网传输，就要符合网际协议(internet protocol, ip)标准。
+数据包交给网络层，网络层给数据包附加 ip 头， 包括 ip 版本， 源 ip ，目标 ip，生存时间。
+通过物理网络传输给 B。
+B 网络层拆开数据包 ip 头，将数据交给应用层。
+
+ip 将数据包发给指定的电脑。
+UDP（user datagram protocol) 用户数据包协议，通过端口号将数据给指定程序。
+UDP 可以校验数据是否正确，但是对错误的包，不提供重发机制，不知道数据是否到达 B，也不能重组包。传输速度快，适合在线视频，互动游戏。
+但是有些数据需要安全的到达，所以有了 TCP。
+TCP: transmission control protocol，传输控制协议，面向连接、可靠的、基于字节流的传输层协议。
+特点：
+
+对于数据包丢失，重传机制
+数据包排序机制，将乱序数据包重组为完整的包
+
+完整的 TCP 生命周期：
+
+连接三次握手 时序图
+传输数据
+断开：四次挥手
+
+HTTP 请求流程
+浏览器发起 http 请求过程：
+
+构建请求： 构建请求头信息
+
+GET /index.html HTTP1.1
+
+查找缓存：有缓存则直接返回该资源的副本，并直接结束请求。好处：减少服务器压力，提升资源加载速度。
+缓存查找失败，开始网络请求。
+为数据传输准备 ip 和端口。
+
+DNS (domain name system)将 url 映射成 ip。
+有 DNS 数据缓存服务
+得到 ip
+根据 url 得到端口号，默认 80
+
+等待 TCP 队列，chrome 默认同一个域名最多 6 个 TCP 连接。如果小于 6 则建立 TCP 连接。
+建立 TCP 连接。
+TCP 传输数据，即发送 HTTP 请求，包括请求方法、url，http 版本、请求头、请求体(post)。http 请求报文格式：
+
+服务器处理 HTTP 请求，返回响应，包括协议版本、状态码、服务器信息等。
+
+断开连接：一旦服务器返回请求数据，就要关闭 TCP 连接，不过可以在头信息中加入 Connection: Keep-Alive 保持连接复用 TCP，这样可以省去下次连接的开销。
+重定向，如果状态码是 301 ，就是告诉浏览器要重定向，浏览器获取响应头的 Location，重新导航这个地址。
+
+为什么很多站点第二次打开速度会很快？
+因为有缓存: DNS 缓存，页面缓存。
+缓存查找过程：
+服务器返回 http 响应给浏览器，浏览器通过响应头 Cache-Control 设置是否缓存资源，时长通过 Cache-Control 里的 Max-age 设置。
+Cache-Control: Max-age=2000
+
+如果缓存资源未过期，则直接返回，如果过期了，则发起网络请求，并在 HTTP 请求头带上
+If-None-Match:&quot;4f80f-13c-3a1xb12a&quot;
+
+服务器收到后，会根据 If-None-Match 值判断请求的资源是否有更新。
+没更新就返回 304，表示该缓存可以继续用。
+有更新就返回资源给浏览器。
+登录状态如何保持？
+用户 post 账户密码
+服务器返回头 Set-Cookie: UID=3431uad;给浏览器。
+浏览器会保存到本地，再次访问时，会将Cookie: UID=3431uad;发送给服务器。
+服务器根据 Cookie 判断用户是否登录。
+disk：新 tab 打开时，都是 disk；html 文件都是 disk
+memory：新 tab 再次使用缓存时，是 memory
+完整的示意图
+
+http 请求的 8 个阶段: 构建请求、查找缓存、准备 IP 和端口、发起 TCP 连接、发送 HTTP 请求、服务器处理请求、服务器返回请求和端口连接。
+如果一个页面的网络加载时间过久，你是如何分析卡在哪个阶段的?
+https://developers.google.com/web/tools/chrome-devtools/network/reference#timing-explanation 举个例子 Content Download 如果太长，很有可能是下载的资源太大，但也有可能是网络慢导致的下载太慢，简单计算一下，在例如 Waiting (TTFB) 这个太长的话，有可能是网络慢，或者就是 后端处理时间过长导致的，至少可以排查掉前端原因，还有很多，例如 DNS lookup 等，但是最终要确认具体哪里慢，最好是结合系统日志去分析
+导航流程
+从输入 URL 到页面展示，这中间发生了什么？
+
+浏览器进程收到用户输入的 URL 请求，将该 URL 转发给网络进程。
+网络进程发起 URL 请求。
+网络进程收到响应头数据，解析并将数据转发给浏览器进程。
+浏览器进程收到网络进程的响应头数据后，发送提交导航(CommitNavigation)消息(会携带响应头等基本信息)到渲染进程。
+渲染进程收到消息后，开始准备接收 HTML 数据，接收方式是直接和网络进程建立数据管道。
+渲染进程向浏览器进程确认提交，告诉浏览器已经准备好接收和解析数据。
+浏览器进程收到渲染进程提交文档的消息后，移除之前旧文档，更新浏览器进程中的页面状态。
+
+其中，用户发起 url 请求到页面开始解析的过程，叫做导航。
+
+用户输入
+
+输入搜索内容: 和浏览器默认搜索引擎合成 URL。
+输入请求 URL: 加协议等，合成完整的 URL。
+
+回车
+
+清理旧页面， beforeunload 事件可以做数据清理或询问用户是否要离开。
+标签页图标变成加载状态，页面还是之前的页面，需要等提交文档阶段，页面内容才会替换。
+
+URL 请求过程
+
+浏览器进程通过 IPC 把 URL 发给网络进程
+
+网络进程查找缓存，有则直接返回，没有则网络请求(DNS 解析，如果是 HTTPS 还要建立 TLS)
+
+利用 IP 和服务器建立 TCP 连接，浏览器端构建请求行、请求头等信息，发给服务器
+
+服务器收到后，生成响应数据，发给网络进程，网络进程收到响应行和响应头开始解析
+
+处理状态码
+
+重定向： 301 或 302，读 Location，重新导航请求
+200 浏览器继续处理请求
+
+处理响应类型
+
+Content-Type: 响应体数据是什么类型
+
+application/octet-stream: 字节流，按下载类型处理，同时该 url 请求导航流程结束
+text/html: 继续导航
+
+准备渲染进程：
+
+每个标签对应一个渲染进程（左键点击才算，右键新开会新开渲染进程)
+同一站点(same-site)： 根域名、协议相同。新页面会复用父页面的渲染进程,process-per-site-instance。
+使用 noopener noreferrer 就是告诉浏览器，新打开的子窗口不需要访问父窗口的任何内容，这是为了防止一些钓鱼网站窃取父窗口的信息。会新开渲染进程
+
+提交文档，浏览器进程将网络进程数据交给渲染进程
+
+浏览器进程收到网络进程的响应头数据后，向渲染进程发起提交文档的消息。
+渲染进程收到消息，会和网络进程建立传输数据的管道。
+数据传输完成，渲染进程返回确认提交消息给浏览器进程。
+浏览器进程收到消息，更新浏览器界面状态，包括安全状态、地址栏 URL、前进后退的历史状态，并更新 web 页面。
+
+渲染阶段：渲染进程开始页面解析和子资源加载
+
+渲染流程
+
+深入了解现代 Web 浏览器（第 1 部分）
+]]></description>
+            <enclosure url="https://www.banli17.com/imgs/1-1-0.png">
+            </enclosure>
+        </item>
+        <item>
             <title><![CDATA[css 常用]]></title>
             <link>https://www.banli17.com/css/</link>
             <guid>https://www.banli17.com/css/</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
             <description><![CDATA[css 常用
 滚动条样式
 ::-webkit-scrollbar {
@@ -573,12 +599,20 @@ DOM 引用
 ]]></description>
         </item>
         <item>
+            <title><![CDATA[垃圾回收机制]]></title>
+            <link>https://www.banli17.com/browser/gc.html</link>
+            <guid>https://www.banli17.com/browser/gc.html</guid>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <description><![CDATA[垃圾回收机制]]></description>
+        </item>
+        <item>
             <title><![CDATA[兼容性问题]]></title>
             <link>https://www.banli17.com/css/compatible.html</link>
             <guid>https://www.banli17.com/css/compatible.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
             <description><![CDATA[兼容性问题
 line-height android 不居中
+https://www.zhihu.com/question/39516424
 css reset
 http://meyerweb.com/eric/tools/css/reset/
 多行文字显示几行
@@ -609,509 +643,208 @@ iphone 6p 10 系统，卡片商品名称内容不显示，
 ]]></description>
         </item>
         <item>
-            <title><![CDATA[extend()]]></title>
-            <link>https://www.banli17.com/jquery/extend.html</link>
-            <guid>https://www.banli17.com/jquery/extend.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
-            <description><![CDATA[extend 源码分析
-用法
-jQuery 里的 extend 主要有下面几种用法：
+            <title><![CDATA[css 揭秘]]></title>
+            <link>https://www.banli17.com/css/css-secret.html</link>
+            <guid>https://www.banli17.com/css/css-secret.html</guid>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <description><![CDATA[css 揭秘
+1. 透明边框
+背景实际会从边框处开始渲染，所以如果 border rgba 会有问题。
+解决方法是 background-clip:padding-box
+2. 多边框
+方案 1: box-shadow: 右 下 模糊 扩展 色。
+注意： 阴影不影响盒子渲染，阴影无法触发盒子鼠标事件。可以通过 inset 解决。
+方案 2: outline 适合 2 层边框，+border，而且支持 dashed。
+而且可以通过 outline-offset 调整位置，支持负数。
+3. 灵活的背景定位
+图片要定位到有下角。
+background-position: right 20px bottom 20px;
+还一种方法是 calc，计算到左上角的距离。
+calc(100% - 20px) 注意空格
+background-position 默认是从 padding-box 定位的，可以通过 background-origin 修改。
+4. 边框内圆角
+outline 不会跟着 border-radius 走，box-shadow 会。
+所以用 box-shadow 来填满空隙。所以如果边框小于空隙处半径，则无法实现
+5. 条纹背景]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Deferred 概念和源码解析]]></title>
+            <link>https://www.banli17.com/jquery/deferred.html</link>
+            <guid>https://www.banli17.com/jquery/deferred.html</guid>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <description><![CDATA[Deferred 概念和源码解析
+promise A+ 规范
+Deferred API
 
-拷贝对象
+jQuery.Deferred() 返回一个对象用来注册多个回调，回调队列，调用回调队列，并转达任何同步或异步函数的成功或失败状态
+deferred.done()
+deferred.fail()
+deferred.progress()
+jQuery.when(deferred) 返回一个 promise 对象
+.promise() 返回一个 Promise 对象来观察当某种类型的所有行动绑定到集合，排队与否还是已经完成。
 
-$.extend({}, { name: "zs" }, { age: 12 });
-// {name:"zs", age:12}
+使用
+var wait = function() {
+    var deferred = $.Deferred();
+    setTimeout(function() {
+        deferred.resolve("hello");
+    });
+    return deferred;
+};
 
-$.extend([], [1, 2, 3], [4, 5, 6, 7]);
-// [4, 5, 6, 7];
-
-第一个参数为 true，表示深拷贝
-
-$.extend(
-  true,
-  {},
-  { name: "zs", child: { name: "lisi" } },
-  { child: { age: 12 } }
-);
-
-// {name:'zs',child:{name:'lisi', age:'12'}}
-
-扩展静态方法
-
-$.extend({
-  show() {}
-});
-
-$.show();
-
-扩展原型上的方法
-
-$.fn.extend({
-  show() {}
-});
-
-$("div").show();
-
-原理
-看完上面的用法之后，再去看 extend 的源码就简单了。它最核心的技巧就是：参数规格化。也就是保证 extend 调用方式一致。
-我们来看看上面几个使用方法，实际上 extend 源码将它们进行了统一处理。即都转成了下面的形式来调用:
-extend(deep, target, copy);
-
-再看看下面示例，相信就明白了。
-// 1
-$.extend({}, { name: "zs" }, { age: 12 });
-// 转成了
-$.extend(false, {}, { name: "zs" }, { age: 12 });
-
-// 2
-$.extend({
-  show() {}
-});
-// 转成了
-// 这里 this，就是 jQuery 对象
-$.extend(false, this, {
-  show() {}
-});
-
-// 3
-$.fn.extend({
-  show() {}
-});
-// 转成了
-// 这里 this 就是 jQuery.prototype 对象
-$.fn.extend(false, this, {
-  show() {}
-});
-
-练习
-
-extend 练习地址
+$.when(wait())
+    .done(function(value) {
+        console.log("done: " + value);
+    })
+    .fail(function(value) {
+        console.log("fail: " + value);
+    });
 ]]></description>
         </item>
         <item>
-            <title><![CDATA[架构]]></title>
-            <link>https://www.banli17.com/jquery/overall.html</link>
-            <guid>https://www.banli17.com/jquery/overall.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
-            <description><![CDATA[jQuery 整体架构]]></description>
-        </item>
-        <item>
-            <title><![CDATA[选择器]]></title>
-            <link>https://www.banli17.com/jquery/selector.html</link>
-            <guid>https://www.banli17.com/jquery/selector.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
-            <description><![CDATA[选择器]]></description>
-        </item>
-        <item>
-            <title><![CDATA[3.系统组成和帮助命令]]></title>
-            <link>https://www.banli17.com/linux/3.html</link>
-            <guid>https://www.banli17.com/linux/3.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
-            <description><![CDATA[Linux 系统组成和获取命令帮助
-获取命令使用帮助详解
-命令的语法通用格式
-COMMAND OPTIONS ARGUMENTS
-
-发起一个命令：请求内核将某个二进制程序运行为一个进程。
-程序 --&gt; 进程
-静态 --&gt; 动态 (有生命周期)
-命令本身是一个可执行的程序文件：二进制格式的文件，有可能会调用共享库文件
-多数程序文件都存放在: /bin /sbin /usr/bin /usr/sbin 安装的有可能在 /usr/local/bin /usr/local/sbin
-普通命令： /bin /usr/bin /usr/local/bin
-管理命令：/sbin /usr/sbin /usr/local/sbin
-共享库 /lib /lib64 /usr/lib /usr/lib64 /usr/local/lib /usr/local/lib64
-32bits 的库: /lib /usr/lib /usr/local/lib
-64bits 的库 /lib64 /usr/lib64 /usr/local/lib64
-绿色是可执行文件，青色是链接文件
-命令必须遵循特定的格式规范：exe msi ELF(linux)
-查看命令文件的格式详情
-file /bin/ls
-
-命令分为两类：
-
-shell 程序自带的命令：内置命令(builtin)
-独立的可执行程序文件，文件名即命令名：外部命令
-
-shell 程序是一个独特的程序，负责解析用户提供的命令，会去环境变量查找命令文件
-环境变量 PATH: 从哪些路径中查找用户键入的命令字符串所对应的命令文件，查找次序是自左到右
-echo $PATH
-查看命令类型，内置还是外部命令
-type COMMAND
-OPTIONS
-指定命令的运行特性
-选项有两种表现形式
-
-短选项 -C，如 -l -d，注意有的命令选项没有-。同一个命令同时使用多个短选项，多数可合并
-长选项，--word，如 --help，--human-readable。长选项不能合并
-
-有些选项可以带参数，叫做选项参数
-ARGUMENTS: 命令的作用对象，命令对什么生效
-不同的命令的参数格式不同，有些命令可同时带多个参数，多个之间以空白字符分隔。
-ls /etc
-ls /etc /var
-le -l -d /var
-
-获取命令的使用帮助
-内部命令：help COMMAND
-type type
-help type
-
-外部命令：
-
-命令自带简要格式的使用帮助 COMMAND --help
-使用手册 manual: ``
-
-man
-ls 手册位置
-ls /usr/share/man
-
-man COMMAND
-
-SECTION
-NAME 功能性说明
-SYNOPSIS 语法格式
-DESCRIPTION: 描述
-OPTIONS 选项
-EXAMPLES
-AUTHOR
-BUGS
-SEE ALSO 参考
-
-SYNOPSIS
-[] 可选内容
-&lt;&gt; 必须提供的内容
-a|b 多选一
-... 同类内容可出现多个
-使用手册：压缩格式的文件，有章节之分
-/usr/share/man
-man1 man2
-
-用户命令
-系统调用
-C 库调用
-设备文件及特殊文件
-文件格式 (配置文件格式)
-游戏使用帮助
-杂项
-系统工具及守护进程
-
-~]# man CHAPTER COMMAND
-
-注意：并非每个 COMMAND 在所有章节下都有手册
-查看命令在手册哪些地方有。
-~]# whatis COMMAND
-其执行过程是查询数据库进行的
-手动更新数据库：
-~]# makewhatis
-
-man 命令打开手册以后的操作方法
-翻屏：
-空格键，向文件尾部翻一屏幕
-b: 向文件首部翻一屏幕
-ctrl+d：翻半屏幕 down
-ctrl+u 上翻半屏 up
-回车键 向文件尾部翻一行
-k 向文件首部翻一行
-G 跳至最后一行
-#G 跳到指定行
-1G 跳到第一行
-文本搜索
-/keyword 从文件首部向文件尾部依次查找，不区分字符大小写
-?keyword 从文件尾部向文件首部依次查找
-n 与查找命令方向相同 N 与查找命令方向相反
-退出 q: quit
-选项
--M /PATH/TO/SOMEDIR 到指定位置目录查找命令手册并打开
-练习：useradd 命令的用法
-
-1)添加用户 gentoo
-2)添加用户 slackware 要求指定其所用的 shell 为 /bin/tcsh
-
-useradd -s /bin/tcsh slackware
-id slaceware
-tail -1 /etc/passwd # 查看最后一行，可以显示 shell 类型
-
-info COMMAND 获取命令的在线文档
-
-很多应用程序都自带帮助文档 /usr/share/doc/APP-VERSION
-README 程序的相关的信息
-INSTALL 安装帮助
-CHANGES 版本迭代时的改动信息
-
-主流发行版官方文档 http://www.redhat.com/doc
-
-程序官方的文档：官方站点上的 Document
-
-搜索引擎
-keyword filetype:pdf
-keyword site:domain.tld
-
-centeos 修改语言 https://www.jianshu.com/p/8dc24d5e893d
-linux 文件系统
-
-文件名名称严格区分字符大小写
-文件可以使用除/以外的任意字符
-文件名长度不能超过255字符
-以.开头的文件为隐藏文件
-
-. 当前目录
-.. 当前目录的上一层目录
-
-工作目录 working directory
-家目录 home
-常用基本命令实战应用
-pwd
-printing working directory 显示工作目录
-cd
-切换目录(change directory)，用法：cd [/PATH/TO/SOMEDIR]
-
-cd 不带参数，表示切回家目录 ~也表示家目录
-cd ~
-cd ~USERNAME: 切换至指定用户的家目录
-cd - 上一次所在目录和当前目录来回切换，shell保存了相关的变量
-
-PWD: 当前目录
-OLDPWD: 上一次的工作目录
-
-ls
-ls: list 列出指定目录下的内容，用法是ls [OPTION]... [FILE]...。
-
--a: 显示所有文件，包括隐藏文件，目录可以.开头，文件也可以.开头
--A: 显示除.和..之外的所有文件
--l: --long, 长格式列表，即显示文件的详细属性信息
-
--rw-r--r--, 1 root  root   8957 10月 14 19:34 boot.log
-
--表示文件类型 - d b c l s p
-rw-r--r--:
-
-rw-: 文件属主的权限
-r--: 文件属性的权限
-r--: 其它用户(非属主、属组)的权限
-
-1: 数字表示文件被硬链接的次数
-root: 文件的属主
-root：文件的属组
-8957: 数字表示文件的大小，单位是字节
-10月 14 19:34: 文件最近一次被修改的时间
-boot.log: 文件名
-
--h, --human-readable: 对文件大小单位换算，换算后结果可能为非精确值
--d: 查看目录自身而非其内部的文件列表，配合 -l 使用才有意义
--r: reverse 按逆序排序，文件名字母
--R: recursive 递归显示
-
-cat
-cat: concatenate 表示连接并显示文件内容， 文件文件查看工具
-
--n: 显示行号
--E: 显示行结束符$
-
-cat /etc/fstab
-cat /etc/passwd
-cat /etc/issue
-
-cat /etc/fstab /etc/passwd
-
-tac 和 cat 一样，只是内容是逆序的
-通过 file 命令可以看文件是不是文本文件，如:file /etc/fstab。
-file
-file 查看文件内容类型，用法：file [FILE]...
-echo
-echo: 回显命令，语法是echo [SHORT-OPTION]... [STRING]...。
-
--n: 不自动进行换行
--e: 让转义符生效  \b  \v  \t
-
-显示颜色
-echo -e &quot;\033[31mhello\033[0m everyone&quot;
-
-其中，STRING 可以使用引号。
-
-单引号：&quot;&quot; 强引用，变量引用不执行替换 echo '$SHELL'。
-双引号：'' 弱引用，变量引用会被替换  echo &quot;$SHELL&quot;。
-
-注意变量引用的正规符号 ${name}
-shutdown
-关机或重启命令，语法是shutdown [OPTIONS...] [TIME] [WALL...]。
-OPTIONS
-
--h: halt  和 -P, --poweroff 一样
--r: reboot
--c: cancel
-
-TIME
-
-now
-+minutes: 多少分钟后
-hh:mm: 几点几分
-
-WALL
-和wall命令一样，用于向每个终端发一个消息 wall &quot;hello&quot;，默认会发送
-~]# shutdown -h now
-~]# shutdown -r +20 &quot;hello goodbye&quot;
-Shutdown scheduled for Mon 2019-10-28 00:14:29 CST, use &#39;shutdown -c&#39; to cancel.
-~]# shutdown -c
-
-Broadcast message from root@banli.linux (Sun 2019-10-27 23:54:42 CST):
-
-The system shutdown has been cancelled at Sun 2019-10-27 23:55:42 CST!
-
-shutdown/halt/poweroff/reboot 的区别
-
-shutdown 以一种安全的方式关闭系统。所有登陆用户都可以看到关机信息提示，并且 login  将被阻塞。
-halt命令，若系统的 runlevel 为 0 或 6 ，则关闭系统，否则以 shutdown 指令（加上 -h 参数）来取代。
-poweroff命令用来关闭计算机操作系统并且切断系统电源。
-reboot执行reboot指令可让系统停止运作，并重新开机。
-
-init 0 关机，init 6 重启。
-日期相关的命令
-linux 系统启动时，从硬件读取日期和时间信息，读取完成后，就不再与硬件时间相关联。
-
-系统时钟
-硬件时钟
-
-date 系统时钟
-显示和设置系统日期格式，语法是date [OPTION]... [+FORMAT]。
-
-%F
-%T
-%Y
-%m
-%d
-%H
-%M
-%S
-%s 时间戳，从1970.1.1(unix元年)到命令执行时经历的秒数
-
-~]# date
-Mon Oct 21 00:51:45 CST 2019
-~]# date +%F
-2019-10-21
-~]# date +%T
-00:52:34
-~]# date +%F +%T
-date: extra operand ‘+%T’
-Try &#39;date --help&#39; for more information.
-
-~]# date +&#39;%F %T&#39;
-2019-10-21 00:22:56
-
-设置日期时间：date MMDDhhmm[[CC]YY]
-如果不写年，则表示计算机当前的时间年份。
-~]# date 10271108
-Sun Oct 27 11:08:00 CST 2019
-
-[[CC]YY] 表示年，可以是2位或4位
-clock/hwclock 硬件时钟
-查询和设置硬件时钟。主板上有个纽扣电池给硬件供电，即使关机了。
-~]# hwclock --set --date=&quot;2011-08-14 16:45:05&quot;
-
-hwclock 和 clock 是同一个命令。一个是硬连接、一个是软连接。
-~]# which clock
-/usr/sbin/clock
-~]# file /usr/sbin/clock
-/usr/sbin/clock: symbolic link to `hwclock&#39;
-~]# which hwclock
-/usr/sbin/hwclock
-~]# file /usr/sbin/hwclock
-/usr/sbin/hwclock: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, BuildID[sha1]=f3cee5ecdad7f100e9e0a46ff922ec2c60abb6e6, stripped
-
--s, --hctosys: 根据硬件时间设置系统时间。
--w, --systohc: 根据系统时间设置硬件时间。
-
-同步远程时间
-ntp常用服务器：
-
-中国国家授时中心：210.72.145.44
-NTP服务器(上海) ：ntp.api.bz
-
-~]# yum -y install ntpdate
-~]# ntpdate -u ntp.api.bz
-
-cal 日历
-用法：cal [[month] year]
-~]# cal 11 19
-     November 19
-Su Mo Tu We Th Fr Sa
-          1  2  3  4
- 5  6  7  8  9 10 11
-12 13 14 15 16 17 18
-19 20 21 22 23 24 25
-26 27 28 29 30
-
-课外作用，学习 which, whereis who w 命令]]></description>
-        </item>
-        <item>
-            <title><![CDATA[4.根文件系统和目录结构及bash特性]]></title>
-            <link>https://www.banli17.com/linux/4.html</link>
-            <guid>https://www.banli17.com/linux/4.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
-            <description><![CDATA[Linux根文件系统和目录结构及bash特性
-10、Linux目录结构和根文件系统全面讲解
-Linux: glibc
-程序编译方式：
-
-动态链接: 程序执行时会去引用特定路径下的库文件，多个程序可以共享库文件，但是移植的机器需要有这个库文件。
-静态编译: 程序编译就将库文件打包进去了，体积会大，如果本机多个程序都这样做，会占用较大体积。
-
-进程的类型：
-
-终端： 硬件设备，关联一个用户接口
-
-与终端相关：通过终端启动
-与终端无关：操作引导启动过程当中自动启动
-操作系统的组成：
-
-静态: kernel, application
-文件系统： 层级结构
-
-FHS: Filesystem Hierarchy Standard 文件层级标准
-
-/bin 所有用户可用的基本命令程序文件
-/sbin 供系统管理使用的工具程序
-/boot 引导加载器必须用到的各静态文件：kernel, initramfs(initrd), grub 等
-/dev 存储特殊文件或设备文件
-设备有两种类型：字符设备(键盘，一个字符一个字符发送，线性设备，有时序)、块设备(硬盘，将字符打包后发送，随机设备)
-/etc  系统程序的配置文件，只能是静态文件，不能是可执行文件
-/home 普通用户家目录的集中位置(可选)
-/root 管理员的家目录：可选。管理员不应该登录系统。
-/lib  为系统启动或根文件系统上的应用程序(/bin 、 /sbin等)提供共享库，以及为内核提供内核模块
-
-libc.so.* 动态链接的 C 库
-ld*: 运行时链接器/加载器
-modules: 用于存储内核模块的目录
-
-/lib64 64位系统特有的存放64位共享库的路径
-/media 便携式设备挂载点，cdrom, floppy 等
-/mnt 其它文件系统的临时挂载点
-/opt 附加(第三方)应用程序的安装位置: 可选路径
-/srv  当前主机为服务提供的数据
-/tmp 为那些会产生临时文件的程序提供的用于存储临时文件的目录，可供所有用户执行写入操作，有特殊权限
-/usr  usr hierarchy 全局共享的只读数据路径
-
-bin sbin lib lib64
-include: c程序头文件
-share: 命令手册页和自带文档等架构特有的文件的存储位置
-local: 另一个层级目录
-X11R6: X-Window程序的安装位置
-src:
-
-/usr/local 让系统管理员安装本地应用程序，也通常用于安装第三方程序
-/var 存储经常发生变化的数据的目录，如日志
-
-log
-
-/proc 基于内存的虚拟文件系统(临时的)，用于为内核及进程存储其相关信息，它们多为内核参数，例如 net.ipv4.ipforward 虚拟为 net/ipv4/ipforward 存储于 /proc/sys/
-/sys sysfs 虚拟文件系统提供了一种必 proc 更为理想的访问内核数据的途径，其主要作用在于为管理linux设备提供了一种统一模型的接口
+            <title><![CDATA[let 和 const]]></title>
+            <link>https://www.banli17.com/es6/let_const.html</link>
+            <guid>https://www.banli17.com/es6/let_const.html</guid>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <description><![CDATA[ES6 系列之 let 和 const
+var 的问题
+
+变量提升
+循环问题
+
+for (var i = 0; i &lt; 2; i++) {
+    div[i].onClick = function() {
+        console.log(i);
+    };
+}
+console.log(i); // 2
+
+所以 es6 引入了块级作用域。存在于：函数内部、{} 中。
+let 和 const
+
+不会被提升，在声明前使用会报错
+重复声明报错
+不绑定全局作用域，即不会挂载到 window 上
+const 不能修改绑定，但允许修改值(对象时)
+
+临时死区
+临时死区(Temporal Dead Zone)，简称 TDZ。
+let 和 const 声明的变量不会提升到作用域顶部，在声明前访问会报错。
+js 引擎在扫描变量时，会将 var 声明提前，let 和 const 放在 TDZ 中，在访问 TDZ 中变量会发生错误，只有执行过变量声明语句后，变量才会从 TDZ 中移出，才可以访问。
+{
+    console.log(a); // 报错，a 还在 TDZ 中
+    let a = 1; // a 从 TDZ 中移出
+}
+
+循环
+for (let i = 0; i &lt; 3; i++) {
+    div[i].onClick = function() {
+        console.log(i);
+    };
+}
+
+上面是 重复定义 i? 应该报错？ let 声明在循环内行为在标准中专门定义的。
+let 会创建一个隐藏的作用域。每次迭代会创建一个新变量，并将之前同名变量的值赋值给新变量进行初始化。
+如果用 const 会报错，因为在循环中 const a = 0; 之后尝试赋新值初始化。
+for in 循环也是一样的，用 let 会创建新的绑定。
+for (let i in o) {
+    div[i].onClick = function() {
+        console.log(i);
+    };
+}
+
+Babel 编译 let 和 const
+// example 1
+let value = 1;
+// 编译后
+var value = 1;
+
+// example 2
+if (false) {
+    let value = 1;
+}
+// 编译后
+if (false) {
+    var _value = 1;
+}
+
+// example 3
+let value = 1;
+{
+    let value = 2;
+}
+value = 3;
+// 编译后
+var value = 1;
+{
+    var _value = 2;
+}
+value = 3;
+
+// example 4
+var funcs = [];
+for (let i = 0; i &lt; 10; i++) {
+    funcs[i] = function() {
+        console.log(i);
+    };
+}
+// 编译后
+var funcs = [];
+
+var loop = function loop(i) {
+    funcs[i] = function() {
+        console.log(i);
+    };
+};
+
+for (var i = 0; i &lt; 10; i++) {
+    _loop(i);
+}
+
+// example 5
+for (let i = 0; i &lt; 3; i++) {
+    let i = "abc";
+    console.log(i); // 输出 3 次 abc，上面两个 i是不同的
+}
+// 编译后，因为没有必要为 i 新建作用域
+for (var i = 0; i &lt; 3; i++) {
+    var _i = "abc";
+    console.log(_i); // 输出 3 次 abc，上面两个 i是不同的
+}
+
+总结
+
+var 的问题： 挂载全局，提升，多次声明覆盖，循环问题
+什么是临时死区? let const 声明的变量会进入临时死区，代码执行后才可访问。
+let 循环的过程中如何执行？声明新变量，赋予旧值。所以 const 会报错，因为要赋值。
+babel 如何编译 let const？
+
+babel 在线编译工具
 ]]></description>
         </item>
         <item>
-            <title><![CDATA[5.用户组管理及用户权限]]></title>
-            <link>https://www.banli17.com/linux/5.html</link>
-            <guid>https://www.banli17.com/linux/5.html</guid>
-            <pubDate>Wed, 29 Jan 2020 08:19:44 GMT</pubDate>
-            <description><![CDATA[Linux用户组管理及用户权限]]></description>
+            <title><![CDATA[简介]]></title>
+            <link>https://www.banli17.com/es6/</link>
+            <guid>https://www.banli17.com/es6/</guid>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <description><![CDATA[简介
+jQuery 2.0.3 源码分析
+参考资料
+
+jQuery 2.0.3 源码分析系列
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[简介]]></title>
+            <link>https://www.banli17.com/jquery/</link>
+            <guid>https://www.banli17.com/jquery/</guid>
+            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <description><![CDATA[简介
+jQuery 2.0.3 源码分析
+参考资料
+
+jQuery 2.0.3 源码分析系列
+]]></description>
         </item>
     </channel>
 </rss>
