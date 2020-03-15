@@ -224,3 +224,14 @@ Scrapy 是一个十分强大的爬虫框架，依赖的库比较多，至少需�
 3. headers
 4. 带参数
 5. response 的值，r.json()
+
+## 爬虫数据采集分类
+
+1. 按照采集对象分类
+    - 全网采集(baidu/google)
+    - 全站采集
+    - 具体网站指定分类数据采集
+2. 采集方案分类
+    - 利用 http 协议采集 - 页面分析
+    - 利用 API 接口采集 - app 数据采集
+    - 利用目标网站公开的 api 采集 - 微博、github、twitter、facebook
