@@ -4,43 +4,24 @@
         <title></title>
         <link>https://www.banli17.com</link>
         <description></description>
-        <lastBuildDate>Tue, 10 Mar 2020 12:17:51 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 27 Mar 2020 03:26:08 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="https://www.banli17.com/feed.atom" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[数据结构与算法]]></title>
-            <link>https://www.banli17.com/algo/1.html</link>
-            <guid>https://www.banli17.com/algo/1.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
-            <description><![CDATA[数据结构与算法
-1
-职业训练：拆分知识点、刻意练习、反馈(学习别人、被别人指点)
-切题四件套(单个题目)：
-
-Clarification: 多看题目，反复沟通，保证理解正确
-Possible solutions: 列出所有可能的解法
-
-compare(time/space): 比较时空复杂度
-optimal(加强)：找最优
-
-Coding 多些
-Test Case: 测试用例
-
-五步刷题法：
-
-第一遍： 5 分钟读题+思考，没思路就直接看解法：注意！多解法，比较解法优劣。背诵
-第二遍: 马上自己写 -&gt; leetcode 提交；各种解法比较(执行时间)、体会 -&gt; 优化！
-第三遍: 过了一天后，练习
-第四遍 : 够了一周后，练习
-第五遍 : 面试前，练习
-
-误区： 不要只练习一遍
-https://naotu.baidu.com/file/b832f043e2ead159d584cca4efb19703?token=7a6a56eb2630548c
-https://naotu.baidu.com/file/0a53d3a5343bd86375f348b2831d3610?token=5ab1de1c90d5f3ec
-2-1 编辑器、代码风格
-快捷键，google 代码风格 ，自顶向下代码
-2-2 时间复杂度
+            <title><![CDATA[Home]]></title>
+            <link>https://www.banli17.com/</link>
+            <guid>https://www.banli17.com/</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
+            <description><![CDATA[https://www.cnblogs.com/andong2015/p/9981363.html]]></description>
+        </item>
+        <item>
+            <title><![CDATA[算法复杂度分析]]></title>
+            <link>https://www.banli17.com/algo/01_complexity.html</link>
+            <guid>https://www.banli17.com/algo/01_complexity.html</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
+            <description><![CDATA[算法复杂度分析
+时间复杂度
 大 O 表示法
 O(1)
 O(N)
@@ -54,36 +35,352 @@ O(K^n)
 二分查找 O(logn)
 归并排序： O(nlogn)
 
-如何理解算法时间复杂度的表示法https://www.zhihu.com/question/21387264
+如何理解算法时间复杂度的表示法 https://www.zhihu.com/question/21387264
 Master theorem http://en.wikipedia.org/wiki/Mastertheorem(analysisofalgorithms)
 主定理http://zh.wikipedia.org/wiki/%E4%B8%BB%E5%AE%9A%E7%90%86
 ]]></description>
         </item>
         <item>
-            <title><![CDATA[Home]]></title>
-            <link>https://www.banli17.com/</link>
-            <guid>https://www.banli17.com/</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
-            <description><![CDATA[https://www.cnblogs.com/andong2015/p/9981363.html]]></description>
+            <title><![CDATA[数组、链表、跳表]]></title>
+            <link>https://www.banli17.com/algo/02_%E6%95%B0%E7%BB%84_%E9%93%BE%E8%A1%A8_%E8%B7%B3%E8%A1%A8.html</link>
+            <guid>https://www.banli17.com/algo/02_%E6%95%B0%E7%BB%84_%E9%93%BE%E8%A1%A8_%E8%B7%B3%E8%A1%A8.html</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
+            <description><![CDATA[数组、链表、跳表
+概念
+Array 数组
+数组的特点是开辟一段内存连续的地址，可以通过硬件内存管理器来访问，它可以保证访问某个元素的时间复杂度都是 O(1)。
+数组存在的问题：
+
+插入时后面元素都要向后移动一位 O(n)
+删除时将后面的元素往前移动一位 O(n)，最后一个设置为 null，唤起内存回收机制
+
+ArrayList 支持扩容，如果容量不够，会新建一个 2 倍大小的数组，将旧的数组拷贝过去。删除时也会移动位置。 删除、插入时间复杂度还是 O(n)。
+所以 Array 时间复杂度为：
+prepend    O(1)
+append O(1)
+lookup O(1)
+insert O(n)
+delete O(n)
+
+链表出现是为了解决数组的插入和删除操作时间复杂度高的问题。它的特点是：
+
+有头 head、尾 tail 节点。
+节点有 next 指针指向下一个元素，最后一个元素的 next 指针指向 None。
+
+时间复杂度分析：
+
+插入: 只需要将前一个节点的 next 指向插入元素，插入元素的 next 指针指向下一个节点即可。时间复杂度是 O(1)。
+删除: 前一个节点的 next 指向要删除元素的下个节点。时间复杂度是 O(1)。
+查找：时间复杂度为 O(n)。
+
+双向链表， java 里的 LinkedList
+循环链表
+插入节点： O(1)
+删除节点: O(1)
+查找节点: O(n)
+prepend  O(1)
+append  O(1)
+lookup  O(n)
+insert  O(1)
+delete  O(1)
+
+跳表：为了优化链表的缺陷（随机访问某个元素的时间太长 O(n）)。
+跳表的思想是：
+
+升维思想，多维空间
+空间换时间
+
+建立索引级别
+索引的高度： logn，每层索引遍历的节点个数 3
+在跳表中查询任意数据的时间复杂度就是 O(logn)
+1                        第k 级索引
+1       5
+1   3   5   7
+1 2 3 4 5 6 7 8 9
+
+n/2 n/4 n/8 第 k 级索引节点个数是 n/(2^k)
+假设索引有 h 级，最高级的索引有 2 个节点，n/(2^h) = 2 从而 h = log2(n) - 1
+现实中跳表会随着增加和删除，索引跨步会改变，需要更新索引，维护索引成本高
+空间复杂度
+2 个节点抽 1 个 n/2 n/4 n/8 8 4 2
+3 个抽一个 n/3 n/9 n/27 9 3 1
+空间复杂度 O(n)
+工程中的应用
+LRU Cache - Linked List 146
+题目
+283.Move Zeroes
+题目：https://leetcode-cn.com/problems/move-zeroes/
+
+罗列解法
+
+第一次循环将非 0 移动到前面，第二次循环后面 0
+一次循环，交换位置
+一次循环，将前面的值设置为当前值，当前位置设置为 0
+
+解法1
+def move_zero(nums):
+    i = 0
+    for l in nums:
+        if l != 0:
+            nums[i] = l
+            i += 1
+    for x in range(i, len(nums)):
+        nums[x] = 0
+    return nums
+
+解法2
+def move_zero(nums):
+    i = 0
+    for n in range(len(nums)):
+        if nums[n] != 0:
+            nums[n], nums[i] = nums[i], nums[n]
+            i += 1
+    return nums
+
+解法3
+def move_zero(nums):
+    i = -1
+    for n in range(len(nums)):
+        if nums[n] != 0:
+            i += 1
+            nums[i] = nums[n]
+            if (i != n):
+                nums[n] = 0
+    return nums
+
+11.装最多水问题
+题目：https://leetcode-cn.com/problems/container-with-most-water/
+
+解法
+
+暴力法，两层循环求最大值 O(n^2)，第二层循环从 i+1 开始
+两边收敛(左右夹逼)法，一层循环，两个指针往里收，如果比外层高度小不用考虑，高度大才比较。
+
+class Solution(object):
+暴力法，时间太长，未通过
+    def maxArea(self, height):
+        oldArea = 0
+        for i in range(0, len(height) - 1):
+            for j in range(i + 1, len(height) - 1):
+                area = min(height[j], height[i]) * (j - i)
+                if area > oldArea:
+                    oldArea = area
+        return oldArea
+
+收敛法
+    def maxArea2(self, height):
+        i = 0
+        j = len(height) - 1
+        r = 0
+        minHeight = 0
+        while i &lt; j:
+            if height[i] &lt; height[j]:
+                minHeight = height[i]
+                i += 1
+            else:
+                minHeight = height[j]
+                j -= 1
+            area = (j - i + 1) * minHeight
+            r = max(area, r)
+        return r
+
+s = Solution()
+print(s.maxArea2([1,8,6,2,5,4,8,3,7]))
+
+70.爬楼梯问题
+题目：https://leetcode-cn.com/problems/climbing-stairs/
+
+解法
+
+暴力? 不行
+找重复子问题，斐波拉契
+
+递推法，用3个变量不断前进
+class Solution(object):
+    def climbStairs(self, n):
+        if n &lt;= 2:
+            return n
+        f1, f2, f3 = 1, 2, 3
+        for i in range(3, n+1):
+            f3 = f1 + f2
+            f1 = f2
+            f2 = f3
+        return f3
+
+1.两数之和
+https://leetcode-cn.com/problems/two-sum/
+
+暴力法 两层循环
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        nums_len = len(nums)
+        for i in range(nums_len):
+            for j in range(i+1, nums_len):
+                if target == nums[i] + nums[j]:
+                    return [i, j]
+
+nums = [2, 7, 11, 15]
+target = 9
+s = Solution()
+r = s.twoSum(nums, target)
+print(r)
+
+15. 三数之和
+https://leetcode-cn.com/problems/3sum/
+和第1题类似， a + b = -c
+解法：
+- 暴力，三层循环 O(n^3)
+- hash表，O(n^2)， 循环两次，去哈希表里查结果 c
+- 左右夹逼 O(NlogN)，先排序，再 k i j，i j 往中间走
+class Solution(object):
+    def threeSum(self, nums):
+        list_r = []
+        nums.sort()
+        for i in range(0, len(nums)):
+            for j in range((i + 1), len(nums)):
+                for k in range((j + 1), len(nums)):
+                    if (nums[i] + nums[j] + nums[k] == 0) and ([nums[i], nums[j], nums[k]] not in list_r):
+                        list_r.append([nums[i], nums[j], nums[k]])
+        return list_r
+
+    def threeSum3(self, nums):
+        list_r = []
+        nums.sort()
+        for k in range(0, len(nums)):
+            i = k + 1
+            j = len(nums) - 1
+            while i &lt; j:
+                nums_sum = nums[k] + nums[i] + nums[j]
+                if nums_sum == 0:
+if [nums[i], nums[j], nums[k]] not in list_r:
+                    list_r.append([nums[i], nums[j], nums[k]])
+                    while(i&lt;j and nums[i]==nums[i+1]):
+                        i += 1
+                    while(i&lt;j and nums[j]==nums[j-1]):
+                        j-=1
+                    i += 1
+                    j -= 1
+                elif nums_sum &lt; 0:
+                    i += 1
+                else:
+                    j -= 1
+        return list_r
+
+s = Solution()
+
+r = s.threeSum3([-1,0,1,2,-1,-4])
+print(r)
+
+资料
+课后作业
+
+https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
+https://leetcode-cn.com/problems/rotate-array/
+https://leetcode-cn.com/problems/merge-two-sorted-lists/
+https://leetcode-cn.com/problems/merge-sorted-array/
+https://leetcode-cn.com/problems/two-sum/
+https://leetcode-cn.com/problems/move-zeroes/
+https://leetcode-cn.com/problems/plus-one/
+
+Linked List 实战题目
+
+https://leetcode.com/problems/reverse-linked-list/
+https://leetcode.com/problems/swap-nodes-in-pairs
+https://leetcode.com/problems/linked-list-cycle
+https://leetcode.com/problems/linked-list-cycle-ii
+https://leetcode.com/problems/reverse-nodes-in-k-group/
+
+练习题：
+
+https://leetcode.com/problems/reverse-linked-list/ 206
+
+方法 1 迭代法
+方法 2 递归
+方法 3 es6 https://leetcode.com/problems/reverse-linked-list/discuss/313728/Javascript-ES6-less-code-solution
+
+https://leetcode.com/problems/linked-list-cycle 141
+
+新建节点进行迭代：https://leetcode.com/problems/swap-nodes-in-pairs/discuss/284762/js-solution-faster-than-100
+
+暴力法，循环等 1s 没相遇就没有环
+将前面节点记录一下，然后查找。
+快慢指针: https://leetcode.com/problems/linked-list-cycle/discuss/371507/Javascript-Solutions-(using-Set-slow-and-fast-pointers)
+
+https://leetcode.com/problems/swap-nodes-in-pairs 24
+
+加一个头节点，防止赋值导致节点断裂的问题
+
+https://leetcode.com/problems/linked-list-cycle-ii
+https://leetcode.com/problems/reverse-nodes-in-k-group/
+]]></description>
         </item>
         <item>
-            <title><![CDATA[简介]]></title>
-            <link>https://www.banli17.com/algo/</link>
-            <guid>https://www.banli17.com/algo/</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
-            <description><![CDATA[简介
-数据结构与算法是一块非常不太好学会的内容，平时工作中业务开发也不太会用到，但是它是一门非常重要的基本功。学习它没有其它好的方法，只有反复的练习，加深记忆。
-学习资料
+            <title><![CDATA[栈、队列、优先队列、双端队列]]></title>
+            <link>https://www.banli17.com/algo/03_%E6%A0%88_%E9%98%9F%E5%88%97_%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97_%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97.html</link>
+            <guid>https://www.banli17.com/algo/03_%E6%A0%88_%E9%98%9F%E5%88%97_%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97_%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97.html</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
+            <description><![CDATA[栈、队列、优先队列、双端队列
+概念
+Stack 先进后出，添加，删除都是 O(1)，查询是 O(N)
+Queue 先进先出，添加、删除都是 O(1)，查询是 O(N)
+工程中一般用 双端队列 Deque(Double-End Queue)，头尾都可以出和入。添加删除都是 O(1)，查询是 O(N)。
+工程实现
+查询 Stack 等接口实现
+google 搜索 stack java 12 、java source stack download/source java stack
+栈的方法
+class Stack{
+    boolean empty()
+    E       peek()   查看栈顶元素
+    E       pop()
+    E       push(E item)
+    int     search(Object o)
+}
 
-极客时间：数据结构与算法之美
-极客时间：算法面试通关 40 讲
-]]></description>
+queue 是一个接口
+interface Queue{
+    // 有异常会抛出异常
+    add()
+    remove()
+    element()
+
+    // 有异常会返回一个值
+    offer(e)
+    poll()
+    peek()
+}
+
+优先队列 PriorityQueue
+插入操作 O(1)
+取出操作 O(logN) 好处: 按照元素的优先级取出
+底层具体实现多种多样和复杂，可以是 heap、bst、treap
+Vector 可变数组
+参考链接
+
+Java 的 PriorityQueue 文档
+Java 的 Stack 源码
+Java 的 Queue 源码
+Python 的 heapq
+高性能的 container 库
+
+预习题目
+https://leetcode-cn.com/problems/valid-parentheses/
+https://leetcode-cn.com/problems/min-stack/
+实战题目
+https://leetcode-cn.com/problems/largest-rectangle-in-histogram
+https://leetcode-cn.com/problems/sliding-window-maximum
+课后作业
+ 用 add first 或 add last 这套新的 API 改写 Deque 的代码
+ 分析 Queue 和 Priority Queue 的源码
+https://leetcode.com/problems/design-circular-deque
+https://leetcode.com/problems/trapping-rain-water/
+说明：改写代码和分析源码这两项作业，同学们需要在第 1 周的学习总结中完成。如果不熟悉 Java 语言，这两项作业可选做。]]></description>
         </item>
         <item>
             <title><![CDATA[数组]]></title>
             <link>https://www.banli17.com/algo/array.html</link>
             <guid>https://www.banli17.com/algo/array.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
             <description><![CDATA[数组
 数组在内存一般是连续存储的。
 操作
@@ -97,7 +394,7 @@ Master theorem http://en.wikipedia.org/wiki/Mastertheorem(analysisofalgorithms)
             <title><![CDATA[动态规划]]></title>
             <link>https://www.banli17.com/algo/dynamic-program.html</link>
             <guid>https://www.banli17.com/algo/dynamic-program.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
             <description><![CDATA[动态规划
 
 递归 + 记忆化 -&gt; 递推
@@ -199,10 +496,60 @@ https://github.com/banli17/practice/tree/master/algo
             </enclosure>
         </item>
         <item>
+            <title><![CDATA[简介]]></title>
+            <link>https://www.banli17.com/algo/</link>
+            <guid>https://www.banli17.com/algo/</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
+            <description><![CDATA[简介
+数据结构与算法是一块非常不太好学会的内容，平时工作中业务开发也不太会用到，但是它是一门非常重要的基本功。学习它没有其它好的方法，只有反复的练习，加深记忆。
+学习资料
+
+极客时间：数据结构与算法之美
+极客时间：算法面试通关 40 讲
+
+学习方法
+职业训练：拆分知识点、刻意练习、反馈(学习别人、被别人指点)
+切题四件套(单个题目)：
+
+Clarification: 多看题目，反复沟通，保证理解正确
+Possible solutions: 列出所有可能的解法
+
+compare(time/space): 比较时空复杂度
+optimal(加强)：找最优
+
+Coding 多些
+Test Case: 测试用例
+
+五步刷题法：
+
+第一遍： 5 分钟读题+思考，没思路就直接看解法：注意！多解法，比较解法优劣。背诵
+第二遍: 马上自己写 -&gt; leetcode 提交；各种解法比较(执行时间)、体会 -&gt; 优化！
+第三遍: 过了一天后，练习
+第四遍 : 够了一周后，练习
+第五遍 : 面试前，练习
+
+误区： 不要只练习一遍
+https://naotu.baidu.com/file/b832f043e2ead159d584cca4efb19703?token=7a6a56eb2630548c
+https://naotu.baidu.com/file/0a53d3a5343bd86375f348b2831d3610?token=5ab1de1c90d5f3ec
+编辑器、代码风格
+快捷键，google 代码风格 ，自顶向下代码]]></description>
+        </item>
+        <item>
+            <title><![CDATA[大前端笔记]]></title>
+            <link>https://www.banli17.com/browser/</link>
+            <guid>https://www.banli17.com/browser/</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
+            <description><![CDATA[大前端笔记
+第一阶段
+木桶理论
+基础：印记中文
+简历写详细，如熟悉某某原理、渲染机制]]></description>
+        </item>
+        <item>
             <title><![CDATA[堆和栈]]></title>
             <link>https://www.banli17.com/algo/heap-stack.html</link>
             <guid>https://www.banli17.com/algo/heap-stack.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
             <description><![CDATA[堆和栈
 
 stack 数组或单双链表 查 O(n) 插入，删除 O(1)
@@ -233,7 +580,7 @@ do while 循环 replace () [] {}
             <title><![CDATA[优先队列]]></title>
             <link>https://www.banli17.com/algo/priority-queue.html</link>
             <guid>https://www.banli17.com/algo/priority-queue.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
             <description><![CDATA[优先队列
 优先队列(PriorityQueue)
 正常⼊、按照优先级出
@@ -254,55 +601,10 @@ https://leetcode.com/problems/sliding-window-maximum/
 ]]></description>
         </item>
         <item>
-            <title><![CDATA[链表]]></title>
-            <link>https://www.banli17.com/algo/linked-list.html</link>
-            <guid>https://www.banli17.com/algo/linked-list.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
-            <description><![CDATA[链表
-Linked List
-为了解决数组的插入和删除操作时间复杂度高的问题。
-head tail 最后一个节点的 next 指向 null
-
-插入: 前一个节点的 next 指向插入元素，插入元素的 next 指向下一个节点。时间复杂度是 O(1)
-删除: 前一个节点的 next 指向要删除元素的下个节点。时间复杂度是 O(1)
-
-但是查找的时间为 O(n)。
-双向链表
-
-lookup: O (n)
-插入: O(1) insert prepend append
-删除: O(1) delete
-空间复杂度 O(n)
-
-练习题：
-
-https://leetcode.com/problems/reverse-linked-list/ 206
-
-方法 1 迭代法
-方法 2 递归
-方法 3 es6 https://leetcode.com/problems/reverse-linked-list/discuss/313728/Javascript-ES6-less-code-solution
-
-https://leetcode.com/problems/linked-list-cycle 141
-
-新建节点进行迭代：https://leetcode.com/problems/swap-nodes-in-pairs/discuss/284762/js-solution-faster-than-100
-
-暴力法，循环等 1s 没相遇就没有环
-将前面节点记录一下，然后查找。
-快慢指针: https://leetcode.com/problems/linked-list-cycle/discuss/371507/Javascript-Solutions-(using-Set-slow-and-fast-pointers)
-
-https://leetcode.com/problems/swap-nodes-in-pairs 24
-
-加一个头节点，防止赋值导致节点断裂的问题
-
-https://leetcode.com/problems/linked-list-cycle-ii
-https://leetcode.com/problems/reverse-nodes-in-k-group/
-]]></description>
-        </item>
-        <item>
             <title><![CDATA[树和图]]></title>
             <link>https://www.banli17.com/algo/tree.html</link>
             <guid>https://www.banli17.com/algo/tree.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
             <description><![CDATA[树和图
 理论
 链表是特殊的树(后继节点可以多个)，树是特殊的图(可以乱指)。
@@ -324,76 +626,17 @@ in-order 中序遍历（左、根、右），应该是一个升序的 array。
             </enclosure>
         </item>
         <item>
-            <title><![CDATA[v8 工作原理]]></title>
-            <link>https://www.banli17.com/browser/v8.html</link>
-            <guid>https://www.banli17.com/browser/v8.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
-            <description><![CDATA[v8 工作原理
-垃圾回收
-栈中的垃圾回收
-执行栈中有一个记录当前执行状态的指针（ESP)，指向栈顶的函数执行上下文，函数执行完成后，ESP 会下移，函数执行上下文就是无效内存了，如果调用新函数，这块内存会被覆盖掉，用来存放新函数的执行上下文。
-所以说，当一个函数执行完后，JS 引擎会通过向下移动 ESP 来销毁该函数保存在栈中的执行上下文。
-堆中的垃圾回收
-堆中的垃圾回收，就用到了 JS 的垃圾回收器。
-代际假说有两个特点：
-
-大部分对象在内存中存在的时间很短。
-不死的对象，会存活的更久。
-
-V8 将堆分为新生代和老生代两个区域，新生代存放生存时间短的对象，老生代存放生存时间长的对象。
-新生区通常只支持 1-8M 容量，老生区支持的容量大。V8 分别堆这两个区使用了不同的垃圾回收器。
-
-副垃圾回收器，负责新生代的垃圾回收。
-主垃圾回收器，负责老生代的垃圾回收。
-
-垃圾回收器工作流程
-垃圾回收器的工作流程是一致的：
-
-标记空间中活动对象和非活动对象。
-回收非活动对象所占用的内存。即清理标记为非活动对象的内存。
-内存整理，通常垃圾回收后，内存会变得不连续，有内存碎片。
-
-副垃圾回收器
-副垃圾回收器主要负责新生区的垃圾回收，通常小的对象分配到这里。
-新生代中用 Scavenge 算法来处理，即把新生区对半分为两个区域，一般是对象区域，一半是空闲区域。新加入的对象会存放在对象区域，当对象区域快满时，就需要一次垃圾回收。
-垃圾回收过程中，首先标记对象区域中的垃圾，标记完成后，进行垃圾清理阶段，副垃圾回收器会把存活的对象复制到空闲区域，同时将它们有序的排列起来，所以这个复制过程相当于是内存整理。
-复制完成后，对象区域和空闲区域进行反转，这种角色反转的操作能让新生代的两块内存可以无限重复使用下去。
-因为 Scavenge 算法，每次要复制存活对象到空闲区域，复制需要时间成本，所以如果新生区空间太大，每次清理需要很长时间，为了执行效率，新生区会设置的比较小。
-但是由于新生区空间不大，会很快被装满，所以 JS 引擎采用对象晋升策略，即经过两次垃圾回收还存活的对象，会被移动到老生区中。
-主垃圾回收器
-主垃圾回收器负责老生区的垃圾回收，除了新生区晋升的对象，一些大的对象也会直接分配到老生区，所以老生区中的对象有两个特点：占用空间大、存活时间长。
-如果使用 Scavenge 算法，复制大对象会花很长时间，同时还会浪费一半的空间。所以主垃圾回收器采用的是标记-清除(Mark-Sweep)算法。
-
-标记过程，从根元素开始，进行递归遍历，能到达的元素就标记为活动对象，没有到达的就是垃圾数据。
-垃圾清除
-
-但是上面的标记-清除算法，如果多次执行后，会有大量的内存碎片，会导致大对象无法分配到足够的连续内存。所以有产生了一个新的算法标记-整理(Mark-Compact)，是直接将活动对象从开始进行排列，然后将边界后面的内存一次清空。
-全停顿
-JS 是运行在主线程上的，一旦执行垃圾回收算法，JS 脚本会停止执行，等待垃圾回收完毕后再恢复执行，这种行为叫做全停顿(Stop-The-World)。
-如果堆中数据 1.5G，V8 清理垃圾的时间会超过 1s。这样会让应用的性能和响应能力下降。新生代小，影响不大，但是老生代就不能这样了，所以为了降低卡顿，V8 将标记过程分为一个个子标记过程，同时让垃圾回收标记和 JS 应用逻辑交替执行，直到标记阶段完成，这个算法叫增量标记算法(Incremental Marking)。
-新生代和老生代的标记过程是同一过程，之后新生代把存活的数据移动到空闲区，老生代把死去的对象加到空闲列表中。
-V8 还维护了一个空闲列表，也就是没有被使用的空闲空间列表，垃圾清理过程就是把没有标记的添加到空闲列表中！
-增量标记会受到中间穿插的 js 应用逻辑影响么？会造成标记结果不全或者错误么？
-不全没关系，新产生的垃圾下次再回收，分配内存使用空闲列表里面的。
-怎么看内存泄露
-
-一般是感官上的长时间运行页面卡顿，猜可能会有内存泄漏。
-使用 chrome 的 Performance 面板，观察内存变化 如何多次垃圾回收后，整体趋势是向上，就存在内部泄漏的可能！
-确定不使用的临时变量置为 null，当前 es6 普及场景下少使用闭包也是一种方法。
-
-可能导致内存泄露
-
-全局变量过大
-定时器没有清除
-闭包
-DOM 引用
-]]></description>
+            <title><![CDATA[垃圾回收机制]]></title>
+            <link>https://www.banli17.com/browser/gc.html</link>
+            <guid>https://www.banli17.com/browser/gc.html</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
+            <description><![CDATA[垃圾回收机制]]></description>
         </item>
         <item>
             <title><![CDATA[宏观视角下的浏览器]]></title>
             <link>https://www.banli17.com/browser/macro.html</link>
             <guid>https://www.banli17.com/browser/macro.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
             <description><![CDATA[宏观视角下的浏览器
 Chrome 架构
 查看 Chrome 进程情况： Chrome 又上角选项 -&gt; 更多工具 -&gt; 任务管理器。
@@ -582,15 +825,83 @@ text/html: 继续导航
 渲染流程
 
 深入了解现代 Web 浏览器（第 1 部分）
-]]></description>
+
+openId omvMN5KyrfvTDD0iQGbhY8M_sZmg
+userInfo {&quot;nickName&quot;:&quot;板栗&quot;,&quot;gender&quot;:1,&quot;language&quot;:&quot;zhCN&quot;,&quot;city&quot;:&quot;Qianjiang&quot;,&quot;province&quot;:&quot;Hubei&quot;,&quot;country&quot;:&quot;China&quot;,&quot;avatarUrl&quot;:&quot;https://wx.qlogo.cn/mmopen/vi32/DYAIOgq83epCVsZFRYQ0yGjw5HMorkBJFbub7RwatYdSYS6W0MWsmACPfSrZlUVfic6ibBRtNbG5Gd3IsAZk7F9Q/132&quot;}]]></description>
             <enclosure url="https://www.banli17.com/imgs/1-1-0.png">
             </enclosure>
+        </item>
+        <item>
+            <title><![CDATA[v8 工作原理]]></title>
+            <link>https://www.banli17.com/browser/v8.html</link>
+            <guid>https://www.banli17.com/browser/v8.html</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:07 GMT</pubDate>
+            <description><![CDATA[v8 工作原理
+垃圾回收
+栈中的垃圾回收
+执行栈中有一个记录当前执行状态的指针（ESP)，指向栈顶的函数执行上下文，函数执行完成后，ESP 会下移，函数执行上下文就是无效内存了，如果调用新函数，这块内存会被覆盖掉，用来存放新函数的执行上下文。
+所以说，当一个函数执行完后，JS 引擎会通过向下移动 ESP 来销毁该函数保存在栈中的执行上下文。
+堆中的垃圾回收
+堆中的垃圾回收，就用到了 JS 的垃圾回收器。
+代际假说有两个特点：
+
+大部分对象在内存中存在的时间很短。
+不死的对象，会存活的更久。
+
+V8 将堆分为新生代和老生代两个区域，新生代存放生存时间短的对象，老生代存放生存时间长的对象。
+新生区通常只支持 1-8M 容量，老生区支持的容量大。V8 分别堆这两个区使用了不同的垃圾回收器。
+
+副垃圾回收器，负责新生代的垃圾回收。
+主垃圾回收器，负责老生代的垃圾回收。
+
+垃圾回收器工作流程
+垃圾回收器的工作流程是一致的：
+
+标记空间中活动对象和非活动对象。
+回收非活动对象所占用的内存。即清理标记为非活动对象的内存。
+内存整理，通常垃圾回收后，内存会变得不连续，有内存碎片。
+
+副垃圾回收器
+副垃圾回收器主要负责新生区的垃圾回收，通常小的对象分配到这里。
+新生代中用 Scavenge 算法来处理，即把新生区对半分为两个区域，一般是对象区域，一半是空闲区域。新加入的对象会存放在对象区域，当对象区域快满时，就需要一次垃圾回收。
+垃圾回收过程中，首先标记对象区域中的垃圾，标记完成后，进行垃圾清理阶段，副垃圾回收器会把存活的对象复制到空闲区域，同时将它们有序的排列起来，所以这个复制过程相当于是内存整理。
+复制完成后，对象区域和空闲区域进行反转，这种角色反转的操作能让新生代的两块内存可以无限重复使用下去。
+因为 Scavenge 算法，每次要复制存活对象到空闲区域，复制需要时间成本，所以如果新生区空间太大，每次清理需要很长时间，为了执行效率，新生区会设置的比较小。
+但是由于新生区空间不大，会很快被装满，所以 JS 引擎采用对象晋升策略，即经过两次垃圾回收还存活的对象，会被移动到老生区中。
+主垃圾回收器
+主垃圾回收器负责老生区的垃圾回收，除了新生区晋升的对象，一些大的对象也会直接分配到老生区，所以老生区中的对象有两个特点：占用空间大、存活时间长。
+如果使用 Scavenge 算法，复制大对象会花很长时间，同时还会浪费一半的空间。所以主垃圾回收器采用的是标记-清除(Mark-Sweep)算法。
+
+标记过程，从根元素开始，进行递归遍历，能到达的元素就标记为活动对象，没有到达的就是垃圾数据。
+垃圾清除
+
+但是上面的标记-清除算法，如果多次执行后，会有大量的内存碎片，会导致大对象无法分配到足够的连续内存。所以有产生了一个新的算法标记-整理(Mark-Compact)，是直接将活动对象从开始进行排列，然后将边界后面的内存一次清空。
+全停顿
+JS 是运行在主线程上的，一旦执行垃圾回收算法，JS 脚本会停止执行，等待垃圾回收完毕后再恢复执行，这种行为叫做全停顿(Stop-The-World)。
+如果堆中数据 1.5G，V8 清理垃圾的时间会超过 1s。这样会让应用的性能和响应能力下降。新生代小，影响不大，但是老生代就不能这样了，所以为了降低卡顿，V8 将标记过程分为一个个子标记过程，同时让垃圾回收标记和 JS 应用逻辑交替执行，直到标记阶段完成，这个算法叫增量标记算法(Incremental Marking)。
+新生代和老生代的标记过程是同一过程，之后新生代把存活的数据移动到空闲区，老生代把死去的对象加到空闲列表中。
+V8 还维护了一个空闲列表，也就是没有被使用的空闲空间列表，垃圾清理过程就是把没有标记的添加到空闲列表中！
+增量标记会受到中间穿插的 js 应用逻辑影响么？会造成标记结果不全或者错误么？
+不全没关系，新产生的垃圾下次再回收，分配内存使用空闲列表里面的。
+怎么看内存泄露
+
+一般是感官上的长时间运行页面卡顿，猜可能会有内存泄漏。
+使用 chrome 的 Performance 面板，观察内存变化 如何多次垃圾回收后，整体趋势是向上，就存在内部泄漏的可能！
+确定不使用的临时变量置为 null，当前 es6 普及场景下少使用闭包也是一种方法。
+
+可能导致内存泄露
+
+全局变量过大
+定时器没有清除
+闭包
+DOM 引用
+]]></description>
         </item>
         <item>
             <title><![CDATA[css 常用]]></title>
             <link>https://www.banli17.com/css/</link>
             <guid>https://www.banli17.com/css/</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <pubDate>Fri, 27 Mar 2020 03:26:08 GMT</pubDate>
             <description><![CDATA[css 常用
 滚动条样式
 ::-webkit-scrollbar {
@@ -599,17 +910,10 @@ text/html: 继续导航
 ]]></description>
         </item>
         <item>
-            <title><![CDATA[垃圾回收机制]]></title>
-            <link>https://www.banli17.com/browser/gc.html</link>
-            <guid>https://www.banli17.com/browser/gc.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
-            <description><![CDATA[垃圾回收机制]]></description>
-        </item>
-        <item>
             <title><![CDATA[兼容性问题]]></title>
             <link>https://www.banli17.com/css/compatible.html</link>
             <guid>https://www.banli17.com/css/compatible.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <pubDate>Fri, 27 Mar 2020 03:26:08 GMT</pubDate>
             <description><![CDATA[兼容性问题
 line-height android 不居中
 https://www.zhihu.com/question/39516424
@@ -643,69 +947,472 @@ iphone 6p 10 系统，卡片商品名称内容不显示，
 ]]></description>
         </item>
         <item>
-            <title><![CDATA[css 揭秘]]></title>
-            <link>https://www.banli17.com/css/css-secret.html</link>
-            <guid>https://www.banli17.com/css/css-secret.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
-            <description><![CDATA[css 揭秘
-1. 透明边框
-背景实际会从边框处开始渲染，所以如果 border rgba 会有问题。
-解决方法是 background-clip:padding-box
-2. 多边框
-方案 1: box-shadow: 右 下 模糊 扩展 色。
-注意： 阴影不影响盒子渲染，阴影无法触发盒子鼠标事件。可以通过 inset 解决。
-方案 2: outline 适合 2 层边框，+border，而且支持 dashed。
-而且可以通过 outline-offset 调整位置，支持负数。
-3. 灵活的背景定位
-图片要定位到有下角。
-background-position: right 20px bottom 20px;
-还一种方法是 calc，计算到左上角的距离。
-calc(100% - 20px) 注意空格
-background-position 默认是从 padding-box 定位的，可以通过 background-origin 修改。
-4. 边框内圆角
-outline 不会跟着 border-radius 走，box-shadow 会。
-所以用 box-shadow 来填满空隙。所以如果边框小于空隙处半径，则无法实现
-5. 条纹背景]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Deferred 概念和源码解析]]></title>
-            <link>https://www.banli17.com/jquery/deferred.html</link>
-            <guid>https://www.banli17.com/jquery/deferred.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
-            <description><![CDATA[Deferred 概念和源码解析
-promise A+ 规范
-Deferred API
+            <title><![CDATA[less 总结]]></title>
+            <link>https://www.banli17.com/css/less.html</link>
+            <guid>https://www.banli17.com/css/less.html</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:08 GMT</pubDate>
+            <description><![CDATA[less 文档阅读总结
+总览
+less 的概念包括：
 
-jQuery.Deferred() 返回一个对象用来注册多个回调，回调队列，调用回调队列，并转达任何同步或异步函数的成功或失败状态
-deferred.done()
-deferred.fail()
-deferred.progress()
-jQuery.when(deferred) 返回一个 promise 对象
-.promise() 返回一个 Promise 对象来观察当某种类型的所有行动绑定到集合，排队与否还是已经完成。
+变量 (Variables)
 
-使用
-var wait = function() {
-    var deferred = $.Deferred();
-    setTimeout(function() {
-        deferred.resolve("hello");
-    });
-    return deferred;
-};
+常规使用
+可变插值： 在选择器名、属性名、url、@import 里使用
+将属性当作变量 $props
+当作变量使用 @@
 
-$.when(wait())
-    .done(function(value) {
-        console.log("done: " + value);
-    })
-    .fail(function(value) {
-        console.log("fail: " + value);
-    });
+父选择器 (Parent Selector)
+
+&amp; 是所有父级的引用
+可以多个&amp;
+逗号选择器组合爆炸
+
+扩展 (Extend)
+合并 (Merge)
+混合 (Minxins)
+CSS 守卫 (CSS Guards)
+分离规则集(detached ruleset)
+@import 规则
+@plugin 规则
+映射 (Maps)
+
+注释
+/* 我是被编译的，会保留 */
+// 不会被保留
+
+变量
+总览
+@color-default: red;
+@color-draken: darken(@color-default, 10%); // less 函数 darken
+
+.box {
+    color: @color-default;
+}
+
+可变插值
+可以在选择器名称、属性名、URL 和@import 里使用。
+// 1. 选择器
+@my-selector: banner;
+.@{my-selector} {
+}
+// 编译为
+.banner {
+}
+
+// 2.路径
+@imgs: "../img";
+body {
+    background: url("@{imgs}/1.png");
+}
+
+@themes: "../src/theme";
+@import "@{themes}/a.less";
+
+// 3.属性名
+@property: color;
+.widget {
+    @{property}: red;
+}
+
+可变变量
+使用另一个变量定义变量的名称。
+@primary: green;
+.section {
+    @color: primary;
+    .element {
+        color: @@color;
+    }
+}
+
+// 编译后
+.section .element {
+    color: green;
+}
+
+懒声明
+变量不需要在使用前声明。
+// 1
+.lazy-eval {
+    width: @var;
+}
+
+@var: @a;
+@a: 9%;
+
+// 2
+.lazy-eval {
+    width: @var;
+    @a: 9%;
+}
+
+@var: @a;
+@a: 100%;
+
+// 都编译为， 有作用域概念，由 css 定义的最后一个属性确定
+.lazy-eval {
+    width: 9%;
+}
+
+将属性当作变量
+使用 $prop 语法将属性当作变量。
+.a {
+    color: red;
+    background: $color;
+}
+
+默认变量
+// library
+@base-color: green;
+@dark-color: darken(@base-color, 10%);
+
+// use of library
+@import "library.less";
+@base-color: red; // 会覆盖前面的变量
+
+父选择器
+通过 &amp; 可以引用父选择器。
+.button {
+    &amp;:hover {
+        // .button:hover
+    }
+    &amp;-ok {
+        // .button-ok
+    }
+    &amp;-cancel {
+    }
+    &amp; &amp; {
+        // .button .button
+    }
+    &amp; + &amp; {
+        // .button + .button
+    }
+    &amp;&amp; {
+        .button.button;
+    }
+    &amp;,
+    &amp;ish {
+        .button, .buttonish;
+    }
+}
+
+&amp; 表示所有的父元素，而不是最近的一个。
+.grand {
+    .parent {
+        &amp; > &amp; {
+            color: red;
+        }
+    }
+}
+// 编译后
+.grand .parent > .grand .parent {
+    color: red;
+}
+
+更改选择器顺序
+.a {
+    .b {
+        .c &amp; {
+            color: red;
+        }
+    }
+}
+// 编译后
+.c .a .b {
+    color: red;
+}
+
+组合爆炸
+会给逗号分割列表列出所有可能。
+p,
+a {
+    &amp; + &amp; {
+        color: red;
+    }
+}
+// 编译后
+p + p
+p + a
+a + p
+a + a
+
+扩展(Extend)
+它将合并的选择器和其引用的选择器合并。
+nav ul {
+    &amp;:extend(.inline);
+    color: red;
+}
+.inline {
+    background: blue;
+}
+// 编译后
+nav ul {
+    color: red;
+}
+.inline,
+nav ul {
+    color: red;
+}
+
+混合
+// 混合
+.border {
+    border: 1px solid red;
+}
+.box {
+    color: @color-default;
+    .border;
+}
+
+// 混合 - 可带参数
+.border02(@borderwidth) {
+    border: solid yellow @border_width;
+}
+
+.test {
+    .border_02(30px);
+}
+
+// 混合 - 默认带值
+.border03(@borderwidth:10px) {
+    border: solid yellow @border_width;
+}
+
+.text {
+    .border_03();
+}
+
+// 混合的例子
+.border_radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -ms-border-radius: @radius;
+    border-radius: @radius;
+}
+
+匹配模式
+// 普通
+.sanjiao {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+    border-width: 10px;
+    border-color: red transparent transparent transparent; // 朝下
+    border-style: solid; // ie不兼容，需要改成 solid dashed dashed dashed
+}
+
+// 匹配模式
+.triangle(top, @w:5px, @c:#ccc) {
+    border-width: @w;
+    border-color: transparent transparent @c transparent;
+    border-style: dashed dashed solid dashed;
+}
+.triangle(bottom, @w:5px, @c:#ccc) {
+    border-width: @w;
+    border-color: @c transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+}
+.triangle(@_, @w:5px, @c:#ccc) {
+    // 默认带上这个
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.sanjiao {
+    .triangle(bottom, 100px);
+}
+
+// 匹配模式 - 定位
+.pos(r) {
+    position: relative;
+}
+.pos(f) {
+    position: fixed;
+}
+.pos(a) {
+    position: absolute;
+}
+.pipe {
+    .pos(f);
+}
+
+运算
+@test: 100px;
+.box {
+    width: @test -10 * 2;
+}
+
+嵌套规则
+.list {
+    ul {
+        li {
+            a {
+                color: red;
+            }
+        }
+    }
+}
+
+// &amp; 表示上一层选择器
+a {
+    &amp;:hover {
+        // 表示 a:hover
+        color: red;
+    }
+}
+
+// .title
+//.titlenav 可以写成 &amp;nav
+
+arguments
+.border(@w:20px,@c:red,@type:solid) {
+    border: @arguments;
+}
+
+避免编译
+.test {
+    width: ~"calc(300px -10px)";
+    // calc 是浏览器计算的，而不是css
+}
+
+important
+.test {
+    .border() !important; // 里面所有的元素都会加 !important
+}
+
+css 重构规范
+
+供 js 使用，非样式类，使用js-前缀。
+
+&lt;a href=&quot;/login&quot; class=&quot;js-login&quot;&gt;&lt;/a&gt;
+
+工具类 Utilities，必须使用驼峰命名，前缀使用u-，比如 floats, containing floats, vertical alignment, text truncation，clearfix 等。可以跟组件类一起使用。
+
+&lt;div class=&quot;u-clearfix&quot;&gt;
+	&lt;div class=&quot;u-pullLeft&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+组件 components，比如按钮，模态框等。
+
+// 样式类组件
+.btn {}
+.btn--default{}
+
+// 功能类组件
+.modal {}
+.modal-header {}
+.modal-body {}
+
+// 状态类组件修饰，需要组合使用，比如.modal.is-big
+.modal {}
+.is-big {}
+
+变量，命名规范是属性-值--组件名，比如
+
+@color-grayLight-highlightMenu: rgb(51, 51, 50)
+
+颜色，规定使用 colors.less，颜色的值优先使用 rgb 或 rgba 格式，后使用 16 进制或 hsl 或英语单词。
+
+z-index 范围，使用z-index.less文件。
+
+@zIndex-1: 100
+@zIndex-2: 200
+@zIndex-3: 200
+...
+@zIndex-9: 900
+
+字体粗细，参考 type.less 类型的大小，字母间距和行高。原尺寸，空格和线的高度应避免出现在 type.less 之外。
+
+N = normal
+I = italic
+4 = normal font-weight
+7 = bold font-weight
+
+@fontSize-micro
+@fontSize-smallest
+@fontSize-smaller
+@fontSize-small
+@fontSize-base
+@fontSize-large
+@fontSize-larger
+@fontSize-largest
+@fontSize-jumbo
+
+行高
+
+@lineHeight-tightest
+@lineHeight-tighter
+@lineHeight-tight
+@lineHeight-baseSans
+@lineHeight-base
+@lineHeight-loose
+@lineHeight-looser
+
+文字间隔
+
+@letterSpacing-tightest
+@letterSpacing-tighter
+@letterSpacing-tight
+@letterSpacing-normal
+@letterSpacing-loose
+@letterSpacing-looser
+
+多个 css 选择器用逗号分隔，并换行。
+
+.content,
+.content-edit {
+  …
+}
+
+css 块之间只有一个新行，不能有多余空行。
+
+// ok
+.content {
+  …
+}
+.content-edit {
+  …
+}
+
+// bad
+.content {
+  …
+}
+
+.content-edit {
+  …
+}
+
+引号使用双引号
+
+background-image: url(&quot;/img/you.jpg&quot;);
+font-family: &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial;
+
+优化选择器性能
+
+// ok
+.user-list &gt; a:hover {
+  color: red;
+}
+
+// ok
+.user-list &gt; .link-primary:hover {
+  color: red;
+}
+
+// bad  太长了
+ul.user-list li span a:hover { color: red; }
+
+参考
+
+http://lesscss.org/features/#variables-feature
 ]]></description>
         </item>
         <item>
             <title><![CDATA[let 和 const]]></title>
             <link>https://www.banli17.com/es6/let_const.html</link>
             <guid>https://www.banli17.com/es6/let_const.html</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <pubDate>Fri, 27 Mar 2020 03:26:08 GMT</pubDate>
             <description><![CDATA[ES6 系列之 let 和 const
 var 的问题
 
@@ -823,22 +1530,35 @@ babel 在线编译工具
 ]]></description>
         </item>
         <item>
-            <title><![CDATA[简介]]></title>
-            <link>https://www.banli17.com/es6/</link>
-            <guid>https://www.banli17.com/es6/</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
-            <description><![CDATA[简介
-jQuery 2.0.3 源码分析
-参考资料
-
-jQuery 2.0.3 源码分析系列
-]]></description>
+            <title><![CDATA[css 揭秘]]></title>
+            <link>https://www.banli17.com/css/css-secret.html</link>
+            <guid>https://www.banli17.com/css/css-secret.html</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:08 GMT</pubDate>
+            <description><![CDATA[css 揭秘
+1. 透明边框
+背景实际会从边框处开始渲染，所以如果 border rgba 会有问题。
+解决方法是 background-clip:padding-box
+2. 多边框
+方案 1: box-shadow: 右 下 模糊 扩展 色。
+注意： 阴影不影响盒子渲染，阴影无法触发盒子鼠标事件。可以通过 inset 解决。
+方案 2: outline 适合 2 层边框，+border，而且支持 dashed。
+而且可以通过 outline-offset 调整位置，支持负数。
+3. 灵活的背景定位
+图片要定位到有下角。
+background-position: right 20px bottom 20px;
+还一种方法是 calc，计算到左上角的距离。
+calc(100% - 20px) 注意空格
+background-position 默认是从 padding-box 定位的，可以通过 background-origin 修改。
+4. 边框内圆角
+outline 不会跟着 border-radius 走，box-shadow 会。
+所以用 box-shadow 来填满空隙。所以如果边框小于空隙处半径，则无法实现
+5. 条纹背景]]></description>
         </item>
         <item>
             <title><![CDATA[简介]]></title>
-            <link>https://www.banli17.com/jquery/</link>
-            <guid>https://www.banli17.com/jquery/</guid>
-            <pubDate>Tue, 10 Mar 2020 12:17:51 GMT</pubDate>
+            <link>https://www.banli17.com/es6/</link>
+            <guid>https://www.banli17.com/es6/</guid>
+            <pubDate>Fri, 27 Mar 2020 03:26:08 GMT</pubDate>
             <description><![CDATA[简介
 jQuery 2.0.3 源码分析
 参考资料

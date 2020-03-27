@@ -1,4 +1,4 @@
-# 简介
+# 笔记
 
 ## 环境安装
 
@@ -608,3 +608,770 @@ not a or b + 2 == c
 不支持 switch
 
 input() 命令行输入
+
+```py
+while i < 5:
+    i++
+else:
+    print('end')
+```
+
+for in: 用来遍历 序列或集合、字典
+
+print(x, end='e'): end 会加在每个打印后面
+
+```
+for x in a:
+    print(x)
+    for y in b:
+        if y:
+            break      # 后面的else 还是会执行，break 是中断的是 for y in b 循环，而不是外层的循环
+else:   # for 循环之后会结束, 如果当前层的循环中途 break 了，则不会打印 else
+    print('end')
+
+```
+
+break continue
+
+for 和 range
+range(start, end, step)
+
+```
+# range [0, 10)
+for x in range(0, 10):
+    print(x)
+
+for x in range(0, 10, 2):
+    print(x, end = ' | ') # 0 | 2 | 4 | 6 | 8
+
+
+for x in range(10, 0, -2):
+    print(x, end = ' | ') # 10 | 8 | 6 | 4 |2
+```
+
+```py
+a = [1, 3, 4, 5, 6, 7, 8]
+
+for x in range(0, len(a), 2):
+    print(a[x], end=' | ')  # 1 | 3 | 5 | 7 |
+
+b = a[0:len(a):2] # [1, 4, 6, 8] 列表切片
+print(b)
+```
+
+## python 项目的组织结构
+
+包
+模块
+类
+函数、变量
+
+```
+
+```
+
+包名就是文件夹的名字，class 的名字就是文件的名字。
+包： 在文件夹下建立一个 `__init__.py` 的文件，解释器就将它当作一个包。
+
+```py
+- __init__.py
+- moduleA.py
+- moduleB.py
+- x
+    - moduleC.py
+
+# moduleB， 引入同级别
+import moduleA
+import x.moduleC as c
+moduleA.x
+```
+
+import 只能导入模块。不能只导入某个函数、变量，需要使用 from
+
+```py
+from moduleC import a, def
+from x import moduleC
+
+# 不建议使用，因为不知道变量从哪里来的，可以在模块中使用 __all__ = ['a', 'c'] 只导出 ac 变量
+from moduleC import *
+print(a)
+print(b)
+print(c)
+
+# 建议
+from moduleC import a, c
+# 或者
+# 在 moduleC 文件使用 __all__
+__all = ['a', 'c']
+a = 1
+b = 2
+c = 3
+
+
+# 如果导入太多方法，不建议用 \换行，而是建议用 ()
+from moduleC import a,b \
+c
+from moduleC import (a,b,c)
+```
+
+导入包或包里模块内容的时候， `__init__.py` 文件会自动运行，作用有：
+
+-   `__init__.py`里的`__all__` 控制导出的包。
+
+```py
+# 包 t 里的 __init__.py
+__all__ = ['moduleA']
+
+from t import *
+print(moduleA)
+print(moduleB) # error
+```
+
+-   提取公共要导入的模块
+
+```py
+# t 包 __init__.py
+import datetime
+import sys
+import io
+...
+
+# moduleA
+import t
+print(t.sys.path)
+```
+
+包和模块是不会被重复导入的
+避免循环导入
+
+## 函数
+
+```py
+a = 1.12586
+print(round(a, 2)) # 1.13
+```
+
+help(round)
+help(print)
+
+自定义函数
+
+```
+def fn(x, y):
+    result = x + y
+    return result
+```
+
+递归最大次数 默认为 1000 次左右(平台有关)
+
+```
+import sys
+sys.setrecursionlimit(1000000)
+```
+
+返回多个值，会当成元组
+
+```py
+# 不推荐
+def a():
+    return a, b
+result = a()
+# 推荐用解构方式 x, y = a()
+print(result [0], result[1]) # 不推荐用序号来访问，推荐序列解包，解构
+
+a,b,c = 1,2,3
+a,b,c = 1,1,1
+a = b = c = 1
+
+[a, b] = [1, 2]
+print(a, b)
+```
+
+参数
+
+-   必须参数：形参必须传入
+-   关键字参数：可以指定名称进行调用 `**arg` 字典参数
+-   `*arg` 默认参数(元组参数): 默认参数要放在最后，否则报错
+
+```py
+def add(x=1, y=2, z=3):
+    return x + y + z
+c = add(y=3, x=2)
+c = add(5, z = 2)
+
+def f(*args, **kw):
+    print(args)  # (1,2,3)
+    print(kw)    # {'name:'zs','age':12}
+f(1,2,3, name='zs',age=12)
+```
+
+## 面向对象
+
+类
+
+-   变量: 类变量、实例变量
+-   方法: 类方法、实例方法(通过 self 调用)、静态方法
+-   构造函数
+-   成员可见性
+    -   public: 默认，可以在外部访问
+    -   private： 将方法名前面加双下划线 `__`，但是不能在后面再加`__`，否则会公开，如`__init__`
+-   面向对象 3 大特性
+    -   封装
+    -   继承：支持多继承
+    -   多态
+
+```py
+class Person():
+    name = '' # 类变量和实例变量都可以继承
+    def __init(self, name, age):
+        self.name = name
+        self.age = age
+
+    def get_name():
+        return self.name
+
+    def get_age():
+        return self.age
+
+class Student(Person):
+    # 类变量定义
+    name = ''
+    age = 0
+    className = 'c1'
+
+    # 构造函数，实际也是个类方法
+    def __init__(self, name, age):
+        # 显示调用父类构造函数，需要传递 self，否则会报错
+        # Person.__init__ 是类调用实例方法？构造函数支持，但是其它方法要传参数 self，不好理解
+        # Person.__init__(self, name, age)
+
+        # 通过 super 调用父类方法
+        super(Student, self).__init__(name, age)
+
+
+        self.name = name # 实例变量定义和赋值，通过 self
+        self.age = age
+        self.__sex = 'girl' # 私有变量，编译器会自动将名改为`_Student__sex`，外部可以访问，所以不是真正的私有
+
+        name = name # 局部变量
+
+        print(Student.name) # 类变量
+        print(self.__class__.name) # 类变量
+
+    # 实例方法
+    # 必须要 self 或其它名字，表示 this, 否则调用会报错
+    def print_file(self):
+        super(Student, self).get_name()
+        print('name: ' + self.name)
+        print('age: ' + str(self.age))
+
+    # 类方法
+    @classmethod
+    def plus_sum(cls):
+        pass
+
+    # 静态方法， 参数没有 self 或 cls，对象和类都可以调用
+    # 静态方法和类方法都不能访问实例变量
+    # 可以不使用，当工具方法使用
+    @staticmethod
+    def add(x, y):
+        pass
+
+# 不需要 new
+student = Student("zs", 12)
+
+# 所有实例变量的字典
+student.__dict__  # {name:"zs", age:12}
+# 类变量字典
+Student.__dict__
+
+# 实例上没有的属性会到类属性上查找
+print(student.className) # 'c1'
+
+# 类和对象都可以调用类方法
+student.plus_sum()
+Student.plus_sum()
+
+print(student.__sex) # 报错，__sex 是私有的，不能访问
+print(student._Student__sex) # 可以访问
+student.__sex = 'boy' # 新增了一个 __sex 的属性，和内部的 __sex 不一样
+print(student.__sex) # 'boy'
+```
+
+显示调用构造函数，只能 return None 或不写 return，不能返回其它值。
+
+## 正则表达式
+
+```py
+str = 'yy|substr|hello
+print(str.index('substr') > -1) # True
+print('substr' in str)
+```
+
+re 对象的方法：
+
+-   `re.findall(pattern, string)`: 返回一个列表
+-   `re.sub(pattern, repl, string, count=0,flags=0)` 替换
+-   `re.match(pattern, string, flags)`: 从字符串首字母开始匹配，匹配一个就返回，没有返回 None
+-   `re.search(pattern, string, flags)`: 找到一个结果就返回匹配的结果的对象，没有返回 None
+
+-   `str.replace(pattern, repl)`: 返回一个新字符串，字符串是不可变的
+
+```py
+import re
+
+str = 'hello123'
+r = re.findall('l', str) # ['l', 'l']
+if len(r) > 0:
+    print('字符串包含' + len(r) + '个l')
+else:
+    print('字符串不包含l')
+
+r = re.findall('\d', str)
+```
+
+元字符
+
+```py
+# 字符集 []
+a[bd]f
+a[b-d]f
+a[^bd]f
+
+# 概括字符集
+\d 数字, 等价于[0-9]
+\D 非数字,等价于[^0-9]
+\w 单词字符(下划线、数字和字母)，等价于 [_0-9a-zA-Z]
+\W 非单词字符
+\s 空白字符(' ' \t \n \r)
+\S
+. 匹配除换行符 \n 之外其它的字符
+
+# 量词
+{m}
+{m, n}
+{m, }
+*  大于等于0次
++
+？
+
+# 贪婪、非贪婪
+量词?  非贪婪
+
+str = 'pytho123python123pythonn123'
+re.findall('python{1,2}?', str)
+
+# 边界匹配
+^
+$
+\b
+\B
+
+# 组
+()
+
+# 模式
+re.I  忽略大小写
+re.S  改变. 让. 能匹配\n
+
+lang = 'py\njava
+re.findall('py.{1}', re.I | re.S)
+
+lang = 'py java py php py'
+re.sub('py', 'go', lang, 1) # count 默认为0表示全部替换，1表示只替换一个
+
+def convert(value):
+    print(value)  # value.group() 为替换的原始值，即 py
+    pass
+re.sub('py', convert, lang)
+
+# result
+<re.Match object; span=(0, 2), match='py'>
+<re.Match object; span=(8, 10), match='py'>
+<re.Match object; span=(15, 17), match='py'>
+ java  php  # py 被替换为了空字符串
+
+# re.match
+print(re.match('py', lang))
+# <re.Match object; span=(0, 2), match='py'>
+
+# re.search
+print(re.search('py', lang))
+# <re.Match object; span=(0, 2), match='py'>
+
+# 分组
+r = re.search('py(.+)py', lang)
+print(r.group(0)) # 'py java py php py'
+print(r.group(1)) # ' java py php p'
+print(r.group(0, 1)) # 返回一个元组 ('py java py php py', ' java py php p')
+print(r.groups()) # 返回元组
+
+r = re.findall('py(.+)py', lang)
+print(r) #[' java py php ']
+
+```
+
+## JSON
+
+javascript object notation 轻量级数据交换格式
+
+符合 JSON 格式的字符串就是 json 字符串
+符合 JSON 格式的对象就是 json 对象
+
+优点：
+
+-   易于阅读
+-   易于解析
+-   网络传输效率高（轻量）
+-   跨语言交换数据（语言基本都有内置的数据结构）
+
+```py
+import json
+
+# 序列化
+# 字典
+json_str = '{"name":"zs","age":12, "flag": false}'
+person = json.loads(json_str)
+
+print(type(person)) # <class 'dict'>
+print(person)  # {'name': 'zs', 'age': 12, 'flag': False}
+
+# 列表
+json_str = '[{"name":"zs","age":12}]'
+person = json.loads(json_str)
+
+print(type(person)) # <class 'list'>
+
+# 反序列化
+json_str = json.dumps(person)
+print(json_str) # <class 'str'>
+```
+
+转换关系
+
+```
+json     python
+object   dict
+array    list
+string   str
+number   int/float
+null     None
+true     True
+false    False
+```
+
+## 枚举
+
+python3 新增
+
+枚举的标签和值是对应且唯一的。
+
+```py
+from enum import Enum
+
+class VIP(Enum):
+    yellow = 1
+    green = 1  # 值和 yellow相等，会当作 yellow 的别名
+    black = 3
+    red = 4
+    yellow = 2 # 报错，不能用同一个标签
+
+print(VIP['yellow']) # 也可以[]这样访问
+print(VIP.yellow)  # VIP.yellow
+print(VIP.green)  # VIP.yellow, 已经定义后，不能被修改，而且值是唯一的
+print(type(VIP.yellow))  # <enum 'VIP'>
+print(VIP.yellow.value()))  # 1
+print(VIP.yellow.name))  # 'yellow' <class 'str'>
+
+# 遍历
+for v in VIP:
+    print(v)    # 不会打印别名
+
+# VIP.yellow
+# VIP.black
+# VIP.red
+
+for v in VIP.__members__.items():
+    print(v)    # 会打印别名
+
+# ('yellow', <VIP.yellow: 1>)
+# ('green', <VIP.yellow: 1>)
+# ('black', <VIP.black: 3>)
+# ('red', <VIP.red: 4>)
+
+for v in VIP.__members__:
+    print(v)    # 会打印别名，只打印 key
+
+# yellow
+# green
+# black
+# red
+
+
+# 比较
+class VIP2(Enum):
+    yellow = 1
+result = VIP.yellow == VIP.yellow    # True
+result = VIP.yellow is VIP.yellow    # True
+result = VIP.yellow == VIP2.yellow    # False 不同的枚举比较
+result = VIP.yellow == 1    # False
+result = VIP.yellow > VIP.black    # 报错
+```
+
+和枚举比较， dict 和类实现的缺点：
+
+-   值可以重复
+-   值可以修改
+
+```
+{'name': 1}
+class N():
+    name = 1
+```
+
+数据库存储枚举类型，一般存数字，因为占用空间更小，更简洁。
+
+```py
+# 从数据库获取到的值
+a = 1
+
+# 将值转为枚举类型。
+VIP(a)  # VIP.yellow
+
+if a == VIP.yellow:
+    pass
+if a == VIP.black:
+    pass
+```
+
+枚举的继承
+
+-   IntEnum 枚举必须都是整型
+
+```py
+from enum import IntEnum, unique
+
+@unique  # 装饰器，显示枚举如果有别名就报错 duplicate value
+class VIP(IntENum):
+    yellow = 1
+    green = 1 # 报错
+```
+
+枚举不能实例化。是单例模式实现。
+
+## 函数 闭包
+
+函数可以返回一个函数，可以当参数传递。
+
+函数和运行时的环境变量 就是闭包
+
+```py
+c = 1
+z = 10
+
+def a():
+    print(z)  # 10
+
+    # print(c) 会报错，因为下面定义了 c，为局部变量
+    c = 2  # c 是局部变量， 可以加 global 定义为全局的变量
+    def d():
+        print(c)
+
+    return d
+
+x = a()
+# 如果没有闭包，则返回 None，只有函数有 __closure__
+print(x.__closure__)  # (<cell at 0x10db53678: int object at 0x10d8fccd0>,)
+print(x.__closure__[0].cell_contents) # 2
+y = x()  # 2
+print(a.__closure__)  # None  函数的内部函数才有闭包
+```
+
+```py
+c = 1
+
+def a():
+    def d():
+        print(c)
+
+    return d
+
+x = a()
+print(x.__closure__)  # None
+```
+
+```py
+c = 1
+
+def a():
+    # global c
+    num = c  # local variable 'c' referenced before assignment,这里c是局部变量
+    c = 2
+
+x = a()
+```
+
+```py
+c = 1
+
+def a():
+    c = 2
+
+a()
+print(c)  # 1
+```
+
+闭包的应用: 旅行距离计算
+
+```py
+origin = 0
+
+def factory(pos):
+    def go(step):
+        nonlocal pos # 指定 pos 不是局部变量
+        new_pos = pos + step
+        pos = new_pos
+        print(new_pos)
+        return new_pos
+    return go
+
+g = factory(origin)
+
+g(3)   # 3
+g(3)   # 6
+g(3)   # 9
+```
+
+闭包的问题：容易造成内存泄露
+
+匿名函数, lambda 表达式
+
+```py
+def add(x, y):
+    return x + y
+add(1, 2)
+
+# 匿名函数，冒号后面不能是代码块
+# lambda parameter_list: expression
+f = lambda x,y: x+y
+f(1,2)
+
+# 其它语言三元表达式 x > y ? x : y
+# python 三元表达式  条件真的结果 if 条件判断 条件假的结果
+f = lambda x,y: x if x > y else y
+```
+
+map 函数
+
+`map(fn, *iterator)`
+
+```py
+# 将每个元素平方
+def square(x):
+    return x * x
+list_x = [1,2,3]
+r = map(square, list_x)
+
+# lambda
+r = map(lambda x: x*x, list_x)
+
+# list 2 它会按照列表少的来返回结果长度
+list2 = [1,2]
+r = map(lambda x, y: x*x + y, list_x, list2)
+```
+
+reduce
+
+```py
+from functools import reduce
+list_x = [1,2,3,4,5]
+reduce(lambda x,y:x+y, list_x, initial=10)
+
+(x, y)
+(0, 0)
+[(1,2), (3, -3), (-2, 3)] 连续计算
+```
+
+map/reduce 编程模型 映射 归约 并行计算
+函数式编程
+
+filter(function or None, iterable)
+
+```py
+# 去掉0元素
+list_x = [1, 0, 0, -1, 0, 1]
+r = filter(lambda x: x != 0, list_x)
+print(list(r))) # [1, -1, 1]
+```
+
+注意 list 是个关键字，不能定义为变量。
+
+## 装饰器
+
+-   `time.time()` unix 时间戳，单位是 s
+
+```py
+import time
+
+def f1():
+    print('f1')
+
+
+def f2():
+    print('f2')
+
+
+def logger(f):
+    print(time.time())
+    f()
+
+
+logger(f1)
+logger(f2)
+
+# 1585027328.113216
+# f1
+# 1585027328.1132538
+# f2
+```
+
+```py
+import time
+
+# 装饰器返回一个函数，来包装新函数
+def decorator(fn):
+    def wrapper(*args, **kw):
+        print(time.time())
+        fn(*args, **kw)
+    return wrapper
+
+def f1():
+    print('f1')
+
+f = decorator(f1)
+f()
+
+@decorator
+def f2():
+    print('f1')
+
+f2()
+
+@decorator('test')
+def f3(str):
+    print('f3' + str)
+
+f3()
+
+# 多参数、关键字参数
+@decorator('test', name='zs')
+def f4(str):
+    print('f4' + str)
+
+f4()
+```
+
+定义复杂可以，但是调用不可以复杂。
+
+装饰器给函数增加功能，不破坏代码实现。
+AOP 思想

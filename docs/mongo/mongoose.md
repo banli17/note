@@ -159,14 +159,22 @@ security:
 # 创建
 db.createUser(
   {
-    user: "mongodb",
+    user: "mongodb2",
     pwd: "hs15415162",
-    roles: [ { role: "readWrite", db: "qinkuaikan" } ]
+    roles: [ { role: "readWrite", db: "guess" } ]
   }
 )
 
+
 # 验证
 db.auth("admin","admin")
+
+db.revokeRolesFromUser(
+  {
+    user: "mongodb",
+    roles: [ { role: "readWrite", db: "guess" } ]
+  }
+)
 ```
 
 4. 配置 Robo 3T。

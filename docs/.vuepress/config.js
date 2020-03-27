@@ -48,7 +48,7 @@ module.exports = {
                     { text: "javascript", link: "/language/japanese/" },
                     { text: "es6", link: "/es6/" },
                     { text: "jQuery", link: "/jquery/" },
-                    // { text: "vue", link: "/vue/" },
+                    { text: "vue", link: "/vue/" },
                     { text: "浏览器", link: "/browser/" },
                     { text: "工程化", link: "/project/" }
                 ]
@@ -86,16 +86,18 @@ module.exports = {
             { text: "Github", link: "https://github.com/banli17" }
         ],
         sidebar: {
-            // "/vue": [
-            //     // {
-            //     //     title: "vue 总结",
-            //     //     children: ["/vue/basic"]
-            //     // },
-            //     {
-            //         title: "vue 源码分析",
-            //         children: ["/vue/", "/vue/basic", "/vue/issues"]
-            //     }
-            // ],
+            "/vue": [
+                {
+                    title: "vue 笔记",
+                    children: ["/vue/", "/vue/issues"]
+                },
+            ],
+            "/css": [
+                {
+                    title: "css 笔记",
+                    children: ["/css/", "/css/less"]
+                },
+            ],
             "/jquery": [
                 {
                     title: "jQuery 源码分析",
@@ -197,8 +199,9 @@ module.exports = {
                     title: "数据结构与算法",
                     children: [
                         "/algo/",
-                        "/algo/array",
-                        "/algo/linked-list",
+                        "/algo/01_complexity",
+                        "/algo/02_数组_链表_跳表",
+                        "/algo/03_栈_队列_优先队列_双端队列",
                         "/algo/heap-stack",
                         "/algo/priority-queue",
                         "/algo/dynamic-program",
