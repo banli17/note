@@ -1,8 +1,8 @@
-# Objective-C程序设计
+# Objective-C 程序设计
 
 ## Objective-C 编程
 
-![](./imgs/2020-05-21-12-49-17.png)
+![](/upload/2020-05-21-12-49-17.png)
 
 通过命令行运行 oc 文件。
 
@@ -11,24 +11,23 @@
 clang -fobjc-arc files -o program
 
 # 编译 main.m 并且将它叫做 prog1 命令
-clang -fobjc-arc main.m -o proj1 
+clang -fobjc-arc main.m -o proj1
 
 # 执行 prog1 命令，可以用相对路径 或者将它添加在 shell PATH 变量中
-./prog1 
+./prog1
 ```
-
 
 **注释**
 
 会被编译器忽略
 
-- 单行注释 `//`
-- 多行注释 `/* */`
+-   单行注释 `//`
+-   多行注释 `/* */`
 
 `@autoreleasepool{}`之间的语句会被放到`自动释放池`语境中执行。自动释放池的机制：创建新对象时，系统能够有效管理应用所使用的内存。
 
-- `@"hello world"`，叫做常量 NSString 对象。
-- `"hello world"` 所常量 C 类型的字符串。
+-   `@"hello world"`，叫做常量 NSString 对象。
+-   `"hello world"` 所常量 C 类型的字符串。
 
 显示变量的值
 
@@ -59,11 +58,11 @@ yourCar = [Car new];
 
 **处理分数**
 
-程序从逻辑上分为3部分：
+程序从逻辑上分为 3 部分：
 
-- @interface 部分： 用于描述类和类的方法
-- @implementation 部分: 用于实现数据(类对象的实例变量存储的数据)和方法
-- program 部分: 实现程序
+-   @interface 部分： 用于描述类和类的方法
+-   @implementation 部分: 用于实现数据(类对象的实例变量存储的数据)和方法
+-   program 部分: 实现程序
 
 **@interface**
 
@@ -77,7 +76,7 @@ yourCar = [Car new];
 
 -(void) print;
 -(void) setNumerator: (int) n;
--(void) setDenominator: (int) d; 
+-(void) setDenominator: (int) d;
 
 @end
 ```
@@ -93,7 +92,6 @@ yourCar = [Car new];
 返回值：需要将返回类型放入开头的正负号之后圆括号。
 
 void 表示没有返回值，可以不写 return ，或者只写 `return;`
-
 
 ```
 // 方法类型(返回类型) 方法名: (参数类型) 参数名;
@@ -124,7 +122,6 @@ void 表示没有返回值，可以不写 return ，或者只写 `return;`
 memberDeclarations 部分指定了要存储的数据。
 methodDefinitions 部分指定了 @interface 里的方法。每
 
-
 ### 3.6 program 部分
 
 **main.m**
@@ -139,10 +136,10 @@ int main(int argc, const char * argv[]) {
         // 下面等价于 f1 = [[Fraction alloc] init];
         f1 = [Fraction alloc];  // 为对象分配内存
         f1 = [f1 init];  // 初始化对象
-        
+
         [f1 setNumerator: 1];
         [f1 setDenominator: 3];
-        
+
         // 打印显示分数
         NSLog(@"分数为: ");
         [f1 print];
@@ -156,28 +153,26 @@ int main(int argc, const char * argv[]) {
 实例变量对外是隐藏的。可以通过自己写访问器属性来访问和设置。
 访问器属性： 设值方法(setter)，和取值方法(getter)。
 
-
 ## 4. 数据类型和表达式
 
 ### 4.1 数据类型和常量
 
-- int `(%i)`: 整数，存储和计算机有关，语言没有规定这个量。
-- float `(%f/%g)`：小数，或者也可以用科学技术法表示。
-- double `(%g)`: 和 float 相似，存储范围约为 float 的两倍。
-- char `(%c)`单个字符: 将字符放在单引号里得到字符常量，如`'a'`，`\n`也是合法的字符常量，oc编译器将它看作单个字符。
+-   int `(%i)`: 整数，存储和计算机有关，语言没有规定这个量。
+-   float `(%f/%g)`：小数，或者也可以用科学技术法表示。
+-   double `(%g)`: 和 float 相似，存储范围约为 float 的两倍。
+-   char `(%c)`单个字符: 将字符放在单引号里得到字符常量，如`'a'`，`\n`也是合法的字符常量，oc 编译器将它看作单个字符。
 
 oc 中，数字、单个字符、字符串通常都称为常量，比如 58 是一个常量整数值，`@"hello"` 是一个常量字符串对象，`@5`表示一个常量数字对象。
 
-
 **限定词**
 
-- long: 比如 `long int`，NSLog 用 `%li` 显示。
-- long long
-- short 
-- unsigned 无符号，能表示的数据更大
-- signed 有符号
+-   long: 比如 `long int`，NSLog 用 `%li` 显示。
+-   long long
+-   short
+-   unsigned 无符号，能表示的数据更大
+-   signed 有符号
 
-**id类型**
+**id 类型**
 
 id 数据类型可存储任何类型的对象。
 
@@ -186,10 +181,9 @@ id graphicObject
 -(id) newObject: (int) type
 ```
 
-![](./imgs/2020-05-22-15-08-29.png)
+![](/upload/2020-05-22-15-08-29.png)
 
 ### 4.2 算术表达式
-
 
 ```
 int a= 1;
@@ -204,7 +198,7 @@ NSLog(@"a1/b1 = %f", a1/b1);  // 0.500000
 优先级: `一元负号运算符` > (`算术运算符(+ - * / %)` | `一元正号运算符`)。
 
 ```
--a * b 
+-a * b
 ```
 
 模运算符 % 只用于处理整数。
@@ -251,7 +245,7 @@ f1 = (Fraction *) num;
 格式为：
 
 ```
-op= 
+op=
 // op 可以为 + - * / %
 ```
 
@@ -314,7 +308,7 @@ NSLog(@"最后的值 %i", (int)[ca getN]);
 
 ## 5. 循环结构
 
-### 5.1 for循环
+### 5.1 for 循环
 
 ```
 void testFor(){
@@ -346,20 +340,19 @@ void testFor(){
 100
 ```
 
-![](./imgs/2020-05-22-16-05-31.png)
+![](/upload/2020-05-22-16-05-31.png)
 
 关系运算符的优先级比所有算术运算符都低。如 a < b + c 会按照 a < (b+c) 求值。
 
-
-- `scanf()`: 用于键盘输入
+-   `scanf()`: 用于键盘输入
 
 ```
 int number;
 // NSLog 第一个参数是 NSString，需要@
-NSLog(@"请输入数字："); 
+NSLog(@"请输入数字：");
 // scanf 第一个参数是C风格的字符串，不加@
 // & 表示指针
-scanf("%i", &number); 
+scanf("%i", &number);
 ```
 
 ### 5.2 while 语句
@@ -370,13 +363,13 @@ scanf("%i", &number);
 void testMaxGCD(){
     int u, v, temp;
     scanf("%i %i", &u, &v);
-    
+
     while (v != 0) {
         temp = u % v;
         u = v;
         v  = temp;
     }
-    
+
     NSLog(@"最大公约数为 %u", u);
 }
 ```
@@ -398,7 +391,7 @@ void reversePrintNum(){
 
 ### 5.3 do 语句
 
-do语句的语法为：
+do 语句的语法为：
 
 ```
 do
@@ -406,7 +399,7 @@ do
 while (expression)
 ```
 
-上面的`reversePrintNum()`如果输入0不会打印任何数字。可以转换为 do while 语句。
+上面的`reversePrintNum()`如果输入 0 不会打印任何数字。可以转换为 do while 语句。
 
 ### 5.4 break 语句
 
@@ -448,8 +441,8 @@ else
 
 **复合条件测试**
 
-- 逻辑与(&&) 和逻辑或(||)。
-- && 比 || 优先级高，比运算符和关系符低。
+-   逻辑与(&&) 和逻辑或(||)。
+-   && 比 || 优先级高，比运算符和关系符低。
 
 ```
 // 判断闰年
@@ -470,20 +463,20 @@ Boolean isRunYear(int year){
 
 **嵌套 if 语句**
 
-注意：else 子句通常和最近的不包含 else 子句的 if语句对应。
+注意：else 子句通常和最近的不包含 else 子句的 if 语句对应。
 
 ```
 if expression1
     if expression2
         program statement 1
-else 
+else
         program statement 2
 
 // 会被变成
 if expression1
     if expression2
         program statement 1
-    else 
+    else
         program statement 2
 ```
 
@@ -525,7 +518,7 @@ switch (expression)
 // 打印素数
 void printPrime(){
     int p, d, isPrime;
-    
+
     for(p = 2;p<=50;p++){
         isPrime = 1;
         for(d = 2;d < p;d++){
@@ -538,10 +531,10 @@ void printPrime(){
 }
 ```
 
-oc 内置的布尔型(用BOOL表示)：
+oc 内置的布尔型(用 BOOL 表示)：
 
-- true 或 YES
-- false 或 NO
+-   true 或 YES
+-   false 或 NO
 
 ```
 BOOL a = YES;
@@ -576,7 +569,7 @@ condition ? condition : expression
 
 ### 7.1 分离接口和实现文件
 
-新建 Cocoa class 创建类。会生成 .h 和 .m 文件。类的声明(@interface 部分) 放在 class.h 文件中，而类的定义(@implementation 部分)放在 class.m 文件中。这样接口和实现文件就分离了。 
+新建 Cocoa class 创建类。会生成 .h 和 .m 文件。类的声明(@interface 部分) 放在 class.h 文件中，而类的定义(@implementation 部分)放在 class.m 文件中。这样接口和实现文件就分离了。
 
 ```
 // 导入系统文件
@@ -611,7 +604,7 @@ oc 为了方便，在 2.0 开始，可以自动生成存取方法(setter, getter
 // 会自动生成取值方法 x 和设值方法 setX
 // 不使用 @synthesize，只使用 @property，生成的实例变量是 _x，以 _ 开头
 // 使用 @synthesize，生成的实例变量是 _
-@synthesize a, b;   
+@synthesize a, b;
 
 -(void) print
 {
@@ -622,14 +615,14 @@ oc 为了方便，在 2.0 开始，可以自动生成存取方法(setter, getter
 
 ### 7.3 使用点运算符访问属性
 
-取值可以使用下面2种语句：
+取值可以使用下面 2 种语句：
 
 ```
 [instance property]
 instance.property
 ```
 
-赋值也有2种语句：
+赋值也有 2 种语句：
 
 ```
 [instance setProperty: value]
@@ -777,22 +770,21 @@ Fraction.sayHello;  //警告，因为 . 是用于属性，而不用于方法
 
 5. 私有属性、私有方法
 
-- 私有属性：在 .h 中声明的属性是公开的，在 .m 中实现的变量默认是私有 (@private) 的，不能改为 @public，注意不能和 .h 的成员变量同名。
-- 私有方法：只有实现，没有声明的方法。oc 中没有真正的私有方法，在外面也可以调用。
+-   私有属性：在 .h 中声明的属性是公开的，在 .m 中实现的变量默认是私有 (@private) 的，不能改为 @public，注意不能和 .h 的成员变量同名。
+-   私有方法：只有实现，没有声明的方法。oc 中没有真正的私有方法，在外面也可以调用。
 
 ```
 // .h中
 @interface Person: NSObject
 {
     // 默认是 @private ，即使 @public 也无效
-    @private 
+    @private
     NSString name;   // 私有变量，也可以将 @private 去掉
 }
 
 // .m 中
 @property
 ```
-
 
 ## 8. 继承
 
@@ -813,7 +805,6 @@ Fraction.sayHello;  //警告，因为 . 是用于属性，而不用于方法
 ### 8.2 通过继承来扩展：添加新方法
 
 ### 8.3 覆写方法
-
 
 ## 9. 多态、动态类型和动态绑定
 
@@ -849,6 +840,7 @@ Fraction.sayHello;  //警告，因为 . 是用于属性，而不用于方法
 静态方法不能调用成员变量。
 
 方法名: 去掉 - 和参数类型
+
 ```
 // show:
 -(int) show: (int)a
@@ -857,6 +849,7 @@ Fraction.sayHello;  //警告，因为 . 是用于属性，而不用于方法
 ```
 
 特殊: 匿名函数
+
 ```
 -(int): (int)a : (int)b
 
@@ -884,17 +877,15 @@ p:10:20
 
 只声明了 `@property` 的属性，会在内部生成 `_同名` 的成员变量。而使用 `@synthesize` 后，会生成同名的成员变量。
 
-
 访问修饰符
 成员变量有：@protected(默认)、@public、@private、@package，`@public`需要通过 `p->name`形式来方法
 属性：相当于是 getter setter 方法，方法是没有访问修饰符的，如果要私有，则不写在 .h 中，直接在 .m 里写，
 
 private 变量是无法继承的。但是如果继承了方法，方法里使用了 private 变量，是可以工作的。
-oc 没有多继承，可以使用协议来实现，java是通过接口来实现。
+oc 没有多继承，可以使用协议来实现，java 是通过接口来实现。
 父类不写方法实现，是无法被继承的。
 
 oc 没有重载，只有重写。
-
 
 可以用父类来接受子类对象。
 
@@ -907,7 +898,7 @@ Printer *printer = [[BlackPrinter alloc] init];
 
 ## 12. 预处理程序
 
-## 13. 基本的C语言特性
+## 13. 基本的 C 语言特性
 
 ## 14. Foundation 框架简介
 
@@ -921,7 +912,8 @@ Printer *printer = [[BlackPrinter alloc] init];
 
 ## 19. 归档
 
-## 20. Cocoa 和 Cocoa Touch简介
+## 20. Cocoa 和 Cocoa Touch 简介
+
 ## 21 编写 IOS 应用程序
 
 ### 类的定义
@@ -961,37 +953,35 @@ Printer *printer = [[BlackPrinter alloc] init];
 
 基本数据类型
 
-- int   32位
-- float 32位
-- double  64位
-- char  一个字节，8位，一个字符
-- NSString  字符串 @"hello"，常用
-- 字符串 "hello"
-- 指针类型 *p
-- 自定义类型
-- 万能类型 id
-
+-   int 32 位
+-   float 32 位
+-   double 64 位
+-   char 一个字节，8 位，一个字符
+-   NSString 字符串 @"hello"，常用
+-   字符串 "hello"
+-   指针类型 \*p
+-   自定义类型
+-   万能类型 id
 
 **引用类型**
 
-- class 
-- pointer 指针
-- block 块
+-   class
+-   pointer 指针
+-   block 块
 
 **类型装饰**
 
-- protocol 协议
-- category 类别
-- extension 扩展
+-   protocol 协议
+-   category 类别
+-   extension 扩展
 
 **值类型**
 
-- 基础数值类型
-- 结构 stuct
-- 枚举 enum
+-   基础数值类型
+-   结构 stuct
+-   枚举 enum
 
-
-###  class 和 stuct
+### class 和 stuct
 
 运算符
 
@@ -1008,12 +998,12 @@ int main(int argc, const char * argv[]) {
         for (int a = 1; a<10; a++) {
             NSLog(@"a = %d", a);
         }
-        
+
         int i = 0;
     a:{
         i++;
         NSLog(@"i = %d", i);
-        
+
     }
     b: {
         i = 1;
@@ -1026,7 +1016,7 @@ int main(int argc, const char * argv[]) {
         }else{
 
         }
-        
+
     }
     return 0;
 }
@@ -1050,7 +1040,7 @@ switch (a) {
     case 1:
         NSLog(@"中奖了");
         break;
-        
+
     default:
         break;
 }
