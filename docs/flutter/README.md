@@ -522,96 +522,6 @@ child: Icon(IconData(0xf5566, fontFamily: 'a'), size: 100, color: Colors.blue)
 
 ### 下拉和滚动刷新
 
-### 混合开发
-
--   Flutter Android 混合开发
--   Flutter ios 混合开发
--   Flutter 和 Android 通信
--   Flutter 和 ios 通信
-
-场景：
-
--   独立页面加入，flutter 页面打开原生页面或原生页面打开 flutter 页面。
--   作为一部分嵌入。
-
-步骤：
-
-1. 创建 Flutter module。
-2. 添加 Flutter module 依赖。
-3. 在 Java/Object-c 中调用 Flutter module。
-4. 编写 Dart 代码。
-
-### 启动白屏问题
-
-时间：1-3s，因为 flutter 应用需要启动 flutter sdk，加载代码，然后渲染。
-
-`flutter_native_splash`插件太大了，打包后增加了 10M，所以用下面原生方式实现：
-
-https://juejin.im/post/5ca2d357e51d4533087aa92c
-
-### 沉浸式状态栏
-
-## 打包发布
-
-## 优化
-
-1. 代码优化：冗余代码、封装。
-
-### Android 打包发布
-
-1. 修改 app 名称和 snapshot 名称(查看打开 app 列表时显示的)。
-
-```
-// 1. app名称, android/app/src/main/AndroidManifest.xml
-<application
-        android:name="io.flutter.app.FlutterApplication"
-        android:icon="@mipmap/ic_launcher"
-        android:label="flutter之旅">
-
-
-// 2. snapshot名称
-MaterialApp({
-    title: 'snapshot名称'
-})
-```
-
-2. 修改 applicationId、targetSdkVersion。在 `android/app/src/build.gradle`文件。
-
-3. 修改启动图标，文件 `android/app/src/res/mipmap-xhdpi/ic_launcher.png`，可以将其它分辨率的图标删除，减少包的大小。
-
-4. 签名 APP。
-
-```sh
-// mac
-keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
-
-// windows
-keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
-```
-
-创建一个名为的文件`<app dir>/android/key.properties` ，其中包含对密钥库的引用：
-
-```
-storePassword=flutter_app
-keyPassword=flutter_app
-keyAlias=key
-storeFile=/Users/banli/key.jks
-```
-
-5. 构建
-
-```sh
-# 移除--split-per-abi参数后,会生成支持所有ABI平台的Apk文件
-# 打包文件在 <app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk
-flutter build apk --split-per-abi
-
-# dart 混淆 obfuscate
-flutter build apk --obfuscate --split-debug-info=/Users/banli/Desktop/test/flutter_app/split_debug_info  --split-per-abi
-```
-
--   android abi 详细:[https://developer.android.google.cn/ndk/guides/abis](https://developer.android.google.cn/ndk/guides/abis)
--   官方详细文档[https://flutter.dev/docs/deployment/android](https://flutter.dev/docs/deployment/android)
-
 ## 常见问题
 
 ### pod install 失败
@@ -666,3 +576,45 @@ android 联网权限。在 `android/app/src/main/AndroidManifest.xml` 文件里�
 <application
     ...
 ```
+
+## Flutter 升级与适配指南
+
+1. 更新 Flutter SDK 和 packages
+
+```
+// 会更新 flutter 和将包升级到所能兼容到的最新版
+flutter upgrade
+```
+
+2. 只更新包，可以手动更新或者运行如下命令：
+
+```
+flutter packages upgrade
+flutter packages get
+```
+
+3. 切换 flutter channels
+
+```bash
+/** flutter channels: stable(推荐) beta dev master **/
+
+/** 查看flutter channel **/
+flutter doctor
+// 或者
+flutter channel
+
+// 切换到其它 channel
+flutter channel dev
+flutter upgrade
+```
+
+4. 适配关注
+
+-   变更记录 https://github.com/flutter/flutter/wiki/Changelog
+-   公告 https://groups.google.com/forum/#!forum/flutter-announce
+-   公告 https://groups.google.com/forum/#!forum/flutter-dev
+
+## 更多文章
+
+-   https://www.imooc.com/t/4951150#Article
+-   https://www.devio.org/tags/#Flutter

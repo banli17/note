@@ -47,18 +47,18 @@ module.exports = {
         {
           title: 'Community',
           items: [
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
+            // {
+            //   label: 'Twitter',
+            //   href: 'https://twitter.com/docusaurus',
+            // },
           ],
         },
         {
-          title: 'More',
+          title: '学习',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: '2020年',
+              to: 'docs/task/2020',
             },
             {
               label: 'GitHub',
@@ -80,13 +80,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/banli17/blog/tree/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          // editUrl:
+          //   'https://github.com/banli17/blog/tree/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

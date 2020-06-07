@@ -1,8 +1,10 @@
-# Objective-C 程序设计
+---
+title: Objective-C 程序设计
+---
 
 ## Objective-C 编程
 
-![](/upload/2020-05-21-12-49-17.png)
+![](imgs/2020-05-21-12-49-17.png)
 
 通过命令行运行 oc 文件。
 
@@ -181,7 +183,7 @@ id graphicObject
 -(id) newObject: (int) type
 ```
 
-![](/upload/2020-05-22-15-08-29.png)
+![](imgs/2020-05-22-15-08-29.png)
 
 ### 4.2 算术表达式
 
@@ -340,7 +342,7 @@ void testFor(){
 100
 ```
 
-![](/upload/2020-05-22-16-05-31.png)
+![](imgs/2020-05-22-16-05-31.png)
 
 关系运算符的优先级比所有算术运算符都低。如 a < b + c 会按照 a < (b+c) 求值。
 
