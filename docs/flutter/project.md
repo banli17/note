@@ -18,6 +18,44 @@ title: 项目技术方案
 
 ### 全面屏适配
 
+全面屏特点：屏占比高，长宽比不再是 16:9，而是 19.5:9 甚至更高。
+
+问题：
+
+-   传统布局高度不足，导致上下有黑边
+-   基于屏幕顶部和底部的布局，如弹框，在全面屏手机上会移位
+-   安全区域问题：超出安全区域已经被系统接管，不能点击
+
+全面屏的适配：
+
+-   Scaffold 和 bottomNavigationBar 的页面已经自动适配好了
+
+没有用 Scaffold 的页面：
+
+适配要点，navigationBar 上部和底部预留安全区域
+
+适配方案有两种：
+
+1. 使用 SafeArea 包裹页面，这种方式简单，不灵活
+2. 使用 MediaQuery.of(context).padding 获取屏幕四周距离，然后给容器设置 padding。这种方式更加灵活，比如可以不设置底部距离
+
+```dart
+final EdgeInsets padding = MediaQuery.of(context).padding;
+
+Container({
+    padding: EdgeInset.fromLTRB(0, padding.top, 0, 0) // 不设置底部
+})
+```
+
+对于安卓手机，还需要配置 `android.max_aspect`：
+
+```xml title="AndroidManifest.xml"
+<!-- 设置应用支持的最大长宽比 -->
+<meta-data android:name="android.max_aspect" android:value="2.4">
+```
+
+### 折叠屏适配
+
 ### 启动白屏问题
 
 时间：1-3s，因为 flutter 应用需要启动 flutter sdk，加载代码，然后渲染。
