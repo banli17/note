@@ -1,0 +1,11 @@
+.history
+.vscode
+
+**/.idea
+**/node_modules
+**/cmake-build-debug
+**/*.xcodeproj
+**/tupian
+**/tupian_dist
+Java入门/out
+NodeJS/
