@@ -36,3 +36,19 @@ vue 不一样，它知道具体哪些状态变化了，所以可以更细的更�
 ### 6.3 Vnode 的类型
 
 ### 6.4 总结
+
+## 第 7 章： patch
+
+patch 就是打补丁(通过对比 vnode 和 oldVnode)去更新 DOM。原因是直接操作 DOM 比较费性能。
+
+DOM 的操作主要有：
+
+- 新增节点
+- 删除节点
+- 更新节点
+
+path 的过程是：
+
+1. 当 oldVnode 不存在时，直接用 vnode 渲染视图
+2. 当 oldVnode 和 vnode 完全不是一个节点时，新增 vnode 节点并插入，然后删除 oldVnode 节点
+3. 当 oldVnode 和 vnode 是同一个节点时，通过对比来更新 DOM 节点
