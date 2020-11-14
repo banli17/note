@@ -1,0 +1,1 @@
+let s: string = "hello"; // var s = "hello";
