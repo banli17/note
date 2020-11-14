@@ -12,9 +12,9 @@
 
 **笔记**
 
-- [x][彻底弄懂 0.1 + 0.2 != 0.3](./compute_basic/IEEE754.md)
+- [x] [彻底弄懂 0.1 + 0.2 != 0.3](./compute_basic/IEEE754.md)
 
-- [x][+0 和-0 是否相同？](./compute_basic/0.md)
+- [x] [+0 和-0 是否相同？](./compute_basic/0.md)
 
 ### 前端
 
@@ -33,7 +33,7 @@
 
 ### Vue 源码解析
 
-学习资料：书籍 <<深入浅出 Vue.js >>，刘博文
+**笔记**
 
 - [深入浅出 Vue.js 笔记](./Vue.js源码解析/README.md)
 
@@ -41,10 +41,14 @@
 
 - [6. Vnode](./Vue.js源码解析/src/6.VNode)
 
+**学习资料**
+
+- 书籍 <<深入浅出 Vue.js >>，刘博文
+
 ## 数据结构与算法
 
 ## python 进阶
 
-- [1. python 基础回顾](./python/1.basic/README.md)
+- [x] [1. python 基础回顾](./python/1.basic/README.md)
 
 ## Linux
