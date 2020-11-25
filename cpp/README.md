@@ -482,9 +482,662 @@ if(pa != NULL){
 pa = NULL;
 ```
 
+### 内存分布
+
+栈和队列
+
+栈和堆
+
+```cpp
+int a = 0             // (GVAR)全局初始化区
+int *p1;              // (bss)全局未初始化区
+int main(){           // (text)代码区
+  int b = 1;          // (stack)栈区变量
+  char s[] = "abc";   // (stack)栈区变量
+  int *p2 = NULL;     // (stack)栈区变量
+  char *p3 = "123456";// 123456\0 在常量区(不能修改)，p3 在(stack)栈区
+  static int c = 0;   // (GVAR)全局(静态)初始化区
+  p1 = new int(10);   // (heap)堆区变量，new 会分配到堆，可以用 delete 释放
+  p2 = new int(20);   // (heap)堆区变量
+  char *p4 = new char[7];  // (stack)栈区变量
+  strcpy_s(p4, 7, "123456") // (text)代码区
+
+  if(p1 != NULL){
+    delete p1;
+    p1 = NULL;
+  }
+  if(p2 != NULL){
+    delete p2;
+    p2 = NULL;
+  }
+  if(p4 != NULL){
+    delete[] p4;  // 数组是 delete[]
+    p4 = NULL;
+  }
+
+  return 0;                 // (text)代码区
+}
+```
+
+![](imgs/2020-11-18-13-53-22.png)
+
+栈空间是系统或编译器分配的，堆空间是可以由程序员分配的。常量区在 heap 和 bss 之间。
+
+heap 堆是一种动态分配资源的形式
+
+1. 从现代编程语言角度来看，使用堆，或者说使用动态内存分配，是一件很自然的事情。
+2. 动态内存带来了不确定性：内存分配耗时需要多久？失败了怎么办？在实时性要求高的场合，如嵌入式控制器和电信设备。
+3. 一般而言，当我们在堆上分配内存时，很多语言会使用 new，有些语言则使用隐式分配，在 c++ 中 new 的对应词是 delete，因为 c++ 是可以让程序员完全接管内存的分配释放的。
+
+程序通常需要牵涉到三个内存管理器的操作：
+
+1. 分配一个某个大小的内存块。
+2. 释放一个之前分配的内存块。
+3. 垃圾收集操作，寻找不再使用的内存块并予以释放；
+
+这个回收策略需要实现性能、实时性、额外开销等各方面的平衡，很难有统一和高效的做法(内存碎片，导致有时很难分配大空间)；
+
+C++ 做了 1，2 两件事(程序员自己管理内存)，而 Java 做了 1,3 两件事，无法很好做一些高效的事情(释放空间，立马新建一个空间)如图像处理，性能实时性有影响。
+
+### 资源管理方案 - RALL
+
+RALL(Resource Acquisition Is Initialization):
+
+- C++ 所特有的资源管理方式。有少量其它语言，如 D，Rust 也采纳了 RALL，但主流编程语言中，C++ 是唯一一个依赖 RALL 来做资源管理的。
+- RALL 依赖栈和析构函数(即栈退出时在析构函数中释放内存)，来对所有的资源 - 包括堆内存在内进行管理。
+- RALL 有些比较成熟的智能指针代表：如 std::auto_ptr 和 boost:shared_ptr。
+
+### 几种变量的对比
+
+![](imgs/2020-11-18-14-15-56.png)
+![](imgs/2020-11-18-14-19-53.png)
+
+### 内存泄漏
+
+**什么是内存泄露问题?**
+
+指程序中已动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果
+
+**内存泄露发生原因和排查方式**
+
+1. 内存泄露主要发生在堆内存分配方式中，即配置了内存后，所有指向该内存的指针都遗失了。若缺乏语言这样的垃圾回收机制，这样的内存片就无法归还系统（除非程序停止执行后，系统才会收回）。
+2. 因为内存泄露属于程序运行中的问题，无法通过编译识别，所以只能在程序运行过程中来判别和诊断。
+
+```cpp
+while(true){
+  int *a = new int(10);
+}
+```
+
+### 智能指针
+
+使用指针是非常危险的行为，可能存在空指针、野指针等问题，并可能导致内存泄露。但是指针有非常高效，所以需要更安全的方式来使用指针。
+
+一般有两种典型的方案:
+
+1. 使用更安全的指针 - 智能指针。
+2. 不使用指针，使用更安全的方式 - 引用。
+
+C++ 中退出了四种常用的智能指针：
+
+- unique_ptr
+- share_ptr
+- weak_ptr
+- auto_ptr，C++11 已经废弃，在 C++17 中被正式删除
+
+从下面几个角度来分析这几种指针
+
+- 应用场景：
+  - 对象使用权
+  - 生命周期
+- 性能分析
+
+**auto_ptr**
+
+![](imgs/2020-11-18-14-37-33.png)
+
+### 引用
+
+引用是一种特殊的指针，不允许修改的指针。
+
+使用指针有哪些坑：
+
+1. 空指针
+2. 野指针
+3. 不知不觉改变了指针的值，却继续使用
+
+使用引用，则可以：
+
+1. 不存在空引用
+2. 必须初始化
+3. 一个引用永远指向它初始化的那个对象
+
+引用的基本使用：可以认为是指定变量的别名，使用时可以认为是变量本身。
+
+```cpp
+int x = 1,x2 = 3;
+int& rx = x;
+rx = 2;
+cout << x << endl; // 2
+cout << rx << endl; // 2
+rx = x2;
+cout << x << endl;  // 3
+cout << rx << endl; // 3
+```
+
+```cpp
+// 交换 int a,b 的值
+// 不行，因为参数会参数另外的变量，而不是传入的变量了
+void swap(a, b)
+{
+  int tmp = a;
+  a = b;
+  b = tmp;
+}
+void swap2(int& a, int& b)
+{
+  int tmp = a;
+  a = b;
+  b = tmp;
+}
+void swap3(int* a, int* b)
+{
+  int tmp = a;
+  a = b;
+  b = tmp;
+}
+int a = 3, b = 2;
+swap2(a, b)
+assert(a == 4 && b == 3)
+swap3(&a, &b) // 需要传指针
+```
+
+有了指针为什么还需要引用？
+
+> Bjarne Stroustrup 的解释是：为了支持函数运算符重载。(让参数传递好看些)
+
+有了引用为什么还需要指针？
+
+> Bjarne Stroustrup 的解释：为了兼容 C 语言。
+
+补充，关于函数传递参数类型的说明：
+
+1. 对内置基础类型(如 int, double 等)而言，在函数中传递时传值(pass by value)更高效。
+2. 对 OO 面向对象中自定义类型而言，在函数中传递时传引用(pass by reference to const)更高效，因为变量大。
+
 ## 第 6 章 C++基础句法
 
+图灵机
+
+三种基本的程序结构：
+
+- 顺序、分支和循环
+
+单一语句: 在任何一个表达式后面加上分号(;)。如：
+
+```cpp
+c = a+b; cout << "hello world" << endl;
+```
+
+复合语句：用一对花括号 {} 括起来的语句块，在语法上等效于一个单一的语句。
+
+```cpp
+if(p != NULL) {
+  cout << *p << endl;
+} else if {
+} else {
+}
+```
+
+1. 实现一个函数，输入一个年份，判断是否是闰年。
+
+```cpp
+// if(year % 400 == 0 || (year % 4 == 0 && year %100 != 0))
+if((year % 4 == 0 && year %100 != 0) || year % 400 == 0) {
+  return true
+} else {
+  return false
+}
+```
+
+2. 判断一个整数是否是另一个整数的倍数。
+
+```cpp
+if((a!=0)&&(b%a==0)){
+  return true;
+}
+```
+
+switch
+
+```cpp
+typedef enum __COLOR {
+    RED = 3,
+    GREEN,
+    BLUE,
+    UNKOWN
+} color;  // 定义一个结构体叫 color
+
+color color0;
+color0 = GREEN;
+if (color0 == BLUE) {
+    cout << "蓝色" << endl;
+} else {
+    // 非蓝色 4
+    cout << "非蓝色" << color0 << endl;
+}
+
+switch (color0) {
+    case GREEN:
+        cout << "绿色" << endl;
+        break; // 如果不加 break，满足条件后，后面的条件不符合也会指向
+    case RED:
+        cout << "红色" << endl;
+        //break;
+    case BLUE:
+        cout << "蓝色" << endl;
+        //break;
+    default:
+        cout << "其它" << endl;
+        break;
+}
+```
+
+### 枚举
+
+使用 #define 和 const 创建符号常量，使用 enum 不仅能够创建符号常量，还能定义新的数据类型。
+
+枚举类型 enum (enumeration) 的声明和定义：
+
+```cpp
+// 声明 wT 类型
+enum wT {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday
+}
+wT weekday;  // 定义
+weekday = Monday;  // 只能赋wT里定义好的值，不能直接给int值
+weekday = wT(1); // 做了强制类型转换，但是不推荐
+
+int a = Wednesday;
+cout << a << endl;
+```
+
+### 结构体和联合体
+
+联合体(共用体)是一种特殊的数据类型，允许您在相同的内存位置存储不同的数据类型。您可以定义一个带有多成员的共用体，但是任何时候只能有一个成员带有值。共用体提供了一种使用相同的内存位置的有效方式。
+
+结构体是组合式。联合体是重叠式。
+
+```cpp
+union Score{
+  // 联合体，只有一个成员有值，sizeof 是最大的成员的值
+  double ds;  // 8
+  char level; // 1
+}
+struct Student{
+  char name[6];
+  int age;
+  Score s;
+}
+cout << sizeof(Score) << endl;   // 8
+cout << sizeof(Student) << endl; // 18
+
+Student s1;
+strcpy_s(s1.name, 'lili');
+s1.age = 16;
+s1.s.ds = 95.5;
+s1.s.level = 'A';
+cout << sizeof(Student) << endl; // 24
+```
+
+结构体的内存分布按照缺省对齐原则。
+
+![](imgs/2020-11-20-16-13-41.png)
+
+1. 分块按照最大的数据类型的倍数扩充。
+2. 相邻的如果小，会组合在一起。如果被拆开了，会每个都占最大数据的一倍大小。
+
+试验一下顺序不同导致了 sizeof 的不同。
+
+```cpp
+// sizeof 24
+struct Student{
+  int age;     // 4
+  int x;
+  double a;
+  Score s;     // 8
+};
+// sizeof 32
+struct Student{
+  int age;     // 4
+  double a;
+  int x;
+  Score s;     // 8
+};
+```
+
+修改默认编译选项：
+
+- visual c++
+  - `#pragma pack(n)` 设置最小单元，如果设置为 1，则会让内存相邻排布
+- g++
+  - `__attribute__(aligned(n))`
+  - `__attribute__(__packed__)`
+
+![](imgs/2020-11-20-16-29-51.png)
+
+### 循环
+
+C++ 中提供了三种循环语句：while , do while 和 for。
+
+### 函数
+
+一个 C++ 程序是由若干个源程序文件构成，而一个源程序是由若干个函数构成，函数将一段逻辑封装起来，便于复用。
+
+从用户角度看，函数分为：
+
+- 库函数：标准函数，由 C++ 系统提供，如 strcpy_s 等。
+- 用户自定义函数：需要用户定义后使用；比如自己判断闰年函数 isLeapYear;
+
+函数的所有组成部分：
+
+1. 返回类型
+2. 函数实际名，函数名和参数列表一起构成了函数签名
+3. 参数：由参数类型、个数、名称
+4. 函数主体：大括号里的函数执行任务语句。
+
+函数重载 overload 与 C++ Name Mangling（名字碾碎）:
+
+```cpp
+int test(int a);
+int test(double a);
+int test(int a, double d);
+```
+
+实际上 C++ 编译器内部会进行函数签名，将上面的函数名转为其它名字：
+
+```
+int test(int)  -> test@xxx
+int test(double)  -> test@xxx
+int test(int, double)  -> test@xxx
+```
+
+> main 函数最好不用 void。
+
+### 内联(inline)函数
+
+如果一个函数是内联的，那么在编译时，编译器会把该函数的代码副本放置在每个调用该函数的地方。
+
+内联函数的目的是为了解决程序中函数调用的效率问题。(内联后不用开辟新栈了，空间换时间)。
+
+> 注意：内联函数内部不能有太复杂的逻辑，编译器有时会有自己的优化策略，所以内联不一定起作用；一般有复杂的循环、判断、递归等，编译器不会进行内联。
+
+### 返回函数的指针与返回指针的函数
+
+每个函数都占用一段内存单元，它们都有一个起始地址，指向函数入口地址的指针叫做函数指针。
+
+- `int (*p)(int)`: 函数指针，返回函数入口地址。常用于回调函数。
+- `int* p(int)`: 指针函数，返回值是一个指针。
+
+```cpp
+int add(int x, int y) {
+  return x + y;
+}
+
+// 将函数当作回调使用，传入指针函数
+int testFnPoint(int x, int y, int (*p)(int, int)) {
+  cout << "testFnPoint 计算 x+y 的值为" << p(x, y) << endl;
+  return 0;
+}
+
+int main() {
+  testFnPoint(1, 2, add);  // 3
+
+  int (*add2)(int, int);
+  add2 = add;
+}
+```
+
+### 命名空间
+
+命名空间用来解决同名冲突问题。它可以作为附加信息来区分不同库中相同名称的函数、类、变量等，命名空间即定义了上下文。本质上，命名空间就是定义了一个范围。
+
+关键词：using 和 namespace 的使用。
+
+```cpp
+int add(int x, int y) {
+    return x + y;
+}
+namespace my {
+    int add(int x, int y) {
+        cout << "这是命名空间 my 下的 add";
+        return x + y;
+    }
+}
+int main(){
+  cout << add(10, 20) << endl;
+  cout << my::add(10, 20) << endl; // 使用命名空间调用add
+}
+```
+
+如果多个`using namespace`里有同名方法，则会引发冲突。这时需要带上自己的命名空间才行。
+
+```
+using namespace a;
+using namespace b;
+
+// a b 里都有 add 方法，需要使用前缀
+a::add()
+b::add()
+```
+
+### 递归
+
+![](imgs/2020-11-20-17-40-02.png)
+但是计算了大量的重复。
+![](imgs/2020-11-20-17-40-32.png)
+![](imgs/2020-11-20-17-39-39.png)
+![](imgs/2020-11-20-17-41-51.png)
+![](imgs/2020-11-20-17-50-19.png)
+
+https://www.runoob.com/w3cnote/cpp-header.html
+
 ## 第 7 章 C++高级语法
+
+### 面向对象
+
+抽象是一种认识事物本质的方法。
+
+C++使用 struct、class 来定义一个类。
+
+- struct 的默认成员权限是 public。
+- class 的默认成员权限是 private。
+
+除此之外，二者基本无差别。
+
+```cpp
+class Student {
+  private: // 成员变量
+    string name;
+    double score;
+  public:  // 成员函数
+    double GetScore(){
+      return score;
+    }
+}
+```
+
+### IO 流
+
+stream: 从一端到另一端，字节的流动。
+
+传统的 C 中 I/O 有 printf, scanf, getch, gets 等函数，他们的问题是：
+
+- 不可编程，仅仅能识别固有的数据类型。
+- 代码可移植性差，有很多坑。
+
+C++ 中有 I/O 流 istream, ostream 等：
+
+- 可编程，对于类库的设计者很有用
+- 简化编程，使得 I/O 风格一致
+
+```
+- ios
+  - istream
+    - ifstream
+    - istrstream
+    - iostream(共有)  - fstream
+  - ostream
+    - ostrstream
+    - ofstream
+
+streambuf - strstreambuf
+          - filebuf
+```
+
+![](imgs/2020-11-21-15-35-20.png)
+
+### IO 缓存区
+
+标准 IO 提供的三种类型的缓存模式：
+
+1. 按块缓存(一次性全部加载)：如文件系统
+2. 按行缓存(一行行读取)： \n
+3. 不缓存(直接读取)
+
+![](imgs/2020-11-21-15-37-02.png)
+
+缓存区优点: 更加高效
+
+```cpp
+int testCache() {
+    int a;
+    int index = 0;
+    // 如果输入float 1.1，回车时程序 float 转 int 转换会异常退出
+    // 如果输入的个数小于 5 个，则会执行后继续等待输入
+    while (cin >> a) {
+        cout << "the number is " << a << endl;
+        index++;
+        if (index == 5) {
+            break;
+        }
+    }
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    char ch;
+    cin >> ch;
+    cout << "the last number is " << ch << endl;
+    return 0;
+}
+```
+
+上面的代码中，cin 是按行缓存的，直到输入回车后，才会从缓冲区中读取数据。如果输入`1 2 3 4 5 6 \n`。while 循环时会依次从缓冲区读取 `1 2 3 4 5`来执行(`while(cin>>a)`)。当循环退出后，程序没有等待 ch 的输入，而是从缓冲区直接获取了还存在的 6，所以如果不清空缓冲区，6 会赋值给 ch。导致程序异常。
+
+### 文件操作
+
+输入流的起点和输出流的终点都可以是磁盘文件。
+
+文件 C++ 把每个文件都看成是一个有序的字节序列，每个文件都以文件结束标识结束。
+
+![](imgs/2020-11-21-15-55-09.png)
+
+按照文件中数据的组织形式可以把文件分成：
+
+1. 文本文件: 文件中信息形式为 ASCII 码文件，每个字符占一个字节；
+2. 二进制文件: 文件中的信息的形式与其在内存中的形式相同；
+
+文件操作：
+
+1. 打开文件用于读和写 open。
+2. 检查打开是否成功 fail。
+3. 读或者写 read, write。
+4. 检查是否读完 EOF(end of file)。
+5. 使用完后关闭文件 close。
+
+![](imgs/2020-11-21-16-48-36.png)
+
+```cpp
+int testFstream() {
+    int a;
+    int index = 0;
+    fstream fout;
+    fout.open("../fstream.txt");
+    // 或者 if(!fout)
+    if (fout.fail()) {
+        cout << "open file faild " << endl;
+    }
+    while (cin >> a) {
+        fout << "the number is " << a << endl;
+        index++;
+        if (index == 5) {
+            break;
+        }
+    }
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    char ch;
+    cin >> ch;
+    fout << "the last number is " << ch << endl;
+    return 0;
+}
+```
+
+**拷贝二进制文件**
+
+```cpp
+static const int bufferLen = 2048;
+
+bool testCopyFile(const string &src, const string &dst) {
+    ifstream in(src.c_str(), std::ios::in | std::ios::binary);
+    ofstream out(dst.c_str(), std::ios::out | std::ios::binary);
+
+    if (!in || !out) {
+        return false;
+    }
+
+    char temp[bufferLen];
+    while (!in.eof()) {
+        in.read(temp, bufferLen);
+        streamsize count = in.gcount(); // 实际读取了多少，比如最后一点，可能不足 bufferLen
+        out.write(temp, count);
+    }
+
+    in.close();
+    out.close();
+    return true;
+}
+
+cout << testCopyFile("../a.gif", "../b.gif") << endl;
+```
+
+clion 读取文件路径问题：
+
+### 头文件的重复包含问题
+
+为了避免同一个文件被 include 多次，有两种方式：
+
+1. ifndef(`if not define`)
+
+```
+#ifndef __SOMEFILE_H__
+#define __SOMEFILE_H__
+...
+#endif
+```
+
+使用宏来防止同一个文件被多次包含：优点：可移植性好；缺点：无法防止宏名重复，难以排错。
+
+2. `#program once`
+
+使用编译器来防止同一个文件被包含多次，优点是防止宏名重复，容易排错，缺点是可移植性不好。
+
+可以将头文件全部包含在 `stdafx.h` 中。
+
+c++ 获取当前路径
 
 ## 第 8 章 C++编程思想
 

@@ -1,5 +1,7 @@
 #include "iostream"
+#include "fstream"
 #include "vector"
+#include "Complex.h"
 
 using namespace std;  // 如果找不到的变量或方法，会在命名空间下查找
 
@@ -126,6 +128,230 @@ int testPointConst() {
     return 0;
 }
 
+int testPoint5() {
+    cout << "hello testPoint5" << endl;
+    char *p3 = "123456";
+//    p3 = 'hi';      不能修改
+    //  *p3 = 'hello'; 不能修改
+    cout << p3 << endl;   // 123456
+    cout << *p3 << endl;  // 1
+    return 0;
+}
+
+int testIf() {
+    int a = 3 && 0;
+    // 3 && 1 // 0
+//    3 && 0 // 0
+    cout << a << endl;
+
+//    if (1 % 0) {
+// 1%0 is0
+    cout << "10%0 is" << 10 % 0 << endl;  // remainder by zero is undefined
+//    }
+    cout << "hi" << endl;
+
+    typedef enum __COLOR {
+        RED = 3,
+        GREEN,
+        BLUE,
+        UNKOWN
+    } color;  // 定义一个结构体叫 color
+
+    color color0;
+    color0 = GREEN;
+    if (color0 == BLUE) {
+        cout << "蓝色" << endl;
+    } else {
+        // 非蓝色 4
+        cout << "非蓝色" << color0 << endl;
+    }
+
+    switch (color0) {
+        case GREEN:
+            cout << "绿色" << endl;
+            break; // 如果不加 break，满足条件后，后面的条件不符合也会指向
+        case RED:
+            cout << "红色" << endl;
+            //break;
+        case BLUE:
+            cout << "蓝色" << endl;
+            //break;
+        default:
+            cout << "其它" << endl;
+            break;
+    }
+
+    return 0;
+
+}
+
+int testMemory() {
+    int b = 1;          // (stack)栈区变量
+    char s[] = "abc";   // (stack)栈区变量
+    int *p2 = NULL;     // (stack)栈区变量
+    char *p3 = "123456";// 123456\0 在常量区(不能修改)，p3 在(stack)栈区
+    static int c = 0;   // (GVAR)全局(静态)初始化区
+    int *p1 = new int(10);   // (heap)堆区变量，new 会分配到堆，可以用 delete 释放
+    p2 = new int(20);   // (heap)堆区变量
+    char *p4 = new char[7];  // (stack)栈区变量
+//    strcpy_s(p4, 7, "123456") // (text)代码区
+    return 0;                 // (text)代码区
+}
+
+int testStruct() {
+    union Score {
+        double ds;  // 8
+        char level; // 1
+    };
+    struct Student {
+//        char name[6];  // 6
+        int age;     // 4
+        int x;
+        double a;
+        Score s;     // 8
+    };
+    double a;
+    cout << sizeof(a) << endl;  // 8
+    cout << sizeof(Score) << endl;   // 8
+    cout << sizeof(Student) << endl; // 24 = 3*8
+    return 0;
+}
+
+int testWhile() {
+    // 求 1 + ... + 100 的和
+    // for 循环
+    int num = 1;
+    int max = 100;
+    int sum = 0;
+    for (; num <= max; num++) {
+        sum += num;
+    }
+    cout << sum << endl;  // 5050
+
+    // while 循环
+    int num1 = 1;
+    int max1 = 100;
+    int sum1 = 0;
+    while (num1 <= max1) {
+        sum1 += num1;
+        num1++;
+    }
+    cout << sum1 << endl;
+
+    int num2 = 1;
+    int max2 = 100;
+    int sum2 = 0;
+    do {
+        sum2 += num2;
+        num2++;
+    } while (num2 <= max2);
+    cout << sum2 << endl;
+    return 0;
+}
+
+int testClass() {
+    Complex a(1, 2);
+    Complex b(2, 3);
+    Complex c;
+    c = a + b;  // 这里C++会默认帮忙生成一个 = 的运算符重载
+
+    Complex d(c);
+
+    c++;
+    ++c;
+    cout << c << endl;
+    Complex i;
+    cin >> i;
+    cout << i << endl;
+    return 0;
+}
+
+int testCache() {
+    int a;
+    int index = 0;
+    // 如果输入float 1.1，回车时程序 float 转 int 转换会异常退出
+    // 如果输入的个数小于 5 个，则程序会执行完后直接退出
+    while (cin >> a) {
+        cout << "the number is " << a << endl;
+        index++;
+        if (index == 5) {
+            break;
+        }
+    }
+    //cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    char ch;
+    cin >> ch;
+    cout << "the last number is " << ch << endl;
+    return 0;
+}
+
+int testFstream() {
+    int a;
+    int index = 0;
+    fstream fout;
+    fout.open("../fstream.txt");
+    // 或者 if(!fout)
+    if (fout.fail()) {
+        cout << "open file faild " << endl;
+    }
+    while (cin >> a) {
+        fout << "the number is " << a << endl;
+        index++;
+        if (index == 5) {
+            break;
+        }
+    }
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    char ch;
+    cin >> ch;
+    fout << "the last number is " << ch << endl;
+    return 0;
+}
+
+// 指针函数，返回一个指针
+char *testPointFn() {
+    char *str = "hello";
+    return str;
+}
+
+int add(int x, int y) {
+    return x + y;
+}
+
+int testFnPoint(int x, int y, int (*p)(int, int)) {
+    cout << "testFnPoint 计算 x+y 的值为" << p(x, y) << endl;
+    return 0;
+}
+
+namespace my {
+    int add(int x, int y) {
+        cout << "这是命名空间 my 下的 add";
+        return x + y;
+    }
+}
+
+static const int bufferLen = 2048;
+
+bool testCopyFile(const string &src, const string &dst) {
+    ifstream in(src.c_str(), std::ios::in | std::ios::binary);
+    ofstream out(dst.c_str(), std::ios::out | std::ios::binary);
+
+    if (!in || !out) {
+        return false;
+    }
+
+    char temp[bufferLen];
+    while (!in.eof()) {
+        in.read(temp, bufferLen);
+        streamsize count = in.gcount(); // 实际读取了多少，比如最后一点，可能不足 bufferLen
+        out.write(temp, count);
+    }
+
+    in.close();
+    out.close();
+    return true;
+}
+
 int main() {
     int a = -10;
     cout << a << endl;
@@ -134,8 +360,22 @@ int main() {
     //testVector();
     //testPoint();
     //testPoint2();
-//    testPoint3();
-    testPointConst();
+    //testPoint3();
+    //testPointConst();
+//    testPoint5();
+//    testIf();
+//    cout << testPointFn() << endl;
+//    testFnPoint(1, 2, add);
+//    cout << add(10, 20) << endl;
+//    cout << my::add(10, 20) << endl;
+//    testMemory();
+//    testStruct();
+//    testWhile();
+    // testClass();
+
+    cout << testCopyFile("../point.drawio", "../point2.drawio") << endl;
+//    testCache();
+//    testFstream();
 }
 
 // -10 -> 10000000 00000000 00000000 00001010
