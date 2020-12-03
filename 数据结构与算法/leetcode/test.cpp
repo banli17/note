@@ -26,23 +26,3 @@ bool isSubsequence(char str1, char str2)
     //     }
     // }
 }
-
-int main()
-{
-    char str1[] = {"hello"};
-    char str2[] = "he";
-    char *str3 = "hello";
-    char str4[6] = {"hello"};
-    char str5[] = {'h', '\0'};
-    int *p = new int ;
-    cout << sizeof(str1) << endl;
-    cout << sizeof(str2) << endl;
-    cout << sizeof(str3) << endl;
-    cout << sizeof(str4) << endl;
-    cout << strlen(str5) << endl;
-    cout << sizeof(str5) << endl;   // 6
-    cout << sizeof(str3) << endl;   // 8   64位系统里指针是8个字节
-    cout << sizeof(p) << endl;
-    //isSubsequence(str1, str2);
-    return 0;
-}

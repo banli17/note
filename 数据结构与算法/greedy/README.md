@@ -9,8 +9,4 @@
 - 如 s = "abc", t = "ahbgdc"，则 s 是 t 的子序列，算法返回 true
 - 如 s = "axc", t = "ahbgdc"，则 s 不是 t 的子序列，算法返回 false
 
-实现如下：
-
-```
-
-```
+实现如下： [代码实现](../leetcode/L392.h)
