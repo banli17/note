@@ -2,6 +2,7 @@
 #include "fstream"
 #include "vector"
 #include "Complex.h"
+#include "stl01.h"
 
 using namespace std;  // 如果找不到的变量或方法，会在命名空间下查找
 
@@ -373,9 +374,13 @@ int main() {
 //    testWhile();
     // testClass();
 
-    cout << testCopyFile("../point.drawio", "../point2.drawio") << endl;
+    //cout << testCopyFile("../point.drawio", "../point2.drawio") << endl;
 //    testCache();
 //    testFstream();
+
+    stl01::stl01 *s1 = new stl01::stl01();
+//    s1->testRelative();
+    s1->testList();
 }
 
 // -10 -> 10000000 00000000 00000000 00001010
