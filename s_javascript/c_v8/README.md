@@ -45,7 +45,7 @@ function Foo() {
   this[100] = "test-100";
   this[1] = "test-1";
   this["B"] = "bar-B";
-  this[3] = "test-3";
+  this[3] = "test-3";  // 注意对象的 key 打印都是字符串
   this["2"] = "test-2"; // 注意 如果字符串能转为数字，则会变成数字属性。
   this["A"] = "bar-A";
 }
