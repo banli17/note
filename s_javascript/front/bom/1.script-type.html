@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script defer type='text/javascript' charset="GBK" src='./1.js' onload="console.log(2)"></script>
+</head>
+
+<body>32131我你好
+    <a href="javascript:alert(1)">aaa弹出1</a>
+    <a href="javascript:  'hello world!'">点击时间</a>
+    <script type='a' id='script'>
+        alert(1)
+   </script>
+    <script type='text/javascript' charset="GBK">
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('loaded')
+        });
+
+        ['1.a.js'].forEach(function (src) {
+            var script = document.createElement('script');
+            script.src = src;
+            document.head.appendChild(script);
+        });
+        console.log(document.querySelector('#script').text) // alert(1)
+    </script>
+    helfjdlsajfa
+</body>
+
+</html>

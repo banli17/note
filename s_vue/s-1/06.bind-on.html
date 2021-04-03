@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <div class="a" :class="['a', 'b']"></div>
+  <div class="a" :class="{a: true, b: false}"></div>
+
+  <div :style="{color: 'red'}">xxx</div>
+  <div :style="[{color: 'red'}, s]">xxx</div>
+
+  <!--   事件绑定是直接给元素加 addEventListener，没有用事件代理 -->
+  <div v-on:click="fn">点击</div>
+  <div @click="fn(3, $event)">点击</div>
+
+  {{msg}}
+  <input type="text" :value="msg" @input="e=>msg = e.target.value">
+  <input type="text" v-model="msg">
+
+  <br>
+<!--   radio 一样 -->
+  {{checked}}
+  羽毛球<input type="checkbox" v-model="checked" value="羽毛球">
+  乒乓球<input type="checkbox" v-model="checked" value="乒乓球">
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+// vm 就是 viewModel
+let vm = new Vue({
+    el: '#app',
+    data() {
+        return {
+            // 响应式规则
+            msg: 'hi',
+            s: {background: 'blue'},
+            checked: []
+            // fn() {
+            //     console.log(this) // 这里this是window，方法不能写在 data里
+            // }
+        }
+    },
+    methods: {
+        fn(a, e) {
+            console.log(e)
+            console.log(this) // 当前Vue实例，内部已经 bind 了，不能再 bind
+
+            console.log(e.target, e.currentTarget)
+        }
+    }
+})
+</script>
+</body>
+</html>

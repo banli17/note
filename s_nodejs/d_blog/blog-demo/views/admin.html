@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理后台</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>当前用户：{{realname}}</p>
+
+    <h2>文章列表</h2>
+    <ul>
+        <li v-for="l in list">
+            <a :href="'/detail?id='+l.id">{{l.title}}</a>
+            <a @click="edit(l.id)">编辑</a>
+            <a @click="del(l.id)">删除</a>
+        </li>
+    </ul>
+</div>
+<script>
+    function query(id) {
+        const params = {}
+        location.search.replace(/([^=?]+)=([^=?]+)/g, function (a, b, c) {
+            params[b] = c
+        })
+        return params[id]
+    }
+
+    new Vue({
+        el: '#app',
+        data: {
+            realname: '',
+            list: []
+        },
+        methods: {
+            getList() {
+                axios({
+                    url: '/api/blog/list',
+                    params: {
+                        isAdmin: 1
+                    }
+                }).then(({data}) => {
+                    // if (data.errno == 0) {
+                    //     // 登陆成功
+                    //     location.href = '/admin.html'
+                    // } else {
+                    //     alert(data.message)
+                    // }
+                    this.list = data.data
+                })
+            }
+        },
+        created() {
+            try {
+                let user = JSON.parse(localStorage.getItem('user'))
+                this.realname = user.realname
+            } catch (e) {
+
+            }
+            this.getList()
+        }
+    })
+</script>
+</body>
+</html>

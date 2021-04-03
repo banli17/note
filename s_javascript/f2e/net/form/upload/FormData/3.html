@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="file" name="file" class="file">
+<button>上传</button>
+<script>
+    var file = document.querySelector('.file')
+    var btn = document.querySelector('button')
+    btn.addEventListener('click', function () {
+
+        var formData = new FormData()
+
+        console.log(file.files[0])
+        return
+        formData.append('file', {
+            uri: file.files[0],
+            name: '1.jpg'
+
+        })
+    }, false)
+</script>
+</body>
+</html>

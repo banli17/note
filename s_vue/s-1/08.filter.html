@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <div>
+    {{money | currency('人民币') }}
+  </div>
+  <div>{{time | time('YY:MM:DD HH:mm:ss')}}</div>
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./node_modules/moment/moment.js"></script>
+<script>
+Vue.filter('currency', (v, ...args) => {
+    // v 是 money， args 是过滤器的参数
+    console.log(v, ...args)
+    return args[0] + ':' + v
+})
+Vue.filter('time', (v, format) => {
+    return moment(v).format(format)
+})
+let vm = new Vue({
+    el: '#app',
+    data() {
+        return {
+            money: 199,
+            time: '2020-09-08 01:01:22'
+        }
+    }
+})
+</script>
+</body>
+</html>

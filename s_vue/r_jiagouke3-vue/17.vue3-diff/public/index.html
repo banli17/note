@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script src="/node_modules/vue/dist/vue.global.js"></script> -->
+    <script src="/dist/bundle.js"></script>
+    <div id="app">123123</div>
+    <script>
+        let { createApp, h, reactive } = Vue;
+
+        // 1.虚拟dom原理 shapeFlag 
+        // 2.vue3 diff算法
+
+        const App = {
+            setup() { // 入口函数
+                // 返回值可以是对象 也可以是函数
+                let state = reactive({ flag: true });
+                setTimeout(() => {
+                    state.flag = !state.flag
+                }, 1000);
+                return () => { // 等价于vue2 中的render函数
+                    return state.flag ?
+                        h('div', { style: { color: 'red' } }, [
+                        h('li', { key: 'E' }, 'E'),
+                            h('li', { key: 'F' }, 'F'),
+                            h('li', { key: 'D' }, 'D'),
+                            h('li', { key: 'A' }, 'A'),
+                            h('li', { key: 'B' }, 'B'),
+                            h('li', { key: 'C' }, 'C'),
+                          
+
+                        ]) :
+                        h('div', { style: { background: 'yellow' } }, [
+                            h('li', { key: 'A' }, 'A'),
+                            h('li', { key: 'B' }, 'B'),
+                            h('li', { key: 'C' }, 'C')
+
+                        ])
+                }
+            },
+        }
+        createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>

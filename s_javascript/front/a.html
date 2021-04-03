@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='https://cdn.bootcss.com/jquery/2.0.3/jquery.js'></script>
+</head>
+
+<body>
+        <div id="myDiv"><![CDATA[This is some content.]]></div>
+    <a></a>
+    <a xx='po' class="link">xx
+        <!-- hello -->
+    </a>
+    <label for="xxxeee"></label>
+    <ul id="list">
+        <li class="item">1</li>
+        <li class="item">2
+            <ul class="list">
+                <li class="item">2.1</li>
+                <li class="item">2.2
+                    <ul class="list">
+                        <li class="item">2.2.1</li>
+                        <li class="item">2.2.2</li>
+                    </ul>
+                </li>
+                <li class="item">2.3</li>
+            </ul>
+        </li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+    </ul>
+    <input type="text" value='hi'>
+    <script>
+        document.write('hello')
+        function traversal(dom, callback) {
+            for (var i = 0, len = dom.length; i < len; i++) {
+                callback(dom[i])
+                if (dom[i].children.length) {
+                    traversal(dom[i].children, callback)
+                }
+            }
+        }
+
+        var map = {
+            ul: 'parent',
+            li: 'child'
+        }
+
+        traversal(document.getElementById('list').children, function (node) {
+            node.classList.add(map[node.nodeName.toLowerCase()])
+        })
+
+        //document.open('text/html','replace')
+
+        document.querySelector('.link').addEventListener('click', function () {
+            document.open()
+        })
+
+        function outputAttributes(element) {
+            var pairs = [],
+                attrName, attrValue;
+            for (var i = 0, len = element.attributes.length; i < len; i++) {
+                attrName = element.attributes[i].nodeName
+                attrValue = element.attributes[i].nodeValue
+                pairs.push(attrName + '="' + attrValue + '"')
+            }
+            return pairs.join(' ')
+        }
+        var opAttr = outputAttributes(document.querySelector('.link'))
+        //console.log(opAttr)
+
+        // var radio1 = document.createElement('<input type="radio" name="choice" value="1">')
+        // var radio2 = document.createElement('<input type="radio" name="choice" value="2">')
+        // document.body.append(radio1)
+        // document.body.append(radio2)
+    </script>
+</body>
+
+</html>

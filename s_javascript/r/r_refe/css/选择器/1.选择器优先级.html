@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red
+        }
+
+        .blue {
+            color: blue
+        }
+
+        .blue-important {
+            color: blue !important
+        }
+    </style>
+</head>
+
+<body>
+    <span class="blue-important" style="color:red!important">文字是红色 class="blue-important"
+        style="color:red!important"</span>
+    <p class="red blue">文字是蓝色 class="red blue" 多个class后面的样式生效</p>
+    <p class="red blue red">文字是蓝色 class="red blue red" 两个重复的 red，blue 后面的 red 忽略</p>
+    <p class="red" class="blue">文字是红色 class="red" class="blue" 前面的class生效</p>
+</body>
+
+</html>

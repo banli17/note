@@ -1,0 +1,37 @@
+{
+    "name": "09.vue-ssr",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "client:dev": "webpack-dev-server --config ./build/webpack.client.js",
+        "client:build": "webpack --config ./build/webpack.client.js",
+        "server:build": "webpack --config ./build/webpack.server.js",
+        "run-all": "concurrently \"npm run client:build -- --watch\" \"npm run server:build -- --watch\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "koa": "^2.13.0",
+        "koa-router": "^10.0.0",
+        "koa-static": "^5.0.0",
+        "vue": "^2.6.12",
+        "vue-server-renderer": "^2.6.12"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.3",
+        "@babel/preset-env": "^7.12.1",
+        "babel-loader": "^8.1.0",
+        "concurrently": "^5.3.0",
+        "css-loader": "^5.0.0",
+        "html-webpack-plugin": "^4.5.0",
+        "vue-loader": "^15.9.5",
+        "vue-style-loader": "^4.1.2",
+        "vue-template-compiler": "^2.6.12",
+        "webpack": "^5.3.2",
+        "webpack-cli": "^4.1.0",
+        "webpack-dev-server": "^3.11.0",
+        "webpack-merge": "^5.3.0"
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "s_redis",
+  "version": "1.0.0",
+  "description": "## 简介",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "banli17",
+  "license": "MIT",
+  "dependencies": {
+    "redis": "^3.0.2"
+  }
+}

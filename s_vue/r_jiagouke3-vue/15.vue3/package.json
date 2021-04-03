@@ -1,0 +1,27 @@
+{
+  "name": "12.ts-lesson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -c -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "rollup": "^2.33.1",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.5.4",
+    "@vue/reactivity": "^3.0.2",
+    "jquery": "^3.5.1",
+    "redux": "^4.0.5",
+    "vue": "^3.0.2",
+    "vue-next": "0.0.1"
+  }
+}

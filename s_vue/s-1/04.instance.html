@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+// vm 就是 viewModel
+let vm = new Vue({
+    // el: '#app',
+    template: '<div>hello</div>',
+    data() {
+        return {
+            // 响应式规则
+            msg: 'hi'
+        }
+    }
+})
+console.log(vm.$el)
+vm.$mount('#app')
+// document.body.appendChild(vm.$el)
+console.log(vm.$options)
+console.log(vm.$data == vm._data)
+vm.$watch('msg', function (newValue, oldValue,) {
+    console.log(newValue)
+})
+// 下面只会更新一次，
+vm.msg = 1
+vm.msg = 2
+vm.msg = 3
+</script>
+</body>
+</html>

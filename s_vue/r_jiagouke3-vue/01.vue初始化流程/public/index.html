@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="/dist/vue.js"></script>
+    <!-- 
+
+        模板编译原理 AST语法树 （树的遍历）  先标识出html来 -》 js语法
+
+        1.需要将模板变成一个render方法 render(){return _l(3,_c('li',{},name)) }
+        2.需要去当前的实例上取值  with
+        3.虚拟dom =》 对象 可以描述dom结构（diff算法）
+        4.要生成一个真实的dom结构扔到页面中
+     -->
+  
+   
+    <div id="app" a=1 b=2 style="color:green">
+       <ul>
+           <li>{{name}}</li>
+           <li>{{age}}</li>
+       </ul>
+    </div>
+   
+    
+    <script>
+        // 响应式数据变化，数据代理 Object.defineProperty
+        const vm = new Vue({ // vue2 options Api  tree-shaking 
+            el:'#app',
+            data(){
+                return {name:'zf',age:10}   // vue中数组中的对象 如果变化了 也需要更新视图
+            }
+        });
+        console.log(vm);
+        //console.log(vm); // vm._data.name
+    </script>
+</body>
+</html>

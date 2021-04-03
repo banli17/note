@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            ;
+        }
+._loading_wrap_ {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999
+}
+
+._loading_div_class_,._loading_wrap_ {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+._loading_div_class_ {
+    word-wrap: break-word;
+    padding: .5rem .75rem;
+    text-align: center;
+    z-index: 9999;
+    font-size: .6rem;
+    max-width: 60%;
+    color: #fff;
+    border-radius: .25rem;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+._loading_div_class_ .message {
+    color: #353535;
+    font-size: 16px;
+    line-height: 3
+}
+
+.spinner {
+    animation: circle-rotator 1.4s linear infinite
+}
+
+.spinner * {
+    line-height: 0;
+    box-sizing: border-box
+}
+
+@keyframes circle-rotator {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(270deg)
+    }
+}
+
+.path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: circle-dash 1.4s ease-in-out infinite,circle-colors 5.6s ease-in-out infinite
+}
+
+@keyframes circle-colors {
+    0% {
+        stroke: #fa8919
+    }
+
+    to {
+        stroke: #fa8919
+    }
+}
+
+@keyframes circle-dash {
+    0% {
+        stroke-dashoffset: 187
+    }
+
+    50% {
+        stroke-dashoffset: 46.75;
+        transform: rotate(135deg)
+    }
+
+    to {
+        stroke-dashoffset: 187;
+        transform: rotate(450deg)
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="box1 box" draggable="true"></div>
+    <a draggable="false" href='xx'>hello</a>
+    <div class="_loading_wrap_"><div class="_loading_div_class_ fade-leave fade-leave-active"><svg viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg" class="spinner spinner--circle" style="width: 40px; height: 40px;"><circle fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30" class="path"></circle></svg> <p class="message">加载中...</p></div></div>
+    <script>
+    </script>
+</body>
+
+</html>

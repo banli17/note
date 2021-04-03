@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="/dist/bundle.js"></script>
+    <div id="app"></div>
+    <!-- <script src="/node_modules/@vue/reactivity/dist/reactivity.global.js"></script> -->
+    <script>
+        // vue2 options Api vue3.compositionApi 
+        let { reactive, effect, computed, ref, toRefs } = VueReactivity;
+         let counter = reactive({a:{a:1},c:computed(()=>{
+            return counter.a
+        })});
+
+        console.log(counter.c)
+
+
+        // {a:1,b:2}
+        // {a:{value:1},b:{value:2}}
+
+        // toRefs 就是让对象展开 并且让对象里面的第一层基本类型 都增加了value属性
+        // let r = toRefs(counter);
+        // 内部会检测属性 是否包含  __v_isRef会自动.value
+        // console.log(r)
+
+
+    </script>
+
+
+
+</body>
+
+</html>

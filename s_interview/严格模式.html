@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+    // 消除不合理的地方，减少怪异行为
+    // 消除不安全的地方
+    // 提交编译器效率，增加运行速度
+    // 为未来版本做铺垫
+
+    // 全局对象显示声明
+    // 静态绑定
+    // - 严格模式禁用 with
+    // - eval 独立作用域，不为上层注册变量
+    // 增强安全措施
+    // - 全局 this 是 undefined
+    // - 进制函数内部遍历调用栈argument.callee fn.caller fn.arguments，函数严格，内部的函数也是严格的
+    // - -进制删除遍历 delete x
+    // - 显示报错，正常模式下静默失败的，如对只读属性赋值
+    //    - 对一个只有getter 的属性赋值
+    //    - 禁止扩展后Object.preventExtensions(o)，再扩展对象新属性
+    //    - 删除不可删除的属性， delete Object.prototype
+    // - 重名错误，如 o{p:,p:}
+          // - 函数形参不能重名
+    // 禁止 8禁止 v n = 0111 ，因为整数前面是0
+    // arguments 赋值
+    // arguments 改变后无效，不追踪 f(a){ a=1, argument[0]} f(2)  //2 
+    // argument.callee
+    // 函数声明必须在顶层，如 if(true){function} 报错
+    // 保留字 implements interface let package private protected public static yield
+    //   class enum export extends import super  const
+    function a(){
+      console.log(a.caller)  // b
+    }
+    function b(){
+      "use strict"
+      console.log(arguments)  // , b.caller
+
+      a(1)
+    }
+    b()
+    // let a = function(){console.log(1)}
+    // delete a  // 非严格模式静默失败，严格模式报错
+    // a()
+    </script>
+</body>
+</html>

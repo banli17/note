@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <textarea v-model="content" cols="30" rows="10"></textarea>
+  <button @click="run">点击</button>
+  <div id="result"></div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+new Vue({
+    el: '#app',
+    data() {
+        return {content: ''}
+    },
+    methods: {
+        getSource(type, source) {
+            let reg = new RegExp(`<${type}>([\\w\\W]*)<\\/${type}>`, 'gim')
+            let res = reg.exec(source)
+            if (res) {
+                return res[1]
+            }
+        },
+        run() {
+            let template = '<div id="result">'
+            template += this.getSource('template', this.content)
+            template += '</div>'
+            let script = this.getSource('script', this.content).replace('export default', 'return ')
+            let style = this.getSource('style', this.content)
+            console.log(template, script, style)
+            let obj = new Function(script)()
+            obj.template = template  // 需要定义模版
+            console.log('obj', obj)
+            let ChildComponent = Vue.extend(obj)
+            let styleEle = document.createElement('style')
+            styleEle.innerHTML = style
+            document.body.appendChild(styleEle)
+
+            new ChildComponent().$mount('#result')
+        }
+    }
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪元素</title>
+    <style>
+        .p0 {
+            outline: solid 1px orange;
+
+        }
+
+        .p0::first-line {
+            /* text-transform: uppercase */
+            color: red;
+        }
+
+        .p1::first-letter {
+            /* text-transform: uppercase */
+            color: red;
+            text-transform: uppercase;
+            font-size: 2em;
+            float: left;
+            line-height: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>::first-line </h2>
+    <p class="p0"> 调整窗口大小看看，(换行符)
+        第一行是显示的第一行，(换行符)
+        而不是 HTML 中代码的换行。</p>
+    <div class="p0">
+        <p>我在第一行</p>
+        <p>我在第二行了</p>
+    </div>
+    <div class="p0">
+        <span>注意是显示效果的第一行,</span>
+        <span>还在第一行</span>
+    </div>
+    <span class="p0">这是一个行内元素span，::first-line 对行内元素无效</span>
+    <h2>::first-letter </h2>
+    <p class="p1">this is 首字母大写、放大的效果</p>
+    <span class="p1">what是一个行内元素span，::first-line 对行内元素无效</span>
+
+
+    <style>
+        div>span#a {
+            color: green;
+        }
+
+        div::first-line {
+            color: blue;
+        }
+    </style>
+
+    <div>
+        <span id=a>First paragraph</span><br />
+        <span>Second paragraph</span>
+    </div>
+
+    <!-- <style>
+        div>span#a {
+            color: green;
+        }
+
+        div::first-letter {
+            color: blue;
+        }
+    </style>
+    <div>
+        <span id=a>First paragraph</span><br />
+        <span>Second paragraph</span>
+    </div> -->
+
+
+</body>
+
+</html>

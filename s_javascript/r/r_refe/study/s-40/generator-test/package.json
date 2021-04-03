@@ -1,0 +1,19 @@
+{
+  "name": "generator-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "yo test"
+  },
+  "keywords": [],
+  "author": "banli17",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^4.8.2",
+    "yo": "^3.1.1"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.21"
+  }
+}

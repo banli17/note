@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 6.9MB
+        var df = document.createDocumentFragment()
+        for (let i = 0; i < 500000; i++) {
+            let e = document.createElement('div')
+            e.innerHTML = 'ehll'
+            df.appendChild(e)
+        }
+        document.body.prepend(df)
+
+        // 51.7MB
+        // var divs = document.querySelectorAll('div')
+        // for (let i = 0; i < 500000; i++) {
+        //     divs[i].addEventListener('click', function () {
+        //         alert(1)
+        //     })
+        // }
+
+        // 10.4MB
+        // document.body.addEventListener('click', function () {
+        //     alert(1)
+        // }, false)
+    </script>
+</body>
+
+</html>

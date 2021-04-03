@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="/dist/bundle.js"></script>
+    <div id="app"></div>
+ <!-- <script src="/node_modules/@vue/reactivity/dist/reactivity.global.js"></script> -->
+    <script>
+
+        // vue2 options Api vue3.compositionApi 
+        let { reactive, effect,computed } = VueReactivity;
+        let obj = { name: 'zf', age: 11, address: { a: 1 }, arr: [1, 2, 3,4,5] }
+        let state = reactive(obj);
+        // computed({
+        //     get(){},
+        //     set(){}
+        // })
+
+        // 当执行函数时， 默认只会收集计算属性的effect
+        // 应该让计算属性 收集他外层的effect
+
+        // 1.计算属性是一个effect   age=> computed effect => scheduler =》 myAge.value => effect
+        let myAge = computed(()=>{ // 默认计算属性的值被包装到了value属性上
+            console.log('ok')
+            return state.age + 20; // 当依赖的属性发生变化时 会重新执行计算属性
+        })
+        // myAge.value => effect
+        effect(function fn1(){
+            app.innerHTML = `珠峰今年${state.name},我的年龄是${myAge.value}`
+        });
+        setTimeout(() => {
+            state.age++;
+        }, 1000);
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <my-component></my-component>
+  <my-component></my-component>
+  <my-component></my-component>
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+let Ctor = Vue.extend({
+    data() {
+        return {msg: 'hello'}
+    },
+    template: `<div>{{msg}}</div>`
+})
+// 组件如果传入是一个对象，则内部会调用 Vue.extend 方法
+Vue.component('my-component', Ctor)
+
+Vue.component('my-component2', {
+    data() {
+        return {msg: 'hello'}
+    },
+    template: `<div>{{msg}}</div>`
+})
+
+console.log(Ctor)    // ƒ VueComponent (options) { this._init(options); }
+console.log(new Ctor())  // VueComponent
+document.body.appendChild(new Ctor().$mount().$el)
+let vm = new Vue({
+    el: '#app',
+    data() {
+        return {
+            msg: 'hi'
+        }
+    }
+})
+</script>
+</body>
+</html>

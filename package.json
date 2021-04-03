@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "banli17",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.26.3"
+  }
 }

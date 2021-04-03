@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  1. 实现 v-click-outside
+  <div v-click-outside="hide" id="xx">
+    <input type="text" @focus="focus">
+    <div class="tips" v-if="show">这里是提示文字</div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  2. 实现 v-focus
+  <input type="text" autofocus>
+  <input type="text" v-focus>
+  <br>
+  3. 实现 v-model:
+  {{msg}}
+  <input type="text" v-model2="msg">
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+// Vue.directive('clickOutside', {
+// })
+let vm = new Vue({
+    el: '#app',
+    directives: {
+        model2: {
+            bind(el, bindings, vnode, oldVnode) {
+                el.handler = function (e) {
+                    console.log(e.target.value)
+                    console.log('vnode.context', vnode.context)
+                    vnode.context._data[bindings.expression] = e.target.value
+                    // el.value = e.target.value
+                }
+                el.value = vnode.context._data[bindings.expression]
+                el.addEventListener('input', el.handler)
+            },
+            unbind(el) {
+                el.removeEventListener('input', el.handler)
+            }
+        },
+        focus: {
+            // 这里需要插入后执行
+            inserted(el) {
+                el.focus()
+                // 或者在 bind 里
+                // Vue.nextTick(()=>{
+                //     el.focus()
+                // })
+            }
+        },
+        clickOutside: {
+            // 指令生命周期
+            // bind 执行一次，绑定时
+            // inserted 插入到 dom
+            // update 引用数据变化时执行
+            // componentUpdate
+            // unbind
+            // 默认写一个函数是 bind + update
+            update() {
+                console.log('udpate')
+            },
+            bind(el, bindings, vnode) {
+                // el 是 xx 元素
+                // vnode 是当前的 div#xx 节点 vnode.context 指向Vue实例
+                // bindings 是一个包含指令信息的对象
+                console.log(el, bindings, vnode)
+                el.handler = function (e) {
+                    if (!el.contains(e.target)) {
+                        const method = bindings.expression
+                        vnode.context[method]()  // 执行 hide 方法
+                    }
+                }
+                document.addEventListener('click', el.handler)
+            },
+            unbind(el) {
+                document.removeEventListener('click', el.handler)
+            }
+        }
+    },
+    data() {
+        return {
+            show: false,
+            msg: 'hi'
+        }
+    },
+    methods: {
+        focus() {
+            this.show = true
+        },
+        hide() {
+            this.show = false
+        }
+    }
+})
+</script>
+</body>
+</html>

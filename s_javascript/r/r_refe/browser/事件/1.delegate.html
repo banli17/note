@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="parent">
+   
+  </div>
+<!-- <script src="./jquery.js"></script> -->
+  <script>
+    var el = document.createElement('div')
+    el.innerHTML = '<span>按钮</span>'
+    el.classList.add('b')
+    el.classList.add('button')
+
+    var p =  document.querySelector('.parent')
+    var f = document.createDocumentFragment()
+    for(var i=0;i<100000;i++){
+      elClone = el.cloneNode(true)
+      f.appendChild(elClone)
+    }
+    p.appendChild(f)
+
+    function is(target, se){
+      console.log([...target.classList].sort().toString(), se.classList.sort().toString())
+        return [...target.classList].sort().toString() === se.classList.sort().toString() && target.id == se.id
+    } 
+    function format(selector){
+      const id = selector.match(/#([^.\[]+)/)
+      const classList = selector.match(/(?:\.)[^.#[]+/g)
+      // const propList =  selector.match(/(?:[)[^.#\[]+(?:]))/g)
+      console.log(classList)
+      return {
+        id:  id && id[1],
+        classList: classList,
+        // propList
+      }
+    }
+    function delegate(agent, type, selector, fn){
+      // 搜集 selector
+      const se = format(selector)
+      agent.addEventListener(type, function(e){
+        var target = e.target
+        while(target !== agent){
+          if(is(target, se)){
+            return fn.call(agent, e)
+          }
+          target = target.parentNode
+        }
+      }, false)
+    }
+    delegate(document.querySelector('.parent'), 'click', '.button.b', function(e){
+      console.log(e.target)
+    })
+
+    // $('.parent').delegate('.button','click', function(){
+    //     console.log('hi')
+    // })
+  </script>
+</body>
+</html>

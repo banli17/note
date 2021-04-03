@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="/dist/vue.js"></script>
+    <div id="app">
+        <li>hello</li>
+        <span><a>
+            <b>{{name}}</b>
+        </a></span>
+    </div>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                name:'zf'
+            }
+        });
+        setTimeout(() => {
+            vm.name = 'jw'
+        }, 2000);
+        // 1.响应式原理 （vue3） 数组、对象 // 2.组件原理 // 3.diff 算法 (虚拟节点 模板编译等。。。)
+    </script>
+</body>
+</html>

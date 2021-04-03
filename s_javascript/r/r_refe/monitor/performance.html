@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <dir>
+        <p>首次绘制（FP）时间：对于应用页面，用户在视觉上首次出现不同于跳转之前的内容时间点，或者说是页面发生第一次绘制的时间点。</p>
+        <p>首次有内容绘制（FCP）时间：指浏览器完成渲染 DOM 中第一个内容的时间点，可能是文本、图像或者其他任何元素，此时用户应该在视觉上有直观的感受。</p>
+        <p> 首次有意义绘制（FMP）时间：指页面关键元素渲染时间。这个概念并没有标准化定义，因为关键元素可以由开发者自行定义——究竟什么是“有意义”的内容，只有开发者或者产品经理自己了解。</p>
+        <p> 首屏时间：对于所有网页应用，这是一个非常重要的指标。用大白话来说，就是进入页面之后，应用渲染完整个手机屏幕（未滚动之前）内容的时间。需要注意的是，业界对于这个指标其实同样并没有确切的定论，比如这个时间是否包含手机屏幕内图片的渲染完成时间。　
+        </p>
+        <p> 用户可交互时间：顾名思义，也就是用户可以与应用进行交互的时间。一般来讲，我们认为是 domready
+            的时间，因为我们通常会在这时候绑定事件操作。如果页面中涉及交互的脚本没有下载完成，那么当然没有到达所谓的用户可交互时间。那么如何定义 domready 时间呢？我推荐参考司徒正美的文章：何谓 domReady。
+        </p>
+        </p>
+    </dir>
+    <img src="https://images.gitbook.cn/5da0e420-a2ac-11e8-be89-4d388a8bf024" alt="">
+    <script src="performance.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parent {
+            outline: solid 1px red;
+            width: 200px;
+            height: 200px;
+        }
+
+        .child {
+            width: 50px;
+            height: 50px;
+            background: blue;
+        }
+
+        /* 方式1: flex  */
+        /* .parent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } */
+
+        /* 方式2: flex */
+        /* .parent {
+            display: flex;
+        }
+
+        .child {
+            margin: auto;
+        } */
+
+        /* 方式3: absolute */
+        /* .parent {
+            position: relative;
+        }
+
+        .child {
+            position: absolute;
+            /* left: 50%;
+            top: 50%; */
+        /* margin-left: -25px;
+            margin-top: -25px; */
+        /* 或者 */
+        /* transform: translate(-50%, -50%) */
+        /* 或者 */
+        /* margin: auto;
+            left: 0;
+            top:0;
+            right:0;
+            bottom:0; */
+        /* } */
+
+        /* 方法4. grid方式 */
+        /* .parent{
+            display: grid;
+        }
+        .child{
+            justify-self: center;
+            align-self: center;
+        } */
+
+        /* 方式5:table-cell */
+        /* .parent {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .child {
+            display: inline-block;
+        } */
+        /* div.parent {
+            font-size: 0;
+            text-align: center;
+
+        }
+
+        .parent::before {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        div.child {
+            display: inline-block;
+            vertical-align: middle;
+        } */
+
+        /* .parent{
+    display: table
+}
+.child{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+} */
+        .parent {
+            display: grid
+        }
+
+        .child {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child">hello</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <div v-once>{{msg}}</div>
+  <!--  <div v-html="img"></div>-->
+  <div v-for="a of 3">{{a}}</div>
+  <div v-for="a in 3">{{a}}</div>
+  <div v-for="(b,index) in 3">{{b}} {{index}}</div>
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+let vm = new Vue({
+    el: '#app',
+    data() {
+        return {
+            msg: 'hi',
+            img: '<img src="xxx" alt="" onerror="alert(1)"/>'
+        }
+    }
+})
+vm.$data.msg = 'hello'
+</script>
+</body>
+</html>

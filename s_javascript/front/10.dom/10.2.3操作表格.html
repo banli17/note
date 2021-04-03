@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var table = document.createElement('table')
+        table.border = 1
+
+        var caption = document.createElement('caption')
+        caption.appendChild(document.createTextNode('hello'))
+        table.appendChild(caption)
+
+        var tbody = document.createElement('tbody')
+        table.appendChild(tbody)
+        tbody.insertRow(0)
+        tbody.rows[0].insertCell(0) // 插入单元格
+        tbody.rows[0].cells[0].appendChild(document.createTextNode('cell 1,1'))
+        tbody.rows[0].insertCell(1)
+        tbody.rows[0].cells[1].appendChild(document.createTextNode('cell 2,1'))
+        document.body.appendChild(table)
+    </script>
+</body>
+
+</html>

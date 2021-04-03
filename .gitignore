@@ -1,7 +1,5 @@
-.history
-
+**/.history
 **/.vscode
-
 **/.idea
 **/node_modules
 **/cmake-build-debug
@@ -10,3 +8,4 @@
 **/tupian_dist
 Java入门/out
 NodeJS/
+**/s_crawl

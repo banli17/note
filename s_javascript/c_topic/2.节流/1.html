@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body style="height: 1000px">
+<script src="./throttle.js"></script>
+<script>
+const handler = throttle(() => {
+    console.log(1)
+}, 2000)
+const handler2 = throttle_with_timeout(() => {
+    console.log(2)
+}, 2000)
+document.body.addEventListener('mousemove', handler)
+// document.body.addEventListener('mousemove', handler2)
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!-- Portions (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+<!-- Character entity set. Typical invocation:
+    <!ENTITY % HTMLlat1 PUBLIC
+       "-//W3C//ENTITIES Latin 1 for XHTML//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml-lat1.ent">
+    %HTMLlat1;
+-->
+
+<!ENTITY nbsp   "&#160;"> <!-- no-break space = non-breaking space,
+                                  U+00A0 ISOnum -->
+<!ENTITY iexcl  "&#161;"> <!-- inverted exclamation mark, U+00A1 ISOnum -->
+<!ENTITY cent   "&#162;"> <!-- cent sign, U+00A2 ISOnum -->
+<!ENTITY pound  "&#163;"> <!-- pound sign, U+00A3 ISOnum -->

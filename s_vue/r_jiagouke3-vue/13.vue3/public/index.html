@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="/dist/bundle.js"></script>
+    <!-- reactive  effect -->
+    <div id="app"></div>
+
+    <!-- <script src="/node_modules/@vue/reactivity/dist/reactivity.global.js"></script> -->
+
+    <script>
+        let { reactive, effect } = VueReactivity;
+        let obj = {name:'zf',age:11}
+        let state = reactive(obj); // 通过代理后的对象来进行操作
+        // effect 副作用， 默认一加载就执行
+
+        effect(()=>{
+            app.innerHTML = state.name +'今年' + state.age +'岁'
+        });
+        // 对数据进行劫持操作 vue2 Object.defineProperty  Vue3里用的是proxy
+        // vue中当页面渲染时 会做依赖收集  vue2 属性收集的是watcher，vue3 属性收集的是effect
+
+        // vue3 性能 proxy
+
+        setTimeout(() => {
+            state.name = 'jw'
+        }, 3000);
+        
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function jsonp(opts) {
+        return new Promise((resolve, reject) => {
+            let {url, params, cb} = opts
+            window[cb] = function (data) {
+                resolve(data)
+                document.body.removeChild(script)
+            }
+            params.cb = cb
+            let urlParams = []
+            Object.keys(params).forEach(key => {
+                urlParams.push(`${key}=${params[key]}`)
+            })
+            url += '?' + urlParams.join('&')
+            let script = document.createElement('script')
+            script.src = url
+            document.body.appendChild(script)
+        })
+    }
+
+    jsonp({
+        url: 'http://localhost:3001/listen',
+        params: {wd: 'hello world'},
+        cb: 'xxx'
+    }).then((data) => {
+        console.log(data)
+    })
+</script>
+</body>
+</html>

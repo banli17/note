@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id='app' a="2">
+  <div>
+    <aa></aa>
+  </div>
+</div>
+<script src="dist/umd/vue.js"></script>
+<!--<script src="node_modules/vue/dist/vue.js"></script>-->
+<script>
+Vue.component('my-button', {
+    template: `<div>button</div>`
+})
+Vue.component('aa', {
+    template: `<div>aaa</div>`
+})
+let vm = new Vue({
+    el: '#app',
+    data() {
+        return {a: 1, b: [{x: 2}, 2, 3, 4,]}
+    },
+    components: {
+        aa: {
+            template: `<div>hello</div>`
+        },
+        bb: {
+            template: `<div>world</div>`
+        },
+    },
+})
+console.log(vm)
+</script>
+</body>
+</html>

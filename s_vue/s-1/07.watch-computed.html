@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-model="t.x">
+  <input type="checkbox" v-model="t.check">
+  <input type="text" :value="ctx">
+  <br>
+  msg: <input type="text" v-model="msg">
+  msg2: <input type="text" v-model="msg2">
+  <br>
+  全选<input type="checkbox" v-model="checkAll">
+  <br>
+  <input type="checkbox" v-for="check in checks" v-model="check.check">
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+// vm 就是 viewModel
+let vm = new Vue({
+    el: '#app',
+    data() {
+        return {
+            // 响应式规则
+            msg: 'hi',
+            msg2: 'hi',
+            t: {
+                x: 1,
+                check: false
+            },
+            s: {background: 'blue'},
+            checked: [],
+            checks: [{check: true}, {check: true}, {check: true}]
+            // fn() {
+            //     console.log(this) // 这里this是window，方法不能写在 data里
+            // }
+
+        }
+    },
+    computed: {
+        ctx() {
+            console.log('update ctx')
+            return this.t.x
+        },
+        checkAll: {
+            get() {
+                console.log('get checkAll')
+                return this.checks.every(item => item.check)
+            },
+            set(value) {
+                console.log('set checkAll')
+                this.checks.forEach(item => item.check = value)
+            }
+        }
+    },
+    methods: {
+        fn(a, e) {
+            console.log(e)
+            console.log(this) // 当前Vue实例，内部已经 bind 了，不能再 bind
+
+            console.log(e.target, e.currentTarget)
+        }
+    },
+    watch: {
+        t:{
+          deep: true,
+          handler(){
+              console.log('t change')
+          }
+        },
+        // watch 三种写法：函数、对象、字符串
+        msg: [
+            {
+                handler(newValue, oldValue) {
+                    //对象类型获取不到旧值
+                },
+                deep: true,
+                immediate: true, // 立即执行
+            },
+            'fn',
+        ],
+        xx: 'fn',  // 三种写法
+    }
+})
+</script>
+</body>
+</html>

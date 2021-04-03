@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<iframe src="http://localhost:4000/b.html" id='frame' frameborder="0" onload="load()"></iframe>
+<script>
+    let first = true
+
+    function load() {
+        const frame = document.getElementById('frame')
+        if (first) {
+            // 不能给跨域的iframe contentWindow设置属性，会报错
+            frame.src = 'http://localhost:63342/zf/w3croad_demo/src/demo/cross-site/4.window.name/c.html'
+            first = false
+        } else {
+            console.log('frame name', frame.contentWindow.name)
+        }
+    }
+</script>
+</body>
+</html>

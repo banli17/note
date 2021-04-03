@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="" enctype="application/x-www-form-urlencoded">
+    <!--<input type="file" name="file" class="file">-->
+    <input type="text" name="name">
+    <input type="submit" class="submit" value="确定">
+</form>
+<script>
+    function ajax(options) {
+        var xhr = new XMLHttpRequest()
+        xhr.open(options.type ? options.type : 'get', options.url, true)
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (/2\d{2}|304/.test(xhr.status)) {
+                    console.log(xhr.response)
+                }
+            }
+        }
+        xhr.send(options.type === 'get' ? null : options.data)
+    }
+
+    //    formData.append('username', 'hello')
+
+    document.querySelector('.submit').onclick = function () {
+        var formData = new FormData(document.querySelector('form'))
+//        formData.append('age', document.querySelector('.file').files[0])
+        ajax({
+            url: '1.php',
+            type: 'post',
+            data: formData
+        })
+    }
+</script>
+</body>
+</html>

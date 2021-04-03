@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrap {
+            outline: solid 1px red;
+            /* overflow: auto; */
+            display: flex;
+            margin: 20px;
+        }
+
+        .left {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+
+        .box {
+            height: 50px;
+            margin: 20px;
+            outline: solid 1px orange ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="left"></div>
+        <div class="wrap"></div>
+    </div>
+    <div class="wrap">
+        <div class="box"></div>
+        <div class="box"></div>
+        <span style="margin-top:30px">你好</span>
+    </div>
+</body>
+
+</html>

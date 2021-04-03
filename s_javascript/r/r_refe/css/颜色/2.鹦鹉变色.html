@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .bird {
+            width: 400px;
+            height: calc(1440 * 400 / 1920 * 1px);
+        }
+
+        canvas.bird {
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="img" class="bird" src="./bird.jpg">
+    <canvas id="canvas" width="1920" height="1440" class="bird"></canvas>
+
+    <script type="text/javascript">
+        let img = document.getElementById('img')
+        let canvas = document.getElementById('canvas')
+        canvas.drawImage(img)
+    </script>
+</body>
+
+</html>

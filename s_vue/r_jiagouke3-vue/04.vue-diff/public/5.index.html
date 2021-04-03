@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <my-button></my-button>
+        <my-button></my-button>
+        <my-button></my-button>
+    </div>
+    <script src="/dist/vue.js"></script>
+    <script>
+        // Vue.component => Vue.extend =>返回通过对象创建一个类，通过这个类去创建一个组件去使用
+     
+        Vue.component('my-button',{
+            template:'<button>按钮</button>'
+        });
+        // 先查找自己身上是否存在，没有查找父亲的 __proto__  Object.create
+
+        const vm = new Vue({
+            el:'#app',
+            components:{
+                'my-button':{
+                    template:'<button>内部按钮</button>'
+                }
+            }
+        });
+        // 1. Vue.component => Vue.extend方法 => 生成子类的构造函数
+        // 2. 如果是组件添加了 init hook()  componentOptions => Ctor
+        // 3. 创建真实节点时 会调用init钩子  new Ctor().$mount() 内部会在给组件添加一个watcher，会将渲染的节点放在当前实例上，并且返回
+    </script>
+</body>
+</html>

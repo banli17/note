@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Simulation</title>
+    <style>
+        .ball {
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 5px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateY(180px);
+        }
+    </style>
+</head>
+
+<body>
+    <label> 运动时间：<input value="3.6" type="number" id="t" />s</label><br />
+    <label> 初速度：<input value="-21" type="number" id="vy" /> px/s</label><br />
+    <label> 水平速度：<input value="21" type="number" id="vx" /> px/s</label><br />
+    <label> 重力：<input value="10" type="number" id="g" /> px/s²</label><br />
+    <button onclick="createBall()"> 来一个球 </button>
+    <script>
+        function generateCubicBezier(v, g, t) {
+            var a = v / g;
+            var b = t + v / g;
+
+            return [
+                [(a / 3 + (a + b) / 3 - a) / (b - a), (a * a / 3 + a * b * 2 / 3 - a * a) / (b * b - a * a)],
+                [(b / 3 + (a + b) / 3 - a) / (b - a), (b * b / 3 + a * b * 2 / 3 - a * a) / (b * b - a * a)]
+            ];
+        }
+
+        function createBall() {
+            var ball = document.createElement("div");
+            var t = Number(document.getElementById("t").value);
+            var vx = Number(document.getElementById("vx").value);
+            var vy = Number(document.getElementById("vy").value);
+            var g = Number(document.getElementById("g").value);
+            ball.className = "ball";
+            document.body.appendChild(ball)
+
+            console.log(generateCubicBezier(vy, g, t))
+            console.log(`${generateCubicBezier(vy, g, t)}`)
+
+            ball.style.transition = `left linear ${t}s, top cubic-bezier(${generateCubicBezier(vy, g, t)}) ${t}s`;
+            setTimeout(function () {
+                ball.style.left = `${vx * t}px`;
+                ball.style.top = `${vy * t + 0.5 * g * t * t}px`;
+            }, 10);
+            setTimeout(function () {
+                document.body.removeChild(ball);
+            }, t * 1000);
+        }
+    </script>
+</body>
+
+</html>

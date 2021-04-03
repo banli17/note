@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .yellow {
+            background: yellow;
+        }
+
+        .green {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div class="red blue yellow"></div>
+    <script>
+        let div = document.querySelector('div')
+
+        function sleep(time) {
+            return new Promise((resolve) => {
+                setTimeout(resolve, time * 1000)
+            })
+        }
+
+        function changeColor(color) {
+            div.className = ''
+            console.dir(div.classList)
+            div.classList.add(color)
+        }
+        async function run() {
+            while (true) {
+                changeColor('green')
+                await sleep(3)
+                changeColor('yellow')
+                await sleep(1)
+                changeColor('red')
+                await sleep(2)
+            }
+        }
+        run()
+    </script>
+</body>
+
+</html>

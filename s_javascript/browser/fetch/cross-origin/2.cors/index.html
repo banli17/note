@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const xhr = new XMLHttpRequest()
+    // 默认跨域只允许GET POST，如果是PUT等方法会先发OPTIONS预检请求，然后再发真实请求
+    xhr.open('PUT', 'http://localhost:4001/listen', true)
+    document.cookie = 'age=12'
+
+    xhr.setRequestHeader('name', 'zhangsan')
+    xhr.withCredentials = true
+
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                console.log(xhr.response)
+                console.log(xhr.getResponseHeader('name'))
+            }
+        }
+    }
+    xhr.send()
+</script>
+</body>
+</html>

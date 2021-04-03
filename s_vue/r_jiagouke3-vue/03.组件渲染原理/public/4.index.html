@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="/dist/vue.js"></script>
+    <script>
+        // mergeOptions 实现原理
+        Vue.mixin({ // 静态方法
+            beforeCreate(){ // 组件创建之前
+                console.log('before-create1')
+            },
+            created(){ // 数据已经被劫持
+                console.log('created1')
+            }
+        })
+        Vue.mixin({ // 静态方法
+            beforeCreate(){ // 组件创建之前
+                console.log('before-create2')
+            },
+            created(){ // 数据已经被劫持
+                console.log('created2')
+            }
+        })
+        const vm = new Vue({
+            el:'#app',
+            beforeCreate(){ // 组件创建之前 // []
+                console.log('before-create3')
+            },
+            created(){ // 数据已经被劫持  // []
+                console.log('created3')
+            }
+        })
+
+    </script>
+</body>
+</html>

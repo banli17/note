@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 响应式数据原理 -->
+    <!-- 组件渲染流程 -->
+    <!-- vuex中的模块处理 -->
+    <!-- diff算法 -->
+    <script src="/dist/vue.js"></script>
+    <div id="app" a=1 b=2 style="color:green">
+        <ul>    
+            {{arr[0]}}
+        </ul>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data() {
+                // 内部会给arr这个属性增加依赖，但是我们更改数组时不会去通知更新
+                // 外层数组进行了依赖收集，但是里层数组没有进行依赖收集 
+                return { arr:[[1,2,3]] }// JSON.stringify  _s(arr)
+            }
+        });
+        setTimeout(() => {
+            vm.arr[0].push(56);
+          
+        }, 1000);
+    </script>
+</body>
+
+</html>

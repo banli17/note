@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>博客详情</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>登陆</h1>
+
+    <label for="">用户名: </label><input type="text" v-model="username">
+    <br>
+    <label for="">密码： </label><input type="text" v-model="password">
+    <br>
+    <br>
+    <span id="btn" @click="login" style="cursor: pointer;background: blue;color:#fff;padding:8px;">登陆</span>
+</div>
+<script>
+    function query(id) {
+        const params = {}
+        location.search.replace(/([^=?]+)=([^=?]+)/g, function (a, b, c) {
+            params[b] = c
+        })
+        console.log(params)
+        return params[id]
+    }
+
+    new Vue({
+        el: '#app',
+        data: {
+            username: '',
+            password: ''
+        },
+        methods: {
+            login() {
+                axios({
+                    url: '/api/user/login',
+                    method: 'post',
+                    data: {
+                        username: this.username,
+                        password: this.password
+                    }
+                }).then(({data}) => {
+                    if (data.errno == 0) {
+                        localStorage.setItem('user', JSON.stringify(data.data))
+                        // 登陆成功
+                        location.href = '/admin.html'
+                    } else {
+                        alert(data.message)
+                    }
+                })
+            }
+        },
+        created() {
+
+        }
+    })
+</script>
+</body>
+</html>

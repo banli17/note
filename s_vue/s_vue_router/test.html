@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<a href="#a">a页面</a>
+<a href="#b">b页面</a>
+
+<a onClick="goA()">goA</a>
+<a onClick="goB()">goB</a>
+<div id="app"></div>
+<script>
+function fn() {
+    document.getElementById('app').innerHTML = window.location.hash
+}
+
+window.addEventListener('hashchange', (e) => {
+    fn()
+})
+
+function fn1() {
+    app.innerHTML = window.location.pathname
+}
+
+function goA() {
+    history.pushState('', null, '/a')
+    fn1()
+}
+
+function goB() {
+    history.pushState('', null, '/b')
+    fn1()
+}
+window.addEventListener('popstate', fn1)
+</script>
+</body>
+</html>

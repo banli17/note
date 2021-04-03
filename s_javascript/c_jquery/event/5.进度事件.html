@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- <video src="http://vjs.zencdn.net/v/oceans.mp4" id="video" controls="controls"></video> -->
+    <script>
+        var a = new Image()
+
+        a.addEventListener('load', function (e) {
+            console.log(e)
+        }, false)
+        a.addEventListener('progress', function (e) {
+            console.log(e)
+        }, false)
+        a.src = 'https://oimagec8.ydstatic.com/image?id=7754523424251726609&product=adpublish&w=320&h=240&sc=0&rm=0'
+    </script>
+</body>
+
+</html>

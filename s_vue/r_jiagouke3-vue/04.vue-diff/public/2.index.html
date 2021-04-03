@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        1. 对数据进行了拦截 对象 数组  （依赖收集）
+        2. template模板 => ast语法树（描述语法的） => render函数 => 虚拟dom
+        3. new Vue时会产生一个watcher（渲染watcher） vm._update(vm._render()) 创建真实节点
+
+     -->
+    <script src="/dist/vue.js"></script>
+    <div id="app" a=1 b=2 style="color:green">
+        <ul>
+            <li>{{name}}</li> 
+            <li>{{name}}</li>
+            <li>{{age}}</li>
+        </ul>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data() {
+                return { name: 'zf', age: 10 ,address:'回龙观'}
+            }
+          
+        });
+        // console.log(vm);
+
+        // 依赖收集
+        setTimeout(() => {
+            // 我希望数据更新可以自动更新视图，而不是用户手动触发
+            vm.name = 'XXX'
+            vm.age = 100;  // vue更新原理 就是通过nextTick 异步执行更新视图逻辑
+            vm.$nextTick(() => {
+                 console.log(vm.$el.innerHTML)
+            });
+            //xxxxxx  
+            // vm._update(vm._render()); // 强制更新的方法 
+            // 小程序 更新数据 setData()
+        }, 1000);
+
+        // 这里取值没有依赖于模板 ，所以不需要收集依赖
+
+        vm.address
+    </script>
+</body>
+
+</html>
