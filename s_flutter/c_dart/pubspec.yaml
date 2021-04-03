@@ -1,0 +1,11 @@
+name: dart_demo
+
+dependencies:
+  characters: ^0.5.0
+  meta: ^1.1.8
+  json_annotation: 3.0.1
+  build_runner: 1.10.0
+
+dev_dependencies:
+  json_serializable: 3.3.0
+
