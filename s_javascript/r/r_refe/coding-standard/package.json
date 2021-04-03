@@ -1,0 +1,30 @@
+{
+    "name": "coding-standard",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "prettier": "prettier --write src/index.js"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "eslint": "^6.2.1",
+        "eslint-config-standard": "^14.0.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-node": "^9.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1",
+        "eslint-plugin-vue": "^5.2.3",
+        "husky": "^3.0.4",
+        "prettier": "1.18.2",
+        "pretty-quick": "^1.11.1"
+    },
+    "dependencies": {}
+}
