@@ -1,32 +1,100 @@
+# 重学前端
+
+## 22. DOM API
+
+addEventListener()
+第二个参数可以是一个对象 {handleEvent:()=>{}}
+第三个参数可以是一个对象
+
+```
+{
+  capture,
+  once,
+  passive,
+}
+```
+
+事件模型：捕获、冒泡
+
+## 23. 其它 API
+
+### Range API
+
+Range 接口表示一个包含节点与文本节点的一部分的文档片段。
+
+**创建**
+
+-   document.createRange()
+-   new Range()
+-   根据 Selection 对象的 getRangeAt 方法获取
+
+**属性**
+
+-   Range.collapsed 返回开始和终点是否相同
+-   Range.endContainer 包含终点的节点
+-   Range.startContainer 包含起点的节点
+-   Range.startOffset 起点在开始节点中的位置
+-   Range.endOffset 终点在结束节点中的位置
+-   Range.commonAncestorContainer 包含开始和结束节点的最深的一级公共节点
+
+**方法**
+
+-   range.setStart(startNode, startOffset)
+-   range.setEnd()
+-   range.setStartBefore(referenceNode)
+-   range.setStartAfter(referenceNode)
+-   range.setEndBefore(referenceNode)
+-   range.setEndAfter(referenceNode)
+-   range.selectNode(referenceNode);
+-   range.selectNodeContents(referenceNode)
+-   range.cloneContents()
+-   range.deleteContents()
+-   range.extractContents() 将 range 的内容移动到一个文档碎片里
+-   range.insertNode() 在 range 起点处插入一个节点
+-   range.surroundContents(newParent) 将 range 移动到一个新的节点，注意是新的，否则报错
+-   range.compareBoundaryPoints() 比较 range 的端点
+-   range.cloneRange()
+-   range.detach() 释放，改善性能
+-   range.toString()
+
+### CSSOM
+
+document.styleSheet
+document.styleSheet.Rule
+
+window.getComputedStyle(elt, pseudoElt): 第二个参数是伪元素
+
+## 24. 编程与算法训练 TicTacToe 井字棋
+
 ## 32. 组件的基础知识与轮播组件
 
 ### 对象与组件
 
 对象
 
-- Properties
-- Methods
-- Inherit
+-   Properties
+-   Methods
+-   Inherit
 
 组件
 
-- Properties
-- Methods
-- Inherit
-- Attribute
-- Config & State
-- Event
-- Lifecycle
-- Children
+-   Properties
+-   Methods
+-   Inherit
+-   Attribute
+-   Config & State
+-   Event
+-   Lifecycle
+-   Children
 
 结构图
 
 Attribute 和 Property 的区别？
 
-- Attribute 强调描述性，外部的描述
-  - html 和 js 都能设置
-- Property 强调从属关系
-  - 只有 js 能设置
+-   Attribute 强调描述性，外部的描述
+    -   html 和 js 都能设置
+-   Property 强调从属关系
+    -   只有 js 能设置
 
 ```
 Attribute
@@ -38,7 +106,7 @@ Property
 myComponent.a = "value"
 ```
 
-- 有些名字不一样，如
+-   有些名字不一样，如
 
 ```
 <div class="cl1">
@@ -46,7 +114,7 @@ div.className 关键字
 div.classList
 ```
 
-- input: attr 像是 prop 的默认值。一旦设置了 prop，attr 就改不了了。
+-   input: attr 像是 prop 的默认值。一旦设置了 prop，attr 就改不了了。
 
 ![](imgs/2021-03-02-10-40-58.png)
 ![](imgs/2021-03-02-10-44-26.png)
@@ -103,14 +171,14 @@ FSM Finite State Machine 有限状态机
 
 每个状态机都是一个机器
 
-- 在每个机器里，我们可以做计算、存储、输出
-- 所有的这些机器接受的输入是一致的(可以理解为参数一致的函数，不能这个是字符串，那个是数字)
-- 状态机每一个机器本身没有状态，如果我们用函数来表示的话就是纯函数(无副作用)
+-   在每个机器里，我们可以做计算、存储、输出
+-   所有的这些机器接受的输入是一致的(可以理解为参数一致的函数，不能这个是字符串，那个是数字)
+-   状态机每一个机器本身没有状态，如果我们用函数来表示的话就是纯函数(无副作用)
 
 每个机器知道下一个状态
 
-- 每个机器都有确定的下一个状态(Moore)
-- 每个机器根据输入决定下一个状态(Mealy)
+-   每个机器都有确定的下一个状态(Moore)
+-   每个机器根据输入决定下一个状态(Mealy)
 
 ![](imgs/2021-03-08-18-49-20.png)
 
@@ -144,10 +212,10 @@ EOF: end of file
 }
 ```
 
-- 从标签构建 DOM 树的基本技巧是使用栈
-- 遇到开始标签时创建元素并入栈，遇到结束标签时出栈
-- 自封闭节点可视为入栈后立刻出栈
-- 任何元素的父元素是它入栈前的栈顶
+-   从标签构建 DOM 树的基本技巧是使用栈
+-   遇到开始标签时创建元素并入栈，遇到结束标签时出栈
+-   自封闭节点可视为入栈后立刻出栈
+-   任何元素的父元素是它入栈前的栈顶
 
 ## 40. 工具链: 整体理解一个工具链的设计（一）
 
@@ -196,8 +264,8 @@ yeoman 能力
 
 如何用原生实现一个命令行选择器。
 
-- 通过鼠标控制光标
-- 控制文本颜色
+-   通过鼠标控制光标
+-   控制文本颜色
 
 有多个软件包可用于在 Node.js 中格式化控制台文本。最受欢迎的是：
 
@@ -211,16 +279,16 @@ colors
 
 Server
 
-- build: webpack babel vue jsx postcss
-- watch: fsevent
-- mock
-- http: ws http-server
+-   build: webpack babel vue jsx postcss
+-   watch: fsevent
+-   mock
+-   http: ws http-server
 
 Client
 
-- debugger: vscode devtool
-  工作原理是：vscode 调试时，执行的命令 node 带 brk(服务端)，可以和客户端通信来控制
-- source map ?
+-   debugger: vscode devtool
+    工作原理是：vscode 调试时，执行的命令 node 带 brk(服务端)，可以和客户端通信来控制
+-   source map ?
 
 ## 43 工具链: 设计并实现一个单元测试工具（一）
 
@@ -290,8 +358,8 @@ server 线上服务
 
 学习 http 模块
 
-- 发送 get post 数据，并接受返回的数据
-- 获取相应头、响应状态码等
+-   发送 get post 数据，并接受返回的数据
+-   获取相应头、响应状态码等
 
 学习 express api 文档
 
@@ -301,13 +369,12 @@ server 线上服务
 
 ## 48 发布系统: lint 与 PhantomJS
 
-- eslint
-- [plantomjs](https://phantomjs.org/download.html)
+-   eslint
+-   [plantomjs](https://phantomjs.org/download.html)
 
 ```
 npx eslint --init
 ```
-
 
 ## 49 发布系统: OAuth
 

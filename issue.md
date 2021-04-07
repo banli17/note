@@ -79,3 +79,9 @@ https://www.cnblogs.com/dongfangzan/p/5976791.html
 ## 阿里云 OSS 视频上传
 
 跨域解决 https://blog.csdn.net/jinchunzhao123/article/details/90475074
+
+## 资料
+
+http://www.conardli.top/docs/JavaScript/%E8%8A%82%E6%B5%81.html#%E5%AE%9A%E6%97%B6%E5%99%A8%E5%AE%9E%E7%8E%B0
+http://www.conardli.top/blog/article/%E7%BB%BC%E5%90%88/%E3%80%90%E8%87%AA%E6%A3%80%E3%80%91%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E6%B8%85%E5%8D%95.html#%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90
+https://github.com/ConardLi/awesome-coding-js

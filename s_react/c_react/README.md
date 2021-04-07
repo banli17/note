@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## jsx
 
-## Available Scripts
+jsx : js + xml
+jsx 属性不能包含关键字
 
-In the project directory, you can run:
+- class : className
+- for : htmlFor
+- style：会当作对象
 
-### `yarn start`
+```
+style={{color: 'red'}}
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+react 元素创建后，是不可变的
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+let el = <div></div>
+```
 
-### `yarn test`
+react 17 后不能修改 el，或给 el 添加额外属性，17 之前是约定，也可以改。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+Object.freeze(a) : 不能新增 修改删除属性
+Object.seal() 密封，只能修改属性
+```
 
-### `yarn build`
+之前需要引入 React 库，否则报错，会转成 React.createElement。
+react 17 之后会自动引入并转换为 `jsx()` 函数。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+const H = ()=> <div></div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+// 会转成
+import {jsx as __jsx} from 'react/jsx-runtime'
+const H = () => __jsx('div', {})
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+JSON.stringify(obj, replacer, spacing);
 
-### `yarn eject`
+function replacer(key, value) {
+  return value.toUpperCase();
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 组件
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 函数组件
+  - 组件名称首字母大写(会报错)，因为原生组件是小写
+  - 组件需要返回并且只返回一个根元素
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+函数组件的虚拟 dom:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+$$typeof: Symbol(react.element)
+key: null
+props: {style: {…}, children: Array(2)}
+ref: null
+type: props => {…}    是一个函数
+_owner: null
+_store: {validated: false}
+_self: undefined
+_source: {fileName: "/Users/banli/Desktop/learn/s_react/c_react/src/index.js", lineNumber: 10, columnNumber: 13}
+__proto__: Object
+```
 
-## Learn More
+## React 实现
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### render(vdom, container)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`render(vdom, container)` 方法用来将虚拟 DOM 转成真实 DOM，并挂载到容器中。
 
-### Code Splitting
+下面是一个真实 div 对应的虚拟 dom。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![](imgs/2021-04-04-10-37-37.png)
 
-### Analyzing the Bundle Size
+主要属性如下:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- vdom.type: 元素的标签名，函数组件的 type 是一个函数，类组件的 type 是一个类。
+- vdom.props 元素的属性
+  - vdom.props.children 子元素
 
-### Making a Progressive Web App
+通过下面要求即可创建出真实 dom。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. createElement(vdom) 创建真实元素，并包含子元素
+2. 根据 vdom.props 更新属性
+3. 将子元素通过 render 挂载到父 dom 上。
 
-### Advanced Configuration
+```js
+function render(vdom, container) {
+  const dom = createDOM(vdom);
+  container.appendChild(dom);
+}
+function createDOM(vdom) {
+  // 创建dom
+  const dom = createElement(type);
+  updateProps(dom, props);
+  if (isFunction(type)) {
+    mountFunctionComponent(type, props);
+  }
+}
+// 将 vdom props 更新到 dom 上
+// 注意 style 是个对象，children 是子元素，不处理
+function updateProps(dom, newProps) {}
+function mountFunctionComponent(type, props) {
+  const vdom = type(props);
+  return createDOM(vdom);
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### React.Component
 
-### Deployment
+- 组件的 vdom 是通过 Component 的子类的 render() 方法创建的
+- 调用 setState 方法后会更新组件
+- 函数组件的 type 是一个函数，类组件的方法是一个类，本质都是函数，区分的方法是 Component.prototype.isReactComponent = {};（[静态属性拷贝时有可能丢失，所以 React 放在了原型上](https://stackoverflow.com/questions/32509891/warning-react-component-classes-must-extend-react-component-when-using-scalajs)）
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### setState
 
-### `yarn build` fails to minify
+- 在 React 的方法里 setState 是批量更新的，setState 的回调函数也是批量更新的。
+- 在 React 控制外，如 queueMicrotask、setTimeout 里，是一个个更新的
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 生命周期
+
+![](imgs/2021-04-04-13-59-16.png)
+
+不要在 componentWillUpdate、componentDidUpdate 里写 setState，推荐在 componentDidMount 里写。

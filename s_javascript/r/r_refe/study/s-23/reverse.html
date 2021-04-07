@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a">
+        <span>1</span>
+        <p>2</p>
+        <a>3</a>
+        <div>4</div>
+    </div>
+    <script>
+        let element = document.getElementById('a')
+        function reverseChildren(element){
+            // const childrens = element.children
+            // console.log(childrens);
+            // const lastChildren = childrens[childrens.length-1]
+            // while(moveEl = lastChildren.previousSibling){
+            //     element.appendChild(moveEl) 
+            // }
+
+            let l = element.children.length - 1
+            while(l-- > 0){
+                element.appendChild(element.children[l])
+            }
+        }
+        reverseChildren(element)
+
+    </script>
+</body>
+</html>

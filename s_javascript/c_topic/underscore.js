@@ -3025,4 +3025,9 @@
             return _;
         });
     }
+
+    console.log(_.difference([1, 2, 3, 4, 5], [5, 2, 10], [4], 3))
+
 }.call(this));
+
+

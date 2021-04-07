@@ -54,3 +54,66 @@ RF 时间复杂度是 O(n)，但 hash 冲突多时，会退化到 `O(n*m)`。哈
 计算机是如何比较数字的大小的？
 
 比较两个数的指令计算机一般是做减法，然后有一个 condition code 寄存器，里面记录最近一次算数或逻辑操作的一些影响，比如是否有进位，是否有溢出，是否结果为 0， 是否结果为负等。逻辑比较时将两个数相减，然后检查上述标准，确定是大数减小数还是反之还是相等。有兴趣可以阅读计算机组成原理方面的书，《深入理解计算机系统》是一本不错的书。
+
+## 动态规划
+
+将问题分解为相互重复的子问题。
+
+### 斐波那契数列
+
+F(0) = 0
+F(1) = 1
+定义子问题：F(n) = F(n-1) + F(n-2)
+反复执行：从2循环到n，执行上面公式
+
+与分而治之：将问题分解为相互独立的子问题。
+
+### 70.爬楼梯
+
+> [https://leetcode-cn.com/problems/climbing-stairs](https://leetcode-cn.com/problems/climbing-stairs)
+
+- 子问题：`f(n) = f(n-1) + f(n-2)`
+- 反复执行：从2开始循环，执行上面公式
+
+### 198.打家劫舍
+
+> [https://leetcode-cn.com/problems/house-robber](https://leetcode-cn.com/problems/house-robber)
+
+子问题: `f(n) = max(f(n-1) , f(n-2) + v)`，`v` 表示当前家的打劫金额。
+
+## 贪心算法
+
+贪心算法：期望每个阶段的局部最优解，从而达到全局最优。结果并不一定是最优。
+
+### 零钱兑换
+
+### 455.分饼干
+
+> [https://leetcode-cn.com/problems/assign-cookies/](https://leetcode-cn.com/problems/assign-cookies/)
+
+1. 首先对2个数组进行排序，注意排序不传递参数是按字符来比较的 10 排在 2 前面。
+2. 遍历饼干，如果饼干大于孩子值，则 i++。
+
+### 122. 买卖股票的最佳时机2
+
+> [https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii)
+
+- 只要后一天比前一天大，就买卖
+- 注意边界索引越界，从 i = 1 开始遍历
+
+### 392. Is Subsequence
+
+题目：给定两个字符串 s 和 t, 问 s 是不是 t 的子序列
+
+- 如 s = "abc", t = "ahbgdc"，则 s 是 t 的子序列，算法返回 true
+- 如 s = "axc", t = "ahbgdc"，则 s 不是 t 的子序列，算法返回 false
+
+实现如下： [代码实现](../leetcode/L392.h)
+
+## 回溯算法
+
+- 有很多路
+- 有的路通，有的不通
+
+### 46.全排列
+
