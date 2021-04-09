@@ -39,16 +39,32 @@
 -   你所理解,同步和异步的区别是什么?阻塞与非阻塞？
 
 -   扫描二维码登录网页是什么原理，前后两个事件是如何联系的?
-    1. 用户打开页面，会返回一个临时的 uuid，网页端不停发 login 请求检查登陆，会请求 uuid 的绑定信息（请求 pending 状态)，超时则重发(timeout=35s)。
-    2. 用户使用微信 app 扫码(会发送微信账号密码等验证)成功后，微信 server 返回给网页用户的头像信息。
-    3. 网页端继续发 login 请求，当用户点确定时，微信 server 返回网页端 token 登陆成功。
-    4. 在超时、网络断开、其他设备上登录后，此前获得的令牌或丢失、或失效，对授权过程形成有效的安全防护。
+
+```
+1.  用户打开页面，会返回一个临时的 uuid，网页端不停发 login 请求检查登陆，会请求 uuid 的绑定信息（请求 pending 状态)，超时则重发(timeout=35s)。
+2. 用户使用微信 app 扫码(会发送微信账号密码等验证)成功后，微信 server 返回给网页用户的头像信息。
+3. 网页端继续发 login 请求，当用户点确定时，微信 server 返回网页端 token 登陆成功。
+4. 在超时、网络断开、其他设备上登录后，此前获得的令牌或丢失、或失效，对授权过程形成有效的安全防护。
+```
 
 ## 浏览器相关
 
 -   介绍一下你对浏览器内核的理解?
-    > 浏览器内核就是浏览器引擎，主要包含网页渲染和 js 引擎。浏览器内核目前主要有：Mozilla 的 Gecko，Google 的 Blink，还有 Apple 的 Webkit。Chromium 是 Google 的一个开源浏览器项目，JS 引擎主要有 v8，SpiderMonkey(firefox)，JavasSriptCore(safari)
-    > ![](imgs/2021-04-08-00-52-38.png)
+
+```
+浏览器内核就是浏览器引擎，主要包含渲染引擎和 js 引擎。
+
+产品       浏览器内核    js引擎
+Mozilla     Gecko      spiderMonkey
+Google/Edge  Blink           v8
+Apple       Webkit    javascriptcore
+ie          Trident
+Chromium 是 Google 的一个开源浏览器项目
+
+```
+
+![](imgs/2021-04-08-00-52-38.png)
+
 -   什么是同源限制？同源限制的目的？哪些地方会有同源限制？
 -   为什么要限制 ajax 同源？答案：[why-the-cross-domain-ajax-is-a-security-concern](https://stackoverflow.com/questions/466737/why-the-cross-domain-ajax-is-a-security-concern)
 -   [我知道的跨域与安全](https://juejin.im/post/5a6320d56fb9a01cb64ee191)
@@ -63,7 +79,7 @@
 
 ## Vue
 
--   说一下 vue-router 的原理是什么?
+-   Vue 是如何收集依赖的?
 -   Vue 中的 key 有什么作用?
 -   说一下 Vue 的父组件和子组件生命周期钩子函数执行顺序？
 -   使用过 Vue SSR 吗？说说 SSR？
@@ -84,8 +100,8 @@
 -   计算属性和普通属性的区别是什么
 -   Vue-cli 默认是单页面的，如果要开发多页面应该怎么办?
 -   说说 Vue 开发如何针对搜索引擎做 SEO 优化?
--   Vue 是如何收集依赖的?
 -   介绍下 vue-router 中的导航钩子函数
+-   说一下 vue-router 的原理是什么?
 
 ## React
 

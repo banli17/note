@@ -59,10 +59,66 @@ Range 接口表示一个包含节点与文本节点的一部分的文档片段�
 
 ### CSSOM
 
-document.styleSheet
-document.styleSheet.Rule
+CSSOM 可以用来操作 style 样式
+
+```
+document.styleSheets
+document.styleSheets[0].cssRules
+```
 
 window.getComputedStyle(elt, pseudoElt): 第二个参数是伪元素
+
+```
+document.styleSheets[0].cssRules[0].style.fontSize = '40px'
+```
+
+datauri 格式 : `data:image/svg,base46,经过base64的字符`
+
+窗口 API:
+
+-   window.open
+
+```js
+// _self _blank, _parent _top
+// 不写第三个参数，会打开一个 tab
+let childWindow = window.open(
+    "about:blank",
+    "_blank",
+    "width=100,height=100,left=100,top=100"
+);
+childWindow.moveBy(0, 0);
+childWindow.resizeBy(0, 0);
+```
+
+滚动 API
+
+-   window.scrollX
+-   window.scrollY
+-   window.scrollBy(0, 50)
+-   window.scrollTo(0, 50)
+-   element.scrollLeft
+-   element.scrollTop
+-   element.scrollBy(0, 50)
+-   element.scrollTo(0, 50)
+-   element.getClientRects(): 返回元素中每一个盒子的边界矩形的矩形集合，比如 span 里多行文字，会有多个边界矩形。不包含伪元素。
+-   Element.getBoundingClientRect()：返回元素的大小及其相对于视口的位置。是按实际看到区域来的。如果是标准盒子模型，元素的尺寸等于 width/height + padding + border-width 的总和。如果 box-sizing: border-box，元素的的尺寸等于 width/height。
+-   window.innerHeight, window.innerWidth 和 document.documentElement.getBoundingClientRect() 相同
+-   window.outerHeight, window.outerWidth 包含滚动条
+-   window.devicePixelRatio 逻辑像素与物理像素比
+
+-   offsetHeight 只比 clientHeight 多了边框，都包含滚动条，display:none 时返回 0
+-   offsetParent: 非 position:static 上层元素，如果本元素为 display: none 或 fixed，则 offsetParent 返回 null。如果没有，则为 body。
+-   offsetLeft 根据 offsetParent 来的。
+-   scrollHeight: 包含溢出，padding、滚动条、伪元素。
+-   clientLeft: 左边框宽度,行内元素返回 0
+-   clientHeight: 元素的高度，包括 padding，不包括滚动条
+
+```
+document.documentElement.scrollLeft
+document.documentElement.scrollTop
+document.documentElement.clientHeight 视口高度
+document.body.clientHeight 网页总高度
+```
 
 ## 24. 编程与算法训练 TicTacToe 井字棋
 
