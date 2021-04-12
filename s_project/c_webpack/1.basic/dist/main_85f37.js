@@ -1,0 +1,3 @@
+/*! For license information please see main_85f37.js.LICENSE.txt */
+(()=>{var o={747:o=>{o.exports="/images/logo_27cf0947.png"}},e={};function n(r){var s=e[r];if(void 0!==s)return s.exports;var t=e[r]={exports:{}};return o[r](t,t.exports,n),t.exports}(()=>{"use strict";console.log("ee1enonexxx"),console.log("这是 main js");var o=new Image;o.src=n(747),o.onload=function(){},document.body.appendChild(o)})()})();
+//# sourceMappingURL=http://127.0.0.1:8081/main_85f37.js.map

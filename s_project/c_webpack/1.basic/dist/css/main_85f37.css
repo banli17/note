@@ -1,0 +1,32 @@
+/*!
+ * -----
+ * banli17
+ * --------
+ */
+body {
+    background-color: green;
+}
+
+.text_blue {
+  color: blue;
+  background: url(/images/logo_27cf0947.png) no-repeat 100% 100% / contain;
+  width: 200px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.box {
+  display: flex;
+}
+::-moz-placeholder {
+  color: red;
+}
+:-ms-input-placeholder {
+  color: red;
+}
+::placeholder {
+  color: red;
+}
+
+
+/*# sourceMappingURL=http://127.0.0.1:8081/main_85f37.css.map*/

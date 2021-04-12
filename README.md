@@ -1,6 +1,6 @@
 # 学习记录
 
-1. [JavaScript 专题系列](./s_javascript/c_topic/README.md)
+1. [JavaScript 专题系列](./s_javascript/c_topic/)
 1. [图解v8笔记](./s_javascript/c_v8/README.md)
 1. [Vue 总结](./s_vue/README.md)
 1. [React 总结](./s_react/README.md)

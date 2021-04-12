@@ -277,8 +277,207 @@ for、forEach、map 性能问题：
         - 会造成 JSON.stringify 错误，和深拷贝可能报错为题
     - 解决方法
         - 将循环引用的值标记为一个特殊对象，如 `{'$ref': '$'}`？
-        - 将比较的对象 push 到 astack 中，遍历 astack 看有没有与当前元素相等的，如果有，则看 bstack 是不是一样的情况
+        - 将比较的对象 push 到 aStack 中，遍历 aStack 看有没有与当前元素相等的，如果有，则看 bStack 是不是一样的情况，一样的情况才行
 7. 函数直接返回 false
+
+## 11.函数柯里化
+
+柯里化是一种将多参数函数转成一系列使用一个参数函数的技术。
+
+作用是参数复用，本质是降低函数的通用性，提高适用性。
+
+**实现**
+
+-   `curry(fn, ...args)`使用闭包保存参数并返回函数 curryFn，执行 curryFn(...restArgs) 时，将参数(args, restArgs)合并，执行函数 fn。
+-   当参数总数量大于等于 fn.length 时，才执行函数 fn，否则继续返回 curry。
+-   使用占位符\_，实现后续可以传递其它位置的参数
+    -   如对 fn(a,b,c) 柯里化 curryFn(fn, a, \_ ,c) 之后可以执行 curryFn(b)。
+    -   如果后续参数有占位符，则一一匹配，curryFn(_, _ ,1) -> curryFn(2, _, 4)，则等价于 currFn(2, _, 1, 4)
+
+## 12.偏函数
+
+便函数是指固定一个函数的参数，然后产生另一个更少参数的函数。
+
+如：fetch(method, url, data) 可以转换为 get(url, data) 和 post(url, data)。
+
+柯里化与偏函数的区别是：
+
+-   柯里化是将多个参数转成多个单参数函数，即 n 转成 n 个 1
+-   偏函数是将多个参数转为少参数函数，即 n 转成 n - x
+
+## 13. 惰性函数
+
+惰性函数是为了解决每次都要判断的问题。就是判断完成后重写原来函数。
+
+一般我们做缓存，会写如下代码。
+
+```js
+var foo = function () {
+    var t;
+    return function () {
+        if (t) return t;
+        t = new Date();
+        return t;
+    };
+};
+```
+
+但是这样也是需要每次都判断 t 是否存在。可以通过惰性函数解决。
+
+```js
+var foo = function () {
+    t = new Date();
+    foo = function () {
+        return t;
+    };
+    return foo();
+};
+var time = foo(); // t
+var x = foo(); // t
+```
+
+上面代码执行完后，time 就变成了 t。再次执行 foo() 时，返回的还是 t。
+
+实际可以应用在一些兼容方法的书写上，如下：
+
+```js
+function addEvent(type, el, fn) {
+    if (window.addEventListener) {
+        addEvent = function (type, el, fn) {
+            el.addEventListener(type, fn, false);
+        };
+    } else if (window.attachEvent) {
+        addEvent = function (type, el, fn) {
+            el.attachEvent("on" + type, fn);
+        };
+    }
+    addEvent(type, el, fn);
+}
+```
+
+## 14. 函数组合
+
+函数组合是将函数组合起来返回一个新的函数的技巧，有点像 pipe 管道，或者链式调用，上个函数的执行结果会传递给下一个函数执行。
+
+compose 返回一个函数，当这个函数执行时，会传给多个函数依次执行。
+
+```js
+const compose = (...funcs) => {
+    return (val) => {
+        return funcs.reduceRight((a, b) => b(a), val);
+    };
+};
+
+function add10(a) {
+    return a + 10;
+}
+function minus5(a) {
+    return a - 5;
+}
+const add5 = compose(add10, minus5);
+console.log(add5(20)); // 25
+```
+
+## 15. 函数记忆
+
+函数记忆是指将函数计算过的结果缓存起来，以后计算时，如果有则返回。
+
+这里的 key 可以是:
+
+-   arg.length + args
+-   自定义生成 key 的 hasher 函数
+
+值得注意的是，这种操作可能会更慢，比如缓存计算两个数字相加，查找缓存过程可能比计算更慢。
+
+## 16. 递归
+
+程序调用自身的编程技巧称为递归(recursion)。
+
+递归的特点是：
+
+-   能分解为相同的子问题
+-   能够退出递归
+
+尾调用，是指函数内部的最后一个动作是函数调用。该调用的返回值，直接返回给函数。尾调用只需要保存内层函数的执行环境就行，不用保存外层函数的，因为最后它只需要内层函数的执行结果就可以了。
+
+```
+function f(){
+    return g()
+}
+
+// 执行栈的流程
+f stack push()
+f stack pop()  // 尾调用，可以直接 pop，es6严格模式下有用
+g stack push()
+g stack pop()
+```
+
+如果最后调用的函数是自己，那就是尾递归。普通递归改写成尾递归的方法是：把所有用到的内部变量改写成函数的参数。
+
+```js
+function tailFactorial(n, total) {
+    if (n === 1) return total;
+    return tailFactorial(n - 1, n * total);
+}
+
+function factorial(n) {
+    return tailFactorial(n, 1);
+}
+
+factorial(5); // 120
+```
+
+ES6 的尾调用优化只在严格模式下开启，正常模式是无效的。
+
+这是因为在正常模式下，函数内部有两个变量，可以跟踪函数的调用栈。
+
+尾调用优化发生时，函数的调用栈会改写，因此上面两个变量就会失真。严格模式禁用这两个变量，所以尾调用模式仅在严格模式下生效。
+
+## 17.数组乱序
+
+Fisher–Yates 随机置乱算法原理：遍历数组，和随机位置的元素交换位置。
+
+```js
+function shuffle(a) {
+    for (let i = a.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
+    return a;
+}
+```
+
+## 花式表示 26 个字母
+
+是使用隐式类型转换来的，转成字符串后取下标。
+
+```
+[][0]  // undefined
+[][0] + []  // 'undefined'
+([][0]+[])[0]  // u， 通过下标获取 u n d e f i
+
++[][0]  // NaN
+[] == []  // false
++[] == +[] // true
++("1e309") // Infinity
+[]["find"]  // function find() { [native code] }
+
+// 获取 m g
+0["constructor"] // function Number() { [native code] }
+""["constructor"] // function String() { [native code] }
+
+"to" + ""["constructor"]["name"]  // toString
+```
+
+NumberObject.toString(radix)
+
+-   radix 数字的基数，2-36 之间，默认是 10
+
+```js
+var number = new Number(10);
+number.toString("16"); // a
+(35)["toString"](36); // z
+```
 
 ## 学习资料
 

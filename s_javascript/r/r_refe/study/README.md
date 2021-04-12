@@ -106,7 +106,7 @@ childWindow.resizeBy(0, 0);
 -   window.outerHeight, window.outerWidth 包含滚动条
 -   window.devicePixelRatio 逻辑像素与物理像素比
 
--   offsetHeight 只比 clientHeight 多了边框，都包含滚动条，display:none 时返回 0
+-   offsetHeight 只比 clientHeight 多了边框 border 和 滚动条，display:none 时返回 0
 -   offsetParent: 非 position:static 上层元素，如果本元素为 display: none 或 fixed，则 offsetParent 返回 null。如果没有，则为 body。
 -   offsetLeft 根据 offsetParent 来的。
 -   scrollHeight: 包含溢出，padding、滚动条、伪元素。

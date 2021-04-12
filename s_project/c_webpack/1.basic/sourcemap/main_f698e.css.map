@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/bg.css","webpack:///./src/index.less"],"names":[],"mappings":";;;;;AAAA;IACI,uBAAuB;AAC3B;;ACAA;EACE;AAAF","file":"main_f698e.css","sourcesContent":["body{\n    background-color: green;\n}\n","@import \"bg.css\";\n\n.text_blue {\n  color: blue\n}\n"],"sourceRoot":""}
