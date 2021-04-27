@@ -10,6 +10,6 @@
   "author": "banli17",
   "license": "MIT",
   "dependencies": {
-    "redis": "^3.0.2"
+    "redis": "^3.1.1"
   }
 }
