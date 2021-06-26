@@ -1,0 +1,19 @@
+{
+  "name": "design-patterns",
+  "version": "0.0.0",
+  "description": "学习 js 设计模式",
+  "author": "banli17 <867889876@qq.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/design-patterns.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}

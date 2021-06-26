@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/banli/Desktop/learn/数据结构与算法/leetcode
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/banli/Desktop/learn/数据结构与算法/leetcode/cmake-build-debug

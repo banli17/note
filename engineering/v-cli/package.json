@@ -1,0 +1,17 @@
+{
+  "name": "learn-vue-cli",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0",
+    "leven": "^3.1.0"
+  },
+  "dependencies": {
+    "comander": "0.0.1-security",
+    "slash": "^3.0.0",
+    "yargs": "^17.0.1"
+  },
+  "workspaces": [
+    "packages/@v/*",
+    "packages/*"
+  ]
+}

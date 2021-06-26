@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/banli/Desktop/learn/数据结构与算法/leetcode/L391.h
+iostream
+/Users/banli/Desktop/learn/数据结构与算法/leetcode/iostream
+
+/Users/banli/Desktop/learn/数据结构与算法/leetcode/L392.h
+iostream
+-
+string
+-
+
+/Users/banli/Desktop/learn/数据结构与算法/leetcode/main.cpp
+iostream
+/Users/banli/Desktop/learn/数据结构与算法/leetcode/iostream
+L391.h
+/Users/banli/Desktop/learn/数据结构与算法/leetcode/L391.h
+L392.h
+/Users/banli/Desktop/learn/数据结构与算法/leetcode/L392.h
+
