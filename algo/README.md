@@ -1,14 +1,8 @@
 # 学习数据结构与算法
 
-## 目录
+## 简介
 
-1. [ ] [算法复杂度分析]
-2. [ ] [线性查找法](./docs/02-Linear-Search/README.md)
-3. [x] [选择排序](./src/03-Selection-Sort/README.md)
-4. [x] [插入排序](./src/04-Insertion-Sort/README.md)
-5. [x] [数组](./src/05-Arrays/README.md)
-6. [ ] [栈和队列]()
-7. [ ] [链表]()
+本章是我在学习数据结构与算法过程中记录的笔记和[编写的代码][./algo]。
 
 ## 学习资料
 
