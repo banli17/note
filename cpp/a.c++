@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 int main(){
-    echo "hello";
+    cout << "hello";
 }
