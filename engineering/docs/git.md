@@ -188,9 +188,8 @@ $ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commi
 ```
 $ npm install husky --save-dev
 
-# 1. 给 package.json 添加 scripts prepare 
-$ npm set-script prepare "husky install"
-$ npm run prepare
+# 1. 初始化
+npx husky install
 
 # 2. 增加钩子
 $ npx husky add .husky/pre-commit "npm test"
