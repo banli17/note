@@ -181,7 +181,10 @@ $ commitizen init cz-conventional-changelog --save --save-exact
 $ npm install --save-dev @commitlint/config-conventional @commitlint/cli
 
 $ echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+# @commitlint/config-angular
 ```
+
+也可以[自定义 config](https://github.com/conventional-changelog/commitlint/blob/master/@commitlint/config-conventional/index.js)。
 
 2. 安装 [husky](github.com/typicode/husky) 并激活
 
@@ -192,7 +195,10 @@ $ npm install husky --save-dev
 npx husky install
 
 # 2. 增加钩子
+# 提交前测试
 $ npx husky add .husky/pre-commit "npm test"
+# 提交时检查 commit 信息
+npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"' 
 $ git add .husky/pre-commit
 
 # 3. 提交时 npm test 会执行
@@ -212,15 +218,15 @@ $ git commit -m "Keep calm and commit"
 [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) 是生成 Change log 的工具。
 
 ```sh
-$ conventional-changelog -p angular -i CHANGELOG.md -w
+$ conventional-changelog -p angular -i CHANGELOG.md -w -s
 ```
 
-上面命令只会在头部加上自上次发布以来的变动。如果要重新生成所有变动，`-r 0`。
+上面命令只会在头部加上自上次发布以来的变动。如果要重新生成所有变动，`-r 0`。 `-s` 表示保存为文件。
 
 ```json
 {
   "scripts": {
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -w -r 0"
   }
 }
 ```
