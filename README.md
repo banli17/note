@@ -57,9 +57,9 @@
 
 ### 设计模式
 
-- [面向对象编程](./design-patterns/docs/oop.md)
-- [快速改善代码质量](./design-patterns/docs/03.md)
-- [开闭原则](./design-patterns/src/16/README.md)
+- [面向对象编程](./patterns/docs/oop.md)
+- [快速改善代码质量](./patterns/docs/03.md)
+- [开闭原则](./patterns/src/16/README.md)
 
 
 ### 数据结构与算法
