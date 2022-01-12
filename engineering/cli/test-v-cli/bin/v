@@ -1,4 +1,0 @@
-#!/usr/bin/env node
-
-const { sum } = require('test-v-lib')
-console.log('hello world, ', sum(1, 2))

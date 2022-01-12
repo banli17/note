@@ -1,8 +1,0 @@
-{
-  "useWorkspaces": true,
-  "packages": [
-    "packages/@v/cli*",
-    "packages/*"
-  ],
-  "version": "0.0.0"
-}
