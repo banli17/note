@@ -8,6 +8,7 @@
 
 ## 目录
 
+- [css](https://github.com/banli17/course-css)
 - [学习方法](https://github.com/banli17/how-to-learn)
 - [重学前端](https://github.com/banli17/course-refe)
 - [抄一个 iview，学习 vue2 组件库](https://github.com/banli17/course-iview)
@@ -21,7 +22,6 @@
 - [linux 教程](https://github.com/banli17/course-linux)
 - [nodejs 教程](https://github.com/banli17/course-nodejs)
 - [常用](https://github.com/banli17/use)
-- [css](https://github.com/banli17/css)
 
 ## TODO 
 
