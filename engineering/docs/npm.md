@@ -13,6 +13,14 @@ npm install -g 过程：
 1. 包安装在 `{prefix}/node_modules` 下
 2. 在全局命令`{prefix}/bin`下生成映射，指向`{prefix}/lib`下真实文件。
 
+关于 ^ 的范围, 不修改 **[major, minor, patch]** 三元组中，最左侧的第一个非 0 位，都是可以的。即第一个非 0 位右侧变动。
+
+- ^1.2.3 版本包括：>= 1.2.3 并且 < 2.0.0
+- ^0.2.3 版本包括：>= 0.2.3 并且 < 0.3.0
+- ^0.0.3 版本包括：>= 0.0.3 并且 < 0.0.4
+
+https://zhuanlan.zhihu.com/p/66039729
+
 ## register
 
 如何查询远程仓库的最新版本？ npm 提供了模块的查询服务叫 registry。
@@ -73,3 +81,10 @@ https://docs.npmjs.com/cli/v7/configuring-npm/npmrc
   }
 }
 ```
+
+## npm hooks
+
+- prepare: install 和 publish 前运行。
+- prepublishOnly: 在 tarball 创建后, 上传 tarball 之前执行，这意味着，不会上传构建后的文件，所以不要用于构建，99.999% 场景不需要使用。
+  - 遇到一个问题是在该钩子 build，导致其他人装 iview 库部分 ui 不显示
+  - 目前我只在发布命令包时转换 `#!/usr/bin/env node` 后面的换行符，如`"prepublishOnly": "crlf --set=LF bin/*"`，不过是否有效这里?。[更多 prepublishOnly 的讨论](https://github.com/npm/npm/issues/15147)。
