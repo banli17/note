@@ -1,0 +1,22 @@
+{
+  "name": "35.sfc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "myloader.js",
+  "dependencies": {
+    "webpack-cli": "^4.9.1",
+    "webpack": "^5.65.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/runtime": "^7.16.7",
+    "babel-loader": "^8.2.3"
+  },
+  "scripts": {
+    "dev": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

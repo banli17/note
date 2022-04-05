@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// 1. 计算 pow
+		function makePow(pow) {
+			return function (num) {
+				debugger
+				return Math.pow(num, pow)
+			}
+		}
+
+		const pow2 = makePow(2)
+		const pow3 = makePow(3)
+
+		console.log(pow2(5))
+		console.log(pow3(5))
+
+		// 2. 计算工资
+		// 薪水 = 基本工资 + 奖金
+		function calcSalary(base) {
+			return function (pref) {
+				return base + perf
+			}
+		}
+
+		const level1Salary = calcSalary(12000)
+		const level2Salary = calcSalary(15000)
+
+		console.log(level1Salary(200))
+		console.log(level1Salary(500))
+	</script>
+</body>
+
+</html>

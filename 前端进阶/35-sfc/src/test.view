@@ -1,0 +1,21 @@
+<template>
+  <div>hello world</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    a() {},
+  },
+  mounted() {},
+};
+</script>
+
+<style scoped>
+div {
+  color: "red";
+}
+</style>
