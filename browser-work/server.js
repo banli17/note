@@ -16,7 +16,8 @@ const server = http.createServer((req, res) => {
     aa: 'aaa'
   })
   res.end(JSON.stringify({
-    age: 12
+    name: "zhangsan",
+    age: "12"
   }))
 })
 

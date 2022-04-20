@@ -49,6 +49,7 @@ ${this.bodyText}
       }
       this.client.on('data', (data) => {
         resolve(data.toString()) // 这里收到的是http数据流 ，如`HTTP/1.1 200 OK.....`
+        // 要没有数据后才 end
         this.client.end()
       })
       this.client.on('error', () => {
@@ -66,8 +67,12 @@ class Response {
 new Request({
   port: 9999,
   host: '127.0.0.1',
+  headers: {
+    x: 'x1',
+  },
   body: {
-    name: 'wangwu'
+    name: 'wangwu',
+    age: 12,
   }
 }).send().then(res => {
   console.log('result', res)

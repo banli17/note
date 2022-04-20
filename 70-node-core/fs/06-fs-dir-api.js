@@ -17,6 +17,7 @@ fs.access(newsFile, rwMode, (err) => {
 
 // 2 stat
 fs.stat(newsFile, (err, statObj) => {
+  console.log(err) // 文件不存会报错
   console.log(statObj.size); // 228  字节
   console.log(statObj.isFile()); // true
   console.log(statObj.isDirectory()); // false
