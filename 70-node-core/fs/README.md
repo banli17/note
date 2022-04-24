@@ -50,3 +50,19 @@ fd 就是操作系统分配给被打开文件的标识,由于系统不同, nodej
 - rmdir 删除目录，默认只能删除空目录，可以设置 recursive 为 true 删除非空目录。
 - readdir 读目录，返回一个由文件或目录组成的数组。
 - unlink 删除文件，如果文件不存在则会报错。
+
+### stat
+
+stat 方法用于获取文件的信息，如果文件不存在，会报错。
+
+```js
+fs.stat(filepath, (err, stats) => {
+  stats.isFile()
+  stats.isDirectory()
+  stats.isSymbolicLink()
+  stats.size // 字节
+})
+```
+
+
+- https://nodejs.dev/learn/nodejs-file-stats
