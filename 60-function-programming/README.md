@@ -199,9 +199,28 @@ lodash/fp
 - 函子就是一个实现了 map 方法的对象，map 方法返回一个包含新值的函子
 - 函子里封装了一个值，要处理值，就要给 map 传递一个处理值的纯函数
 
-Either 函子
+### Either 函子
+
 - Either 两者中的任何一个，类似 if else 的处理
 - Either 函子可以用来异常处理
+
+### IO 函子
+
+- IO 函子的 _value 是一个函数，这里是把函数作为值来处理
+- IO 函子可以把不纯的动作存储到 _value 中，延迟执行这个不纯的操作(惰性执行)，包装当前的操作
+- 把不纯的操作交给调用者来处理
+
+Task 异步执行
+- 异步任务的实现过于复杂
+- falktale
+
+Pointed 函子
+- 实现了静态 of 方法的函子
+- of 方法是为了避免 new 来创建对象，更深层的含义是 of 方法用来把值放在上下文 Context(容器) 中，使用 map 来处理。
+
+Monad(单子)
+- 可以变扁的 Pointed 函子, IO(IO(x))
+- 具有 join 和 of 两个方法，并遵守一些定律
 ## 附录
 
 https://www.ruanyifeng.com/blog/2017/02/fp-tutorial.html
