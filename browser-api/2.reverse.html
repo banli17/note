@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <span>1</span>
+    <p>2</p>
+    <a>3</a>
+    <div>4</div>
+  </div>
+  <script>
+    var app = document.querySelector('#app')
+
+    // 将 dom 结构倒序
+    function reverseChildren(element) {
+      for (let i = element.children.length - 1; i > 0; i--) {
+        element.appendChild(element.children[i - 1])
+      }
+    }
+
+    function reverseChildren2(element) {
+      Array.prototype.slice.call(element.childNodes).reverse().forEach(node => {
+        element.appendChild(node)
+      });
+    }
+    reverseChildren2(app)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <div id="a">1</div>
+    <div id="b">2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  <div id='app2'></div>
+  <script>
+    var a = document.querySelector('#a')
+    var b = document.querySelector('#b')
+    var app = document.querySelector('#app')
+    var app2 = document.querySelector('#app2')
+
+    // app.appendChild(a)
+
+    // 下面这个移动因为 app.children 是动态的，所以会存在问题
+    for (var i = 0; i < app.children.length; i++) {
+      app2.appendChild(app.children[i])
+    }
+  </script>
+</body>
+
+</html>

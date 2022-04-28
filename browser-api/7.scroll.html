@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="width: 100px;height:150px;overflow-y: scroll;line-height: 30px;">
+    <span style="background-color: aqua;">文字 文字 文字 文字 文字 文字 文字文字 文字 文字 文字 文字 文字 文字文字 文字 </span>
+  </div>
+  <script>
+    const span = document.querySelector('span')
+    console.log(span.getClientRects(), span.getClientRects().length);
+  </script>
+</body>
+
+</html>

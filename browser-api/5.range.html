@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">1234<span style="background: red">56</span>789</div>
+  <script>
+    var app = document.querySelector('#app')
+    var element = app.childNodes[0]
+    console.dir(element)
+    var range = new Range()
+    range.setStart(app.childNodes[0], app.childNodes[0].length) // 有换行不起作用, 如 #not_work
+    range.setEnd(app.childNodes[2], 0)
+    range.extractContents() // 将 56 删掉
+  </script>
+</body>
+
+</html>

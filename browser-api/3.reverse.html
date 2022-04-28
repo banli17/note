@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <span>1</span>
+    <p>2</p>
+    <a>3</a>
+    <div>4</div>
+  </div>
+  <script>
+    var app = document.querySelector('#app')
+
+    // 将 dom 结构倒序
+    function reverseChildren(element) {
+      let range = new Range
+      range.selectNodeContents(element)
+      let fragment = range.extractContents() // 会将 dom 删除掉
+
+      // 下面这个操作没有重排或重绘制
+      let len = fragment.childNodes.length
+      while (len-- > 0) {
+        fragment.appendChild(fragment.childNodes[len])
+      }
+      element.appendChild(fragment)
+    }
+
+    reverseChildren(app)
+  </script>
+</body>
+
+</html>

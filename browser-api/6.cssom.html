@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      background: red;
+    }
+
+    a::before {
+      content: attr(data-attr);
+      color: blue;
+    }
+  </style>
+  <link rel="stylesheet" href="data:text/css,div{color: blue}">
+  <link rel="stylesheet" href="data:text/css,div%7Bborder-bottom: 1px solid green%7D">
+</head>
+
+<body>
+  <div id="app">1234<span style="background: red">56</span>789</div>
+  <a data-attr="hello"> World</a>
+  <script>
+    console.log(document.styleSheets);
+    // disabled
+    // ownerNode
+
+    const style0 = document.styleSheets[0].cssRules[0]
+    console.log('style0', style0)
+    style0.style.background = 'blue'
+
+    // 修改伪元素
+    const style1 = document.styleSheets[0].cssRules[1]
+    console.log('style1', style1, style1.style.content);
+    style1.style.color = 'green'
+    // 内容要替换 rule
+    style1.style.content = 'xx'
+
+    const a = document.querySelector('a')
+    console.log(a.childNodes[0])
+  </script>
+</body>
+
+</html>
