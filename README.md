@@ -10,7 +10,9 @@
   - [2. path 模块](./node-core/path/README.md)
   - [3. fs 模块](./node-core/fs/README.md)
   - [4. buffer 模块](./node-core/buffer/README.md)
-  - [5. process]
+  - [5. process](./70-node-core/5-process/README.md)
+  - [7. events](./70-node-core/7-events/README.md)
+  - [stream](./70-node-core/stream/README.md)
 - [nodejs 常用第三方包]
 - [浏览器工作原理](./browser-work/README.md)
 - [浏览器 API](./browser-api/README.md)
