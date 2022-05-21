@@ -1,0 +1,35 @@
+<script>
+  let handlers = []
+  function reactive(obj) {
+    return new Proxy(obj, {
+      get(obj, key) {
+        console.log('get');
+        return obj[key]
+      },
+      set(obj, key, val) {
+        console.log('set');
+        obj[key] = val
+        handlers.forEach(fn => fn())
+        return obj[key]
+      }
+    })
+  }
+
+  function effect(fn) {
+    fn() // 这里第一次执行的时候，在 get 里进行以来搜集
+    handlers.push(fn) // 会处理全部的 handler, 所以要依赖搜集
+  }
+
+  let obj = {
+    count: 1
+  }
+  let dummy
+  effect(() => console.log('ggg'))
+  effect(() => dummy = obj.count)
+  const proxy = reactive(obj)
+  console.log(dummy);
+  proxy.count = 2
+  console.log(dummy);
+  console.log(obj === proxy);
+
+</script>

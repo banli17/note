@@ -1,0 +1,31 @@
+<script>
+  let person = {
+    name: 'zs',
+    age: 30,
+    children: [{
+      name: 'zd',
+      age: 10,
+    }],
+    wife: {
+      name: 'ls',
+      age: 28
+    }
+  }
+  const proxy = new Proxy(person, {
+    get(target, key, receiver) {
+      console.log(target === person); // true
+      console.log(receiver === target); // false
+      console.log(receiver === proxy); // true
+      return target[key]
+    },
+    set(target, key, val, receiver) {
+      return target[key] = val
+    },
+    apply() {
+      console.log('apply');
+    }
+  })
+
+  console.log(proxy())
+
+</script>

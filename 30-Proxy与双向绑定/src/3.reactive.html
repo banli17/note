@@ -1,0 +1,129 @@
+<input id=r type="range" min=0 max=255>
+<input id=g type="range" min=0 max=255>
+<input id=b type="range" min=0 max=255>
+
+<div style="width: 100px;height: 100px;" id=color></div>
+
+<div id="text">hello {{name}} 哈哈</div>
+<script>
+  let usedReactivities = []
+  let handlers = new Map()
+  let reactivies = new Map()
+  // 对同一个对象 进行 reactive 每次返回的对象相等
+  // 如果属性是对象时，需要对属性值进行 reactive
+
+  function reactive(obj) {
+    if (reactivies.has(obj)) {
+      return reactivies.get(obj)
+    }
+    let proxy = new Proxy(obj, {
+      get(obj, key) {
+        // console.log('get');
+        usedReactivities.push([obj, key])
+        if (typeof obj[key] === 'object') {
+          return reactive(obj[key]) // 这里如果不处理，每次会返回一个新对象, 重写对象时 .a = {} , 依赖搜集时 get(obj) 不是同一个对象, 会出现问题
+        }
+        return obj[key]
+      },
+      set(obj, key, val) {
+        if (typeof val === 'object') {
+          // 重写属性对象时，这里需要找到原来的 handler 然后替换 key
+          handlers.set(val, handlers.get(obj[key]))
+          reactive(val)
+        }
+        obj[key] = val
+
+        if (handlers.has(obj) && handlers.get(obj).has(key)) {
+          console.log('gg', handlers.get(obj).get(key));
+          handlers.get(obj).get(key).forEach(fn => fn())
+        }
+        return obj[key]
+      }
+    })
+
+    reactivies.set(obj, proxy)
+    reactivies.set(proxy, proxy) // 如果是 reactived 也返回自己
+    return proxy
+  }
+
+  function effect(handler) {
+    usedReactivity = []
+    handler()  // 这里执行，会走 get 进行搜集
+    console.log('usedReactivity', usedReactivities);
+    for (let reactivity of usedReactivities) {
+      let [obj, key] = reactivity
+      if (!handlers.has(obj)) {
+        handlers.set(obj, new Map)
+      }
+      if (!handlers.get(obj).get(key)) {
+        handlers.get(obj).set(key, [])
+      }
+      console.log('gg', handlers.get(obj).get(key));
+      handlers.get(obj).get(key).push(handler)
+    }
+    console.log('handlers', handlers);
+  }
+
+  let obj = {
+    count: 1,
+    x: {
+      a: 1
+    }
+  }
+  const proxy = reactive(obj)
+  let dummy
+  let v
+
+  // effect(() => console.log('ggg'))
+  // effect(() => dummy = proxy.count) // 这里如果有 if 或 || 等表达式，搜集会出现问题
+  effect(() => v = proxy.x.a)
+  // console.log('dummy', dummy);
+  // proxy.count = 2
+  // console.log('dummy', dummy);
+  // proxy.count = 3
+  // console.log('dummy', dummy);
+  proxy.x = { a: 3 }
+  console.log('x', v);
+
+  proxy.x.a = 4
+  console.log('x', v);
+
+  // let color = reactive({
+  //   r: 100, g: 100, b: 100
+  // })
+
+  // effect(() => {
+  //   document.getElementById('r').value = color.r
+  //   document.getElementById('g').value = color.g
+  //   document.getElementById('b').value = color.b
+  //   document.getElementById('color').style.background = `rgb(${color.r}, ${color.g}, ${color.b})`
+  // })
+
+  // document.getElementById('r').addEventListener('input', e => {
+  //   console.log('e', e);
+  //   color.r = e.target.value
+  // })
+  // document.getElementById('g').addEventListener('input', e => {
+  //   color.g = e.target.value
+  // })
+  // document.getElementById('b').addEventListener('input', e => {
+  //   color.b = e.target.value
+  // })
+
+  const text = document.querySelector('#text')
+  const t = reactive({
+    text: 'world!'
+  })
+
+  const range = document.createRange()
+  range.setStart(text.childNodes[0], 6) // 对元素是第 6 个 child ?
+  range.setEnd(text.childNodes[0], 14)
+
+  effect(() => {
+    range.extractContents()
+    range.insertNode(document.createTextNode(t.text))
+  })
+  setTimeout(() => {
+    t.text = 'lisi'
+  }, 3000)
+</script>

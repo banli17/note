@@ -108,3 +108,8 @@ import 'style-loader!css-loader!index.css'
 webpack 本身就是一个构建过程的状态机，其本身的核心功能也是建立在 loader 和 plugin 之上。
 
 
+## ZBestPC 项目改造
+
+- 改造前源码分析
+- 项目工程化存在的问题
+- 改造流程梳理和难点
