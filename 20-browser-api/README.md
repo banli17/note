@@ -120,12 +120,15 @@ range.setEnd(element, 4)
 var range = document.getSelection().getRangeAt(0)
 ```
 
-- setStartBefore
-- setEndBefore
-- setStartAfter
-- setEndAfter
-- selectNode
+- setStart(node, index) 如果 node 为 text 或 comment 节点, index 是字符位置,如果是元素节点，则为子节点位置
+- setStartBefore(node)
+- setEndBefore(node)
+- setStartAfter(node)
+- setEndAfter(node)
+- selectNode(node)
 - selectNodeContents(el)
+- extractContents() 将 range 选中的节点摘除
+- insertNode() 在 range 选中的起始位置插入
 
 range 的作用:可以摘取片段为 fragment, 或者往节点内部插入
 

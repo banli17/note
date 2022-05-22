@@ -120,7 +120,7 @@
   range.setEnd(text.childNodes[0], 14)
 
   effect(() => {
-    range.extractContents()
+    // range.extractContents()
     range.insertNode(document.createTextNode(t.text))
   })
   setTimeout(() => {
