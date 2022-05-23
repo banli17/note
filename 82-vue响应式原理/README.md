@@ -1,51 +1,68 @@
-# vue-router 原理实现
+# vue 响应式原理
 
-## 基础使用
+## 数据驱动
 
-```js
-Vue.use(VueRouter)
-const router = new VueRouter({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      component: Home,
-    },
-    ...
-  ]
-})
+- 数据响应式：修改数据时，dom 自动更新。
+- 双向绑定(v-model)：数据改变时，视图改变。视图改变时，数据也随之改变。
 
-new Vue({
-  router
-})
-```
+## 响应式核心原理
 
-## vue-router 做了什么
+### Vue2.x
 
-- 在所有实例上挂载了 this.$router、this.$route 两个属性
-- 注册了两个全局组件 router-view、router-link
-- 支持 history 和 hash 模式
-- 路由变化时，将 router-view 替换为当前路由对应的组件
+Vue2.x 响应式是通过 Object.defineProperty 实现的。
 
-## uml 类图
+- Object.defineProperty 无法 shim, ie8 及以下不支持。
+  - enumerable 默认为 false, 可枚举(是否可遍历)
+  - configurable 默认为 false, 可配置(是否可 delete 删除，和使用 defineProperty 重新定义)
+  - get 默认为 undefined
+  - set 默认为 undefined
+  - writable 默认为 false
+  - value 默认为 undefined
 
-![](./imgs/2022-05-08-20-51-55.png)
+### Vue3.x
 
-## Vue 的构建版本
+Vue3.x 中响应式原理是通过 Proxy 实现的。
 
-runtime-only: 不支持 template，需要打包时提前编译。
-完整版： 包含运行时和编译器，体积大 10k，会将模版转为 render 函数。
+- 它是直接监听对象，而不是某个属性
+- 性能比 defineProperty 要好, 写法更简洁
+- 可以代理很多属性：get、set、defineProperty 等
 
-解决方法
+### 实现 reactive
 
-1. vue.config.js
+步骤:
 
-runtimeCompiler: false // 默认不带编译器
+1. 实现 reactive effect, 存在的问题:
 
-2. 使用 render(h) 函数
+- effect 每次都执行, 需要依赖搜集
 
-## vue-router 实现
+2. 如何依赖搜集, handlers 的数据结构是怎么样?
+3. 对于属性值为对象的处理? 也要 reactive 化, 问题是
 
-- [代码](./src/plugins/vue-router.js)
+- 如果 return reactive() , 那么每次返回的对象不同, 在依赖搜集时会有问题
+- 需要 reactivies 缓存，每次返回同一个对象, vue 里针对同一个对象 reactive 返回值是相等的
 
-## vue-router 源码分析
+## 发布订阅模式和观察者模式
+
+### 发布订阅模式
+
+- 发布者：不知道订阅者的存在, 由消息中心管理
+- 订阅者
+- 消息中心
+
+Vue 自定义事件
+
+- $on(name, fn)
+- $emit(name, data)
+
+### 观察者模式
+
+- 没有事件中心
+- 观察者(订阅者)Wather: 有个 update 方法
+- 目标(发布者) - Dep, 发布者知道订阅者的存在
+  - subs: 存储所有订阅者
+  - notify: 调用所有观察者的 update 方法
+  - addSub
+
+![](./imgs/2022-05-23-22-32-40.png)
+
+## 模拟响应式原理

@@ -112,3 +112,4 @@ dist
 .log*
 
 _cache/
+task.md
