@@ -9,13 +9,27 @@
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <h1>差值表达式</h1>
+    <h3>{{msg}}</h3>
+    <h3>{{count}}</h3>
+    <h1>v-text</h1>
+    <div v-text='msg'></div>
+    <h1>v-model</h1>
+    <input type="text" v-model="msg">
+  </div>
+  <script src="./js/dep.js"></script>
+  <script src="./js/watcher.js"></script>
+  <script src="./js/compiler.js"></script>
+  <script src="./js/observer.js"></script>
   <script src="./js/vue.js"></script>
   <script>
     let vm = new Vue({
       el: '#app',
       data: {
-        msg: 'hello world'
+        msg: 'hello world',
+        count: 100,
+        person: { name: 'zs' }
       }
     })
   </script>
