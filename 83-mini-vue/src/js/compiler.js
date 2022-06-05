@@ -2,6 +2,8 @@ class Compiler {
   constructor(vm) {
     this.el = vm.$el
     this.vm = vm
+
+    this.compile(this.el)
   }
 
   // 编译模版，处理文本和元素节点
