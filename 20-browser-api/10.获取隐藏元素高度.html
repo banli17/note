@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box-wrapper {
+        position: fixed;
+      }
+      .box {
+        width: 112px;
+        display: none;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box-wrapper">
+      <div class="box">
+        <p style="height: 1000px">hello</p>
+        <p>hello</p>
+      </div>
+    </div>
+    <script>
+      const box = document.querySelector(".box");
+      const boxWrapper = document.querySelector(".box-wrapper");
+
+      function getHiddenElementRect(el) {
+        const probeEl = document.createElement("div");
+        probeEl.style.position = "relative";
+        probeEl.style.width = 0;
+        probeEl.style.height = 0;
+        probeEl.style.overflow = "hidden";
+
+        const cloneEl = el.cloneNode(true);
+        cloneEl.style.position = "absolute";
+        cloneEl.style.display = "block";
+        cloneEl.style.zIndex = -1;
+        probeEl.appendChild(cloneEl);
+
+        document.body.append(probeEl);
+
+        const rect = cloneEl.getBoundingClientRect();
+        probeEl.remove();
+        return rect;
+      }
+      console.log("gg", getHiddenElementRect(box));
+    </script>
+  </body>
+</html>
