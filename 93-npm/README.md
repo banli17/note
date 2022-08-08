@@ -73,3 +73,23 @@ https://docs.npmjs.com/cli/v7/configuring-npm/npmrc
   }
 }
 ```
+
+
+require.main  对象 是 node 进程的入口模块
+
+```js
+// node entry.js
+if (require.main === module) {
+  require('./lib/cli.js')(process)
+} else {
+  // 如果是 require 的该文件，不是入口模块，require.main 为 undefined
+  throw new Error('The programmatic API was removed in npm v8.0.0')
+}
+```
+
+## npm view
+
+```
+# 查看包的所有版本列表
+npm view <package-name> versions
+```
