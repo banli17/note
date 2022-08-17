@@ -1,2 +1,0 @@
-import './SelectionSort'
-import './InsertionSort'
