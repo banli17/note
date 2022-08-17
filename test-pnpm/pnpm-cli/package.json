@@ -1,0 +1,16 @@
+{
+  "name": "pnpm-cli",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "node scripts/preinstall.js"
+  },
+  "keywords": [],
+  "private": true,
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "npmlog": "^6.0.2"
+  }
+}
