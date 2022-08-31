@@ -60,7 +60,8 @@ describe("test date", () => {
 // jest.config.js
 module.exports = {
     // testMatch和testRegex互斥，只用一个
-    testMatch: ['**/test/**/*.js?(x)', '**/?(*.)(spec|test).js?(x)'], // ['<rootDir>/test/**/*.js']
+    // testMath 默认配置如下
+    testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'], // ['<rootDir>/test/**/*.js']
     testRegex:'',
     testEnvironment:'jsdom', // node
     rootDir:'', // 默认是package.json所在目录，没有则pwd
@@ -69,7 +70,9 @@ module.exports = {
 
 // package.json
 {
-    "jest":{}
+    "jest":{
+      "verbose": true
+    }
 }
 
 // 命令行

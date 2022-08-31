@@ -11,7 +11,23 @@ npm publish --tag v4-test  # 用于 ui v4 版本测试
 优雅的防止页面文字选中拖拽问题？
 document.body.ondragstart= ()=>{ return false }
 
-```
+```sh
 # 清除缓存
 pnpm store prune
 ```
+
+本地调试命令包的方法
+当 test 目录安装了两个本地包A、B(软链接，切两个包在同一个目录下平级)后，运行命令时，如果 A 里没有安装依赖 B，会报错 B 模块找不到。
+这时，可以在 A 里增加 debug，在 debug 下重新设置 import(BPath) B 包的链接，通过下面方法引入。
+
+```js
+if(debug){
+    BPath = path.resolve(__dirname, '../../', 'B')
+}
+import(BPath)
+
+// 执行命令语句
+cli --debug
+```
+
+<https://stackoverflow.com/questions/64573177/unable-to-resolve-dependency-tree-error-when-installing-npm-packages>
