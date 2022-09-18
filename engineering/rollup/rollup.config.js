@@ -8,6 +8,8 @@ import clear from "rollup-plugin-clear";
 import myExamplePlugin from "./rollup-plugin/rollup-plugin-my-example";
 import myPolyfill from "./rollup-plugin/rollup-plugin-polyfill";
 import myBabel from "./rollup-plugin/rollup-plugin-babel";
+import myDynamicImport from "./rollup-plugin/rollup-plugin-dynamicImport";
+import myResolveFileUrl from "./rollup-plugin/rollup-plugin-resolveFileUrl";
 
 console.log(process.env.NODE_ENV);
 
@@ -15,8 +17,11 @@ const config = {
   input: "./src/index.js",
   // input: "virtual-module",
   output: {
-    file: "./dist/bundle.js",
-    format: "umd", // amd", "cjs", "system", "es", "iife" or "umd"
+    // file: "./dist/bundle.js",
+    // file: 'bundle.js',
+    dir: 'dist',
+    format: 'cjs',
+    // format: "umd", // amd", "cjs", "system", "es", "iife" or "umd"
     name: "v", // iife 和 umd 时必须提供,会作为全局变量
     globals: {
       lodash: "_", // 告诉 rollup lodash _变量从全局取
@@ -26,13 +31,15 @@ const config = {
   plugins: [
     clear({
       targets: ["dist"], // 要清空的目录
-      watch: false
+      watch: false,
     }),
-    myBabel({}),
-    myPolyfill({
-      a: 1,
-      b: 2,
-    }),
+    // myBabel({}),
+    // myPolyfill({
+    //   a: 1,
+    //   b: 2,
+    // }),
+    myDynamicImport(),
+    // myResolveFileUrl(),
     // resolve(),
     // plugin1(),
     // myExamplePlugin(),

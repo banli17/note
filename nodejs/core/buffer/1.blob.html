@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var debug = { hello: 'world' }
+      var blob = new Blob([JSON.stringify(debug)], {
+        type: 'application/json',
+      })
+      blob.text().then((res) => {
+        console.log(res)
+      })
+
+      blob.arrayBuffer().then(async (res) => {
+        console.log('res', res)
+        var blob = new Blob([res], {
+          type: 'application/octet-stream',
+        }) // 传入一个合适的 MIME 类型
+        var url = URL.createObjectURL(blob)
+        console.log(url)
+
+        // 从 blob 读取内容 的两种方式
+        // 1
+        var text = await new Response(blob).text()
+        console.log('text', text) // {hello: world}
+        // 2
+        var reader = new FileReader()
+        reader.addEventListener('loadend', function () {
+          // reader.result 包含被转化为类型数组 typed array 的 blob
+          console.log('reader.result', reader.result)
+        })
+        reader.readAsArrayBuffer(blob)
+      })
+    </script>
+  </body>
+</html>

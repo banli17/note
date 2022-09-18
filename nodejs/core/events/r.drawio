@@ -1,0 +1,40 @@
+<mxfile host="65bd71144e">
+    <diagram id="-iw1gmuUfpXtr5yg9HuD" name="第 1 页">
+        <mxGraphModel dx="636" dy="286" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="80" width="90" height="290" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="微任务" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="215" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="280" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="poll / i o 回调" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="230" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="idle prepare" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="180" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="pending callbacks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="130" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="timer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="80" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="close callback" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="330" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="340" y="100" as="sourcePoint"/>
+                        <mxPoint x="340" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
