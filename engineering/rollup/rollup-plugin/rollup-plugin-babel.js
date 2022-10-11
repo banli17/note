@@ -5,15 +5,15 @@ export default function (config) {
 
   return {
     name: "my-babel",
-    watchChange(){
-      console.log('watchChange')
+    watchChange() {
+      console.log("watchChange");
       // process.exit()
     },
     async transform(code, id) {
       const result = await babel.transformAsync(code, {
         // presets: ["@babel/preset-env"],
       });
-      console.log(result)
+      console.log(result);
       return result;
     },
   };

@@ -5,6 +5,7 @@ const inputOptions = {
   external: [],
   input: {
     index: "./src/index.js",
+    index2: "./src/index2.js",
   }, // conditionally required
   plugins: [],
 
@@ -39,12 +40,11 @@ const outputOptionList = [
 const watchOptions = {
   ...inputOptions,
   output: outputOptionList,
-  watch: {},
 };
 const watcher = watch(watchOptions);
 
 watcher.on("event", (event) => {
-  console.log(event);
+  console.log("event", event);
   // event.code can be one of:
   //   START        — the watcher is (re)starting
   //   BUNDLE_START — building an individual bundle
@@ -74,11 +74,11 @@ watcher.on("event", (event) => {
 });
 
 // This will make sure that bundles are properly closed after each run
-watcher.on("event", ({ result }) => {
-  if (result) {
-    result.close();
-  }
-});
+// watcher.on("event", ({ result }) => {
+//   if (result) {
+//     result.close();
+//   }
+// });
 
 // stop watching
 watcher.close();
