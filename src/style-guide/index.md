@@ -1,5 +1,0 @@
----
-outline: deep
----
-
-# Style Guide
