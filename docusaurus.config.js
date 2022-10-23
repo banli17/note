@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Note',
   tagline: 'Dinosaurs are cool',
-  url: 'https://banli17.github.io/note/',
-  baseUrl: '/',
+  url: 'https://banli17.github.io',
+  baseUrl: '/note/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
