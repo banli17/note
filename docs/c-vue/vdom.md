@@ -895,3 +895,123 @@ function patchVnode(
   hook?.postpatch?.(oldVnode, vnode);
 }
 ```
+
+### updateChildren() 函数
+
+updateChildren() 函数用于对比新 vnode 和旧 vnode 的 children 节点，并更新，也就是常说的 DOM diff 算法。
+
+- https://leetcode.com/problems/edit-distance/
+- https://juejin.cn/post/6892671384976097287
+
+由于 DOM 的特殊性，实际项目中，很少会跨级操作 DOM，所以为了提高性能，只检查同一级的虚拟 dom 节点。
+
+`updateChildren()` 对比 vnode 时，会在 oldCh 中查找是否有当前 vnode，为了提高查找效率，会进行头尾对比，以及将子节点转为一个 map 对象 `oldKeyToIdx`，。
+
+```ts
+function updateChildren(
+  parentElm: Node,
+  oldCh: VNode[],
+  newCh: VNode[],
+  insertedVnodeQueue: VNodeQueue
+) {
+  let oldStartIdx = 0;
+  let newStartIdx = 0;
+  let oldEndIdx = oldCh.length - 1;
+  let oldStartVnode = oldCh[0];
+  let oldEndVnode = oldCh[oldEndIdx];
+  let newEndIdx = newCh.length - 1;
+  let newStartVnode = newCh[0];
+  let newEndVnode = newCh[newEndIdx];
+  let oldKeyToIdx: KeyToIndexMap | undefined;
+  let idxInOld: number;
+  let elmToMove: VNode;
+  let before: any;
+
+  while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
+    // 1. 判断是否是 null，移动指针
+    if (oldStartVnode == null) {
+      oldStartVnode = oldCh[++oldStartIdx]; // Vnode might have been moved left
+    } else if (oldEndVnode == null) {
+      oldEndVnode = oldCh[--oldEndIdx];
+    } else if (newStartVnode == null) {
+      newStartVnode = newCh[++newStartIdx];
+    } else if (newEndVnode == null) {
+      newEndVnode = newCh[--newEndIdx];
+    } else if (sameVnode(oldStartVnode, newStartVnode)) { // 2. 对比前后节点是否是 sameVnode
+      patchVnode(oldStartVnode, newStartVnode, insertedVnodeQueue);
+      oldStartVnode = oldCh[++oldStartIdx];
+      newStartVnode = newCh[++newStartIdx];
+    } else if (sameVnode(oldEndVnode, newEndVnode)) {
+      patchVnode(oldEndVnode, newEndVnode, insertedVnodeQueue);
+      oldEndVnode = oldCh[--oldEndIdx];
+      newEndVnode = newCh[--newEndIdx];
+    } else if (sameVnode(oldStartVnode, newEndVnode)) {
+      // Vnode moved right
+      patchVnode(oldStartVnode, newEndVnode, insertedVnodeQueue);
+      api.insertBefore(
+        parentElm,
+        oldStartVnode.elm!,
+        api.nextSibling(oldEndVnode.elm!)
+      );
+      oldStartVnode = oldCh[++oldStartIdx];
+      newEndVnode = newCh[--newEndIdx];
+    } else if (sameVnode(oldEndVnode, newStartVnode)) {
+      // Vnode moved left
+      patchVnode(oldEndVnode, newStartVnode, insertedVnodeQueue);
+      api.insertBefore(parentElm, oldEndVnode.elm!, oldStartVnode.elm!);
+      oldEndVnode = oldCh[--oldEndIdx];
+      newStartVnode = newCh[++newStartIdx];
+    } else {
+      // 3. 创建 map 对象，方便快速查找
+      if (oldKeyToIdx === undefined) {
+        oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx);
+      }
+      idxInOld = oldKeyToIdx[newStartVnode.key as string];
+      // 4. 没找到，新建并插入元素
+      if (isUndef(idxInOld)) {
+        // New element
+        api.insertBefore(
+          parentElm,
+          createElm(newStartVnode, insertedVnodeQueue),
+          oldStartVnode.elm!
+        );
+      } else {
+        // 找到了
+        elmToMove = oldCh[idxInOld];
+        // 不是同一元素，新增并插入元素
+        if (elmToMove.sel !== newStartVnode.sel) {
+          api.insertBefore(
+            parentElm,
+            createElm(newStartVnode, insertedVnodeQueue),
+            oldStartVnode.elm!
+          );
+        } else {
+          // 是同一元素，pathVnode，将元素移动到 oldStartVnode.elm 前面
+          patchVnode(elmToMove, newStartVnode, insertedVnodeQueue);
+          oldCh[idxInOld] = undefined as any;
+          api.insertBefore(parentElm, elmToMove.elm!, oldStartVnode.elm!);
+        }
+      }
+      newStartVnode = newCh[++newStartIdx];
+    }
+  }
+
+  // 需要新增的元素
+  if (newStartIdx <= newEndIdx) {
+    before = newCh[newEndIdx + 1] == null ? null : newCh[newEndIdx + 1].elm;
+    addVnodes(
+      parentElm,
+      before,
+      newCh,
+      newStartIdx,
+      newEndIdx,
+      insertedVnodeQueue
+    );
+  }
+
+  // 需要删除的元素
+  if (oldStartIdx <= oldEndIdx) {
+    removeVnodes(parentElm, oldCh, oldStartIdx, oldEndIdx);
+  }
+}
+```
