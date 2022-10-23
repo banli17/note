@@ -1,6 +1,6 @@
 {
-  "label": "工程化",
-  "position": 60,
+  "label": "设计模式",
+  "position": 70,
   "link": {
     "type": "generated-index",
     "description": "5 minutes to learn the most important Docusaurus concepts."

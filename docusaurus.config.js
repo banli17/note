@@ -37,7 +37,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/banli17/note',
+            'https://github.com/banli17/note/tree/main/docs',
         },
         // blog: {
         //   showReadingTime: true,
