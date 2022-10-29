@@ -937,7 +937,8 @@ function updateChildren(
       newStartVnode = newCh[++newStartIdx];
     } else if (newEndVnode == null) {
       newEndVnode = newCh[--newEndIdx];
-    } else if (sameVnode(oldStartVnode, newStartVnode)) { // 2. 对比前后节点是否是 sameVnode
+    } else if (sameVnode(oldStartVnode, newStartVnode)) {
+      // 2. 对比前后节点是否是 sameVnode
       patchVnode(oldStartVnode, newStartVnode, insertedVnodeQueue);
       oldStartVnode = oldCh[++oldStartIdx];
       newStartVnode = newCh[++newStartIdx];
@@ -1015,3 +1016,10 @@ function updateChildren(
   }
 }
 ```
+
+### Key 的意义
+
+key 主要用于判断两个 vnode 节点是否相同，如果相同(新旧 vnode 未设置 key 时 值为 undefined 也是相同的)，`updateChildren()` 将会重复利用旧节点的 dom 元素，进行 `patchVnode()`。否则，会重新创建 dom 元素。
+
+<!-- :::tip
+::: -->
