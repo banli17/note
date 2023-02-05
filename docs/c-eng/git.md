@@ -277,3 +277,17 @@ git mv tmp TEST-DIR
 ```
 
 参考资料：https://knightyun.github.io/2021/01/18/git-ignorecase
+
+
+
+### ssh: connect to host github.com port 22: Connection timed out
+
+**windows**
+
+在 `[用户目录]/.ssh` 增加 config 文件。
+
+```sh
+Host github.com
+Hostname ssh.github.com
+Port 443
+```
