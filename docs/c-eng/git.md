@@ -20,6 +20,14 @@ master |    dev     | release
 
 ## 常见问题
 
+### Failed to connect to 127.0.0.1 port 1081 after 2074 ms: Connection refused
+
+https://juejin.cn/post/6999811900368224263
+
+https://www.ipaddress.com/site/github.com
+
+C:\Windows\System32\drivers\etc\hosts
+
 ### git clone 或 push 慢、卡住 ?
 
 1. 首先查看自己 socks5 的端口号
