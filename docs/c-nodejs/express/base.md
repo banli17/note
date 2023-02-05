@@ -89,6 +89,109 @@ http://localhost:3000/static/js/app.js
 
 更多信息可以查看 [serve-static](http://expressjs.com/en/resources/middleware/serve-static.html) 包。
 
+## 中间件
+
+### 介绍
+
+中间件函数是在应用程序请求-响应周期中，可以访问请求对象（req）、响应对象（res） 和 下一个中间件函数(通常是 next 名) 的函数。调用 next() 方法可以执行当前中间件之后的中间件。
+
+中间件函数可以执行以下任务：
+
+- 执行任何代码。
+- 更改请求和响应对象。
+- 结束请求-响应循环。
+- 调用堆栈中的下一个中间件。
+
+如果当前中间件函数没有结束请求-响应循环，它必须调用 next() 将控制权传递给下一个中间件函数。否则，请求将被挂起。
+
+下图显示了中间件函数调用的元素：
+
+![](imgs/2023-02-05-22-04-00.png)
+
+### 示例
+
+```js
+const express = require("express");
+const app = express();
+
+const myLogger = function (req, res, next) {
+  console.log("LOGGED");
+  next();
+};
+
+app.use(myLogger);
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.listen(3000);
+```
+
+中间件加载的顺序很重要：最先加载的中间件函数也最先执行。
+
+如果 myLogger 在到根路径的路由之后加载，请求永远不会到达它并且应用程序不会打印“LOGGED”，因为根路径的路由处理程序终止了请求-响应周期。
+
+**示例 cookieValidator 中间件**
+
+```js
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const cookieValidator = require("./cookieValidator");
+
+const app = express();
+async function cookieValidator(cookies) {
+  try {
+    await externallyValidateCookie(cookies.testCookie);
+  } catch {
+    throw new Error("Invalid cookies");
+  }
+}
+
+async function validateCookies(req, res, next) {
+  await cookieValidator(req.cookies);
+  next();
+}
+
+app.use(cookieParser());
+
+app.use(validateCookies);
+
+// error handler
+app.use((err, req, res, next) => {
+  res.status(400).send(err.message);
+});
+
+app.listen(3000);
+```
+
+**可配置中间件**
+
+```js
+// my-middleware.js
+module.exports = function (options) {
+  return function (req, res, next) {
+    // Implement the middleware function based on the options object
+    next();
+  };
+};
+
+// 使用
+const mw = require("./my-middleware.js");
+
+app.use(mw({ option1: "1", option2: "2" }));
+```
+
+### 使用中间件
+
+Express 应用程序可以使用以下类型的中间件：
+
+- 应用层中间件
+- 路由器级中间件
+- 错误处理中间件
+- 内置中间件
+- 第三方中间件
+
 ## 错误处理
 
 错误处理是指 Express 如何捕获和处理同步和异步发生的错误。Express 带有默认的错误处理程序，因此您无需编写自己的错误处理程序即可开始使用。
